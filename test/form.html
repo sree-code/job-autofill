@@ -1,0 +1,52 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Autofill test form</title>
+  <link rel="stylesheet" href="../src/content.css">
+  <style>body{font:14px system-ui;max-width:640px;margin:24px auto;padding:0 16px}div{margin:8px 0}label{display:block}</style>
+</head>
+<body>
+  <h1>Sample application</h1>
+  <form id="app">
+    <div><label for="fn">First Name *</label><input id="fn" name="job_application[first_name]"></div>
+    <div><label for="ln">Last Name *</label><input id="ln"></div>
+    <div><input aria-label="Email address" type="text"></div>
+    <div><label>Phone <input type="tel"></label></div>
+    <div><span id="liq">LinkedIn Profile URL</span><input aria-labelledby="liq"></div>
+    <div><input placeholder="City"></div>
+    <div><label for="st">State</label><select id="st"><option value="">Select…</option><option value="CA">California</option><option value="NY">New York</option><option value="TX">Texas</option></select></div>
+    <fieldset><legend>Are you legally authorized to work in the United States?</legend>
+      <label><input type="radio" name="auth" value="1"> Yes</label>
+      <label><input type="radio" name="auth" value="0"> No</label></fieldset>
+    <fieldset><legend>Will you now or in the future require visa sponsorship?</legend>
+      <label><input type="radio" name="spon" value="1"> Yes</label>
+      <label><input type="radio" name="spon" value="0"> No</label></fieldset>
+    <div><label for="cv">Resume/CV</label><input id="cv" type="file"></div>
+    <div><label for="ctrl">Current Company (framework-controlled)</label><input id="ctrl"></div>
+    <div id="sr-host"></div>
+  </form>
+  <script>
+    // Stub chrome APIs so the real content scripts run on a plain page.
+    window.chrome = {
+      storage: { local: { get: (_k, cb) => cb({
+        profile: { firstName: "Ada", lastName: "Lovelace", email: "ada@example.com", phone: "555-0100",
+          linkedin: "https://linkedin.com/in/ada", city: "Austin", state: "Texas", postalCode: "78701", currentCompany: "Analytical Engines",
+          workAuthorized: "Yes", needsSponsorship: "No" },
+        resume: { name: "resume.pdf", dataUrl: "data:application/pdf;base64,JVBERi0xLjQK" } }) } },
+      runtime: { onMessage: { addListener() {} } },
+    };
+    // Simulate a React-style controlled input: tracks value only via the native setter + input event.
+    const ctrl = document.getElementById("ctrl"); let tracked = "";
+    ctrl.addEventListener("input", (e) => (tracked = e.target.value));
+    window.controlledValue = () => tracked;
+    // Shadow DOM field.
+    const sr = document.getElementById("sr-host").attachShadow({ mode: "open" });
+    sr.innerHTML = '<label for="zip">Zip code</label><input id="zip">';
+  </script>
+  <script src="../src/matcher.js"></script>
+  <script src="../src/filler.js"></script>
+  <script src="../src/adapters.js"></script>
+  <script src="../src/content.js"></script>
+</body>
+</html>
