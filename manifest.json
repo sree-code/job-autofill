@@ -1,24 +1,68 @@
 {
   "manifest_version": 3,
   "name": "Job Autofill (local)",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Autofill job application forms from a profile stored only on your machine.",
-  "permissions": ["storage", "activeTab", "scripting"],
-  "host_permissions": ["https://*/*", "http://*/*"],
-  "background": { "service_worker": "src/background.js" },
-  "action": { "default_popup": "src/popup.html", "default_icon": { "128": "icons/icon128.png" } },
+  "permissions": [
+    "storage",
+    "activeTab",
+    "scripting"
+  ],
+  "host_permissions": [
+    "https://*/*",
+    "http://*/*"
+  ],
+  "background": {
+    "service_worker": "dist/background.js",
+    "type": "module"
+  },
+  "action": {
+    "default_popup": "src/popup.html",
+    "default_icon": {
+      "128": "icons/icon128.png"
+    }
+  },
   "options_page": "src/options.html",
-  "icons": { "128": "icons/icon128.png" },
+  "icons": {
+    "128": "icons/icon128.png"
+  },
   "content_scripts": [
     {
-      "matches": ["https://*/*", "http://*/*", "file:///*"],
-      "js": ["src/matcher.js", "src/filler.js", "src/adapters.js", "src/content.js"],
-      "css": ["src/content.css"],
+      "matches": [
+        "https://*/*",
+        "http://*/*"
+      ],
+      "js": [
+        "src/page/bridge.js"
+      ],
+      "world": "MAIN",
+      "all_frames": true,
+      "run_at": "document_start"
+    },
+    {
+      "matches": [
+        "https://*/*",
+        "http://*/*"
+      ],
+      "js": [
+        "src/matcher.js",
+        "src/filler.js",
+        "src/adapters.js",
+        "src/content.js"
+      ],
+      "css": [
+        "src/content.css"
+      ],
       "all_frames": true,
       "run_at": "document_idle"
     }
   ],
   "commands": {
-    "autofill": { "suggested_key": { "default": "Alt+Shift+F" }, "description": "Autofill this page" }
+    "autofill": {
+      "suggested_key": {
+        "default": "Alt+Shift+F"
+      },
+      "description": "Autofill this page"
+    }
   }
 }

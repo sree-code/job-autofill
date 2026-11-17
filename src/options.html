@@ -24,6 +24,20 @@
     <label>Resume (PDF/DOCX) <input type="file" id="resume" accept=".pdf,.doc,.docx"><span class="note" id="resumeName"></span></label>
     <label>Cover letter <input type="file" id="coverLetter" accept=".pdf,.doc,.docx"><span class="note" id="coverLetterName"></span></label>
   </div>
+  <h2>Behaviour &amp; AI</h2>
+  <div class="grid" id="settings">
+    <label>Auto-fill when a form appears <select name="autoFill"><option value="true">On</option><option value="false">Off</option></select></label>
+    <label>AI answers for unknown questions <select name="aiEnabled"><option value="true">On</option><option value="false">Off</option></select></label>
+    <label>Anthropic API key <input name="apiKey" type="password" autocomplete="off" placeholder="sk-ant-…"></label>
+    <label>Model <input name="model" placeholder="claude-sonnet-5-5"></label>
+    <label>Session context limit (tokens) <input name="contextLimit" type="number" placeholder="120000"></label>
+    <label>API base URL (advanced) <input name="baseURL" placeholder="https://api.anthropic.com"></label>
+  </div>
+  <p class="note">The key is stored only in this browser and sent only to the Anthropic API. When a session reaches the context limit it is summarized into memory and a new session starts.</p>
+  <p class="note" id="aiStatus"></p>
+  <button type="button" id="resetAI">New AI session (keep memory)</button>
+  <button type="button" id="wipeAI">Clear AI memory</button>
+  <br>
   <button id="save">Save</button><span id="status"></span>
   <script src="options.js"></script>
 </body>

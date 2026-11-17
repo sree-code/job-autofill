@@ -14,7 +14,9 @@
     ["preferredName", /preferred[\s_-]*(first[\s_-]*)?name|nick[\s_-]*name/i],
     ["fullName", /^(full[\s_-]*)?name$|full[\s_-]*name|your[\s_-]*name|legal[\s_-]*name/i],
     ["email", /e-?mail/i],
-    ["phone", /phone|mobile|cell|telephone|tel\b/i],
+    ["phoneDeviceType", /phone[\s_-]*(device[\s_-]*)?type/i],
+    ["previouslyEmployed", /previously[\s_-]*(worked|employed)|former[\s_-]*employee|worked[\s_-]*(here|for us|for this company) before/i],
+    ["phone", /phone|mobile|\bcell\b|telephone|\btel\b/i],
     ["linkedin", /linked[\s_-]*in/i],
     ["github", /git[\s_-]*hub/i],
     ["portfolio", /portfolio|personal[\s_-]*(web)?site|website|blog|url/i],
@@ -49,7 +51,7 @@
   function collectControls(root = document) {
     const out = [];
     const walk = (node) => {
-      node.querySelectorAll("input, select, textarea, [role=combobox], [contenteditable=true]").forEach((el) => out.push(el));
+      node.querySelectorAll("input, select, textarea, [role=combobox], button[aria-haspopup=listbox], [contenteditable=true]").forEach((el) => out.push(el));
       node.querySelectorAll("*").forEach((el) => el.shadowRoot && walk(el.shadowRoot));
     };
     walk(root);
@@ -58,8 +60,11 @@
 
   function isFillable(el) {
     if (el.disabled || el.readOnly) return false;
+    // Hidden validation mirrors (e.g. Greenhouse "requiredInput") are not real fields.
+    if (el.getAttribute("aria-hidden") === "true" || (el.tabIndex === -1 && getComputedStyle(el).opacity === "0" && el.type !== "file")) return false;
     const t = (el.type || "").toLowerCase();
-    if (["hidden", "submit", "button", "reset", "image", "password", "search"].includes(t)) return false;
+    const listbox = el.getAttribute("aria-haspopup") === "listbox";
+    if (!listbox && ["hidden", "submit", "button", "reset", "image", "password", "search"].includes(t)) return false;
     if (t !== "file") {
       const r = el.getBoundingClientRect();
       if (r.width === 0 && r.height === 0) return false;
@@ -81,19 +86,25 @@
     const lb = el.getAttribute("aria-labelledby");
     if (lb) lb.split(/\s+/).forEach((id) => parts.push(textOf(root.getElementById?.(id) || document.getElementById(id))));
     parts.push(el.getAttribute("aria-label"), el.placeholder, el.name, el.id, el.getAttribute("data-automation-id"), el.getAttribute("autocomplete"));
-    // Fallback: nearest preceding label-ish text in the containing field group.
-    if (!parts.filter(Boolean).join("").trim()) {
-      const group = el.closest("fieldset, .field, .form-group, [class*=question], [class*=field], li, div");
-      const legend = group?.querySelector("legend, label, .label, h3, h4, p");
-      if (legend) parts.push(textOf(legend));
-    }
-    // Radios/checkboxes: the question is usually the fieldset legend.
-    if (el.type === "radio" || el.type === "checkbox") {
-      const fs = el.closest("fieldset, [role=radiogroup], [role=group]");
-      const q = fs?.querySelector("legend, [class*=label], label");
-      if (q) parts.unshift(textOf(q));
+    // Question text from the containing question block (fieldset/legend, Lever
+    // .application-label, Greenhouse/Ashby question wrappers…). Radios and
+    // checkboxes always need it: their own label is just "Yes"/"No".
+    const human = parts.filter(Boolean).some((p) => /\s/.test(p) && p.length > 3);
+    if (el.type === "radio" || el.type === "checkbox" || !human) {
+      const q = questionText(el);
+      if (q) parts.unshift(q);
     }
     return parts.filter(Boolean).join(" | ").slice(0, 400);
+  }
+
+  const QUESTION_BOX = "fieldset, [role=radiogroup], [role=group], .application-question, [class*=question], .form-group, .field, li";
+  const QUESTION_LABEL = "legend, .application-label, [class*=label]:not(input):not(label:has(input)), h3, h4";
+  function questionText(el) {
+    for (let box = el.closest(QUESTION_BOX); box; box = box.parentElement?.closest(QUESTION_BOX)) {
+      const l = [...box.querySelectorAll(QUESTION_LABEL)].find((n) => !n.contains(el) && textOf(n));
+      if (l) return textOf(l).slice(0, 300);
+    }
+    return "";
   }
 
   const AUTOCOMPLETE = {
@@ -112,10 +123,14 @@
     if (el.type === "tel") return "phone";
     const ac = (el.getAttribute("autocomplete") || "").toLowerCase();
     if (AUTOCOMPLETE[ac]) return AUTOCOMPLETE[ac];
-    const d = describe(el);
+    return classifyText(describe(el));
+  }
+
+  function classifyText(d) {
+    if (!d) return null;
     for (const [key, re] of RULES) if (re.test(d)) return key;
     return null;
   }
 
-  NS.matcher = { collectControls, describe, classify, RULES };
+  NS.matcher = { collectControls, describe, classify, classifyText, RULES };
 })();

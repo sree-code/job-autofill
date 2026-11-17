@@ -1,0 +1,13 @@
+<!doctype html><html><head><title>Vue fixture</title><meta charset="utf-8"><link rel="stylesheet" href="../src/content.css"><style>body{font:14px system-ui;max-width:680px;margin:24px auto;padding:0 16px}label{display:block;margin:8px 0 2px}</style>
+<script src="../src/page/bridge.js"></script><script src="../dist/ai-dev.js"></script><script src="harness.js"></script><script src="../node_modules/vue/dist/vue.global.prod.js"></script></head>
+<body><div id="app"><form>
+<h1>Vue application</h1>
+<label for="fn">Given name</label><input id="fn" v-model="m.firstName">
+<label for="ln">Family name</label><input id="ln" v-model="m.lastName">
+<label for="em">Email</label><input id="em" v-model="m.email">
+<label for="li">LinkedIn URL</label><input id="li" v-model="m.linkedin">
+<label for="st">State</label><select id="st" v-model="m.state"><option value="">Select</option><option value="CA">California</option><option value="TX">Texas</option></select>
+<label for="why">Why do you want to work here?</label><textarea id="why" v-model="m.why"></textarea>
+</form></div>
+<script>const a=Vue.createApp({data:()=>({m:{firstName:"",lastName:"",email:"",linkedin:"",state:"",why:""}}),mounted(){window.appState=()=>({...this.m})}});a.mount("#app");</script>
+<script src="../src/matcher.js"></script><script src="../src/filler.js"></script><script src="../src/adapters.js"></script><script src="../src/content.js"></script></body></html>

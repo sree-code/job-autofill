@@ -1,0 +1,53 @@
+<!doctype html><html><head><title>Workday-style fixture</title><meta charset="utf-8"><link rel="stylesheet" href="../src/content.css"><style>body{font:14px system-ui;max-width:680px;margin:24px auto;padding:0 16px}label{display:block;margin:8px 0 2px}[role=listbox]{border:1px solid #999;list-style:none;padding:0;margin:0;background:#fff;position:absolute;z-index:5}[role=option]{padding:4px 8px;cursor:pointer}</style>
+<script src="../src/page/bridge.js"></script><script src="../dist/ai-dev.js"></script><script src="harness.js"></script></head><body>
+<h1>Apply · My Information</h1>
+<div id="step1" data-automation-id="applyFlowMyInfoPage">
+  <div data-automation-id="formField-source"><label id="lbl-src">How Did You Hear About Us?</label>
+    <button type="button" id="source--source" aria-haspopup="listbox" aria-labelledby="lbl-src" data-opts="LinkedIn|Indeed|Company Website|Referral">Select One</button></div>
+  <fieldset data-automation-id="formField-candidateIsPreviousWorker"><legend>Have you previously worked for this company?</legend>
+    <label><input type="radio" name="prev" value="true"> Yes</label><label><input type="radio" name="prev" value="false"> No</label></fieldset>
+  <label for="name--legalName--firstName">Given Name(s)</label><input id="name--legalName--firstName" data-automation-id="legalNameSection_firstName">
+  <label for="name--legalName--lastName">Family Name</label><input id="name--legalName--lastName" data-automation-id="legalNameSection_lastName">
+  <label for="address--addressLine1">Address Line 1</label><input id="address--addressLine1">
+  <label for="address--city">City</label><input id="address--city">
+  <label id="lbl-st">State</label><button type="button" id="address--countryRegion" aria-haspopup="listbox" aria-labelledby="lbl-st" data-opts="California|New York|Texas">Select One</button>
+  <label for="address--postalCode">Postal Code</label><input id="address--postalCode">
+  <label for="emailAddress--emailAddress">Email Address</label><input id="emailAddress--emailAddress">
+  <label id="lbl-pt">Phone Device Type</label><button type="button" id="phoneNumber--phoneType" aria-haspopup="listbox" aria-labelledby="lbl-pt" data-opts="Home|Mobile|Work">Select One</button>
+  <label for="phoneNumber--phoneNumber">Phone Number</label><input id="phoneNumber--phoneNumber">
+  <p><button type="button" id="next" data-automation-id="bottom-navigation-next-button">Save and Continue</button></p>
+</div>
+<template id="step2tpl">
+  <div id="step2" data-automation-id="applyFlowPrimaryQuestionsPage"><h2>Application Questions</h2>
+  <label id="q1">Are you at least 18 years of age?</label><button type="button" id="primaryQuestionnaire--q1" aria-haspopup="listbox" aria-labelledby="q1" data-opts="Yes|No">Select One</button>
+  <label id="q2">Are you subject to a non-compete agreement?</label><button type="button" id="primaryQuestionnaire--q2" aria-haspopup="listbox" aria-labelledby="q2" data-opts="Yes|No">Select One</button>
+  <label for="q3">Why do you want to work here?</label><textarea id="q3"></textarea>
+  </div>
+</template>
+<script>
+// Workday-like listbox: clicking the button renders a ul[role=listbox] with li[role=option].
+document.addEventListener("click", (e) => {
+  const btn = e.target.closest("button[aria-haspopup=listbox]");
+  document.querySelectorAll("[role=listbox]").forEach((l) => l.remove());
+  if (!btn) return;
+  const ul = document.createElement("ul"); ul.setAttribute("role", "listbox"); ul.id = btn.id + "-list";
+  btn.setAttribute("aria-controls", ul.id);
+  for (const o of btn.dataset.opts.split("|")) {
+    const li = document.createElement("li"); li.setAttribute("role", "option"); li.textContent = o;
+    li.addEventListener("click", (ev) => { ev.stopPropagation(); btn.textContent = o; btn.dataset.value = o; ul.remove(); });
+    ul.appendChild(li);
+  }
+  btn.after(ul);
+});
+document.getElementById("next").onclick = () => {
+  document.getElementById("step1").hidden = true;
+  document.body.appendChild(document.getElementById("step2tpl").content.cloneNode(true));
+};
+window.appState = () => {
+  const v = (id) => document.getElementById(id)?.value; const b = (id) => document.getElementById(id)?.dataset.value;
+  return { source: b("source--source"), prev: document.querySelector("input[name=prev]:checked")?.value, first: v("name--legalName--firstName"),
+    last: v("name--legalName--lastName"), addr: v("address--addressLine1"), city: v("address--city"), state: b("address--countryRegion"),
+    zip: v("address--postalCode"), email: v("emailAddress--emailAddress"), phoneType: b("phoneNumber--phoneType"), phone: v("phoneNumber--phoneNumber"),
+    q1: b("primaryQuestionnaire--q1"), q2: b("primaryQuestionnaire--q2"), q3: v("q3") };
+};
+</script><script src="../src/matcher.js"></script><script src="../src/filler.js"></script><script src="../src/adapters.js"></script><script src="../src/content.js"></script></body></html>

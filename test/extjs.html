@@ -1,0 +1,27 @@
+<!doctype html><html><head><title>Ext JS fixture</title><meta charset="utf-8"><link rel="stylesheet" href="../src/content.css"><style>body{font:14px system-ui;max-width:680px;margin:24px auto;padding:0 16px}label{display:block;margin:8px 0 2px}</style>
+<script src="../src/page/bridge.js"></script><script src="../dist/ai-dev.js"></script><script src="harness.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/extjs/6.0.0/classic/theme-triton/resources/theme-triton-all.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/extjs/6.0.0/ext-all.js"></script></head><body>
+<h1>Ext JS application</h1><div id="ext"></div>
+<script>
+Ext.onReady(() => {
+  const yesNo = Ext.create("Ext.data.Store", { fields: ["v", "t"], data: [{ v: "Y", t: "Yes" }, { v: "N", t: "No" }] });
+  const form = Ext.create("Ext.form.Panel", {
+    renderTo: "ext", width: 560, bodyPadding: 10, defaults: { labelWidth: 220, anchor: "100%" },
+    items: [
+      { xtype: "textfield", name: "first", fieldLabel: "First Name" },
+      { xtype: "textfield", name: "last", fieldLabel: "Last Name" },
+      { xtype: "textfield", name: "mail", fieldLabel: "Email" },
+      { xtype: "textfield", name: "tel", fieldLabel: "Phone" },
+      { xtype: "combobox", name: "state", fieldLabel: "State", displayField: "name", valueField: "abbr", queryMode: "local",
+        store: Ext.create("Ext.data.Store", { fields: ["abbr", "name"], data: [{ abbr: "CA", name: "California" }, { abbr: "TX", name: "Texas" }] }) },
+      { xtype: "combobox", name: "auth", fieldLabel: "Legally authorized to work in the US?", displayField: "t", valueField: "v", queryMode: "local", store: yesNo },
+      { xtype: "combobox", name: "adult", fieldLabel: "Are you at least 18 years of age?", displayField: "t", valueField: "v", queryMode: "local",
+        store: Ext.create("Ext.data.Store", { fields: ["v", "t"], data: [{ v: "Y", t: "Yes" }, { v: "N", t: "No" }] }) },
+      { xtype: "textareafield", name: "why", fieldLabel: "Why do you want to work here?" },
+    ],
+  });
+  window.appState = () => form.getForm().getValues();
+  window.appReady = true;
+});
+</script><script src="../src/matcher.js"></script><script src="../src/filler.js"></script><script src="../src/adapters.js"></script><script src="../src/content.js"></script></body></html>

@@ -62,8 +62,7 @@
   // Radio/checkbox groups: pick the option whose label best matches the answer.
   function fillChoice(el, value) {
     if (value == null || value === "") return false;
-    const root = el.form || el.closest("fieldset, [role=radiogroup], [role=group]") || document;
-    const group = el.name ? [...root.querySelectorAll(`input[name="${CSS.escape(el.name)}"]`)] : [el];
+    const group = groupOf(el);
     if (group.some((g) => g.checked)) return false;
     const opts = group.map((g) => ({ el: g, text: (g.labels?.[0]?.textContent || g.value || "") }));
     const want = typeof value === "boolean" ? (value ? "yes" : "no") : value;
@@ -73,28 +72,64 @@
     return true;
   }
 
-  // Custom dropdowns (react-select, Workday, Greenhouse remix): open, type, pick matching option.
+  // Custom dropdowns (react-select, MUI/Angular Material, Workday listbox buttons).
+  const OPTION_SEL = "[role=option], [id*='-option-'], [class*=option]:not([class*=options])";
+
+  function visibleOptions(input) {
+    const listId = input.getAttribute("aria-controls") || input.getAttribute("aria-owns");
+    const scope = (listId && document.getElementById(listId)) || document;
+    return [...scope.querySelectorAll(OPTION_SEL)]
+      .filter((o) => o.offsetParent !== null && !o.closest("[aria-hidden=true]"))
+      .map((o) => ({ el: o, text: o.textContent }));
+  }
+
+  // rAF is paused in background tabs; race it with a timer so we never hang.
+  const nextTick = () => new Promise((r) => { const t = setTimeout(r, 16); requestAnimationFrame(() => { clearTimeout(t); r(); }); });
+
+  function openMenu(input) {
+    // A full click sequence on the control: react-select opens on mousedown,
+    // some wrappers (Greenhouse) on mouseup, Workday/MUI on click.
+    const control = input.closest("[class*='control']");
+    const target = control && control !== input ? control : input;
+    for (const t of ["pointerdown", "mousedown", "pointerup", "mouseup", "click"])
+      target.dispatchEvent(new MouseEvent(t, { bubbles: true, cancelable: true, button: 0, view: window }));
+    input.focus();
+    // Background tabs never get a real focus event; send one so onFocus handlers run.
+    input.dispatchEvent(new FocusEvent("focusin", { bubbles: true }));
+  }
+
+  function choose(opt) {
+    opt.scrollIntoView({ block: "nearest" });
+    for (const t of ["pointerdown", "mousedown", "pointerup", "mouseup", "click"])
+      opt.dispatchEvent(new MouseEvent(t, { bubbles: true, cancelable: true, view: window, button: 0 }));
+  }
+
   async function fillCombobox(el, value) {
     if (value == null || value === "") return false;
+    if (hasValue(el, "combobox")) return false;
     const input = el.matches("input") ? el : el.querySelector("input") || el;
-    input.focus();
-    input.click();
-    if (input.matches("input")) { setNativeValue(input, String(value)); fire(input, "input"); }
-    for (let i = 0; i < 10; i++) {
-      await sleep(150);
-      const listId = input.getAttribute("aria-controls") || input.getAttribute("aria-owns");
-      const scope = (listId && document.getElementById(listId)) || document;
-      const opts = [...scope.querySelectorAll("[role=option], [class*=option]:not([class*=options])")]
-        .filter((o) => o.offsetParent !== null)
-        .map((o) => ({ el: o, text: o.textContent }));
+    openMenu(input);
+    let typed = false, arrowed = false;
+    // Poll every frame (~16ms) for up to 1.5s: options usually render within 1-2 frames.
+    for (let start = performance.now(); performance.now() - start < 1500; ) {
+      await nextTick();
+      const opts = visibleOptions(input);
       const hit = bestOption(opts, value);
-      if (hit) {
-        hit.el.scrollIntoView({ block: "nearest" });
-        for (const t of ["pointerdown", "mousedown", "pointerup", "mouseup", "click"])
-          hit.el.dispatchEvent(new MouseEvent(t, { bubbles: true, cancelable: true, view: window }));
-        return true;
+      if (hit) { choose(hit.el); return true; }
+      const waited = performance.now() - start;
+      // Fallback 1: keyboard open.
+      if (!arrowed && !opts.length && input.matches("input") && waited > 60) {
+        input.dispatchEvent(new KeyboardEvent("keydown", { key: "ArrowDown", code: "ArrowDown", keyCode: 40, bubbles: true }));
+        arrowed = true;
+      }
+      // Fallback 2: long/async lists (locations, schools): type to filter, once.
+      if (!typed && input.matches("input") && waited > 150) {
+        setNativeValue(input, String(value));
+        fire(input, "input");
+        typed = true;
       }
     }
+    if (typed) { setNativeValue(input, ""); fire(input, "input"); } // don't leave unselected typed text behind
     input.dispatchEvent(new KeyboardEvent("keydown", { key: "Escape", bubbles: true }));
     return false;
   }
@@ -112,5 +147,29 @@
     return true;
   }
 
-  NS.filler = { setNativeValue, fire, fillText, fillSelect, fillChoice, fillCombobox, fillFile, bestOption, norm, sleep };
+  // Radio/checkbox group: same name, or (Angular formControlName / nameless) same fieldset.
+  function groupOf(el) {
+    if (el.name) {
+      const root = el.form || el.getRootNode() || document;
+      return [...root.querySelectorAll(`input[type="${el.type}"][name="${CSS.escape(el.name)}"]`)];
+    }
+    const box = el.closest("fieldset, [role=radiogroup], [role=group]");
+    return box ? [...box.querySelectorAll(`input[type="${el.type}"]`)] : [el];
+  }
+  const groupKey = (el) => el.name || (el.closest("fieldset, [role=radiogroup], [role=group]") ? groupOf(el)[0] : el);
+
+  function hasValue(el, kind) {
+    if (kind === "select") return el.selectedIndex > 0;
+    if (kind === "choice") return groupOf(el).some((g) => g.checked);
+    if (kind === "combobox") {
+      // react-select shows the chosen value in a sibling, not the input.
+      const chosen = el.closest("[class*='container']")?.querySelector("[class*='single-value'], [class*='multi-value']");
+      if (chosen?.textContent.trim()) return true;
+      const t = (el.matches("input") ? el.value : el.textContent ?? "").trim();
+      return !!t && !/^(select|choose)/i.test(t);
+    }
+    return !!String(el.value ?? el.textContent ?? "").trim();
+  }
+
+  NS.filler = { hasValue, groupOf, groupKey, setNativeValue, fire, fillText, fillSelect, fillChoice, fillCombobox, fillFile, bestOption, norm, sleep };
 })();

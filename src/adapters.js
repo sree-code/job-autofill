@@ -8,9 +8,16 @@
       test: (h) => /myworkdayjobs\.com|workday\.com/.test(h),
       // Workday tags inputs with stable data-automation-id values.
       ids: {
+        // Older data-automation-id style
         legalNameSection_firstName: "firstName", legalNameSection_lastName: "lastName",
         email: "email", phone: "phone", "phone-number": "phone", addressSection_addressLine1: "address1",
         addressSection_city: "city", addressSection_postalCode: "postalCode", linkedinQuestion: "linkedin",
+        // Newer id style (name--legalName--firstName etc.)
+        "name--legalName--firstName": "firstName", "name--legalName--lastName": "lastName",
+        "name--preferredName--firstName": "preferredName", "address--addressLine1": "address1",
+        "address--city": "city", "address--postalCode": "postalCode", "address--countryRegion": "state",
+        "phoneNumber--phoneNumber": "phone", "phoneNumber--phoneType": "phoneDeviceType",
+        "emailAddress--emailAddress": "email", "country--country": "country", "source--source": "howHeard",
       },
     },
     { name: "greenhouse", test: (h) => /greenhouse\.io/.test(h),

@@ -1,0 +1,13 @@
+<!doctype html><html><head><title>AngularJS fixture</title><meta charset="utf-8"><link rel="stylesheet" href="../src/content.css"><style>body{font:14px system-ui;max-width:680px;margin:24px auto;padding:0 16px}label{display:block;margin:8px 0 2px}</style>
+<script src="../src/page/bridge.js"></script><script src="../dist/ai-dev.js"></script><script src="harness.js"></script><script src="../node_modules/angular/angular.min.js"></script></head>
+<body ng-app="app" ng-controller="Ctrl as c"><form name="f">
+<h1>AngularJS application</h1>
+<label for="fn">First Name</label><input id="fn" ng-model="c.m.firstName">
+<label for="ln">Last Name</label><input id="ln" ng-model="c.m.lastName">
+<label for="em">E-mail</label><input id="em" ng-model="c.m.email">
+<label for="ph">Phone number</label><input id="ph" ng-model="c.m.phone">
+<label for="st">State</label><select id="st" ng-model="c.m.state" ng-options="s.code as s.name for s in c.states"><option value="">Select</option></select>
+<label for="why">Why do you want to work here?</label><textarea id="why" ng-model="c.m.why"></textarea>
+</form>
+<script>angular.module("app",[]).controller("Ctrl",function(){this.m={};this.states=[{code:"CA",name:"California"},{code:"TX",name:"Texas"}];window.appState=()=>angular.copy(this.m);});</script>
+<script src="../src/matcher.js"></script><script src="../src/filler.js"></script><script src="../src/adapters.js"></script><script src="../src/content.js"></script></body></html>
