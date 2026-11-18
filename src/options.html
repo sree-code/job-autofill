@@ -18,7 +18,8 @@
     #consent { border: 1px solid #2563eb66; background: #2563eb12; border-radius: 10px; padding: 12px 14px; margin: 14px 0; }
     #consent[hidden] { display: none; }
     #consent button { padding: 7px 14px; border-radius: 7px; border: 0; font-weight: 600; cursor: pointer; margin-right: 6px; }
-    #consentYes { background: #2563eb; color: #fff; } #consentNo { background: #e5e7eb; }
+    #consentYes { background: #2563eb; color: #fff; }
+    #app[inert] { opacity: .4; filter: grayscale(1); }
     details.sent { font-size: 12px; margin-top: 6px; }
   </style>
 </head>
@@ -26,10 +27,11 @@
   <h1>Job Autofill profile</h1>
   <p class="note">Your profile is stored only in this browser (chrome.storage.local).</p>
   <div id="consent" hidden>
-    <strong>Help improve Job Autofill?</strong>
-    <p class="note" style="margin:6px 0 10px">Share anonymous usage metrics with the project maintainer: which job sites and form types the extension ran on, how many fields it filled, how long it took, and questions it couldn't match. Your profile values, answers, API key and resume are never sent. You can change this any time below.</p>
-    <button type="button" id="consentYes">Share anonymous metrics</button><button type="button" id="consentNo">No thanks</button>
+    <strong>Beta: usage metrics are required</strong>
+    <p class="note" style="margin:6px 0 10px">This is a beta. To use it, you agree to send anonymous usage metrics to the project maintainer: which job sites and form types the extension ran on, how many fields it filled, how long it took, and questions it couldn't match. Your profile values, answers, API key and resume are never sent. See <a href="https://job-autofill-telemetry.vercel.app/privacy" target="_blank">the privacy policy</a>. If you don't want this, uninstall the extension.</p>
+    <button type="button" id="consentYes">Accept and continue</button>
   </div>
+  <div id="app">
   <details id="importBox">
     <summary><strong>Import profile from JSON</strong> (e.g. exported from another tool)</summary>
     <textarea id="importJson" class="wide" style="width:100%;min-height:140px" placeholder='{"firstName":"Ada","lastName":"Lovelace",...}'></textarea>
@@ -50,19 +52,19 @@
     <label>API key for that provider <input name="apiKey" type="password" autocomplete="off" placeholder="sk-…"></label>
     <label>Model <input name="model" placeholder="deepseek-flash"></label>
     <label>DeepSeek reasoning <select name="reasoning"><option value="low">Fast (low effort)</option><option value="off">Off (fastest)</option><option value="high">High (slower)</option></select></label>
-    <label>Share anonymous usage metrics <select name="telemetry"><option value="false">Off</option><option value="true">On</option></select></label>
     <label>Session context limit (tokens) <input name="contextLimit" type="number" placeholder="120000"></label>
     <label>API base URL (advanced) <input name="baseURL" placeholder="https://api.deepseek.com"></label>
   </div>
   <p class="note">The key is stored only in this browser and sent only to the provider you picked (DeepSeek or Anthropic). When a session reaches the context limit it is summarized into memory and a new session starts.</p>
   <details class="sent"><summary>What the usage metrics contain</summary>
-    <p class="note">Sent (only when "Share anonymous usage metrics" is On): a random install id, extension version, browser version, the job site's hostname (no page path), detected framework and ATS, number of fields found/filled, the field <em>types</em> filled (e.g. "email"), question labels it couldn't match, fill and AI timings, AI provider/model, and error messages. Never sent: profile values, what was typed into forms, AI answers, API keys, resume or cover letter, full URLs.</p>
+    <p class="note">Required during the beta. Sent: a random install id, extension version, browser version, the job site's hostname (no page path), detected framework and ATS, number of fields found/filled, the field <em>types</em> filled (e.g. "email"), question labels it couldn't match, fill and AI timings, AI provider/model, and error messages. Never sent: profile values, what was typed into forms, AI answers, API keys, resume or cover letter, full URLs.</p>
   </details>
   <p class="note" id="aiStatus"></p>
   <button type="button" id="resetAI">New AI session (keep memory)</button>
   <button type="button" id="wipeAI">Clear AI memory</button>
   <br>
   <button id="save">Save</button><span id="status"></span>
+  </div>
   <script type="module" src="options.js"></script>
 </body>
 </html>

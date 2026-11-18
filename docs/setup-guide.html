@@ -58,7 +58,7 @@
     <li>Never type, paste or ask for the user's API key in chat or in any form. The user pastes it into the extension's options page themselves.</li>
     <li>Never submit a job application, create accounts on job sites, or enter passwords. The user signs in and clicks Submit.</li>
     <li>Keep the user's profile and resume on this computer. Don't upload them, commit them to git, or put them in public places.</li>
-    <li>Don't change the telemetry setting for the user. It is their choice (section 6).</li>
+    <li>Don't click “Accept and continue” for the user. Accepting the beta usage metrics is their decision (section 6); explain it and let them click it.</li>
   </ul>
 </div>
 
@@ -92,6 +92,7 @@ npm test</pre>
     The last five (self-identification) are optional. Fill them only if the user tells you their answers.</li>
   <li><strong>You do this: save the profile.</strong> On the options page:
     <ol type="a">
+      <li>Read the <strong>Beta: usage metrics are required</strong> box and click <strong>Accept and continue</strong>. The page stays locked until you do.</li>
       <li>Open <strong>Import profile from JSON</strong>, paste the JSON and click <strong>Fill form from JSON</strong>.</li>
       <li>Review the fields.</li>
       <li>Choose the resume under <strong>Files</strong>.</li>
@@ -105,7 +106,7 @@ npm test</pre>
 </ol>
 
 <h2 class="page-break">3. What it looks like</h2>
-<figure><img src="screenshots/1-options-first-run.png"><figcaption>Options page on first run: optional metrics question, JSON import, profile fields (dummy data).</figcaption></figure>
+<figure><img src="screenshots/1-options-first-run.png"><figcaption>Options page on first run: the page stays locked until the user accepts the beta usage metrics (dummy data).</figcaption></figure>
 <div class="two">
   <figure><img src="screenshots/4-workday-step1-filled.png"><figcaption>Workday-style form after auto-fill. Green outlines mark filled fields; the toast shows the count and time.</figcaption></figure>
   <figure><img src="screenshots/5-workday-step2-ai.png"><figcaption>Next step: custom questions answered by the AI session.</figcaption></figure>
@@ -133,11 +134,11 @@ npm test</pre>
   <tr><td>Update to the latest version</td><td>In the <code>job-autofill</code> folder: <code>git pull</code>, then <code>npm install</code>, then <code>npm run build</code>; then click the reload icon on <code>chrome://extensions</code></td></tr>
 </table>
 
-<h2>6. Privacy and the optional usage metrics</h2>
+<h2>6. Privacy and the beta usage metrics</h2>
 <p>Your profile, resume and API key are stored only in Chrome on your computer (<code>chrome.storage.local</code>). AI questions go only to the provider you chose, using your own key.</p>
-<p>If the maintainer has set up a metrics receiver, the options page asks once whether to <strong>share anonymous usage metrics</strong>. Nothing is sent unless you choose “Share”, and you can switch it off any time.</p>
+<p>This is a beta, so <strong>anonymous usage metrics are required</strong>. The first time you open the options page it shows what is collected and an <strong>Accept and continue</strong> button. The extension doesn't fill anything until you accept. Nothing is sent before that. If you don't want metrics, uninstall the extension.</p>
 <table>
-  <tr><th>Sent when you opt in</th><th>Never sent</th></tr>
+  <tr><th>Sent after you accept</th><th>Never sent</th></tr>
   <tr><td>Random install id, extension and browser version; job site hostname (no page path); detected framework/ATS; number of fields found and filled; field <em>types</em> filled (e.g. “email”); question labels it couldn't match (emails/numbers masked); fill and AI timings; AI provider/model; error messages</td>
       <td>Your profile values, anything typed into forms, AI answers, API keys, resume or cover letter, full URLs, IP address (not stored)</td></tr>
 </table>
@@ -150,7 +151,7 @@ npm test</pre>
   <tr><td>Dropdowns not filled on Greenhouse</td><td>Keep the tab focused (in front) while it fills. Some dropdowns only open in an active tab.</td></tr>
   <tr><td>Report shows <code>ai.error: "no-api-key"</code></td><td>Paste a key in Options and Save.</td></tr>
   <tr><td><code>DeepSeek HTTP 401</code></td><td>Wrong or revoked key. Create a new one at platform.deepseek.com/api_keys.</td></tr>
-  <tr><td>A field fills, then clears</td><td>It's an autocomplete that wants a choice from its list. Pick it by hand. If metrics are on, this is reported so it can be fixed.</td></tr>
+  <tr><td>A field fills, then clears</td><td>It's an autocomplete that wants a choice from its list. Pick it by hand. This is reported in the metrics so it can be fixed.</td></tr>
   <tr><td><code>npm test</code> fails after <code>git pull</code></td><td>Run <code>npm install</code> again, then <code>npm run build</code>.</td></tr>
 </table>
 

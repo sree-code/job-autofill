@@ -21,6 +21,8 @@
     runtime: {
       onMessage: { addListener() {} },
       sendMessage(msg, cb) {
+        if (msg.type === "GATE") return cb?.({ allowed: params.get("gate") !== "0" }); // ?gate=0: metrics not accepted
+        if (msg.type === "OPEN_OPTIONS") return (window.__jafOpenedOptions = true), cb?.();
         if (msg.type === "TELEMETRY") { (window.__jafTelemetry ??= []).push(msg); return cb?.({ ok: true }); }
         if (msg.type !== "AI_ANSWER") return cb?.({});
         session ??= new window.JafAI.AnswerSession({

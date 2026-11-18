@@ -4,7 +4,7 @@ import assert from "node:assert/strict";
 import { mkdtemp, readdir, readFile } from "node:fs/promises";
 import { tmpdir } from "node:os";
 import path from "node:path";
-import { createTelemetry, sanitize } from "../src/telemetry.js";
+import { createTelemetry, sanitize, metricsGate } from "../src/telemetry.js";
 import { createServer } from "../telemetry/server.mjs";
 
 const mem = (init = {}) => { const m = new Map(Object.entries(init)); return { get: async (k) => structuredClone(m.get(k)), set: async (k, v) => void m.set(k, structuredClone(v)), m }; };
@@ -123,4 +123,13 @@ test("telemetry/vercel/lib is in sync with its sources (run scripts/build-teleme
     const gen = await readFile(new URL(`../telemetry/vercel/lib/${to}`, import.meta.url), "utf8");
     assert.equal(gen.split("\n").slice(1).join("\n"), src, `${to} is stale`);
   }
+});
+
+test("beta gate: extension is locked until metrics are accepted (when a receiver is configured)", () => {
+  const url = "https://example.test/v1/events";
+  assert.deepEqual(metricsGate({}, url), { required: true, accepted: false, allowed: false });
+  assert.equal(metricsGate({ telemetry: false }, url).allowed, false, "declining does not unlock");
+  assert.equal(metricsGate({ telemetry: true }, url).allowed, true);
+  assert.equal(metricsGate({}, "").allowed, true, "forks without a receiver are never gated");
+  assert.equal(metricsGate({ telemetryURL: url }, "").allowed, false);
 });

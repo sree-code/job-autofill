@@ -1,6 +1,7 @@
 // Anonymous, opt-in usage metrics (service worker side).
 //
-// Sent ONLY when the user said yes on the options page (settings.telemetry === true).
+// Sent ONLY after the user accepted metrics on the options page (settings.telemetry === true).
+// During the beta that acceptance is required to use the extension (see metricsGate).
 // Never sent: profile values, form answers, AI answers, API keys, resume/cover
 // letter, full page URLs. Sent: event type, extension version, a random install
 // id, the job site's hostname, framework/adapter detected, counts, field *types*
@@ -54,6 +55,14 @@ export function sanitize(type, p = {}) {
 function browserInfo() {
   const b = navigator.userAgentData?.brands?.find((x) => !/not.?a.?brand|chromium/i.test(x.brand)) || navigator.userAgentData?.brands?.[0];
   return { browser: b ? `${b.brand} ${b.version}` : clip(navigator.userAgent.match(/Chrome\/\d+/)?.[0], 30), os: clip(navigator.userAgentData?.platform || "", 20) };
+}
+
+// Beta rule: when a receiver is configured, the extension only works after the
+// user accepts usage metrics (settings.telemetry === true). Forks without a
+// receiver are never gated.
+export function metricsGate(settings = {}, url = TELEMETRY_URL) {
+  const required = !!(settings.telemetryURL || url);
+  return { required, accepted: settings.telemetry === true, allowed: !required || settings.telemetry === true };
 }
 
 export function createTelemetry({ storage, fetchImpl = fetch, url = TELEMETRY_URL, version = "0" } = {}) {

@@ -1,4 +1,4 @@
-import { TELEMETRY_URL } from "./config.js";
+import { metricsGate } from "./telemetry.js";
 const SECTIONS = {
   Personal: ["firstName", "middleName", "lastName", "preferredName", "pronouns", "email", "phone", "phoneDeviceType"],
   Address: ["address1", "address2", "city", "state", "postalCode", "country", "location"],
@@ -87,9 +87,7 @@ sField("provider").addEventListener("change", syncHints);
 chrome.storage.local.get(["profile", "resume", "coverLetter", "settings"], ({ profile = {}, resume, coverLetter, settings = {} }) => {
   for (const [k, v] of Object.entries(settings)) if (sField(k)) sField(k).value = String(v);
   syncHints();
-  // Ask only when a receiver is configured (src/config.js or the advanced setting).
-  const configured = !!(TELEMETRY_URL || settings.telemetryURL);
-  document.getElementById("consent").hidden = !configured || typeof settings.telemetry === "boolean";
+  lockUntilAccepted(settings);
   showAI();
   for (const [k, v] of Object.entries(profile)) if (form.elements[k]) form.elements[k].value = v;
   if (!form.elements.phoneDeviceType.value) form.elements.phoneDeviceType.value = "Mobile";
@@ -102,9 +100,10 @@ document.getElementById("save").onclick = async () => {
   const settings = {};
   settingsEl.querySelectorAll("[name]").forEach((el) => {
     if (el.value === "") return;
-    if (el.name === "telemetry" && !document.getElementById("consent").hidden) return; // unanswered: stay opt-out without hiding the question
     settings[el.name] = el.value === "true" ? true : el.value === "false" ? false : el.value;
   });
+  const { settings: prev = {} } = await chrome.storage.local.get("settings");
+  for (const k of ["telemetry", "telemetryURL"]) if (k in prev) settings[k] = prev[k]; // not editable here
   const data = { profile, settings };
   for (const id of ["resume", "coverLetter"]) {
     const f = document.getElementById(id).files[0];
@@ -122,13 +121,16 @@ document.getElementById("save").onclick = async () => {
   showAI();
 };
 
-// One-time consent banner: nothing is sent until the user picks "Share".
-async function setConsent(on) {
-  const { settings = {} } = await chrome.storage.local.get("settings");
-  await chrome.storage.local.set({ settings: { ...settings, telemetry: on } });
-  sField("telemetry").value = String(on);
-  document.getElementById("consent").hidden = true;
-  if (on) chrome.runtime.sendMessage({ type: "TELEMETRY", event: "consent", props: {} }, () => void chrome.runtime.lastError);
+// Beta gate: the page (and the extension) stays locked until metrics are accepted.
+function lockUntilAccepted(settings) {
+  const { allowed } = metricsGate(settings);
+  document.getElementById("consent").hidden = allowed;
+  document.getElementById("app").inert = !allowed;
 }
-document.getElementById("consentYes").onclick = () => setConsent(true);
-document.getElementById("consentNo").onclick = () => setConsent(false);
+document.getElementById("consentYes").onclick = async () => {
+  const { settings = {} } = await chrome.storage.local.get("settings");
+  const next = { ...settings, telemetry: true };
+  await chrome.storage.local.set({ settings: next });
+  lockUntilAccepted(next);
+  chrome.runtime.sendMessage({ type: "TELEMETRY", event: "consent", props: {} }, () => void chrome.runtime.lastError);
+};

@@ -30,10 +30,10 @@ Pick the provider and paste its API key on the options page. The key stays in `c
 [docs/Job-Autofill-Setup-Guide.pdf](docs/Job-Autofill-Setup-Guide.pdf) is a single document you can share. Give it to a Claude Code session
 and it walks through install, build, profile and a practice run. The source is `docs/setup-guide.html`; run `npm run guide` to rebuild the PDF.
 
-## Usage metrics (opt-in)
+## Usage metrics (required during the beta)
 
-When `TELEMETRY_URL` in `src/config.js` is set, the options page asks each user once whether to share anonymous metrics.
-Nothing is sent without a yes. Metrics are counts, timings, the job site's hostname, field types, unmatched question labels and errors.
+When `TELEMETRY_URL` in `src/config.js` is set, the extension is locked until the user clicks **Accept and continue** on the options page
+(there is no opt-out other than uninstalling). Nothing is sent before they accept. Metrics are counts, timings, the job site's hostname, field types, unmatched question labels and errors.
 Profile values, answers, API keys and resumes are never sent.
 Events go to the maintainer's Vercel receiver (`telemetry/vercel/`, private Blob storage); the dashboard is at
 `https://job-autofill-telemetry.vercel.app/dashboard?key=ADMIN_KEY` and the privacy policy at

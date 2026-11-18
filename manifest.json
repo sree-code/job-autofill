@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "Job Autofill (local)",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "description": "Autofill job application forms from a profile stored only on your machine.",
   "permissions": [
     "storage",

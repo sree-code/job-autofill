@@ -86,8 +86,23 @@
     try { chrome.runtime.sendMessage({ type: "TELEMETRY", event, props }, () => void chrome.runtime.lastError); } catch {}
   };
 
+  // Beta: filling is locked until usage metrics are accepted on the options page.
+  const gate = () => new Promise((r) => {
+    try { chrome.runtime.sendMessage({ type: "GATE" }, (res) => { void chrome.runtime.lastError; r(res || {}); }); }
+    catch { r({}); }
+  });
+  let gateNoticeShown = false;
+
   async function autofill({ useAI = true, trigger = "button" } = {}) {
     if (running) return { filled: [], skipped: [], busy: true };
+    if ((await gate()).allowed === false) {
+      if (trigger !== "auto" || !gateNoticeShown) {
+        gateNoticeShown = true;
+        toast("Job Autofill beta: accept usage metrics on the profile page to start.");
+        if (trigger !== "auto") try { chrome.runtime.sendMessage({ type: "OPEN_OPTIONS" }); } catch {}
+      }
+      return { filled: [], skipped: [], needsConsent: true };
+    }
     running = true;
     const t0 = performance.now();
     try {
