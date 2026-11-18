@@ -90,3 +90,37 @@ test("receiver rejects junk and keeps events queued when unreachable", async () 
   assert.equal(await t.flush(), 0);
   assert.equal(storage.m.get("telemetryQueue").length, 1);
 });
+
+test("vercel blob handlers: store a batch privately, then aggregate it", async () => {
+  const { makeHandlers } = await import("../telemetry/blob-handlers.mjs");
+  const files = new Map();
+  const blob = {
+    put: async (p, body, opts) => { assert.equal(opts.access, "private"); const k = `${p}-${files.size}`; files.set(k, body); return { pathname: k }; },
+    list: async () => ({ blobs: [...files.keys()].map((pathname) => ({ pathname })), hasMore: false }),
+    get: async (p) => ({ statusCode: 200, stream: new Response(files.get(p)).body }),
+  };
+  const h = makeHandlers(blob, { adminKey: "k" });
+  const mkRes = () => { const r = { code: 0, body: "", writeHead(c) { r.code = c; }, end(b) { r.body = b || ""; } }; return r; };
+  const ev = { v: 1, type: "autofill_run", ts: new Date().toISOString(), install: crypto.randomUUID(), ext: "0.3.0", host: "jobs.lever.co", fields: 10, filled: 8, ms: 90 };
+  let res = mkRes();
+  await h.events({ method: "POST", headers: {}, body: { events: [ev, { type: "bad" }] } }, res);
+  assert.equal(res.code, 200);
+  assert.deepEqual(JSON.parse(res.body), { accepted: 1, rejected: 1 });
+  res = mkRes();
+  await h.stats({ url: "/api/stats?format=json", headers: {} }, res);
+  assert.equal(res.code, 401);
+  res = mkRes();
+  await h.stats({ url: "/api/stats?format=json&key=k", headers: {} }, res);
+  const s = JSON.parse(res.body);
+  assert.equal(s.totals.runs, 1);
+  assert.equal(s.byHost[0].key, "jobs.lever.co");
+});
+
+test("telemetry/vercel/lib is in sync with its sources (run scripts/build-telemetry-vercel.mjs)", async () => {
+  const { readFile } = await import("node:fs/promises");
+  for (const [from, to] of [["src/telemetry.js", "telemetry.js"], ["src/config.js", "config.js"], ["telemetry/stats.mjs", "stats.mjs"], ["telemetry/core.mjs", "core.mjs"], ["telemetry/blob-handlers.mjs", "blob-handlers.mjs"]]) {
+    const src = (await readFile(new URL(`../${from}`, import.meta.url), "utf8")).replace('from "../src/telemetry.js"', 'from "./telemetry.js"');
+    const gen = await readFile(new URL(`../telemetry/vercel/lib/${to}`, import.meta.url), "utf8");
+    assert.equal(gen.split("\n").slice(1).join("\n"), src, `${to} is stale`);
+  }
+});

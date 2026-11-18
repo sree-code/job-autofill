@@ -9,7 +9,8 @@
     "mock": "node test/mock-claude.mjs",
     "telemetry": "node telemetry/server.mjs",
     "screenshots": "node build.mjs --fixtures && node scripts/screenshots.mjs",
-    "guide": "node scripts/guide-pdf.mjs"
+    "guide": "node scripts/guide-pdf.mjs",
+    "telemetry:vercel": "node scripts/build-telemetry-vercel.mjs"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^1.10.0",
