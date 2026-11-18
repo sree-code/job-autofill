@@ -25,6 +25,18 @@ passes the limit (default 120k tokens), it's summarized into memory and a new se
 
 Pick the provider and paste its API key on the options page. The key stays in `chrome.storage.local`.
 
+## Setup guide
+
+[docs/Job-Autofill-Setup-Guide.pdf](docs/Job-Autofill-Setup-Guide.pdf) is a single document you can share. Give it to a Claude Code session
+and it walks through install, build, profile and a practice run. The source is `docs/setup-guide.html`; run `npm run guide` to rebuild the PDF.
+
+## Usage metrics (opt-in)
+
+When `TELEMETRY_URL` in `src/config.js` is set, the options page asks each user once whether to share anonymous metrics.
+Nothing is sent without a yes. Metrics are counts, timings, the job site's hostname, field types, unmatched question labels and errors.
+Profile values, answers, API keys and resumes are never sent.
+Run the receiver with `ADMIN_KEY=… npm run telemetry` (see `telemetry/server.mjs`); the dashboard is at `/?key=ADMIN_KEY`.
+
 ## Install (unpacked)
 
 1. Open `chrome://extensions` and turn on **Developer mode**.

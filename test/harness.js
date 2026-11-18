@@ -21,6 +21,7 @@
     runtime: {
       onMessage: { addListener() {} },
       sendMessage(msg, cb) {
+        if (msg.type === "TELEMETRY") { (window.__jafTelemetry ??= []).push(msg); return cb?.({ ok: true }); }
         if (msg.type !== "AI_ANSWER") return cb?.({});
         session ??= new window.JafAI.AnswerSession({
           storage: { get: async (k) => mem.get(k), set: async (k, v) => void mem.set(k, v) },

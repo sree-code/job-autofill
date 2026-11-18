@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Job Autofill – Setup Guide</title>
+<style>
+  @page { size: Letter; margin: 16mm 15mm; }
+  :root { --ink: #111827; --muted: #4b5563; --line: #d1d5db; --blue: #1d4ed8; --soft: #eff6ff; --warn: #fef3c7; }
+  body { font: 10.5pt/1.5 -apple-system, "Segoe UI", system-ui, sans-serif; color: var(--ink); margin: 0; }
+  h1 { font-size: 22pt; margin: 0 0 4px; }
+  h2 { font-size: 14pt; margin: 22px 0 6px; padding-bottom: 3px; border-bottom: 1.5px solid var(--line); break-after: avoid; }
+  h3 { font-size: 11.5pt; margin: 14px 0 4px; break-after: avoid; }
+  p, li { margin: 4px 0; }
+  .sub { color: var(--muted); margin: 0 0 14px; }
+  code, pre { font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace; font-size: 9pt; }
+  code { background: #f3f4f6; padding: 1px 4px; border-radius: 4px; }
+  pre { background: #f3f4f6; font-size: 8.5pt; padding: 8px 10px; border-radius: 6px; white-space: pre-wrap; word-break: break-word; margin: 6px 0; break-inside: avoid; }
+  .box { border: 1px solid #93c5fd; background: var(--soft); border-radius: 8px; padding: 10px 12px; margin: 10px 0; break-inside: avoid; }
+  .warn { border-color: #fcd34d; background: var(--warn); }
+  table { border-collapse: collapse; width: 100%; margin: 6px 0; font-size: 9.5pt; break-inside: avoid; }
+  th, td { border: 1px solid var(--line); padding: 4px 7px; text-align: left; vertical-align: top; }
+  th { background: #f9fafb; }
+  figure { margin: 10px 0; break-inside: avoid; }
+  figure img { width: 100%; border: 1px solid var(--line); border-radius: 6px; }
+  figcaption { color: var(--muted); font-size: 9pt; margin-top: 3px; }
+  .two { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .page-break { break-before: page; }
+  ol.steps > li { margin: 7px 0; }
+</style>
+</head>
+<body>
+
+<h1>Job Autofill: Setup Guide</h1>
+<p class="sub">A Chrome extension that fills job applications (Workday, Greenhouse, Lever, Ashby and React, Angular and Ext JS forms) from a profile kept in your own browser. Source code: <strong>https://github.com/sree-code/job-autofill</strong></p>
+
+<div class="box">
+  <strong>How to use this document.</strong> Open a <strong>Claude Code</strong> session (desktop app or terminal) in an empty folder, attach this PDF, and say:
+  <pre>Set up Job Autofill for me by following this guide. Stop and ask me whenever a step says "You do this".</pre>
+  Claude does the install, build and tests and drafts your profile from your resume. You do the steps that need you: loading the extension, pasting your API key, and submitting applications.
+</div>
+
+<h2>1. What you need</h2>
+<table>
+  <tr><th>Item</th><th>Why</th><th>Get it</th></tr>
+  <tr><td>Google Chrome</td><td>The extension runs here</td><td>google.com/chrome</td></tr>
+  <tr><td>Node.js 20 or newer (tested on 22)</td><td>Builds the extension</td><td>nodejs.org (LTS installer)</td></tr>
+  <tr><td>Git</td><td>Downloads the source</td><td>git-scm.com</td></tr>
+  <tr><td>Claude Code</td><td>Runs this guide for you</td><td>claude.com/claude-code</td></tr>
+  <tr><td>An AI API key (optional)</td><td>Answers custom questions like “Why do you want to work here?”</td><td>DeepSeek: <code>https://platform.deepseek.com/api_keys</code> (default), or an Anthropic API key</td></tr>
+  <tr><td>Your resume (PDF or DOCX)</td><td>Uploaded to applications, and used to draft your profile</td><td>Your file</td></tr>
+</table>
+<p>Without an API key, everything except AI answers still works.</p>
+
+<h2>2. Instructions for the Claude session</h2>
+<div class="box warn">
+  <strong>Rules for Claude (follow all of them):</strong>
+  <ul>
+    <li>Never type, paste or ask for the user's API key in chat or in any form. The user pastes it into the extension's options page themselves.</li>
+    <li>Never submit a job application, create accounts on job sites, or enter passwords. The user signs in and clicks Submit.</li>
+    <li>Keep the user's profile and resume on this computer. Don't upload them, commit them to git, or put them in public places.</li>
+    <li>Don't change the telemetry setting for the user. It is their choice (section 6).</li>
+  </ul>
+</div>
+
+<ol class="steps">
+  <li><strong>Check tools.</strong> Run <code>node -v</code> (it must print v20 or higher), <code>git --version</code> and <code>npm -v</code>. If something is missing, tell the user what to install from section 1 and wait.</li>
+  <li><strong>Download and build</strong> in the current folder:
+<pre>git clone https://github.com/sree-code/job-autofill
+cd job-autofill
+npm install
+npm run build
+npm test</pre>
+    All tests must pass. If they don't, show the user the failing output and stop. On Windows PowerShell, run the lines one by one.</li>
+  <li><strong>You do this: load the extension.</strong> Tell the user:
+    <ol type="a">
+      <li>Open <code>chrome://extensions</code> in Chrome.</li>
+      <li>Turn on <strong>Developer mode</strong> (top right).</li>
+      <li>Click <strong>Load unpacked</strong> and choose the <code>job-autofill</code> folder (the one that contains <code>manifest.json</code>). Give them its full path.</li>
+      <li>Pin the extension from the puzzle-piece menu. The options page opens by itself the first time.</li>
+    </ol></li>
+  <li><strong>Draft the profile.</strong> Ask the user for their resume file (and, if they use one, a profile export from another autofill tool). Read it, then write a JSON object with exactly the keys below. Use "" for anything you can't find, and never guess. Show it to the user and ask them to fix anything wrong (dates must match the resume they will upload).
+<pre>{"firstName":"","middleName":"","lastName":"","preferredName":"","pronouns":"",
+ "email":"","phone":"","phoneDeviceType":"Mobile",
+ "address1":"","address2":"","city":"","state":"","postalCode":"","country":"","location":"City, ST",
+ "linkedin":"","github":"","portfolio":"",
+ "currentCompany":"","currentTitle":"","yearsExperience":"","salary":"","startDate":"","howHeard":"",
+ "school":"","degree":"","major":"","gradYear":"",
+ "workAuthorized":"Yes/No","needsSponsorship":"Yes/No","willingToRelocate":"Yes/No","previouslyEmployed":"",
+ "summary":"2-4 sentences","skills":"comma-separated",
+ "workHistory":"one line per job: Title, Company, Location, Start–End: key achievements",
+ "gender":"","race":"","hispanic":"","veteran":"","disability":""}</pre>
+    The last five (self-identification) are optional. Fill them only if the user tells you their answers.</li>
+  <li><strong>You do this: save the profile.</strong> On the options page:
+    <ol type="a">
+      <li>Open <strong>Import profile from JSON</strong>, paste the JSON and click <strong>Fill form from JSON</strong>.</li>
+      <li>Review the fields.</li>
+      <li>Choose the resume under <strong>Files</strong>.</li>
+      <li>Under <strong>Behaviour &amp; AI</strong>, pick the provider (DeepSeek is the default) and paste your API key. Leave reasoning on <em>Fast</em>.</li>
+      <li>Click <strong>Save</strong>.</li>
+    </ol>
+    If the resume is a Word file saved with a .pdf name, the extension stores it as .docx automatically.</li>
+  <li><strong>Practice run.</strong> Have the user open any job application form (Greenhouse and Lever forms need no account). The extension fills it automatically when the form appears. Otherwise they click the blue <strong>Autofill</strong> button (bottom right) or press <strong>Alt+Shift+F</strong>. A toast shows how many fields were filled and how long it took. Green outlines mark filled fields. AI-answered fields also get the <code>jaf-ai</code> class.</li>
+  <li><strong>Check the result.</strong> Ask the user to press F12 and open <strong>Console</strong>. A line <code>[job-autofill] report</code> lists what was filled, what was skipped, the timing and any AI error. Fix profile gaps for skipped fields. <strong>The user reviews everything and submits only if they want to.</strong></li>
+  <li><strong>Workday.</strong> Workday requires an account on each company's site. The user creates it and signs in. Then open the application. Each step (My Information, Experience, Application Questions, Voluntary Disclosures) is filled as it appears. Workday support has been tested on a Workday-style form, and testing on live Workday sites is ongoing. Anything it misses shows in the console report.</li>
+</ol>
+
+<h2 class="page-break">3. What it looks like</h2>
+<figure><img src="screenshots/1-options-first-run.png"><figcaption>Options page on first run: optional metrics question, JSON import, profile fields (dummy data).</figcaption></figure>
+<div class="two">
+  <figure><img src="screenshots/4-workday-step1-filled.png"><figcaption>Workday-style form after auto-fill. Green outlines mark filled fields; the toast shows the count and time.</figcaption></figure>
+  <figure><img src="screenshots/5-workday-step2-ai.png"><figcaption>Next step: custom questions answered by the AI session.</figcaption></figure>
+</div>
+<div class="two">
+  <figure><img src="screenshots/6-react-filled.png"><figcaption>React form, filled through React's own state (the extension detects the framework).</figcaption></figure>
+  <figure><img src="screenshots/3-popup.png" style="max-width:260px"><figcaption>Toolbar popup: fill the current page or edit the profile.</figcaption></figure>
+</div>
+
+<h2 class="page-break">4. How it works (short)</h2>
+<ul>
+  <li><strong>Framework detection:</strong> React, Angular, AngularJS, Vue and Ext JS are detected from the page, and values are written so each framework accepts them (React/Vue/Angular through native setters and events, Ext JS through its components). Typical fill time is 20–150 ms for standard fields.</li>
+  <li><strong>ATS adapters:</strong> Workday (by <code>data-automation-id</code>), Greenhouse, Lever, Ashby, iCIMS and SmartRecruiters.</li>
+  <li><strong>Custom dropdowns:</strong> react-select (Greenhouse), Workday listboxes, and type-to-search lists.</li>
+  <li><strong>AI answers:</strong> Questions your profile doesn't cover go to one continuous AI session, one batched call per page. When the session gets long (120k tokens by default), it's summarized into memory and a fresh session continues with that memory, so answers stay consistent across applications. Low-confidence answers are left blank for you.</li>
+  <li><strong>Never submits.</strong> It only fills. You review and submit.</li>
+</ul>
+
+<h2>5. Everyday use and updates</h2>
+<table>
+  <tr><th>Task</th><th>How</th></tr>
+  <tr><td>Fill a page</td><td>Automatic when the form appears, or the Autofill button, or Alt+Shift+F</td></tr>
+  <tr><td>Turn off auto-fill</td><td>Options → “Auto-fill when a form appears” → Off</td></tr>
+  <tr><td>Start a fresh AI session</td><td>Options → “New AI session (keep memory)”, or “Clear AI memory”</td></tr>
+  <tr><td>Update to the latest version</td><td>In the <code>job-autofill</code> folder: <code>git pull</code>, then <code>npm install</code>, then <code>npm run build</code>; then click the reload icon on <code>chrome://extensions</code></td></tr>
+</table>
+
+<h2>6. Privacy and the optional usage metrics</h2>
+<p>Your profile, resume and API key are stored only in Chrome on your computer (<code>chrome.storage.local</code>). AI questions go only to the provider you chose, using your own key.</p>
+<p>If the maintainer has set up a metrics receiver, the options page asks once whether to <strong>share anonymous usage metrics</strong>. Nothing is sent unless you choose “Share”, and you can switch it off any time.</p>
+<table>
+  <tr><th>Sent when you opt in</th><th>Never sent</th></tr>
+  <tr><td>Random install id, extension and browser version; job site hostname (no page path); detected framework/ATS; number of fields found and filled; field <em>types</em> filled (e.g. “email”); question labels it couldn't match (emails/numbers masked); fill and AI timings; AI provider/model; error messages</td>
+      <td>Your profile values, anything typed into forms, AI answers, API keys, resume or cover letter, full URLs, IP address (not stored)</td></tr>
+</table>
+
+<h2>7. Troubleshooting</h2>
+<table>
+  <tr><th>Symptom</th><th>Fix</th></tr>
+  <tr><td>Popup says “No form script on this page”</td><td>Reload the page (tabs opened before installing don't have the script yet).</td></tr>
+  <tr><td>Toast never appears</td><td>The page may not look like an application yet. Click Autofill / Alt+Shift+F. Check the console for <code>[job-autofill]</code>.</td></tr>
+  <tr><td>Dropdowns not filled on Greenhouse</td><td>Keep the tab focused (in front) while it fills. Some dropdowns only open in an active tab.</td></tr>
+  <tr><td>Report shows <code>ai.error: "no-api-key"</code></td><td>Paste a key in Options and Save.</td></tr>
+  <tr><td><code>DeepSeek HTTP 401</code></td><td>Wrong or revoked key. Create a new one at platform.deepseek.com/api_keys.</td></tr>
+  <tr><td>A field fills, then clears</td><td>It's an autocomplete that wants a choice from its list. Pick it by hand. If metrics are on, this is reported so it can be fixed.</td></tr>
+  <tr><td><code>npm test</code> fails after <code>git pull</code></td><td>Run <code>npm install</code> again, then <code>npm run build</code>.</td></tr>
+</table>
+
+<h2>8. For the maintainer: receiving the metrics</h2>
+<p>The receiver is <code>telemetry/server.mjs</code> (Node, no dependencies). Run it on any always-on host with persistent disk:</p>
+<pre>ADMIN_KEY=choose-a-long-secret PORT=8790 DATA_DIR=./telemetry-data npm run telemetry</pre>
+<p>Put the public URL (<code>https://your-host/v1/events</code>) in <code>src/config.js</code> as <code>TELEMETRY_URL</code>, commit and push. Friends get it on their next <code>git pull</code> and build. The dashboard is at <code>https://your-host/?key=ADMIN_KEY</code> and JSON at <code>/v1/stats?key=…</code>. It shows fill rate and timings per job site/framework/ATS, the top unmatched questions (to add matcher rules), fill failures, AI latency and answer rate, errors, versions and daily runs.</p>
+<figure><img src="screenshots/7-telemetry-dashboard-sample.png" style="max-height:520px;object-fit:cover;object-position:top"><figcaption>Metrics dashboard (sample data).</figcaption></figure>
+
+</body>
+</html>

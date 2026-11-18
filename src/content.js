@@ -75,17 +75,48 @@
     return undefined;
   }
 
+  // Highlight what was filled; for radio groups, the option actually chosen.
+  function markFilled(el, kind, ...extra) {
+    const target = kind === "choice" ? filler.groupOf(el).find((g) => g.checked) || el : el;
+    target.classList.add("jaf-filled", ...extra);
+  }
+
   let running = false;
-  async function autofill({ useAI = true } = {}) {
+  const sendTelemetry = (event, props) => {
+    try { chrome.runtime.sendMessage({ type: "TELEMETRY", event, props }, () => void chrome.runtime.lastError); } catch {}
+  };
+
+  async function autofill({ useAI = true, trigger = "button" } = {}) {
     if (running) return { filled: [], skipped: [], busy: true };
     running = true;
     const t0 = performance.now();
     try {
+      const report = await runFill(useAI, t0);
+      if (report.fields) {
+        sendTelemetry("autofill_run", {
+          host: location.hostname, trigger, framework: report.framework, versions: report.versions, adapter: report.adapter,
+          fields: report.fields, filled: report.filled.length, filledKeys: report.filled.map((k) => (k.startsWith("ai:") ? "ai" : k)),
+          skipped: report.skipped.length, skippedLabels: report.skipped, failures: report.failures, ms: report.ms,
+          ai: report.ai && { ...report.ai, provider: report.ai.session?.provider, model: report.ai.session?.model,
+            contextTokens: report.ai.session?.contextTokens, rollovers: report.ai.session?.rollovers },
+        });
+      }
+      return report;
+    } catch (e) {
+      sendTelemetry("error", { where: "autofill", message: String(e?.message || e), host: location.hostname });
+      throw e;
+    } finally {
+      running = false;
+    }
+  }
+
+  async function runFill(useAI, t0) {
+    {
       const { profile = {}, resume, coverLetter, settings = {} } = await getData();
       const files = { resume, coverLetter };
       const fw = (await bridge("detect")) || { primary: "unknown" };
       const adapter = adapters.adapterFor();
-      const report = { framework: fw.primary, versions: fw.versions, adapter: adapter?.name || null, filled: [], skipped: [], ai: null };
+      const report = { framework: fw.primary, versions: fw.versions, adapter: adapter?.name || null, fields: 0, filled: [], skipped: [], failures: [], ai: null };
       const unknown = []; // questions for the AI: {id, label, type, options, write()}
 
       // 1) Ext JS: drive components, not DOM.
@@ -93,6 +124,7 @@
       if (fw.ext) {
         const fields = (await bridge("extFields")) || [];
         for (const f of fields) {
+          report.fields++;
           const dom = document.querySelector(`[data-jaf-id="${CSS.escape(f.id)}"]`);
           if (dom) extHandled.add(dom);
           if (f.hasValue) continue;
@@ -101,6 +133,7 @@
           if (key && val != null && val !== "" && key !== "resume") {
             const r = await bridge("extSet", f.id, String(val));
             if (r?.ok) { report.filled.push(key); dom?.classList.add("jaf-filled"); continue; }
+            report.failures.push({ key, kind: f.xtype || "ext" });
           }
           unknown.push({ id: f.id, label: f.label, type: f.isCheckbox ? "checkbox" : f.options ? "select" : "text", options: f.options,
             write: async (v) => (await bridge("extSet", f.id, v))?.ok });
@@ -117,13 +150,15 @@
           if (seenGroups.has(g)) continue;
           seenGroups.add(g);
         }
+        report.fields++;
         const key = adapters.keyFromAdapter(adapter, el) || matcher.classify(el);
         const label = matcher.describe(el);
         const val = key ? valueFor(key, profile, files) : null;
         if (key && val != null && val !== "") {
           let ok = false;
           try { ok = await writeDom(el, kind, val, fw); } catch (e) { console.warn("[job-autofill]", key, e); }
-          if (ok) { report.filled.push(key); el.classList.add("jaf-filled"); continue; }
+          if (ok) { report.filled.push(key); markFilled(el, kind); continue; }
+          if (!filler.hasValue(el, kind)) report.failures.push({ key, kind });
         }
         if (kind === "file" || filler.hasValue(el, kind)) continue;
         unknown.push({ id: jafId(el), label, type: kind, options: optionsOf(el, kind), required: el.required || el.getAttribute("aria-required") === "true",
@@ -132,15 +167,19 @@
 
       // 3) AI for everything left (one batched call; session keeps memory across forms).
       if (useAI && settings.aiEnabled !== false && unknown.length) {
+        const ta = performance.now();
         const res = await askAI(unknown.map(({ write, ...q }) => q));
-        report.ai = { asked: unknown.length, error: res.error || null, session: res.session || null };
+        report.ai = { asked: unknown.length, answered: 0, error: res.error || null, session: res.session || null,
+          latencyMs: res.latencyMs ?? Math.round(performance.now() - ta), reasoning: res.reasoning };
         const byId = new Map(unknown.map((q) => [q.id, q]));
         for (const a of res.answers || []) {
           const q = byId.get(a.id);
           if (!q || !a.answer || a.confidence === "low") continue;
           if (await q.write(a.answer)) {
             report.filled.push(`ai:${q.label.slice(0, 40)}`);
-            document.querySelector(`[data-jaf-id="${CSS.escape(q.id)}"]`)?.classList.add("jaf-filled", "jaf-ai");
+            report.ai.answered++;
+            const qel = document.querySelector(`[data-jaf-id="${CSS.escape(q.id)}"]`);
+            if (qel) markFilled(qel, qel.type === "radio" || qel.type === "checkbox" ? "choice" : "text", "jaf-ai");
             byId.delete(a.id);
           }
         }
@@ -154,8 +193,6 @@
       console.info("[job-autofill] report", report);
       NS.lastReport = report;
       return report;
-    } finally {
-      running = false;
     }
   }
 
@@ -176,13 +213,13 @@
   function maybeShowButton() {
     if (window.top !== window || document.querySelector(".jaf-fab") || !looksLikeApplication()) return false;
     const b = Object.assign(document.createElement("button"), { className: "jaf-fab", textContent: "Autofill", type: "button" });
-    b.addEventListener("click", () => autofill());
+    b.addEventListener("click", () => autofill({ trigger: "button" }));
     document.body.appendChild(b);
     return true;
   }
 
   chrome.runtime.onMessage.addListener((msg, _s, send) => {
-    if (msg?.type === "AUTOFILL") { autofill().then(send); return true; }
+    if (msg?.type === "AUTOFILL") { autofill({ trigger: msg.trigger || "popup" }).then(send); return true; }
   });
 
   // Auto-fill as soon as an application form appears (and again when multi-step
@@ -196,7 +233,7 @@
     const sig = matcher.collectControls().map((el) => el.name || el.id || el.getAttribute("data-automation-id") || "").join("|");
     if (sig === lastSig) return;
     lastSig = sig;
-    autofill();
+    autofill({ trigger: "auto" });
   }
   scan();
   new MutationObserver(() => { clearTimeout(timer); timer = setTimeout(scan, 300); })
