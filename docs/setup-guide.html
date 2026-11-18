@@ -155,9 +155,9 @@ npm test</pre>
 </table>
 
 <h2>8. For the maintainer: receiving the metrics</h2>
-<p>The receiver is <code>telemetry/server.mjs</code> (Node, no dependencies). Run it on any always-on host with persistent disk:</p>
-<pre>ADMIN_KEY=choose-a-long-secret PORT=8790 DATA_DIR=./telemetry-data npm run telemetry</pre>
-<p>Put the public URL (<code>https://your-host/v1/events</code>) in <code>src/config.js</code> as <code>TELEMETRY_URL</code>, commit and push. Friends get it on their next <code>git pull</code> and build. The dashboard is at <code>https://your-host/?key=ADMIN_KEY</code> and JSON at <code>/v1/stats?key=…</code>. It shows fill rate and timings per job site/framework/ATS, the top unmatched questions (to add matcher rules), fill failures, AI latency and answer rate, errors, versions and daily runs.</p>
+<p>Metrics go to <code>https://job-autofill-telemetry.vercel.app/v1/events</code> (already set in <code>src/config.js</code>). The receiver is <code>telemetry/vercel/</code>: two Vercel functions that store event batches in a private Vercel Blob store. The privacy policy is at <a href="https://job-autofill-telemetry.vercel.app/privacy">job-autofill-telemetry.vercel.app/privacy</a>.</p>
+<p>The dashboard is at <code>https://job-autofill-telemetry.vercel.app/dashboard?key=ADMIN_KEY</code> and JSON at <code>/v1/stats?key=…</code>. Only the maintainer has <code>ADMIN_KEY</code>. It shows fill rate and timings per job site/framework/ATS, the top unmatched questions (to add matcher rules), fill failures, AI latency and answer rate, errors, versions and daily runs.</p>
+<p>To redeploy after changing <code>telemetry/</code>: <code>npm run telemetry:vercel</code>, then <code>vercel deploy --prod</code> from <code>telemetry/vercel</code>. To self-host instead, run <code>ADMIN_KEY=… npm run telemetry</code> (<code>telemetry/server.mjs</code>, no dependencies) and point <code>TELEMETRY_URL</code> at it.</p>
 <figure><img src="screenshots/7-telemetry-dashboard-sample.png" style="max-height:520px;object-fit:cover;object-position:top"><figcaption>Metrics dashboard (sample data).</figcaption></figure>
 
 </body>

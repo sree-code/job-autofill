@@ -35,7 +35,9 @@ and it walks through install, build, profile and a practice run. The source is `
 When `TELEMETRY_URL` in `src/config.js` is set, the options page asks each user once whether to share anonymous metrics.
 Nothing is sent without a yes. Metrics are counts, timings, the job site's hostname, field types, unmatched question labels and errors.
 Profile values, answers, API keys and resumes are never sent.
-Run the receiver with `ADMIN_KEY=… npm run telemetry` (see `telemetry/server.mjs`); the dashboard is at `/?key=ADMIN_KEY`.
+Events go to the maintainer's Vercel receiver (`telemetry/vercel/`, private Blob storage); the dashboard is at
+`https://job-autofill-telemetry.vercel.app/dashboard?key=ADMIN_KEY` and the privacy policy at
+<https://job-autofill-telemetry.vercel.app/privacy>. To self-host, run `ADMIN_KEY=… npm run telemetry` (see `telemetry/server.mjs`).
 
 ## Install (unpacked)
 
