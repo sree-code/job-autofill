@@ -45,7 +45,7 @@ export function start(port = PORT) {
       if (openai) r.messages = r.messages.slice(1);
       const tokens = Math.ceil(body.length / 4);
       log.push({ provider: openai ? "deepseek" : "anthropic", model: r.model, betas: req.headers["anthropic-beta"], effort: r.output_config?.effort,
-        auth: req.headers.authorization, responseFormat: r.response_format?.type, thinking: r.thinking?.type, tokens, summary: sys.includes("MEMORY_SUMMARY") });
+        auth: req.headers.authorization, responseFormat: r.response_format?.type, thinking: r.thinking?.type, reasoningEffort: r.reasoning_effort, tokens, summary: sys.includes("MEMORY_SUMMARY") });
       let out;
       if (sys.includes("MEMORY_SUMMARY")) {
         const user = r.messages[0].content;

@@ -14,6 +14,7 @@ async function getSession() {
     apiKey: settings.apiKey,
     provider: settings.provider, // "deepseek" (default) | "anthropic"
     model: settings.model,
+    reasoning: settings.reasoning, // DeepSeek reasoning effort; default "low"
     contextLimit: Number(settings.contextLimit) || undefined,
     baseURL: settings.baseURL,
   });

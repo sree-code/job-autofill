@@ -52,9 +52,10 @@ export class AnswerSession {
   /**
    * @param {{ storage: {get(k:string):Promise<any>, set(k:string,v:any):Promise<void>},
    *           apiKey: string, provider?: "deepseek"|"anthropic", model?: string,
-   *           contextLimit?: number, baseURL?: string, client?: Anthropic, fetchImpl?: typeof fetch }} opts
+   *           contextLimit?: number, baseURL?: string, reasoning?: string, client?: Anthropic, fetchImpl?: typeof fetch }} opts
    */
-  constructor({ storage, apiKey, provider, model, contextLimit, baseURL, client, fetchImpl }) {
+  constructor({ storage, apiKey, provider, model, contextLimit, baseURL, reasoning, client, fetchImpl }) {
+    this.reasoning = reasoning || undefined; // DeepSeek: off | low | high | max
     this.storage = storage;
     this.provider = provider === "anthropic" ? "anthropic" : DEFAULT_PROVIDER;
     this.model = model || DEFAULT_MODELS[this.provider];
@@ -86,7 +87,7 @@ export class AnswerSession {
       };
     }
     const r = await deepseekJSON({
-      apiKey: this.apiKey, baseURL: this.baseURL, model: this.model, schema, fetchImpl: this.fetchImpl,
+      apiKey: this.apiKey, baseURL: this.baseURL, model: this.model, schema, fetchImpl: this.fetchImpl, reasoning: this.reasoning,
       system: `${systemBlocks.map((b) => b.text).join("\n\n")}\n\n${JSON_SHAPES[shape]}`,
       messages,
     });

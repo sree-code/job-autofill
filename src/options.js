@@ -88,6 +88,7 @@ chrome.storage.local.get(["profile", "resume", "coverLetter", "settings"], ({ pr
   syncHints();
   showAI();
   for (const [k, v] of Object.entries(profile)) if (form.elements[k]) form.elements[k].value = v;
+  if (!form.elements.phoneDeviceType.value) form.elements.phoneDeviceType.value = "Mobile";
   if (resume) document.getElementById("resumeName").textContent = `Saved: ${resume.name}`;
   if (coverLetter) document.getElementById("coverLetterName").textContent = `Saved: ${coverLetter.name}`;
 });

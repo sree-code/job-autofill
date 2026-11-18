@@ -42,6 +42,7 @@
     if (key === "resume") return files.resume;
     if (key === "coverLetter") return files.coverLetter;
     if (key === "location") return p.location || [p.city, p.state].filter(Boolean).join(", ");
+    if (key === "phoneDeviceType") return p.phoneDeviceType || "Mobile";
     return p[key];
   }
 

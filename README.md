@@ -20,7 +20,7 @@ Questions the profile can't answer go to one continuous AI session. When its con
 passes the limit (default 120k tokens), it's summarized into memory and a new session starts.
 
 - **DeepSeek** (default): OpenAI-compatible `https://api.deepseek.com`, model `deepseek-flash`,
-  JSON output mode, thinking disabled.
+  JSON output mode, fast reasoning (`reasoning_effort: low`; Off/High selectable).
 - **Anthropic** (optional): `claude-sonnet-5-5` with structured outputs.
 
 Pick the provider and paste its API key on the options page. The key stays in `chrome.storage.local`.
