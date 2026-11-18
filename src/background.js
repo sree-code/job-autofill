@@ -12,6 +12,7 @@ async function getSession() {
   return new AnswerSession({
     storage: chromeStorage,
     apiKey: settings.apiKey,
+    provider: settings.provider, // "deepseek" (default) | "anthropic"
     model: settings.model,
     contextLimit: Number(settings.contextLimit) || undefined,
     baseURL: settings.baseURL,

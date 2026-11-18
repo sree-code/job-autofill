@@ -35,14 +35,20 @@ function showAI() {
   chrome.runtime.sendMessage({ type: "AI_STATUS" }, (s) => {
     const el = document.getElementById("aiStatus");
     el.textContent = !s || s.error ? "AI: add an API key to enable." :
-      `AI session #${s.sessionNumber} · ${s.turns} turns · ${s.contextTokens}/${s.contextLimit} tokens · ${s.rollovers} rollovers · memory ${s.memoryChars} chars`;
+      `AI ${s.provider}/${s.model} · session #${s.sessionNumber} · ${s.turns} turns · ${s.contextTokens}/${s.contextLimit} tokens · ${s.rollovers} rollovers · memory ${s.memoryChars} chars`;
   });
 }
 document.getElementById("resetAI").onclick = () => chrome.runtime.sendMessage({ type: "AI_RESET", keepMemory: true }, showAI);
 document.getElementById("wipeAI").onclick = () => chrome.runtime.sendMessage({ type: "AI_RESET", keepMemory: false }, showAI);
 
+// Placeholders follow the chosen provider.
+const HINTS = { deepseek: ["deepseek-flash", "https://api.deepseek.com"], anthropic: ["claude-sonnet-5-5", "https://api.anthropic.com"] };
+const syncHints = () => { const [m, u] = HINTS[sField("provider").value] || HINTS.deepseek; sField("model").placeholder = m; sField("baseURL").placeholder = u; };
+sField("provider").addEventListener("change", syncHints);
+
 chrome.storage.local.get(["profile", "resume", "coverLetter", "settings"], ({ profile = {}, resume, coverLetter, settings = {} }) => {
   for (const [k, v] of Object.entries(settings)) if (sField(k)) sField(k).value = String(v);
+  syncHints();
   showAI();
   for (const [k, v] of Object.entries(profile)) if (form.elements[k]) form.elements[k].value = v;
   if (resume) document.getElementById("resumeName").textContent = `Saved: ${resume.name}`;

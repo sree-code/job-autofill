@@ -40,9 +40,12 @@ export function start(port = PORT) {
     req.on("data", (c) => (body += c));
     req.on("end", () => {
       const r = JSON.parse(body || "{}");
-      const sys = (r.system || []).map((b) => b.text).join("\n");
+      const openai = req.url.startsWith("/chat/completions"); // DeepSeek (OpenAI format)
+      let sys = openai ? r.messages[0].content : (r.system || []).map((b) => b.text).join("\n");
+      if (openai) r.messages = r.messages.slice(1);
       const tokens = Math.ceil(body.length / 4);
-      log.push({ model: r.model, betas: req.headers["anthropic-beta"], effort: r.output_config?.effort, tokens, summary: sys.includes("MEMORY_SUMMARY") });
+      log.push({ provider: openai ? "deepseek" : "anthropic", model: r.model, betas: req.headers["anthropic-beta"], effort: r.output_config?.effort,
+        auth: req.headers.authorization, responseFormat: r.response_format?.type, thinking: r.thinking?.type, tokens, summary: sys.includes("MEMORY_SUMMARY") });
       let out;
       if (sys.includes("MEMORY_SUMMARY")) {
         const user = r.messages[0].content;
@@ -57,6 +60,14 @@ export function start(port = PORT) {
           return { id: q.id, answer: a, confidence: a ? "high" : "low" };
         });
         out = { answers, new_facts: answers.filter((a) => a.answer).map((a) => `Answered ${a.id}: ${a.answer}`) };
+      }
+      if (openai) {
+        if (!/json/i.test(sys + JSON.stringify(r.messages))) { res.writeHead(400); return res.end("prompt must contain the word json"); }
+        return reply(res, {
+          id: `chatcmpl_mock_${log.length}`, object: "chat.completion", model: r.model,
+          choices: [{ index: 0, message: { role: "assistant", content: JSON.stringify(out) }, finish_reason: "stop" }],
+          usage: { prompt_tokens: tokens, completion_tokens: 50, total_tokens: tokens + 50 },
+        });
       }
       reply(res, {
         id: `msg_mock_${log.length}`, type: "message", role: "assistant", model: r.model,

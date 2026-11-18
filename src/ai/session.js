@@ -8,8 +8,11 @@
 import Anthropic from "@anthropic-ai/sdk";
 import { betaZodOutputFormat } from "@anthropic-ai/sdk/helpers/beta/zod";
 import { z } from "zod";
+import { deepseekJSON, DEEPSEEK_MODEL } from "./deepseek.js";
 
-export const DEFAULT_MODEL = "claude-sonnet-5-5";
+export const DEFAULT_PROVIDER = "deepseek";
+export const DEFAULT_MODELS = { deepseek: DEEPSEEK_MODEL, anthropic: "claude-sonnet-5-5" };
+export const DEFAULT_MODEL = DEFAULT_MODELS.anthropic;
 export const DEFAULT_CONTEXT_LIMIT = 120_000; // tokens; well under the 1M window to keep calls cheap
 const STATE_KEY = "aiSession";
 
@@ -36,19 +39,64 @@ Rules:
 - Be consistent with answers given earlier in this session and in memory.
 - Put any new durable fact you relied on or established (e.g. "Answered notice period: 2 weeks") in new_facts.`;
 
+// JSON-mode providers (DeepSeek) need the shape spelled out with an example.
+const JSON_SHAPES = {
+  answers: `Reply with a single json object exactly like:
+{"answers":[{"id":"q1","answer":"Yes","confidence":"high"},{"id":"q2","answer":"","confidence":"low"}],"new_facts":["Answered notice period: 2 weeks"]}
+Include one entry in "answers" for every question id. confidence is one of "high","medium","low".`,
+  memory: `Reply with a single json object exactly like: {"memory":"..."}`,
+};
+const MEMORY_RULES = "MEMORY_SUMMARY task. Merge the previous memory, the new facts and the transcript into a compact memory (max ~600 words) of durable facts about the candidate and answers already given to recurring application questions (work authorization, salary, notice period, how-heard, EEO choices, custom answers). Drop page-specific noise. Never add facts not present in the inputs.";
+
 export class AnswerSession {
   /**
    * @param {{ storage: {get(k:string):Promise<any>, set(k:string,v:any):Promise<void>},
-   *           apiKey: string, model?: string, contextLimit?: number, baseURL?: string,
-   *           client?: Anthropic }} opts
+   *           apiKey: string, provider?: "deepseek"|"anthropic", model?: string,
+   *           contextLimit?: number, baseURL?: string, client?: Anthropic, fetchImpl?: typeof fetch }} opts
    */
-  constructor({ storage, apiKey, model, contextLimit, baseURL, client }) {
+  constructor({ storage, apiKey, provider, model, contextLimit, baseURL, client, fetchImpl }) {
     this.storage = storage;
-    this.model = model || DEFAULT_MODEL;
+    this.provider = provider === "anthropic" ? "anthropic" : DEFAULT_PROVIDER;
+    this.model = model || DEFAULT_MODELS[this.provider];
     this.contextLimit = contextLimit || DEFAULT_CONTEXT_LIMIT;
-    this.client =
-      client ||
-      new Anthropic({ apiKey, baseURL: baseURL || undefined, dangerouslyAllowBrowser: true, maxRetries: 2 });
+    this.apiKey = apiKey;
+    this.baseURL = baseURL || undefined;
+    this.fetchImpl = fetchImpl;
+    if (this.provider === "anthropic")
+      this.client = client || new Anthropic({ apiKey, baseURL: this.baseURL, dangerouslyAllowBrowser: true, maxRetries: 2 });
+  }
+
+  // One structured call, whichever provider. Returns {parsed, content, tokens, refused}.
+  async callJSON({ systemBlocks, messages, schema, shape, anthropicExtras = {} }) {
+    if (this.provider === "anthropic") {
+      const res = await this.client.beta.messages.parse({
+        model: this.model,
+        max_tokens: 8000,
+        ...anthropicExtras,
+        output_config: { effort: "low", format: betaZodOutputFormat(schema) },
+        system: systemBlocks,
+        messages,
+      });
+      const u = res.usage || {};
+      return {
+        parsed: res.parsed_output || null,
+        content: res.content, // full content keeps any thinking blocks valid next turn
+        tokens: (u.input_tokens || 0) + (u.cache_read_input_tokens || 0) + (u.cache_creation_input_tokens || 0) + (u.output_tokens || 0),
+        refused: res.stop_reason === "refusal",
+      };
+    }
+    const r = await deepseekJSON({
+      apiKey: this.apiKey, baseURL: this.baseURL, model: this.model, schema, fetchImpl: this.fetchImpl,
+      system: `${systemBlocks.map((b) => b.text).join("\n\n")}\n\n${JSON_SHAPES[shape]}`,
+      messages,
+    });
+    const u = r?.usage || {};
+    return {
+      parsed: r?.parsed || null,
+      content: r?.text || "",
+      tokens: u.total_tokens || (u.prompt_tokens || 0) + (u.completion_tokens || 0),
+      refused: r?.finish === "content_filter",
+    };
   }
 
   async load() {
@@ -89,32 +137,34 @@ export class AnswerSession {
       `Answer these form questions. Return JSON only.\n${JSON.stringify(questions)}`;
     state.messages.push({ role: "user", content: userText });
 
-    const res = await this.client.beta.messages.parse({
-      model: this.model,
-      max_tokens: 8000,
-      betas: ["server-side-fallback-2026-07-01"],
-      fallbacks: "default",
-      output_config: { effort: "low", format: betaZodOutputFormat(AnswerBatch) },
-      system: this.system(profile, state.memory),
-      messages: state.messages,
-    });
+    let res;
+    try {
+      res = await this.callJSON({
+        systemBlocks: this.system(profile, state.memory),
+        messages: state.messages,
+        schema: AnswerBatch,
+        shape: "answers",
+        anthropicExtras: { betas: ["server-side-fallback-2026-07-01"], fallbacks: "default" },
+      });
+    } catch (e) {
+      state.messages.pop();
+      await this.save(state);
+      throw e;
+    }
 
-    if (res.stop_reason === "refusal" || !res.parsed_output) {
+    if (res.refused || !res.parsed) {
       state.messages.pop(); // don't poison the session with an unanswered turn
       await this.save(state);
-      return { answers: [], error: res.stop_reason === "refusal" ? "refused" : "unparsed", session: await this.status() };
+      return { answers: [], error: res.refused ? "refused" : "unparsed", session: await this.status() };
     }
 
-    // Append full content (keeps thinking blocks valid for the next turn).
     state.messages.push({ role: "assistant", content: res.content });
-    const u = res.usage || {};
-    state.lastContextTokens =
-      (u.input_tokens || 0) + (u.cache_read_input_tokens || 0) + (u.cache_creation_input_tokens || 0) + (u.output_tokens || 0);
-    if (res.parsed_output.new_facts?.length) {
-      state.pendingFacts = [...(state.pendingFacts || []), ...res.parsed_output.new_facts].slice(-200);
+    state.lastContextTokens = res.tokens;
+    if (res.parsed.new_facts?.length) {
+      state.pendingFacts = [...(state.pendingFacts || []), ...res.parsed.new_facts].slice(-200);
     }
     await this.save(state);
-    return { answers: res.parsed_output.answers, session: await this.status() };
+    return { answers: res.parsed.answers, session: await this.status() };
   }
 
   // Summarize the current session into memory, then start a fresh one.
@@ -127,18 +177,17 @@ export class AnswerSession {
       })
       .join("\n\n");
 
-    const res = await this.client.beta.messages.parse({
-      model: this.model,
-      max_tokens: 8000,
-      output_config: { effort: "low", format: betaZodOutputFormat(MemorySummary) },
-      system: [{ type: "text", text: "MEMORY_SUMMARY task. Merge the previous memory, the new facts and the transcript into a compact memory (max ~600 words) of durable facts about the candidate and answers already given to recurring application questions (work authorization, salary, notice period, how-heard, EEO choices, custom answers). Drop page-specific noise. Never add facts not present in the inputs." }],
+    const res = await this.callJSON({
+      schema: MemorySummary,
+      shape: "memory",
+      systemBlocks: [{ type: "text", text: MEMORY_RULES }],
       messages: [{
         role: "user",
         content: `PREVIOUS MEMORY:\n${state.memory || "(none)"}\n\nNEW FACTS:\n${(state.pendingFacts || []).join("\n") || "(none)"}\n\nTRANSCRIPT:\n${transcript}`,
       }],
     });
 
-    const memory = res.parsed_output?.memory || [state.memory, ...(state.pendingFacts || [])].filter(Boolean).join("\n");
+    const memory = res.parsed?.memory || [state.memory, ...(state.pendingFacts || [])].filter(Boolean).join("\n");
     const next = {
       sessionNumber: state.sessionNumber + 1,
       messages: [],
@@ -159,6 +208,8 @@ export class AnswerSession {
       contextTokens: s.lastContextTokens,
       contextLimit: this.contextLimit,
       rollovers: s.rollovers || 0,
+      provider: this.provider,
+      model: this.model,
       memoryChars: (s.memory || "").length,
     };
   }
