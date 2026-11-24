@@ -158,7 +158,7 @@ npm test</pre>
   <h3>Step 7. Practice run, without submitting <span class="who you">YOU</span> with <span class="who claude">CLAUDE</span></h3>
   <ol type="a">
     <li>Open a job posting that uses Greenhouse or Lever (these need no account) and click <strong>Apply</strong>.</li>
-    <li>The form fills by itself within a second or two. If not, click the <strong>Fill application</strong> button (bottom right) or press <strong>Alt+Shift+F</strong>.</li>
+    <li>The form fills by itself within a second or two. If not, click <strong>Fill this page</strong> in the Appliqué panel on the right or press <strong>Alt+Shift+F</strong>.</li>
     <li>A message at the bottom shows how many fields were filled. Filled fields get a green outline.</li>
     <li>Check every field. Fix anything by hand. <strong>Don't submit a practice application.</strong></li>
     <li>Optional: press F12, open <strong>Console</strong> and find the line <code>[job-autofill] report</code>. Copy it to Claude, which uses it to suggest profile fixes for skipped fields.</li>
@@ -188,7 +188,7 @@ npm test</pre>
 <h2>2. Everyday use</h2>
 <table>
   <tr><th>To…</th><th>Do this</th></tr>
-  <tr><td>Fill a page</td><td>It fills automatically when a form appears. Or click <strong>Fill application</strong> (bottom right), the toolbar icon, or press <strong>Alt+Shift+F</strong>.</td></tr>
+  <tr><td>Fill a page</td><td>It fills automatically when a form appears. Or click <strong>Fill this page</strong> in the panel, the toolbar icon, or press <strong>Alt+Shift+F</strong>.</td></tr>
   <tr><td>Change your details</td><td>Toolbar icon → <strong>Edit profile</strong> → change → <strong>Save</strong></td></tr>
   <tr><td>Stop automatic filling</td><td>Profile page → “Auto-fill when a form appears” → Off → Save</td></tr>
   <tr><td>Start a fresh AI session</td><td>Profile page → <strong>New AI session (keep memory)</strong>, or <strong>Clear AI memory</strong> to forget past answers</td></tr>
@@ -217,7 +217,7 @@ npm test</pre>
   <tr><th>Problem</th><th>Fix</th></tr>
   <tr><td>Message: “accept usage metrics on the profile page to start”</td><td>Open the profile page and click <strong>Accept and continue</strong> (step 4).</td></tr>
   <tr><td>Popup says “No form script on this page”</td><td>Reload the job page. Tabs opened before installing don't have the extension yet.</td></tr>
-  <tr><td>Nothing fills and no Fill application button</td><td>The page may not look like an application yet. Click Apply first, or press Alt+Shift+F.</td></tr>
+  <tr><td>Nothing fills and no Appliqué panel</td><td>The page may not look like an application yet. Click Apply first, or press Alt+Shift+F.</td></tr>
   <tr><td>Dropdowns not filled on Greenhouse</td><td>Keep the tab in front while it fills. Some dropdowns only open in the visible tab.</td></tr>
   <tr><td>Custom questions left blank</td><td>No API key saved, or the AI wasn't sure. Add a key in step 6, or answer by hand.</td></tr>
   <tr><td><code>DeepSeek HTTP 401</code> in the console report</td><td>Wrong or deleted key. Create a new one at platform.deepseek.com/api_keys and paste it again.</td></tr>

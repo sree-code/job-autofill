@@ -5,6 +5,18 @@
   if (!NS || NS.loaded) return;
   NS.loaded = true;
   const { matcher, filler, adapters } = NS;
+  const panel = () => NS.panel;
+
+  // Tick boxes that sign you up for something or make a legal statement are
+  // never ticked by Appliqué, by profile or AI. They're listed for the user.
+  const LEAVE_FOR_USER = /talent (community|network|pool)|newsletter|marketing|promotional|subscribe|send me|keep me (informed|updated|posted)|job alerts?|i (agree|accept|consent|certify|confirm|acknowledge|understand|attest)|terms (of|and)|privacy (policy|notice|statement)|consent|acknowledg|certif|attest|signature|e-?sign/i;
+
+  // Short, human label for the checklist.
+  function shortLabel(el) {
+    const first = matcher.describe(el).split(" | ").map((t) => t.replace(/\*/g, "").replace(/\s+/g, " ").trim()).find((t) => t && !/^(yes|no|true|false|on)$/i.test(t));
+    return (first || el.name || el.id || "Untitled field").slice(0, 90);
+  }
+  const isRequired = (el) => el.required || el.getAttribute("aria-required") === "true" || /\*/.test(matcher.describe(el).split(" | ")[0] || "");
 
   // ---------- main-world bridge client ----------
   let reqSeq = 0;
@@ -98,7 +110,8 @@
     if ((await gate()).allowed === false) {
       if (trigger !== "auto" || !gateNoticeShown) {
         gateNoticeShown = true;
-        toast("Accept the beta terms to start", "Open Appliqué's profile page and accept usage metrics.");
+        if (panel()?.isMounted()) panel().update({ phase: "consent" });
+        else toast("Accept the beta terms to start", "Open Appliqué's profile page and accept usage metrics.");
         if (trigger !== "auto") try { chrome.runtime.sendMessage({ type: "OPEN_OPTIONS" }); } catch {}
       }
       return { filled: [], skipped: [], needsConsent: true };
@@ -131,7 +144,9 @@
       const files = { resume, coverLetter };
       const fw = (await bridge("detect")) || { primary: "unknown" };
       const adapter = adapters.adapterFor();
-      const report = { framework: fw.primary, versions: fw.versions, adapter: adapter?.name || null, fields: 0, filled: [], skipped: [], failures: [], ai: null };
+      const report = { framework: fw.primary, versions: fw.versions, adapter: adapter?.name || null, fields: 0, filled: [], skipped: [], failures: [], ai: null, items: [] };
+      const item = (id, label, status, required = false) => { const it = { id, label, status, required }; report.items.push(it); return it; };
+      const pendingItems = new Map(); // jaf-id -> item awaiting the AI
       const unknown = []; // questions for the AI: {id, label, type, options, write()}
 
       // 1) Ext JS: drive components, not DOM.
@@ -142,22 +157,28 @@
           report.fields++;
           const dom = document.querySelector(`[data-jaf-id="${CSS.escape(f.id)}"]`);
           if (dom) extHandled.add(dom);
-          if (f.hasValue) continue;
+          const extLabel = (f.label.split(" | ")[0] || f.name || "Field").slice(0, 90);
+          if (f.hasValue) { item(f.id, extLabel, "existing"); continue; }
           const key = matcher.classifyText(f.label);
           const val = key ? valueFor(key, profile, files) : null;
           if (key && val != null && val !== "" && key !== "resume") {
             const r = await bridge("extSet", f.id, String(val));
-            if (r?.ok) { report.filled.push(key); dom?.classList.add("jaf-filled"); continue; }
+            if (r?.ok) { report.filled.push(key); dom?.classList.add("jaf-filled"); item(f.id, extLabel, "profile"); continue; }
             report.failures.push({ key, kind: f.xtype || "ext" });
           }
           unknown.push({ id: f.id, label: f.label, type: f.isCheckbox ? "checkbox" : f.options ? "select" : "text", options: f.options,
             write: async (v) => (await bridge("extSet", f.id, v))?.ok });
+          pendingItems.set(f.id, item(f.id, extLabel, "empty"));
         }
       }
 
       // 2) DOM controls (React / Angular / Vue / vanilla all accept native-setter + events).
       const seenGroups = new Set();
-      for (const el of matcher.collectControls()) {
+      const controls = matcher.collectControls();
+      let step = 0;
+      panel()?.update({ phase: "filling", done: 0, total: controls.length });
+      for (const el of controls) {
+        if (++step % 3 === 0) panel()?.update({ done: step });
         if (extHandled.has(el) || el.closest(".x-field, .x-form-item") && fw.ext) continue;
         const kind = kindOf(el);
         if (kind === "choice") {
@@ -166,23 +187,31 @@
           seenGroups.add(g);
         }
         report.fields++;
-        const key = adapters.keyFromAdapter(adapter, el) || matcher.classify(el);
+        const id = jafId(el), short = shortLabel(el), required = isRequired(el);
         const label = matcher.describe(el);
+        if (kind === "choice" && el.type === "checkbox" && LEAVE_FOR_USER.test(label)) {
+          item(id, short, filler.hasValue(el, kind) ? "existing" : "yours", required);
+          continue;
+        }
+        const key = adapters.keyFromAdapter(adapter, el) || matcher.classify(el);
         const val = key ? valueFor(key, profile, files) : null;
         if (key && val != null && val !== "") {
           let ok = false;
           try { ok = await writeDom(el, kind, val, fw); } catch (e) { console.warn("[job-autofill]", key, e); }
-          if (ok) { report.filled.push(key); markFilled(el, kind); continue; }
+          if (ok) { report.filled.push(key); markFilled(el, kind); item(id, short, "profile", required); continue; }
           if (!filler.hasValue(el, kind)) report.failures.push({ key, kind });
         }
-        if (kind === "file" || filler.hasValue(el, kind)) continue;
-        unknown.push({ id: jafId(el), label, type: kind, options: optionsOf(el, kind), required: el.required || el.getAttribute("aria-required") === "true",
+        if (filler.hasValue(el, kind)) { item(id, short, "existing", required); continue; }
+        if (kind === "file") { item(id, short, "empty", required); continue; }
+        pendingItems.set(id, item(id, short, "empty", required));
+        unknown.push({ id, label, type: kind, options: optionsOf(el, kind), required: el.required || el.getAttribute("aria-required") === "true",
           write: (v) => writeDom(el, kind, v, fw) });
       }
 
       // 3) AI for everything left (one batched call; session keeps memory across forms).
       if (useAI && settings.aiEnabled !== false && unknown.length) {
         const ta = performance.now();
+        panel()?.update({ phase: "ai" });
         const res = await askAI(unknown.map(({ write, ...q }) => q));
         report.ai = { asked: unknown.length, answered: 0, error: res.error || null, session: res.session || null,
           latencyMs: res.latencyMs ?? Math.round(performance.now() - ta), reasoning: res.reasoning };
@@ -195,6 +224,7 @@
             report.ai.answered++;
             const qel = document.querySelector(`[data-jaf-id="${CSS.escape(q.id)}"]`);
             if (qel) markFilled(qel, qel.type === "radio" || qel.type === "checkbox" ? "choice" : "text", "jaf-ai");
+            if (pendingItems.has(q.id)) pendingItems.get(q.id).status = "ai";
             byId.delete(a.id);
           }
         }
@@ -204,9 +234,15 @@
       }
 
       report.ms = Math.round(performance.now() - t0);
-      const n = report.filled.length, left = report.skipped.length;
-      toast(n ? `Filled ${n} field${n === 1 ? "" : "s"}` : "Nothing to fill on this page",
-        left ? `${left} question${left === 1 ? "" : "s"} still need${left === 1 ? "s" : ""} your answer` : "Review before you submit");
+      // Required questions first in each group.
+      report.items.sort((a, b) => (b.required ? 1 : 0) - (a.required ? 1 : 0));
+      if (panel()?.isMounted()) {
+        panel().update({ phase: "done", items: report.items, nextLabel: nextButton()?.label, error: report.ai?.error ? "AI answers were unavailable." : null });
+      } else {
+        const n = report.filled.length, left = report.items.filter((i) => i.status === "empty").length;
+        toast(n ? `Filled ${n} field${n === 1 ? "" : "s"}` : "Nothing to fill on this page",
+          left ? `${left} question${left === 1 ? "" : "s"} still need${left === 1 ? "s" : ""} your answer` : "Review before you submit");
+      }
       console.info("[job-autofill] report", report);
       NS.lastReport = report;
       return report;
@@ -231,12 +267,60 @@
     return (keys.has("email") && (keys.has("resume") || keys.has("firstName") || keys.has("fullName"))) || keys.size >= 4 || !!ext;
   }
 
-  function maybeShowButton() {
-    if (window.top !== window || document.querySelector(".jaf-fab") || !looksLikeApplication()) return false;
-    const b = Object.assign(document.createElement("button"), { className: "jaf-fab", type: "button", title: "Fill this application with your Appliqué profile" });
-    b.textContent = "Fill application";
-    b.addEventListener("click", () => autofill({ trigger: "button" }));
-    document.body.appendChild(b);
+  // ---------- panel ----------
+  // The page's own "Next"/"Continue" button. Anything that could send the
+  // application (Submit, Apply, Send, Finish…) is never a candidate.
+  const NEXT = /^(next|continue|save (and|&) continue|save (and|&) next|next step|proceed|go to next( step| page)?)\b/i;
+  const FINAL = /submit|apply|send|finish|complete|done|review (and|&) submit|sign/i;
+  function nextButton() {
+    const cands = [...document.querySelectorAll("button, [role=button], input[type=submit], input[type=button], a[role=button]")]
+      .filter((b) => !b.closest("#applique-panel-host") && b.getClientRects().length && !b.disabled && b.getAttribute("aria-disabled") !== "true");
+    const textOf = (b) => (b.value || b.getAttribute("aria-label") || b.textContent || "").replace(/\s+/g, " ").trim();
+    const auto = cands.find((b) => b.getAttribute("data-automation-id") === "bottom-navigation-next-button" || b.getAttribute("data-automation-id") === "pageFooterNextButton");
+    const el = auto || cands.find((b) => { const t = textOf(b); return t.length < 40 && NEXT.test(t) && !FINAL.test(t); });
+    if (!el || FINAL.test(textOf(el))) return null;
+    return { el, label: textOf(el).replace(/[›»>▶→]+$/, "").trim() || "Next" };
+  }
+
+  function jobInfo() {
+    const meta = (p) => document.querySelector(`meta[property="${p}"], meta[name="${p}"]`)?.content?.trim();
+    const host = location.hostname.replace(/^www\./, "");
+    const parts = host.split(".");
+    const ats = /myworkdayjobs|greenhouse|lever|ashbyhq|icims|smartrecruiters|workable|jobvite|taleo|successfactors|oraclecloud/;
+    const guess = ats.test(host) ? parts[0] : parts.length > 2 && /^(careers?|jobs|apply|join|work)$/.test(parts[0]) ? parts[1] : parts[parts.length - 2];
+    const company = meta("og:site_name") || (guess ? guess.charAt(0).toUpperCase() + guess.slice(1) : "");
+    const applyingFor = document.body.innerText.match(/applying (?:for|to)\s*[-:–]?\s*([^\n]{3,80})/i)?.[1];
+    const heading = document.querySelector("h1, [data-automation-id=jobPostingHeader], .posting-headline h2, h2")?.textContent?.trim();
+    const title = (applyingFor || meta("og:title") || heading || document.title.split(/[|–-]/)[0] || "").replace(/\s+/g, " ").trim().slice(0, 90);
+    return { title, company, host };
+  }
+
+  function focusField(id) {
+    const el = document.querySelector(`[data-jaf-id="${CSS.escape(id)}"]`);
+    if (!el) return;
+    el.scrollIntoView({ block: "center", behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth" });
+    el.classList.add("jaf-flash");
+    setTimeout(() => el.classList.remove("jaf-flash"), 1600);
+    try { el.focus({ preventScroll: true }); } catch {}
+  }
+
+  function maybeShowPanel() {
+    if (window.top !== window || !NS.panel) return false;
+    if (NS.panel.isMounted()) return true;
+    if (!looksLikeApplication()) return false;
+    NS.panel.mount({
+      fill: () => autofill({ trigger: "button" }),
+      next: () => {
+        const n = nextButton();
+        if (!n) return;
+        n.el.click();
+        // Steps often swap in place; look again as the next one renders.
+        for (const ms of [500, 1200, 2500]) setTimeout(scan, ms);
+      },
+      focus: focusField,
+      openOptions: () => { try { chrome.runtime.sendMessage({ type: "OPEN_OPTIONS" }); } catch {} },
+    });
+    NS.panel.update({ phase: "idle", job: jobInfo(), nextLabel: nextButton()?.label });
     return true;
   }
 
@@ -248,18 +332,21 @@
   // forms render the next step). Debounced; never submits.
   let lastSig = "", timer;
   async function scan() {
-    const shown = maybeShowButton() || !!document.querySelector(".jaf-fab");
-    if (!shown) return;
+    if (!maybeShowPanel()) return;
+    if (running) return;
+    const sig = matcher.collectControls().map((el) => el.name || el.id || el.getAttribute("data-automation-id") || "").join("|");
+    const changed = sig !== lastSig;
+    lastSig = sig;
+    // A new step of a multi-page form: the old checklist no longer applies.
+    panel()?.update(changed ? { phase: "idle", items: [], job: jobInfo(), nextLabel: nextButton()?.label } : { nextLabel: nextButton()?.label });
+    if (!changed) return;
     const { settings = {} } = await getData();
     if (settings.autoFill === false) return;
-    const sig = matcher.collectControls().map((el) => el.name || el.id || el.getAttribute("data-automation-id") || "").join("|");
-    if (sig === lastSig) return;
-    lastSig = sig;
     autofill({ trigger: "auto" });
   }
   scan();
   new MutationObserver(() => { clearTimeout(timer); timer = setTimeout(scan, 300); })
-    .observe(document.documentElement, { childList: true, subtree: true });
+    .observe(document.documentElement, { childList: true, subtree: true, attributes: true, attributeFilter: ["hidden", "style", "aria-hidden"] });
 
   NS.autofill = autofill;
   NS.bridge = bridge;

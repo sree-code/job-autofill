@@ -5,4 +5,5 @@ import "./inject-stub.js";
 import "../src/matcher.js";
 import "../src/filler.js";
 import "../src/adapters.js";
+import "../src/panel.js";
 import "../src/content.js";

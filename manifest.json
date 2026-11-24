@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "Appliqué: Job Application Autofill",
-  "version": "0.5.0",
+  "version": "0.6.0",
   "description": "Fill job applications from a profile that stays in your browser. Works on Workday, Greenhouse, Lever, Ashby and more.",
   "permissions": [
     "storage"
@@ -53,6 +53,7 @@
         "src/matcher.js",
         "src/filler.js",
         "src/adapters.js",
+        "src/panel.js",
         "src/content.js"
       ],
       "css": [

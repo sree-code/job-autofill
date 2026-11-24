@@ -1,0 +1,31 @@
+<!doctype html><html><head><meta charset="utf-8"><title>Software Engineer II – Careers</title>
+<meta property="og:site_name" content="Example Payments">
+<link rel="stylesheet" href="../src/content.css">
+<style>body{font:15px system-ui;max-width:640px;margin:24px 40px;padding:0 16px}label{display:block;margin:14px 0 4px}input,select{font:inherit;padding:6px;width:320px}.step[hidden]{display:none}.box label{display:inline}</style>
+</head><body>
+<!-- Multi-step application like many ATSs: Next moves steps, Submit is only on the last one. -->
+<p>You are applying for - Software Engineer II (R-1234)</p>
+<form onsubmit="event.preventDefault(); document.body.dataset.submitted = '1';">
+<section class="step" id="s1">
+  <h2>My information</h2>
+  <label for="fn">First Name *</label><input id="fn" name="firstName" required>
+  <label for="ln">Last Name *</label><input id="ln" name="lastName" required>
+  <label for="em">Email *</label><input id="em" type="email" name="email" required>
+  <label for="ph">Phone</label><input id="ph" type="tel" name="phone">
+  <p class="box"><input type="checkbox" id="tc" name="talentCommunity"><label for="tc">Yes, please also add me to the Talent Community and send me personalized communications about other job opportunities.</label></p>
+  <button type="button" onclick="s1.hidden=true;s2.hidden=false">Next</button>
+</section>
+<section class="step" id="s2" hidden>
+  <h2>Additional questions</h2>
+  <label for="oe">Are you currently engaged in any outside employment or activity that you would like to continue if hired? *</label>
+  <select id="oe" name="outsideEmployment" required><option value="">Please Select</option><option>Yes</option><option>No</option></select>
+  <label for="sal">Desired Salary? *</label><input id="sal" name="desiredSalary" required>
+  <p class="box"><input type="checkbox" id="cert" name="certify" required><label for="cert">I certify that the information provided is true and complete. *</label></p>
+  <button type="button" onclick="s2.hidden=true;s1.hidden=false">Previous</button>
+  <button type="submit">Submit application</button>
+</section>
+</form>
+<script src="harness.js"></script>
+<script src="../src/page/bridge.js"></script>
+<script src="../src/matcher.js"></script><script src="../src/filler.js"></script><script src="../src/adapters.js"></script><script src="../src/panel.js"></script><script src="../src/content.js"></script>
+</body></html>

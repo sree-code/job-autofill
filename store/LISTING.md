@@ -30,6 +30,8 @@ WHAT IT DOES
 • Fills name, contact details, address, links, work history, education, work authorization and other common questions on job application forms.
 • Works on Workday, Greenhouse, Lever, Ashby and most company career sites, including forms built with React, Angular, Vue and Ext JS.
 • Attaches your saved resume and cover letter to upload fields.
+• A panel docked to the side of each application shows what was filled, what still needs you, and which answers the AI drafted. Click any item to jump to that field. "Continue" moves to the form's next step and never presses Submit.
+• Tick boxes that sign you up for things or make legal statements (talent communities, newsletters, "I certify", "I agree") are never ticked for you. They're listed for you to decide.
 • Marks every field it filled with a stitched outline: gold for answers from your profile, blue for AI-drafted answers you should check.
 • Never overwrites anything you've already typed, and never submits an application. You review every answer and click Submit yourself.
 • Optional AI answers: add your own DeepSeek or Anthropic API key and the extension drafts answers to questions your profile doesn't cover, such as "Why do you want to work here?".
@@ -37,7 +39,7 @@ WHAT IT DOES
 HOW TO USE
 1. Open the extension's options page and accept the beta terms (see below).
 2. Fill in your profile or paste it as JSON, attach your resume, and click Save.
-3. Open a job application and click Fill application (or press Alt+Shift+F). Review the answers, then submit the application yourself.
+3. Open a job application. The Appliqué panel appears on the right; click Fill this page (or press Alt+Shift+F). Review the answers, then submit the application yourself.
 
 PRIVACY
 • Your profile, resume, cover letter and API key are stored only in this browser (chrome.storage.local).
@@ -65,7 +67,7 @@ Fill job application forms on career websites with the user's own saved profile 
 | Permission | Justification |
 |---|---|
 | `storage` | Stores the user's profile, resume, cover letter, settings and optional AI API key locally in chrome.storage.local so they can be used to fill forms. |
-| Host permissions (`https://*/*`, `http://*/*`) | Job applications are hosted on thousands of different domains: applicant-tracking systems such as Workday, Greenhouse, Lever and Ashby, plus each company's own career site. The content script has to run on these pages to detect form fields and fill them. It only reads and writes form fields, and only acts when the user clicks Fill application or has turned on auto-fill. The service worker also uses host access to call the AI provider the user configured (api.deepseek.com or api.anthropic.com) and to send the usage metrics the user accepted. |
+| Host permissions (`https://*/*`, `http://*/*`) | Job applications are hosted on thousands of different domains: applicant-tracking systems such as Workday, Greenhouse, Lever and Ashby, plus each company's own career site. The content script has to run on these pages to detect form fields and fill them. It only reads and writes form fields, and only acts when the user clicks Fill this page or has turned on auto-fill. The service worker also uses host access to call the AI provider the user configured (api.deepseek.com or api.anthropic.com) and to send the usage metrics the user accepted. |
 
 **Remote code:** No, I am not using remote code. (All JavaScript is in the package. The AI provider returns JSON text only, and that text is never executed.)
 
@@ -101,7 +103,7 @@ Fill job application forms on career websites with the user's own saved profile 
 ## Notes for the reviewer (optional field, if offered)
 
 ```
-To test: open the options page, click "Accept and continue", click "Import profile from JSON", paste {"firstName":"Test","lastName":"User","email":"test@example.com","phone":"555-0100","city":"Austin","state":"Texas"}, click "Fill form from JSON", then Save. Open any Greenhouse or Lever job application (for example a job on job-boards.greenhouse.io) and click the "Fill application" button in the bottom-right corner. The extension never submits forms. AI answers are optional and need the reviewer's own API key; everything else works without one.
+To test: open the options page, click "Accept and continue", click "Import profile from JSON", paste {"firstName":"Test","lastName":"User","email":"test@example.com","phone":"555-0100","city":"Austin","state":"Texas"}, click "Fill form from JSON", then Save. Open any Greenhouse or Lever job application (for example a job on job-boards.greenhouse.io) and click "Fill this page" in the Appliqué panel on the right. The extension never submits forms. AI answers are optional and need the reviewer's own API key; everything else works without one.
 ```
 
 ## Before each new upload
