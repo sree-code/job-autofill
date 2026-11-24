@@ -1,70 +1,144 @@
 <!doctype html>
-<html>
+<html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Job Autofill – Profile</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Appliqué – Profile</title>
+  <link rel="icon" href="../icons/icon32.png">
+  <link rel="stylesheet" href="ui.css">
   <style>
-    :root { color-scheme: light dark; }
-    body { max-width: 760px; margin: 32px auto; padding: 0 16px; font: 14px/1.4 system-ui, sans-serif; }
-    h1 { font-size: 22px; } h2 { font-size: 15px; margin-top: 28px; border-bottom: 1px solid #8884; padding-bottom: 4px; }
-    .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 10px 14px; }
-    label { display: flex; flex-direction: column; gap: 4px; font-size: 12px; font-weight: 600; }
-    textarea { min-height: 70px; resize: vertical; }
-    .wide { grid-column: 1 / -1; }
-    input, select, textarea { padding: 7px 8px; font: inherit; border: 1px solid #8886; border-radius: 6px; }
-    #save { margin-top: 24px; padding: 10px 20px; border: 0; border-radius: 8px; background: #2563eb; color: #fff; font-weight: 600; cursor: pointer; }
-    #status { margin-left: 12px; color: #16a34a; }
-    .note { color: #6b7280; font-size: 12px; }
-    #consent { border: 1px solid #2563eb66; background: #2563eb12; border-radius: 10px; padding: 12px 14px; margin: 14px 0; }
+    body { padding: 0 16px 120px; }
+    main { max-width: 680px; margin: 0 auto; }
+
+    /* Header: the stitched patch is the one decorative moment on the page. */
+    .masthead { display: flex; align-items: center; gap: 16px; padding: 44px 4px 28px; }
+    .masthead img { width: 64px; height: 64px; filter: drop-shadow(0 6px 14px rgb(31 53 96 / .28)); }
+    .masthead h1 { margin: 0; font-size: 34px; line-height: 1.1; font-weight: 700; letter-spacing: -.02em; }
+    .masthead p { margin: 4px 0 0; color: var(--label-2); font-size: 15px; }
+
+    /* Grouped inset lists, as in System Settings. */
+    .section { margin: 0 0 30px; }
+    .section > h2 { margin: 0 16px 7px; font-size: 13px; font-weight: 600; color: var(--label-2); letter-spacing: -.005em; }
+    .section > .foot { margin: 7px 16px 0; font-size: 12.5px; line-height: 1.45; color: var(--label-2); }
+    .group { background: var(--bg-2); border-radius: 12px; overflow: hidden; }
+    .row { display: flex; align-items: center; gap: 16px; min-height: 44px; padding: 0 16px; position: relative; }
+    .row + .row::before { content: ""; position: absolute; top: 0; left: 16px; right: 0; border-top: .5px solid var(--sep); }
+    .row > span { flex: 0 0 180px; font-size: 14px; }
+    .row input:not([type=checkbox]):not([type=file]), .row select { flex: 1; min-width: 0; text-align: right; }
+    .row.stack { flex-direction: column; align-items: stretch; gap: 6px; padding: 11px 16px 12px; }
+    .row.stack > span { flex: none; }
+    .row.stack textarea { text-align: left; }
+    .row .value { margin-left: auto; color: var(--label-2); font-size: 13px; text-align: right; }
+
+    /* Consent sheet */
+    #consent { margin: 0 0 30px; padding: 22px 22px 20px; background: var(--bg-2); border-radius: 16px; box-shadow: 0 0 0 .5px var(--sep), 0 18px 40px -18px rgb(31 53 96 / .35); }
     #consent[hidden] { display: none; }
-    #consent button { padding: 7px 14px; border-radius: 7px; border: 0; font-weight: 600; cursor: pointer; margin-right: 6px; }
-    #consentYes { background: #2563eb; color: #fff; }
-    #app[inert] { opacity: .4; filter: grayscale(1); }
-    details.sent { font-size: 12px; margin-top: 6px; }
+    #consent h2 { margin: 0 0 8px; font-size: 19px; letter-spacing: -.01em; }
+    #consent p { margin: 0 0 16px; color: var(--label-2); font-size: 14px; line-height: 1.5; max-width: 60ch; }
+    #app[inert] { opacity: .35; filter: saturate(0); }
+
+    details.import { margin: 0 0 30px; }
+    details.import summary { cursor: pointer; list-style: none; color: var(--accent); font-size: 14px; font-weight: 500; padding: 0 16px 8px; }
+    details.import summary::-webkit-details-marker { display: none; }
+    details.import textarea { width: 100%; min-height: 150px; padding: 12px 14px; font: 12.5px/1.5 ui-monospace, SFMono-Regular, Menlo, monospace; }
+    details.import .bar { display: flex; align-items: center; gap: 12px; margin-top: 10px; }
+
+    .status { font-size: 13px; color: var(--label-2); }
+    .ai-actions { display: flex; gap: 10px; flex-wrap: wrap; margin: 10px 0 0 16px; }
+
+    /* Save bar: translucent material pinned to the bottom. */
+    .savebar { position: fixed; left: 0; right: 0; bottom: 0; padding: 14px 16px calc(14px + env(safe-area-inset-bottom)); background: var(--material); backdrop-filter: saturate(180%) blur(20px); -webkit-backdrop-filter: saturate(180%) blur(20px); border-top: .5px solid var(--sep); }
+    .savebar .inner { max-width: 680px; margin: 0 auto; display: flex; align-items: center; justify-content: flex-end; gap: 14px; }
+
+    @media (max-width: 560px) {
+      .row > span { flex-basis: 120px; }
+      .masthead h1 { font-size: 28px; }
+    }
   </style>
 </head>
 <body>
-  <h1>Job Autofill profile</h1>
-  <p class="note">Your profile is stored only in this browser (chrome.storage.local).</p>
-  <div id="consent" hidden>
-    <strong>Beta: usage metrics are required</strong>
-    <p class="note" style="margin:6px 0 10px">This is a beta. To use it, you agree to send anonymous usage metrics to the project maintainer: which job sites and form types the extension ran on, how many fields it filled, how long it took, and questions it couldn't match. Your profile values, answers, API key and resume are never sent. See <a href="https://job-autofill-telemetry.vercel.app/privacy" target="_blank">the privacy policy</a>. If you don't want this, uninstall the extension.</p>
-    <button type="button" id="consentYes">Accept and continue</button>
-  </div>
+<main>
+  <header class="masthead">
+    <img src="../icons/icon128.png" alt="">
+    <div>
+      <h1>Appliqué</h1>
+      <p>Fill in your details once. They stay in this browser.</p>
+    </div>
+  </header>
+
+  <section id="consent" hidden>
+    <h2>Share usage metrics to use the beta</h2>
+    <p>Appliqué is in beta. To use it, you agree to send anonymous usage metrics: which job sites and form types it ran on, how many fields it filled, how long that took, and questions it couldn't match. Your profile, answers, API key and resume are never sent. Read the <a href="https://job-autofill-telemetry.vercel.app/privacy" target="_blank">privacy policy</a>. If you'd rather not, uninstall the extension.</p>
+    <button type="button" class="btn primary" id="consentYes">Accept and continue</button>
+  </section>
+
   <div id="app">
-  <details id="importBox">
-    <summary><strong>Import profile from JSON</strong> (e.g. exported from another tool)</summary>
-    <textarea id="importJson" class="wide" style="width:100%;min-height:140px" placeholder='{"firstName":"Ada","lastName":"Lovelace",...}'></textarea>
-    <button type="button" id="importBtn">Fill form from JSON</button> <span class="note" id="importStatus"></span>
-    <p class="note">This fills the fields below. Review them, then click Save.</p>
-  </details>
-  <form id="f"></form>
-  <h2>Files</h2>
-  <div class="grid">
-    <label>Resume (PDF/DOCX) <input type="file" id="resume" accept=".pdf,.doc,.docx"><span class="note" id="resumeName"></span></label>
-    <label>Cover letter <input type="file" id="coverLetter" accept=".pdf,.doc,.docx"><span class="note" id="coverLetterName"></span></label>
+    <details class="import" id="importBox">
+      <summary>Import a profile from JSON</summary>
+      <textarea id="importJson" placeholder='{"firstName":"Ada","lastName":"Lovelace", …}' spellcheck="false"></textarea>
+      <div class="bar">
+        <button type="button" class="btn" id="importBtn">Fill form from JSON</button>
+        <span class="status" id="importStatus">This fills the fields below. Review them, then save.</span>
+      </div>
+    </details>
+
+    <form id="f"></form>
+
+    <div class="section">
+      <h2>Files</h2>
+      <div class="group">
+        <label class="row"><span>Resume</span><span class="value" id="resumeName">PDF or Word</span><input type="file" id="resume" accept=".pdf,.doc,.docx" class="file"></label>
+        <label class="row"><span>Cover letter</span><span class="value" id="coverLetterName">Optional</span><input type="file" id="coverLetter" accept=".pdf,.doc,.docx" class="file"></label>
+      </div>
+      <p class="foot">Attached to upload fields on application forms.</p>
+    </div>
+
+    <div id="settings">
+      <div class="section">
+        <h2>Filling</h2>
+        <div class="group">
+          <label class="row"><span>Fill forms automatically</span><input type="checkbox" class="switch" name="autoFill" checked></label>
+        </div>
+        <p class="foot">When on, Appliqué fills an application as soon as the form appears. It never submits anything; you always click Submit yourself.</p>
+      </div>
+
+      <div class="section">
+        <h2>AI answers</h2>
+        <div class="group">
+          <label class="row"><span>Answer unknown questions</span><input type="checkbox" class="switch" name="aiEnabled" checked></label>
+          <label class="row"><span>Provider</span><select name="provider"><option value="deepseek">DeepSeek</option><option value="anthropic">Anthropic (Claude)</option></select></label>
+          <label class="row"><span>API key</span><input name="apiKey" type="password" autocomplete="off" placeholder="sk-…"></label>
+          <label class="row"><span>Reasoning (DeepSeek)</span><select name="reasoning"><option value="low">Fast</option><option value="off">Off (fastest)</option><option value="high">High (slower)</option></select></label>
+        </div>
+        <p class="foot">Questions your profile doesn't cover are sent with your profile to the provider you pick, using your own key. The key stays in this browser.</p>
+      </div>
+
+      <div class="section">
+        <h2>Advanced</h2>
+        <div class="group">
+          <label class="row"><span>Model</span><input name="model" placeholder="deepseek-flash"></label>
+          <label class="row"><span>Context limit (tokens)</span><input name="contextLimit" type="number" placeholder="120000"></label>
+          <label class="row"><span>API base URL</span><input name="baseURL" placeholder="https://api.deepseek.com"></label>
+        </div>
+        <p class="foot" id="aiStatus"></p>
+        <div class="ai-actions">
+          <button type="button" class="btn" id="resetAI">Start a new AI session</button>
+          <button type="button" class="btn destructive" id="wipeAI">Clear AI memory</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>Usage metrics</h2>
+      <div class="group"><div class="row"><span>Sharing</span><span class="value">Required during the beta</span></div></div>
+      <p class="foot">Sent: a random install ID, extension and browser version, the job site's hostname (no page path), the detected form framework, how many fields were found and filled, the kinds of fields filled (for example “email”), questions it couldn't match, timings, the AI provider and model, and error messages. Never sent: your profile, what's typed into forms, AI answers, API keys, your resume or full page addresses.</p>
+    </div>
+    <div class="savebar"><div class="inner">
+      <span class="status" id="status" role="status"></span>
+      <button id="save" class="btn primary">Save</button>
+    </div></div>
   </div>
-  <h2>Behaviour &amp; AI</h2>
-  <div class="grid" id="settings">
-    <label>Auto-fill when a form appears <select name="autoFill"><option value="true">On</option><option value="false">Off</option></select></label>
-    <label>AI answers for unknown questions <select name="aiEnabled"><option value="true">On</option><option value="false">Off</option></select></label>
-    <label>AI provider <select name="provider"><option value="deepseek">DeepSeek</option><option value="anthropic">Anthropic (Claude)</option></select></label>
-    <label>API key for that provider <input name="apiKey" type="password" autocomplete="off" placeholder="sk-…"></label>
-    <label>Model <input name="model" placeholder="deepseek-flash"></label>
-    <label>DeepSeek reasoning <select name="reasoning"><option value="low">Fast (low effort)</option><option value="off">Off (fastest)</option><option value="high">High (slower)</option></select></label>
-    <label>Session context limit (tokens) <input name="contextLimit" type="number" placeholder="120000"></label>
-    <label>API base URL (advanced) <input name="baseURL" placeholder="https://api.deepseek.com"></label>
-  </div>
-  <p class="note">The key is stored only in this browser and sent only to the provider you picked (DeepSeek or Anthropic). When a session reaches the context limit it is summarized into memory and a new session starts.</p>
-  <details class="sent"><summary>What the usage metrics contain</summary>
-    <p class="note">Required during the beta. Sent: a random install id, extension version, browser version, the job site's hostname (no page path), detected framework and ATS, number of fields found/filled, the field <em>types</em> filled (e.g. "email"), question labels it couldn't match, fill and AI timings, AI provider/model, and error messages. Never sent: profile values, what was typed into forms, AI answers, API keys, resume or cover letter, full URLs.</p>
-  </details>
-  <p class="note" id="aiStatus"></p>
-  <button type="button" id="resetAI">New AI session (keep memory)</button>
-  <button type="button" id="wipeAI">Clear AI memory</button>
-  <br>
-  <button id="save">Save</button><span id="status"></span>
-  </div>
-  <script type="module" src="options.js"></script>
+</main>
+<script type="module" src="options.js"></script>
 </body>
 </html>

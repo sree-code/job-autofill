@@ -7,3 +7,4 @@ node_modules/
 dist/
 telemetry-data/
 .vercel/
+store/build/

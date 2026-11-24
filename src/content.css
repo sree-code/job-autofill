@@ -1,13 +1,45 @@
+/* Appliqué on job sites. Everything is prefixed jaf- and pinned with explicit
+   values so the host page's styles can't restyle it. */
 .jaf-fab {
+  all: initial;
   position: fixed; right: 20px; bottom: 20px; z-index: 2147483646;
-  padding: 10px 16px; border: 0; border-radius: 999px; cursor: pointer;
-  background: #2563eb; color: #fff; font: 600 14px/1 system-ui, sans-serif;
-  box-shadow: 0 4px 14px rgba(0,0,0,.25);
+  display: inline-flex; align-items: center; gap: 8px; height: 40px; padding: 0 16px 0 12px;
+  border-radius: 20px; cursor: pointer; box-sizing: border-box;
+  background: rgb(36 62 108 / .92); color: #fff;
+  -webkit-backdrop-filter: saturate(180%) blur(16px); backdrop-filter: saturate(180%) blur(16px);
+  font: 600 14px/1 -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", system-ui, sans-serif; letter-spacing: -.01em;
+  box-shadow: 0 0 0 .5px rgb(255 255 255 / .18) inset, 0 8px 24px -6px rgb(20 36 66 / .45), 0 2px 6px rgb(0 0 0 / .12);
+  transition: transform .15s ease, background .15s ease;
 }
-.jaf-fab:hover { background: #1d4ed8; }
+/* The patch: a small stitched square, the extension's mark. */
+.jaf-fab::before {
+  content: ""; width: 16px; height: 16px; border-radius: 5px; box-sizing: border-box;
+  border: 1.5px dashed #F2B84B; background: rgb(255 255 255 / .14);
+}
+.jaf-fab:hover { background: rgb(44 75 131 / .95); }
+.jaf-fab:active { transform: scale(.97); }
+.jaf-fab:focus-visible { outline: 3px solid rgb(127 162 227 / .7); outline-offset: 2px; }
+
 .jaf-toast {
-  position: fixed; right: 20px; bottom: 70px; z-index: 2147483647;
-  padding: 10px 14px; border-radius: 8px; background: #111827; color: #fff;
-  font: 500 13px/1.3 system-ui, sans-serif;
+  all: initial;
+  position: fixed; right: 20px; bottom: 72px; z-index: 2147483647; box-sizing: border-box;
+  display: flex; flex-direction: column; gap: 2px; min-width: 220px; max-width: 320px; padding: 12px 16px;
+  border-radius: 14px; background: rgb(28 28 30 / .86); color: #fff;
+  -webkit-backdrop-filter: saturate(180%) blur(20px); backdrop-filter: saturate(180%) blur(20px);
+  font: 400 13px/1.35 -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", system-ui, sans-serif; letter-spacing: -.005em;
+  box-shadow: 0 0 0 .5px rgb(255 255 255 / .12) inset, 0 12px 32px -8px rgb(0 0 0 / .4);
+  animation: jaf-in .28s cubic-bezier(.2,.8,.3,1);
 }
-.jaf-filled { outline: 2px solid #22c55e !important; outline-offset: 1px; }
+.jaf-toast b { all: unset; font-weight: 600; font-size: 14px; }
+.jaf-toast span { all: unset; color: rgb(235 235 245 / .7); }
+.jaf-toast.jaf-out { opacity: 0; transform: translateY(6px); transition: opacity .2s ease, transform .2s ease; }
+@keyframes jaf-in { from { opacity: 0; transform: translateY(8px) scale(.98); } }
+
+/* Filled fields get a stitched seam: gold for profile answers,
+   blue for AI-drafted answers so they stand out for review. */
+.jaf-filled { outline: 2px dashed #E9A93A !important; outline-offset: 2px !important; }
+.jaf-filled.jaf-ai { outline-color: #5B83D0 !important; }
+
+@media (prefers-reduced-motion: reduce) {
+  .jaf-fab, .jaf-toast, .jaf-toast.jaf-out { animation: none; transition: none; }
+}

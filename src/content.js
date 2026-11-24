@@ -98,7 +98,7 @@
     if ((await gate()).allowed === false) {
       if (trigger !== "auto" || !gateNoticeShown) {
         gateNoticeShown = true;
-        toast("Job Autofill beta: accept usage metrics on the profile page to start.");
+        toast("Accept the beta terms to start", "Open Appliqué's profile page and accept usage metrics.");
         if (trigger !== "auto") try { chrome.runtime.sendMessage({ type: "OPEN_OPTIONS" }); } catch {}
       }
       return { filled: [], skipped: [], needsConsent: true };
@@ -204,18 +204,24 @@
       }
 
       report.ms = Math.round(performance.now() - t0);
-      toast(`Filled ${report.filled.length} field(s) · ${report.framework}` + (adapter ? ` · ${adapter.name}` : "") + ` · ${report.ms}ms`);
+      const n = report.filled.length, left = report.skipped.length;
+      toast(n ? `Filled ${n} field${n === 1 ? "" : "s"}` : "Nothing to fill on this page",
+        left ? `${left} question${left === 1 ? "" : "s"} still need${left === 1 ? "s" : ""} your answer` : "Review before you submit");
       console.info("[job-autofill] report", report);
       NS.lastReport = report;
       return report;
     }
   }
 
-  function toast(msg) {
+  function toast(msg, detail = "") {
     if (window.top !== window) return;
-    const t = Object.assign(document.createElement("div"), { className: "jaf-toast", textContent: msg });
+    document.querySelector(".jaf-toast")?.remove();
+    const t = Object.assign(document.createElement("div"), { className: "jaf-toast" });
+    t.setAttribute("role", "status");
+    t.append(Object.assign(document.createElement("b"), { textContent: msg }));
+    if (detail) t.append(Object.assign(document.createElement("span"), { textContent: detail }));
     document.body.appendChild(t);
-    setTimeout(() => t.remove(), 3500);
+    setTimeout(() => { t.classList.add("jaf-out"); setTimeout(() => t.remove(), 250); }, 4000);
   }
 
   // A page "looks like an application" if it asks for identity + a resume or many profile fields.
@@ -227,7 +233,8 @@
 
   function maybeShowButton() {
     if (window.top !== window || document.querySelector(".jaf-fab") || !looksLikeApplication()) return false;
-    const b = Object.assign(document.createElement("button"), { className: "jaf-fab", textContent: "Autofill", type: "button" });
+    const b = Object.assign(document.createElement("button"), { className: "jaf-fab", type: "button", title: "Fill this application with your Appliqué profile" });
+    b.textContent = "Fill application";
     b.addEventListener("click", () => autofill({ trigger: "button" }));
     document.body.appendChild(b);
     return true;

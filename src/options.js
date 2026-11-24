@@ -5,24 +5,36 @@ const SECTIONS = {
   Links: ["linkedin", "github", "portfolio"],
   Work: ["currentCompany", "currentTitle", "yearsExperience", "salary", "startDate", "howHeard"],
   Education: ["school", "degree", "major", "gradYear"],
-  "Eligibility (answers like Yes / No)": ["workAuthorized", "needsSponsorship", "willingToRelocate", "previouslyEmployed"],
-  "Background for AI answers (summary, skills, work history)": ["summary", "skills", "workHistory"],
-  "Voluntary self-identification (optional)": ["gender", "race", "hispanic", "veteran", "disability"],
+  Eligibility: ["workAuthorized", "needsSponsorship", "willingToRelocate", "previouslyEmployed"],
+  "About you": ["summary", "skills", "workHistory"],
+  "Voluntary self-identification": ["gender", "race", "hispanic", "veteran", "disability"],
 };
+const FOOTS = {
+  Eligibility: "Answer the way the forms ask, for example Yes or No.",
+  "About you": "Used to draft answers to open questions when AI answers are on.",
+  "Voluntary self-identification": "Optional. Leave blank and these questions stay unanswered.",
+};
+const LABELS = { address1: "Address line 1", address2: "Address line 2", linkedin: "LinkedIn", github: "GitHub", gradYear: "Graduation year",
+  phoneDeviceType: "Phone type", howHeard: "How you heard about the job", workAuthorized: "Authorized to work", needsSponsorship: "Needs visa sponsorship",
+  willingToRelocate: "Willing to relocate", previouslyEmployed: "Worked here before", hispanic: "Hispanic or Latino", workHistory: "Work history", yearsExperience: "Years of experience" };
 const LONG = new Set(["summary", "skills", "workHistory"]); // multi-line: textarea keeps newlines
-const pretty = (k) => k.replace(/([A-Z])/g, " $1").replace(/^./, (c) => c.toUpperCase());
+const pretty = (k) => LABELS[k] || k.replace(/([A-Z])/g, " $1").toLowerCase().replace(/^./, (c) => c.toUpperCase());
 
 const form = document.getElementById("f");
 for (const [title, keys] of Object.entries(SECTIONS)) {
-  const h = document.createElement("h2"); h.textContent = title; form.appendChild(h);
-  const g = document.createElement("div"); g.className = "grid";
+  const sec = document.createElement("div"); sec.className = "section";
+  const h = document.createElement("h2"); h.textContent = title; sec.appendChild(h);
+  const g = document.createElement("div"); g.className = "group";
   for (const k of keys) {
-    const l = document.createElement("label"); l.textContent = pretty(k);
+    const l = document.createElement("label"); l.className = LONG.has(k) ? "row stack" : "row";
+    const t = document.createElement("span"); t.textContent = pretty(k); l.appendChild(t);
     const i = document.createElement(LONG.has(k) ? "textarea" : "input"); i.name = k;
-    if (LONG.has(k)) l.classList.add("wide");
+    if (!LONG.has(k)) i.placeholder = "Not set";
     l.appendChild(i); g.appendChild(l);
   }
-  form.appendChild(g);
+  sec.appendChild(g);
+  if (FOOTS[title]) { const f = document.createElement("p"); f.className = "foot"; f.textContent = FOOTS[title]; sec.appendChild(f); }
+  form.appendChild(sec);
 }
 
 // Trust the bytes, not the extension: a .docx saved as "resume.pdf" would be
@@ -49,6 +61,10 @@ async function readFile(file) {
   return { name, dataUrl: `data:${mime};base64,${b64}`, fixedFrom: fixed ? file.name : undefined };
 }
 
+for (const id of ["resume", "coverLetter"]) document.getElementById(id).addEventListener("change", (e) => {
+  const f = e.target.files[0]; if (f) document.getElementById(`${id}Name`).textContent = `${f.name} (save to keep)`;
+});
+
 // Import: fill the form from pasted JSON (does not save until the user clicks Save).
 const ALL_KEYS = new Set(Object.values(SECTIONS).flat());
 document.getElementById("importBtn").onclick = () => {
@@ -63,7 +79,7 @@ document.getElementById("importBtn").onclick = () => {
     form.elements[k].value = Array.isArray(v) ? v.join(k === "workHistory" ? "\n" : ", ") : String(v);
     used.push(k);
   }
-  out.textContent = `Filled ${used.length} field(s).` + (ignored.length ? ` Ignored unknown keys: ${ignored.join(", ")}.` : "") + " Review, then Save.";
+  out.textContent = `Filled ${used.length} field(s).` + (ignored.length ? ` Ignored unknown keys: ${ignored.join(", ")}.` : "") + " Review them, then save.";
 };
 
 const settingsEl = document.getElementById("settings");
@@ -72,8 +88,8 @@ const sField = (k) => settingsEl.querySelector(`[name="${k}"]`);
 function showAI() {
   chrome.runtime.sendMessage({ type: "AI_STATUS" }, (s) => {
     const el = document.getElementById("aiStatus");
-    el.textContent = !s || s.error ? "AI: add an API key to enable." :
-      `AI ${s.provider}/${s.model} · session #${s.sessionNumber} · ${s.turns} turns · ${s.contextTokens}/${s.contextLimit} tokens · ${s.rollovers} rollovers · memory ${s.memoryChars} chars`;
+    el.textContent = !s || s.error ? "Add an API key to turn on AI answers." :
+      `Using ${s.model} (${s.provider}). Session ${s.sessionNumber}: ${s.turns} questions, ${s.contextTokens.toLocaleString()} of ${s.contextLimit.toLocaleString()} tokens. When a session fills up it's summarized into memory (${s.rollovers} so far).`;
   });
 }
 document.getElementById("resetAI").onclick = () => chrome.runtime.sendMessage({ type: "AI_RESET", keepMemory: true }, showAI);
@@ -85,20 +101,25 @@ const syncHints = () => { const [m, u] = HINTS[sField("provider").value] || HINT
 sField("provider").addEventListener("change", syncHints);
 
 chrome.storage.local.get(["profile", "resume", "coverLetter", "settings"], ({ profile = {}, resume, coverLetter, settings = {} }) => {
-  for (const [k, v] of Object.entries(settings)) if (sField(k)) sField(k).value = String(v);
+  for (const [k, v] of Object.entries(settings)) {
+    const el = sField(k);
+    if (!el) continue;
+    if (el.type === "checkbox") el.checked = v === true || v === "true"; else el.value = String(v);
+  }
   syncHints();
   lockUntilAccepted(settings);
   showAI();
   for (const [k, v] of Object.entries(profile)) if (form.elements[k]) form.elements[k].value = v;
   if (!form.elements.phoneDeviceType.value) form.elements.phoneDeviceType.value = "Mobile";
-  if (resume) document.getElementById("resumeName").textContent = `Saved: ${resume.name}`;
-  if (coverLetter) document.getElementById("coverLetterName").textContent = `Saved: ${coverLetter.name}`;
+  if (resume) document.getElementById("resumeName").textContent = resume.name;
+  if (coverLetter) document.getElementById("coverLetterName").textContent = coverLetter.name;
 });
 
 document.getElementById("save").onclick = async () => {
   const profile = Object.fromEntries([...new FormData(form)].filter(([, v]) => v !== ""));
   const settings = {};
   settingsEl.querySelectorAll("[name]").forEach((el) => {
+    if (el.type === "checkbox") { settings[el.name] = el.checked; return; }
     if (el.value === "") return;
     settings[el.name] = el.value === "true" ? true : el.value === "false" ? false : el.value;
   });
@@ -112,7 +133,7 @@ document.getElementById("save").onclick = async () => {
       const note = document.getElementById(`${id}Name`);
       note.textContent = data[id].fixedFrom
         ? `Saved as ${data[id].name} (the file "${data[id].fixedFrom}" is really a ${data[id].name.split(".").pop().toUpperCase()}).`
-        : `Saved: ${data[id].name}`;
+        : data[id].name;
     }
   }
   await chrome.storage.local.set(data);

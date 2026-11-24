@@ -1,4 +1,4 @@
-# Job Autofill (local)
+# Appliqué: Job Application Autofill
 
 A Chrome (Manifest V3) extension that fills job application forms from a profile stored **only in your browser**. No account, no backend, no tracking.
 

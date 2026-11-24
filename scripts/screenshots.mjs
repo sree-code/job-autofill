@@ -12,7 +12,10 @@ import { mkdtemp } from "node:fs/promises";
 import { tmpdir } from "node:os";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
-const out = path.join(root, "docs/screenshots");
+// STORE=1: Chrome Web Store sizes (1280x800, 1x) into store/screenshots/.
+const STORE = !!process.env.STORE;
+const out = path.join(root, STORE ? "store/screenshots" : "docs/screenshots");
+await (await import("node:fs/promises")).mkdir(out, { recursive: true });
 const CHROME = process.env.CHROME_PATH || {
   darwin: "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
   win32: "C:/Program Files/Google/Chrome/Application/chrome.exe",
@@ -61,9 +64,12 @@ const STUB = ({ consentAnswered, report }) => {
 };
 
 const browser = await puppeteer.launch({ executablePath: CHROME, headless: true, args: ["--hide-scrollbars"] });
+const STORE_SHOTS = { "1-options-first-run.png": "2-beta-consent.png", "2-options-full.png": "1-profile.png", "4-workday-step1-filled.png": "3-workday-filled.png", "5-workday-step2-ai.png": "4-ai-answers.png", "6-react-filled.png": "5-react-filled.png" };
 const shot = async (name, url, { width = 1100, height = 900, stub, full = false, prep } = {}) => {
+  if (STORE) { if (!STORE_SHOTS[name]) return; name = STORE_SHOTS[name]; width = 1280; height = 800; full = false; }
   const page = await browser.newPage();
-  await page.setViewport({ width, height, deviceScaleFactor: 2 });
+  await page.setViewport({ width, height, deviceScaleFactor: STORE ? 1 : 2 });
+  await page.emulateMediaFeatures([{ name: "prefers-color-scheme", value: process.env.SCHEME || "light" }]);
   if (stub) await page.evaluateOnNewDocument(STUB, stub);
   await page.goto(url, { waitUntil: "networkidle0" });
   if (prep) await prep(page);
@@ -76,8 +82,8 @@ const wait = (ms) => new Promise((r) => setTimeout(r, ms));
 try {
   await shot("1-options-first-run.png", `${base}/src/options.html`, { stub: { consentAnswered: false }, height: 1000 });
   await shot("2-options-full.png", `${base}/src/options.html`, { stub: { consentAnswered: true }, full: true,
-    prep: async (p) => { await p.evaluate(() => { document.getElementById("importBox").open = true; document.querySelector("details.sent").open = true; }); } });
-  await shot("3-popup.png", `${base}/src/popup.html`, { width: 270, height: 190,
+    prep: async (p) => { await p.evaluate(() => { document.getElementById("importBox").open = true; }); } });
+  await shot("3-popup.png", `${base}/src/popup.html`, { width: 308, height: 250,
     stub: { consentAnswered: true, report: { filled: ["firstName", "lastName", "email", "phone", "resume", "linkedin", "city", "state", "workAuthorized", "needsSponsorship"], skipped: ["Why do you want to work here?"] } },
     prep: async (p) => { await p.click("#fill"); await wait(200); } });
   await shot("4-workday-step1-filled.png", `${base}/test/workday.html?auto=1`, { width: 900, height: 950, prep: () => wait(1200) });
@@ -85,6 +91,7 @@ try {
     prep: async (p) => { await wait(1200); await p.evaluate(() => [...document.querySelectorAll("button")].find((b) => /next|continue/i.test(b.textContent))?.click()); await wait(1500); } });
   await shot("6-react-filled.png", `${base}/test/react.html?auto=1`, { width: 900, height: 900, prep: () => wait(1500) });
 
+  if (STORE) throw "done";
   // Telemetry dashboard with SAMPLE events (clearly synthetic).
   const dataDir = await mkdtemp(path.join(tmpdir(), "jaf-shot-"));
   const tel = telemetryServer({ dataDir, adminKey: "demo" });
@@ -103,7 +110,7 @@ try {
   await fetch(`${tb}/v1/events`, { method: "POST", body: JSON.stringify({ events: events.slice(50, 100) }) });
   await shot("7-telemetry-dashboard-sample.png", `${tb}/?key=demo`, { width: 1100, height: 1400 });
   tel.close();
-} finally {
+} catch (e) { if (e !== "done") throw e; } finally {
   await browser.close();
   files.close();
   ai?.close();

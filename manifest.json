@@ -1,12 +1,10 @@
 {
   "manifest_version": 3,
-  "name": "Job Autofill (local)",
-  "version": "0.4.0",
-  "description": "Autofill job application forms from a profile stored only on your machine.",
+  "name": "Appliqué: Job Application Autofill",
+  "version": "0.5.0",
+  "description": "Fill job applications from a profile that stays in your browser. Works on Workday, Greenhouse, Lever, Ashby and more.",
   "permissions": [
-    "storage",
-    "activeTab",
-    "scripting"
+    "storage"
   ],
   "host_permissions": [
     "https://*/*",
@@ -19,11 +17,18 @@
   "action": {
     "default_popup": "src/popup.html",
     "default_icon": {
+      "16": "icons/icon16.png",
+      "32": "icons/icon32.png",
+      "48": "icons/icon48.png",
       "128": "icons/icon128.png"
-    }
+    },
+    "default_title": "Appliqué"
   },
   "options_page": "src/options.html",
   "icons": {
+    "16": "icons/icon16.png",
+    "32": "icons/icon32.png",
+    "48": "icons/icon48.png",
     "128": "icons/icon128.png"
   },
   "content_scripts": [
@@ -62,7 +67,8 @@
       "suggested_key": {
         "default": "Alt+Shift+F"
       },
-      "description": "Autofill this page"
+      "description": "Fill this application"
     }
-  }
+  },
+  "short_name": "Appliqué"
 }

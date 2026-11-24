@@ -1,0 +1,92 @@
+/* Appliqué: shared look for the extension's own pages (profile and popup).
+   Follows Apple's platform conventions: system font, grouped backgrounds,
+   hairline separators, switches, and a single accent colour (denim). The
+   gold "thread" colour is reserved for the stitched seam that marks filled fields. */
+:root {
+  color-scheme: light dark;
+  --accent: #2C4B83;          /* denim */
+  --accent-press: #233D6C;
+  --thread: #E9A93A;          /* gold stitching */
+  --danger: #D70015;
+  --bg: #F2F2F7;              /* grouped background */
+  --bg-2: #FFFFFF;            /* grouped content */
+  --fill: rgb(118 118 128 / .12);
+  --label: #000000;
+  --label-2: rgb(60 60 67 / .62);
+  --label-3: rgb(60 60 67 / .3);
+  --sep: rgb(60 60 67 / .29);
+  --material: rgb(242 242 247 / .78);
+  --focus: rgb(44 75 131 / .45);
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --accent: #7FA2E3;
+    --accent-press: #9BB7EC;
+    --thread: #F2B84B;
+    --danger: #FF6961;
+    --bg: #000000;
+    --bg-2: #1C1C1E;
+    --fill: rgb(118 118 128 / .24);
+    --label: #FFFFFF;
+    --label-2: rgb(235 235 245 / .6);
+    --label-3: rgb(235 235 245 / .3);
+    --sep: rgb(84 84 88 / .6);
+    --material: rgb(28 28 30 / .72);
+    --focus: rgb(127 162 227 / .5);
+  }
+}
+
+* { box-sizing: border-box; }
+html { -webkit-font-smoothing: antialiased; }
+body {
+  margin: 0; background: var(--bg); color: var(--label);
+  font: 14px/1.4 -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", system-ui, sans-serif;
+  letter-spacing: -.006em;
+}
+a { color: var(--accent); }
+:focus-visible { outline: 3px solid var(--focus); outline-offset: 1px; border-radius: 6px; }
+
+/* Text fields inside list rows are borderless, like iOS/macOS settings. */
+input, select, textarea {
+  font: inherit; color: var(--label); background: transparent; border: 0; padding: 0; margin: 0;
+}
+input, select { height: 44px; }
+input::placeholder, textarea::placeholder { color: var(--label-3); }
+input:focus, select:focus, textarea:focus { outline: none; }
+.row:focus-within { background: rgb(118 118 128 / .06); }
+select { cursor: pointer; color: var(--label-2); -webkit-appearance: none; appearance: none; padding-right: 16px; direction: rtl;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='9' height='14' viewBox='0 0 9 14'%3E%3Cpath d='M1.5 5L4.5 2l3 3M1.5 9l3 3 3-3' fill='none' stroke='%238E8E93' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") right center no-repeat; }
+select option { direction: ltr; }
+textarea { width: 100%; min-height: 72px; resize: vertical; padding: 9px 11px; background: var(--fill); border-radius: 8px; line-height: 1.45; }
+textarea:focus { box-shadow: 0 0 0 3px var(--focus); }
+
+/* File pickers: the whole row is the control. */
+input.file { position: absolute; inset: 0; opacity: 0; cursor: pointer; width: 100%; height: 100%; }
+.row:has(input.file) .value { color: var(--accent); }
+
+/* Switch */
+input.switch {
+  -webkit-appearance: none; appearance: none; margin-left: auto; flex: none;
+  width: 51px; height: 31px; border-radius: 31px; background: var(--fill); position: relative; cursor: pointer;
+  transition: background .2s ease;
+}
+input.switch::after {
+  content: ""; position: absolute; top: 2px; left: 2px; width: 27px; height: 27px; border-radius: 50%; background: #fff;
+  box-shadow: 0 3px 8px rgb(0 0 0 / .15), 0 3px 1px rgb(0 0 0 / .06); transition: transform .22s cubic-bezier(.3,.7,.4,1);
+}
+input.switch:checked { background: #34C759; }
+input.switch:checked::after { transform: translateX(20px); }
+
+/* Buttons */
+.btn {
+  font: 500 14px/1 inherit; font-family: inherit; height: 34px; padding: 0 16px; border: 0; border-radius: 9px; cursor: pointer;
+  background: var(--fill); color: var(--accent);
+}
+.btn:hover { filter: brightness(.97); }
+.btn:active { filter: brightness(.92); }
+.btn.primary { background: var(--accent); color: #fff; font-weight: 600; }
+.btn.primary:active { background: var(--accent-press); }
+.btn.destructive { color: var(--danger); }
+@media (prefers-color-scheme: dark) { .btn.primary { color: #0B1A33; } }
+
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; animation: none !important; } }

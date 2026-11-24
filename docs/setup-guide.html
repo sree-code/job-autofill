@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<title>Job Autofill – Setup Guide</title>
+<title>Appliqué – Setup Guide</title>
 <style>
   @page { size: Letter; margin: 15mm 15mm; }
   :root { --ink: #111827; --muted: #4b5563; --line: #d1d5db; --blue: #1d4ed8; --soft: #eff6ff; --warn: #fef3c7; --ok: #ecfdf5; }
@@ -39,7 +39,7 @@
 </head>
 <body>
 
-<h1>Job Autofill (beta): Setup Guide</h1>
+<h1>Appliqué (beta): Setup Guide</h1>
 <p class="sub">A Chrome extension that fills job applications (Workday, Greenhouse, Lever, Ashby and React, Angular and Ext JS forms) from a profile kept only in your own browser. It never submits anything. Source: <strong>github.com/sree-code/job-autofill</strong></p>
 
 <h2>Start here (about 15 minutes)</h2>
@@ -47,7 +47,7 @@
   <li>Install Chrome, Node.js, Git and Claude Code (links in the table below), and have your resume ready.</li>
   <li>Make an empty folder (for example <code>Documents/job-autofill-setup</code>) and open <strong>Claude Code</strong> in it, using the desktop app or by running <code>claude</code> in a terminal there.</li>
   <li>Attach this PDF to the chat and send this message:
-<pre>Set up Job Autofill for me by following this guide exactly.
+<pre>Set up Appliqué for me by following this guide exactly.
 Stop and wait for me at every step marked "YOU".</pre></li>
   <li>Follow along. Claude does the steps marked <span class="who claude">CLAUDE</span> and tells you when it's your turn <span class="who you">YOU</span>.</li>
 </ol>
@@ -114,7 +114,7 @@ npm test</pre>
     <li>In Chrome, type <code>chrome://extensions</code> in the address bar and press Enter.</li>
     <li>Turn on <strong>Developer mode</strong> (switch in the top-right corner).</li>
     <li>Click <strong>Load unpacked</strong> and choose the <code>job-autofill</code> folder Claude told you about. It's the one that contains <code>manifest.json</code>.</li>
-    <li>Click the puzzle-piece icon in Chrome's toolbar and pin <strong>Job Autofill</strong>.</li>
+    <li>Click the puzzle-piece icon in Chrome's toolbar and pin <strong>Appliqué</strong>.</li>
   </ol>
   <p>The extension's profile page opens by itself. If it doesn't, click the pinned icon, then <strong>Edit profile</strong>. Tell Claude when you see it.</p>
 </div>
@@ -158,7 +158,7 @@ npm test</pre>
   <h3>Step 7. Practice run, without submitting <span class="who you">YOU</span> with <span class="who claude">CLAUDE</span></h3>
   <ol type="a">
     <li>Open a job posting that uses Greenhouse or Lever (these need no account) and click <strong>Apply</strong>.</li>
-    <li>The form fills by itself within a second or two. If not, click the blue <strong>Autofill</strong> button (bottom right) or press <strong>Alt+Shift+F</strong>.</li>
+    <li>The form fills by itself within a second or two. If not, click the <strong>Fill application</strong> button (bottom right) or press <strong>Alt+Shift+F</strong>.</li>
     <li>A message at the bottom shows how many fields were filled. Filled fields get a green outline.</li>
     <li>Check every field. Fix anything by hand. <strong>Don't submit a practice application.</strong></li>
     <li>Optional: press F12, open <strong>Console</strong> and find the line <code>[job-autofill] report</code>. Copy it to Claude, which uses it to suggest profile fixes for skipped fields.</li>
@@ -169,7 +169,7 @@ npm test</pre>
 <div class="box ok">
   <strong>You're done when:</strong>
   <ul class="check">
-    <li>Job Autofill is pinned in Chrome and the profile page isn't greyed out.</li>
+    <li>Appliqué is pinned in Chrome and the profile page isn't greyed out.</li>
     <li>Your profile, resume and (optionally) API key are saved.</li>
     <li>A practice form filled with your details, and you didn't submit it.</li>
   </ul>
@@ -188,11 +188,11 @@ npm test</pre>
 <h2>2. Everyday use</h2>
 <table>
   <tr><th>To…</th><th>Do this</th></tr>
-  <tr><td>Fill a page</td><td>It fills automatically when a form appears. Or click <strong>Autofill</strong> (bottom right), the toolbar icon, or press <strong>Alt+Shift+F</strong>.</td></tr>
+  <tr><td>Fill a page</td><td>It fills automatically when a form appears. Or click <strong>Fill application</strong> (bottom right), the toolbar icon, or press <strong>Alt+Shift+F</strong>.</td></tr>
   <tr><td>Change your details</td><td>Toolbar icon → <strong>Edit profile</strong> → change → <strong>Save</strong></td></tr>
   <tr><td>Stop automatic filling</td><td>Profile page → “Auto-fill when a form appears” → Off → Save</td></tr>
   <tr><td>Start a fresh AI session</td><td>Profile page → <strong>New AI session (keep memory)</strong>, or <strong>Clear AI memory</strong> to forget past answers</td></tr>
-  <tr><td>Get the latest version</td><td>Ask Claude to “update Job Autofill”, or in the <code>job-autofill</code> folder run <code>git pull</code>, <code>npm install</code> and <code>npm run build</code>. Then click the reload icon on Job Autofill at <code>chrome://extensions</code>.</td></tr>
+  <tr><td>Get the latest version</td><td>Ask Claude to “update Appliqué”, or in the <code>job-autofill</code> folder run <code>git pull</code>, <code>npm install</code> and <code>npm run build</code>. Then click the reload icon on Appliqué at <code>chrome://extensions</code>.</td></tr>
 </table>
 
 <h2>3. How it works (short)</h2>
@@ -217,7 +217,7 @@ npm test</pre>
   <tr><th>Problem</th><th>Fix</th></tr>
   <tr><td>Message: “accept usage metrics on the profile page to start”</td><td>Open the profile page and click <strong>Accept and continue</strong> (step 4).</td></tr>
   <tr><td>Popup says “No form script on this page”</td><td>Reload the job page. Tabs opened before installing don't have the extension yet.</td></tr>
-  <tr><td>Nothing fills and no Autofill button</td><td>The page may not look like an application yet. Click Apply first, or press Alt+Shift+F.</td></tr>
+  <tr><td>Nothing fills and no Fill application button</td><td>The page may not look like an application yet. Click Apply first, or press Alt+Shift+F.</td></tr>
   <tr><td>Dropdowns not filled on Greenhouse</td><td>Keep the tab in front while it fills. Some dropdowns only open in the visible tab.</td></tr>
   <tr><td>Custom questions left blank</td><td>No API key saved, or the AI wasn't sure. Add a key in step 6, or answer by hand.</td></tr>
   <tr><td><code>DeepSeek HTTP 401</code> in the console report</td><td>Wrong or deleted key. Create a new one at platform.deepseek.com/api_keys and paste it again.</td></tr>

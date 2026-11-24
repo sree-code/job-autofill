@@ -1,6 +1,6 @@
 {
   "name": "job-autofill",
-  "version": "0.4.0",
+  "version": "0.5.0",
   "private": true,
   "type": "module",
   "scripts": {
@@ -10,7 +10,9 @@
     "telemetry": "node telemetry/server.mjs",
     "screenshots": "node build.mjs --fixtures && node scripts/screenshots.mjs",
     "guide": "node scripts/guide-pdf.mjs",
-    "telemetry:vercel": "node scripts/build-telemetry-vercel.mjs"
+    "telemetry:vercel": "node scripts/build-telemetry-vercel.mjs",
+    "package": "node build.mjs && node scripts/package-store.mjs",
+    "store:screenshots": "node build.mjs --fixtures && STORE=1 node scripts/screenshots.mjs"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^1.10.0",
