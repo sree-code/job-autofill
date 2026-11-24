@@ -109,6 +109,7 @@ chrome.storage.local.get(["profile", "resume", "coverLetter", "settings"], ({ pr
   syncHints();
   lockUntilAccepted(settings);
   showAI();
+  showQuiet(settings.quietHosts || []);
   for (const [k, v] of Object.entries(profile)) if (form.elements[k]) form.elements[k].value = v;
   if (!form.elements.phoneDeviceType.value) form.elements.phoneDeviceType.value = "Mobile";
   if (resume) document.getElementById("resumeName").textContent = resume.name;
@@ -124,7 +125,7 @@ document.getElementById("save").onclick = async () => {
     settings[el.name] = el.value === "true" ? true : el.value === "false" ? false : el.value;
   });
   const { settings: prev = {} } = await chrome.storage.local.get("settings");
-  for (const k of ["telemetry", "telemetryURL"]) if (k in prev) settings[k] = prev[k]; // not editable here
+  for (const k of ["telemetry", "telemetryURL", "quietHosts"]) if (k in prev) settings[k] = prev[k]; // not edited by these fields
   const data = { profile, settings };
   for (const id of ["resume", "coverLetter"]) {
     const f = document.getElementById(id).files[0];
@@ -155,3 +156,55 @@ document.getElementById("consentYes").onclick = async () => {
   lockUntilAccepted(next);
   chrome.runtime.sendMessage({ type: "TELEMETRY", event: "consent", props: {} }, () => void chrome.runtime.lastError);
 };
+
+// Sites where the user said "Don't show on this site".
+function showQuiet(hosts) {
+  const box = document.getElementById("quietBox"), list = document.getElementById("quietList");
+  box.hidden = !hosts.length;
+  list.replaceChildren(...hosts.map((host) => {
+    const row = document.createElement("div"); row.className = "row";
+    const name = document.createElement("span"); name.textContent = host;
+    const btn = document.createElement("button"); btn.type = "button"; btn.className = "link"; btn.textContent = "Show again";
+    btn.onclick = async () => {
+      const { settings = {} } = await chrome.storage.local.get("settings");
+      const next = (settings.quietHosts || []).filter((h) => h !== host);
+      await chrome.storage.local.set({ settings: { ...settings, quietHosts: next } });
+      showQuiet(next);
+    };
+    row.append(name, btn);
+    return row;
+  }));
+}
+
+// The most recent saved jobs (read by Appliqué on job pages).
+async function showJobs() {
+  const { jobs = {} } = await chrome.storage.local.get("jobs");
+  const list = Object.values(jobs).sort((a, b) => (a.updatedAt < b.updatedAt ? 1 : -1));
+  const el = document.getElementById("jobsList");
+  document.getElementById("clearJobs").hidden = !list.length;
+  if (!list.length) return;
+  el.replaceChildren(...list.slice(0, 25).map((j) => {
+    const a = document.createElement("a"); a.className = "job-row"; a.href = j.url; a.target = "_blank"; a.rel = "noopener";
+    const text = document.createElement("div");
+    const b = document.createElement("b"); b.textContent = j.posting?.title || j.url;
+    const small = document.createElement("small");
+    small.textContent = [j.posting?.company, j.posting?.locations?.[0], j.summary ? "AI summary" : ""].filter(Boolean).join(" · ");
+    text.append(b, small);
+    const when = document.createElement("span"); when.className = "when";
+    when.textContent = new Date(j.updatedAt).toLocaleDateString(undefined, { month: "short", day: "numeric" });
+    a.append(text, when);
+    return a;
+  }));
+  if (list.length > 25) {
+    const more = document.createElement("div"); more.className = "row";
+    const t = document.createElement("span"); t.className = "value"; t.style.marginLeft = "0"; t.textContent = `and ${list.length - 25} more`;
+    more.append(t); el.append(more);
+  }
+}
+document.getElementById("clearJobs").onclick = async () => {
+  if (!confirm("Delete all saved jobs and their summaries from this browser? This can't be undone.")) return;
+  await chrome.storage.local.set({ jobs: {} });
+  document.getElementById("jobsList").innerHTML = '<div class="row"><span class="value" style="margin-left:0">No jobs yet.</span></div>';
+  document.getElementById("clearJobs").hidden = true;
+};
+showJobs();

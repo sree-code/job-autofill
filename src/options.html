@@ -44,6 +44,12 @@
     details.import .bar { display: flex; align-items: center; gap: 12px; margin-top: 10px; }
 
     .status { font-size: 13px; color: var(--label-2); }
+    .job-row { display: flex; align-items: center; gap: 12px; min-height: 52px; padding: 8px 16px; position: relative; text-decoration: none; color: inherit; }
+    .job-row + .job-row::before { content: ""; position: absolute; top: 0; left: 16px; right: 0; border-top: .5px solid var(--sep); }
+    .job-row b { display: block; font-weight: 500; }
+    .job-row small { color: var(--label-2); font-size: 12.5px; }
+    .job-row .when { margin-left: auto; color: var(--label-2); font-size: 12.5px; white-space: nowrap; }
+    .row .link { margin-left: auto; border: 0; background: none; color: var(--accent); font: inherit; cursor: pointer; }
     .ai-actions { display: flex; gap: 10px; flex-wrap: wrap; margin: 10px 0 0 16px; }
 
     /* Save bar: translucent material pinned to the bottom. */
@@ -103,6 +109,29 @@
       </div>
 
       <div class="section">
+        <h2>Job postings</h2>
+        <div class="group">
+          <label class="row"><span>Notice job pages</span><input type="checkbox" class="switch" name="detectJobs" checked></label>
+          <label class="row"><span>Summarize postings with AI</span><input type="checkbox" class="switch" name="analyzePostings" checked></label>
+        </div>
+        <p class="foot">On a job posting, a small Appliqué tab appears at the right edge and reads the posting on this computer. Saved jobs stay in this browser. With an API key, the posting text (not your profile) is also sent to your AI provider for a short summary. On LinkedIn nothing runs until you click.</p>
+        <div id="quietBox" hidden>
+          <h2 style="margin-top:18px">Sites where Appliqué stays quiet</h2>
+          <div class="group" id="quietList"></div>
+        </div>
+      </div>
+
+      <div class="section">
+        <h2>career-ops</h2>
+        <div class="group">
+          <label class="row"><span>Copy jobs to career-ops</span><input type="checkbox" class="switch" name="careerOps"></label>
+          <label class="row"><span>Port</span><input name="careerOpsPort" type="number" placeholder="7788"></label>
+          <label class="row"><span>Capture token</span><input name="careerOpsToken" type="password" autocomplete="off" placeholder="From data/.capture-token"></label>
+        </div>
+        <p class="foot">Sends each posting to your career-ops folder through its local capture server (<code>node capture-server.mjs</code>), which adds it to <code>jds/</code> and a Pending row in <code>data/pipeline.md</code>. Nothing is committed, pushed or evaluated. Only this computer (127.0.0.1) is contacted.</p>
+      </div>
+
+      <div class="section">
         <h2>AI answers</h2>
         <div class="group">
           <label class="row"><span>Answer unknown questions</span><input type="checkbox" class="switch" name="aiEnabled" checked></label>
@@ -129,9 +158,15 @@
     </div>
 
     <div class="section">
+      <h2>Saved jobs</h2>
+      <div class="group" id="jobsList"><div class="row"><span class="value" style="margin-left:0">No jobs yet.</span></div></div>
+      <div class="ai-actions"><button type="button" class="btn destructive" id="clearJobs" hidden>Clear saved jobs</button></div>
+    </div>
+
+    <div class="section">
       <h2>Usage metrics</h2>
       <div class="group"><div class="row"><span>Sharing</span><span class="value">Required during the beta</span></div></div>
-      <p class="foot">Sent: a random install ID, extension and browser version, the job site's hostname (no page path), the detected form framework, how many fields were found and filled, the kinds of fields filled (for example “email”), questions it couldn't match, timings, the AI provider and model, and error messages. Never sent: your profile, what's typed into forms, AI answers, API keys, your resume or full page addresses.</p>
+      <p class="foot">Sent: a random install ID, extension and browser version, the job site's hostname (no page path), the detected form framework, how many fields were found and filled, the kinds of fields filled (for example “email”), questions it couldn't match, how a job page was recognized and how much text was read, timings, the AI provider and model, and error messages. Never sent: your profile, what's typed into forms, AI answers, posting text or summaries, API keys, your resume or full page addresses.</p>
     </div>
     <div class="savebar"><div class="inner">
       <span class="status" id="status" role="status"></span>

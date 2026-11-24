@@ -1,0 +1,3155 @@
+{
+ "source": "career-ops capture-jd.mjs deriveLabels",
+ "cases": [
+  {
+   "url": "https://boards.greenhouse.io/anthropic/jobs/4020305008",
+   "title": "",
+   "company": "Anthropic",
+   "role": ""
+  },
+  {
+   "url": "https://boards.greenhouse.io/anthropic/jobs/4020305008",
+   "title": "Senior AI Engineer at Anthropic",
+   "company": "Anthropic",
+   "role": "Senior AI Engineer"
+  },
+  {
+   "url": "https://boards.greenhouse.io/anthropic/jobs/4020305008",
+   "title": "Senior AI Engineer @ Anthropic",
+   "company": "Anthropic",
+   "role": "Senior AI Engineer"
+  },
+  {
+   "url": "https://boards.greenhouse.io/anthropic/jobs/4020305008",
+   "title": "Senior AI Engineer AT Anthropic",
+   "company": "Anthropic",
+   "role": "Senior AI Engineer"
+  },
+  {
+   "url": "https://boards.greenhouse.io/anthropic/jobs/4020305008",
+   "title": "Senior AI Engineer | Anthropic",
+   "company": "Anthropic",
+   "role": "Senior AI Engineer"
+  },
+  {
+   "url": "https://boards.greenhouse.io/anthropic/jobs/4020305008",
+   "title": "Senior AI Engineer — Anthropic",
+   "company": "Anthropic",
+   "role": "Senior AI Engineer"
+  },
+  {
+   "url": "https://boards.greenhouse.io/anthropic/jobs/4020305008",
+   "title": "Senior AI Engineer – Anthropic",
+   "company": "Anthropic",
+   "role": "Senior AI Engineer"
+  },
+  {
+   "url": "https://boards.greenhouse.io/anthropic/jobs/4020305008",
+   "title": "Senior AI Engineer - Anthropic",
+   "company": "Anthropic",
+   "role": "Senior AI Engineer"
+  },
+  {
+   "url": "https://boards.greenhouse.io/anthropic/jobs/4020305008",
+   "title": "Job Application for Software Engineer, Payments at Stripe",
+   "company": "Stripe",
+   "role": "Job Application for Software Engineer, Payments"
+  },
+  {
+   "url": "https://boards.greenhouse.io/anthropic/jobs/4020305008",
+   "title": "Software Engineer II - Backend | Payments - Mastercard",
+   "company": "Mastercard",
+   "role": "Software Engineer II"
+  },
+  {
+   "url": "https://boards.greenhouse.io/anthropic/jobs/4020305008",
+   "title": "Staff Engineer at Acme at Scale",
+   "company": "Acme at Scale",
+   "role": "Staff Engineer"
+  },
+  {
+   "url": "https://boards.greenhouse.io/anthropic/jobs/4020305008",
+   "title": "Data Scientist",
+   "company": "Anthropic",
+   "role": "Data Scientist"
+  },
+  {
+   "url": "https://boards.greenhouse.io/anthropic/jobs/4020305008",
+   "title": "  Product\tDesigner \n at \r Figma  ",
+   "company": "Figma",
+   "role": "Product Designer"
+  },
+  {
+   "url": "https://boards.greenhouse.io/anthropic/jobs/4020305008",
+   "title": "Engineer|Pipes|In|Name",
+   "company": "Anthropic",
+   "role": "Engineer/Pipes/In/Name"
+  },
+  {
+   "url": "https://boards.greenhouse.io/anthropic/jobs/4020305008",
+   "title": "Engineer - - Acme",
+   "company": "- Acme",
+   "role": "Engineer"
+  },
+  {
+   "url": "https://boards.greenhouse.io/anthropic/jobs/4020305008",
+   "title": "Engineer at",
+   "company": "Anthropic",
+   "role": "Engineer at"
+  },
+  {
+   "url": "https://boards.greenhouse.io/anthropic/jobs/4020305008",
+   "title": "at Acme",
+   "company": "Anthropic",
+   "role": "at Acme"
+  },
+  {
+   "url": "https://boards.greenhouse.io/anthropic/jobs/4020305008",
+   "title": "Café Manager – Le Bistro",
+   "company": "Le Bistro",
+   "role": "Café Manager"
+  },
+  {
+   "url": "https://boards.greenhouse.io/anthropic/jobs/4020305008",
+   "title": "Ingénieur logiciel H/F - Société Générale",
+   "company": "Société Générale",
+   "role": "Ingénieur logiciel H/F"
+  },
+  {
+   "url": "https://boards.greenhouse.io/anthropic/jobs/4020305008",
+   "title": "Lead Engineer at Acme",
+   "company": "Acme",
+   "role": "Lead Engineer"
+  },
+  {
+   "url": "https://boards.greenhouse.io/anthropic/jobs/4020305008",
+   "title": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA | BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB",
+   "company": "BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB",
+   "role": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+  },
+  {
+   "url": "https://job-boards.greenhouse.io/stripe/jobs/6012345",
+   "title": "",
+   "company": "Stripe",
+   "role": ""
+  },
+  {
+   "url": "https://job-boards.greenhouse.io/stripe/jobs/6012345",
+   "title": "Senior AI Engineer at Anthropic",
+   "company": "Anthropic",
+   "role": "Senior AI Engineer"
+  },
+  {
+   "url": "https://job-boards.greenhouse.io/stripe/jobs/6012345",
+   "title": "Senior AI Engineer @ Anthropic",
+   "company": "Anthropic",
+   "role": "Senior AI Engineer"
+  },
+  {
+   "url": "https://job-boards.greenhouse.io/stripe/jobs/6012345",
+   "title": "Senior AI Engineer AT Anthropic",
+   "company": "Anthropic",
+   "role": "Senior AI Engineer"
+  },
+  {
+   "url": "https://job-boards.greenhouse.io/stripe/jobs/6012345",
+   "title": "Senior AI Engineer | Anthropic",
+   "company": "Anthropic",
+   "role": "Senior AI Engineer"
+  },
+  {
+   "url": "https://job-boards.greenhouse.io/stripe/jobs/6012345",
+   "title": "Senior AI Engineer — Anthropic",
+   "company": "Anthropic",
+   "role": "Senior AI Engineer"
+  },
+  {
+   "url": "https://job-boards.greenhouse.io/stripe/jobs/6012345",
+   "title": "Senior AI Engineer – Anthropic",
+   "company": "Anthropic",
+   "role": "Senior AI Engineer"
+  },
+  {
+   "url": "https://job-boards.greenhouse.io/stripe/jobs/6012345",
+   "title": "Senior AI Engineer - Anthropic",
+   "company": "Anthropic",
+   "role": "Senior AI Engineer"
+  },
+  {
+   "url": "https://job-boards.greenhouse.io/stripe/jobs/6012345",
+   "title": "Job Application for Software Engineer, Payments at Stripe",
+   "company": "Stripe",
+   "role": "Job Application for Software Engineer, Payments"
+  },
+  {
+   "url": "https://job-boards.greenhouse.io/stripe/jobs/6012345",
+   "title": "Software Engineer II - Backend | Payments - Mastercard",
+   "company": "Mastercard",
+   "role": "Software Engineer II"
+  },
+  {
+   "url": "https://job-boards.greenhouse.io/stripe/jobs/6012345",
+   "title": "Staff Engineer at Acme at Scale",
+   "company": "Acme at Scale",
+   "role": "Staff Engineer"
+  },
+  {
+   "url": "https://job-boards.greenhouse.io/stripe/jobs/6012345",
+   "title": "Data Scientist",
+   "company": "Stripe",
+   "role": "Data Scientist"
+  },
+  {
+   "url": "https://job-boards.greenhouse.io/stripe/jobs/6012345",
+   "title": "  Product\tDesigner \n at \r Figma  ",
+   "company": "Figma",
+   "role": "Product Designer"
+  },
+  {
+   "url": "https://job-boards.greenhouse.io/stripe/jobs/6012345",
+   "title": "Engineer|Pipes|In|Name",
+   "company": "Stripe",
+   "role": "Engineer/Pipes/In/Name"
+  },
+  {
+   "url": "https://job-boards.greenhouse.io/stripe/jobs/6012345",
+   "title": "Engineer - - Acme",
+   "company": "- Acme",
+   "role": "Engineer"
+  },
+  {
+   "url": "https://job-boards.greenhouse.io/stripe/jobs/6012345",
+   "title": "Engineer at",
+   "company": "Stripe",
+   "role": "Engineer at"
+  },
+  {
+   "url": "https://job-boards.greenhouse.io/stripe/jobs/6012345",
+   "title": "at Acme",
+   "company": "Stripe",
+   "role": "at Acme"
+  },
+  {
+   "url": "https://job-boards.greenhouse.io/stripe/jobs/6012345",
+   "title": "Café Manager – Le Bistro",
+   "company": "Le Bistro",
+   "role": "Café Manager"
+  },
+  {
+   "url": "https://job-boards.greenhouse.io/stripe/jobs/6012345",
+   "title": "Ingénieur logiciel H/F - Société Générale",
+   "company": "Société Générale",
+   "role": "Ingénieur logiciel H/F"
+  },
+  {
+   "url": "https://job-boards.greenhouse.io/stripe/jobs/6012345",
+   "title": "Lead Engineer at Acme",
+   "company": "Acme",
+   "role": "Lead Engineer"
+  },
+  {
+   "url": "https://job-boards.greenhouse.io/stripe/jobs/6012345",
+   "title": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA | BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB",
+   "company": "BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB",
+   "role": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+  },
+  {
+   "url": "https://jobs.lever.co/mistral-ai/0b1c2d3e-aaaa-bbbb-cccc-1234567890ab",
+   "title": "",
+   "company": "Mistral Ai",
+   "role": ""
+  },
+  {
+   "url": "https://jobs.lever.co/mistral-ai/0b1c2d3e-aaaa-bbbb-cccc-1234567890ab",
+   "title": "Senior AI Engineer at Anthropic",
+   "company": "Anthropic",
+   "role": "Senior AI Engineer"
+  },
+  {
+   "url": "https://jobs.lever.co/mistral-ai/0b1c2d3e-aaaa-bbbb-cccc-1234567890ab",
+   "title": "Senior AI Engineer @ Anthropic",
+   "company": "Anthropic",
+   "role": "Senior AI Engineer"
+  },
+  {
+   "url": "https://jobs.lever.co/mistral-ai/0b1c2d3e-aaaa-bbbb-cccc-1234567890ab",
+   "title": "Senior AI Engineer AT Anthropic",
+   "company": "Anthropic",
+   "role": "Senior AI Engineer"
+  },
+  {
+   "url": "https://jobs.lever.co/mistral-ai/0b1c2d3e-aaaa-bbbb-cccc-1234567890ab",
+   "title": "Senior AI Engineer | Anthropic",
+   "company": "Anthropic",
+   "role": "Senior AI Engineer"
+  },
+  {
+   "url": "https://jobs.lever.co/mistral-ai/0b1c2d3e-aaaa-bbbb-cccc-1234567890ab",
+   "title": "Senior AI Engineer — Anthropic",
+   "company": "Anthropic",
+   "role": "Senior AI Engineer"
+  },
+  {
+   "url": "https://jobs.lever.co/mistral-ai/0b1c2d3e-aaaa-bbbb-cccc-1234567890ab",
+   "title": "Senior AI Engineer – Anthropic",
+   "company": "Anthropic",
+   "role": "Senior AI Engineer"
+  },
+  {
+   "url": "https://jobs.lever.co/mistral-ai/0b1c2d3e-aaaa-bbbb-cccc-1234567890ab",
+   "title": "Senior AI Engineer - Anthropic",
+   "company": "Anthropic",
+   "role": "Senior AI Engineer"
+  },
+  {
+   "url": "https://jobs.lever.co/mistral-ai/0b1c2d3e-aaaa-bbbb-cccc-1234567890ab",
+   "title": "Job Application for Software Engineer, Payments at Stripe",
+   "company": "Stripe",
+   "role": "Job Application for Software Engineer, Payments"
+  },
+  {
+   "url": "https://jobs.lever.co/mistral-ai/0b1c2d3e-aaaa-bbbb-cccc-1234567890ab",
+   "title": "Software Engineer II - Backend | Payments - Mastercard",
+   "company": "Mastercard",
+   "role": "Software Engineer II"
+  },
+  {
+   "url": "https://jobs.lever.co/mistral-ai/0b1c2d3e-aaaa-bbbb-cccc-1234567890ab",
+   "title": "Staff Engineer at Acme at Scale",
+   "company": "Acme at Scale",
+   "role": "Staff Engineer"
+  },
+  {
+   "url": "https://jobs.lever.co/mistral-ai/0b1c2d3e-aaaa-bbbb-cccc-1234567890ab",
+   "title": "Data Scientist",
+   "company": "Mistral Ai",
+   "role": "Data Scientist"
+  },
+  {
+   "url": "https://jobs.lever.co/mistral-ai/0b1c2d3e-aaaa-bbbb-cccc-1234567890ab",
+   "title": "  Product\tDesigner \n at \r Figma  ",
+   "company": "Figma",
+   "role": "Product Designer"
+  },
+  {
+   "url": "https://jobs.lever.co/mistral-ai/0b1c2d3e-aaaa-bbbb-cccc-1234567890ab",
+   "title": "Engineer|Pipes|In|Name",
+   "company": "Mistral Ai",
+   "role": "Engineer/Pipes/In/Name"
+  },
+  {
+   "url": "https://jobs.lever.co/mistral-ai/0b1c2d3e-aaaa-bbbb-cccc-1234567890ab",
+   "title": "Engineer - - Acme",
+   "company": "- Acme",
+   "role": "Engineer"
+  },
+  {
+   "url": "https://jobs.lever.co/mistral-ai/0b1c2d3e-aaaa-bbbb-cccc-1234567890ab",
+   "title": "Engineer at",
+   "company": "Mistral Ai",
+   "role": "Engineer at"
+  },
+  {
+   "url": "https://jobs.lever.co/mistral-ai/0b1c2d3e-aaaa-bbbb-cccc-1234567890ab",
+   "title": "at Acme",
+   "company": "Mistral Ai",
+   "role": "at Acme"
+  },
+  {
+   "url": "https://jobs.lever.co/mistral-ai/0b1c2d3e-aaaa-bbbb-cccc-1234567890ab",
+   "title": "Café Manager – Le Bistro",
+   "company": "Le Bistro",
+   "role": "Café Manager"
+  },
+  {
+   "url": "https://jobs.lever.co/mistral-ai/0b1c2d3e-aaaa-bbbb-cccc-1234567890ab",
+   "title": "Ingénieur logiciel H/F - Société Générale",
+   "company": "Société Générale",
+   "role": "Ingénieur logiciel H/F"
+  },
+  {
+   "url": "https://jobs.lever.co/mistral-ai/0b1c2d3e-aaaa-bbbb-cccc-1234567890ab",
+   "title": "Lead Engineer at Acme",
+   "company": "Acme",
+   "role": "Lead Engineer"
+  },
+  {
+   "url": "https://jobs.lever.co/mistral-ai/0b1c2d3e-aaaa-bbbb-cccc-1234567890ab",
+   "title": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA | BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB",
+   "company": "BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB",
+   "role": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+  },
+  {
+   "url": "https://jobs.ashbyhq.com/openai/1f2e3d4c-5b6a-7980-1a2b-3c4d5e6f7a8b",
+   "title": "",
+   "company": "Openai",
+   "role": ""
+  },
+  {
+   "url": "https://jobs.ashbyhq.com/openai/1f2e3d4c-5b6a-7980-1a2b-3c4d5e6f7a8b",
+   "title": "Senior AI Engineer at Anthropic",
+   "company": "Anthropic",
+   "role": "Senior AI Engineer"
+  },
+  {
+   "url": "https://jobs.ashbyhq.com/openai/1f2e3d4c-5b6a-7980-1a2b-3c4d5e6f7a8b",
+   "title": "Senior AI Engineer @ Anthropic",
+   "company": "Anthropic",
+   "role": "Senior AI Engineer"
+  },
+  {
+   "url": "https://jobs.ashbyhq.com/openai/1f2e3d4c-5b6a-7980-1a2b-3c4d5e6f7a8b",
+   "title": "Senior AI Engineer AT Anthropic",
+   "company": "Anthropic",
+   "role": "Senior AI Engineer"
+  },
+  {
+   "url": "https://jobs.ashbyhq.com/openai/1f2e3d4c-5b6a-7980-1a2b-3c4d5e6f7a8b",
+   "title": "Senior AI Engineer | Anthropic",
+   "company": "Anthropic",
+   "role": "Senior AI Engineer"
+  },
+  {
+   "url": "https://jobs.ashbyhq.com/openai/1f2e3d4c-5b6a-7980-1a2b-3c4d5e6f7a8b",
+   "title": "Senior AI Engineer — Anthropic",
+   "company": "Anthropic",
+   "role": "Senior AI Engineer"
+  },
+  {
+   "url": "https://jobs.ashbyhq.com/openai/1f2e3d4c-5b6a-7980-1a2b-3c4d5e6f7a8b",
+   "title": "Senior AI Engineer – Anthropic",
+   "company": "Anthropic",
+   "role": "Senior AI Engineer"
+  },
+  {
+   "url": "https://jobs.ashbyhq.com/openai/1f2e3d4c-5b6a-7980-1a2b-3c4d5e6f7a8b",
+   "title": "Senior AI Engineer - Anthropic",
+   "company": "Anthropic",
+   "role": "Senior AI Engineer"
+  },
+  {
+   "url": "https://jobs.ashbyhq.com/openai/1f2e3d4c-5b6a-7980-1a2b-3c4d5e6f7a8b",
+   "title": "Job Application for Software Engineer, Payments at Stripe",
+   "company": "Stripe",
+   "role": "Job Application for Software Engineer, Payments"
+  },
+  {
+   "url": "https://jobs.ashbyhq.com/openai/1f2e3d4c-5b6a-7980-1a2b-3c4d5e6f7a8b",
+   "title": "Software Engineer II - Backend | Payments - Mastercard",
+   "company": "Mastercard",
+   "role": "Software Engineer II"
+  },
+  {
+   "url": "https://jobs.ashbyhq.com/openai/1f2e3d4c-5b6a-7980-1a2b-3c4d5e6f7a8b",
+   "title": "Staff Engineer at Acme at Scale",
+   "company": "Acme at Scale",
+   "role": "Staff Engineer"
+  },
+  {
+   "url": "https://jobs.ashbyhq.com/openai/1f2e3d4c-5b6a-7980-1a2b-3c4d5e6f7a8b",
+   "title": "Data Scientist",
+   "company": "Openai",
+   "role": "Data Scientist"
+  },
+  {
+   "url": "https://jobs.ashbyhq.com/openai/1f2e3d4c-5b6a-7980-1a2b-3c4d5e6f7a8b",
+   "title": "  Product\tDesigner \n at \r Figma  ",
+   "company": "Figma",
+   "role": "Product Designer"
+  },
+  {
+   "url": "https://jobs.ashbyhq.com/openai/1f2e3d4c-5b6a-7980-1a2b-3c4d5e6f7a8b",
+   "title": "Engineer|Pipes|In|Name",
+   "company": "Openai",
+   "role": "Engineer/Pipes/In/Name"
+  },
+  {
+   "url": "https://jobs.ashbyhq.com/openai/1f2e3d4c-5b6a-7980-1a2b-3c4d5e6f7a8b",
+   "title": "Engineer - - Acme",
+   "company": "- Acme",
+   "role": "Engineer"
+  },
+  {
+   "url": "https://jobs.ashbyhq.com/openai/1f2e3d4c-5b6a-7980-1a2b-3c4d5e6f7a8b",
+   "title": "Engineer at",
+   "company": "Openai",
+   "role": "Engineer at"
+  },
+  {
+   "url": "https://jobs.ashbyhq.com/openai/1f2e3d4c-5b6a-7980-1a2b-3c4d5e6f7a8b",
+   "title": "at Acme",
+   "company": "Openai",
+   "role": "at Acme"
+  },
+  {
+   "url": "https://jobs.ashbyhq.com/openai/1f2e3d4c-5b6a-7980-1a2b-3c4d5e6f7a8b",
+   "title": "Café Manager – Le Bistro",
+   "company": "Le Bistro",
+   "role": "Café Manager"
+  },
+  {
+   "url": "https://jobs.ashbyhq.com/openai/1f2e3d4c-5b6a-7980-1a2b-3c4d5e6f7a8b",
+   "title": "Ingénieur logiciel H/F - Société Générale",
+   "company": "Société Générale",
+   "role": "Ingénieur logiciel H/F"
+  },
+  {
+   "url": "https://jobs.ashbyhq.com/openai/1f2e3d4c-5b6a-7980-1a2b-3c4d5e6f7a8b",
+   "title": "Lead Engineer at Acme",
+   "company": "Acme",
+   "role": "Lead Engineer"
+  },
+  {
+   "url": "https://jobs.ashbyhq.com/openai/1f2e3d4c-5b6a-7980-1a2b-3c4d5e6f7a8b",
+   "title": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA | BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB",
+   "company": "BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB",
+   "role": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+  },
+  {
+   "url": "https://jobs.smartrecruiters.com/Visa/743999999999999-senior-engineer",
+   "title": "",
+   "company": "Visa",
+   "role": ""
+  },
+  {
+   "url": "https://jobs.smartrecruiters.com/Visa/743999999999999-senior-engineer",
+   "title": "Senior AI Engineer at Anthropic",
+   "company": "Anthropic",
+   "role": "Senior AI Engineer"
+  },
+  {
+   "url": "https://jobs.smartrecruiters.com/Visa/743999999999999-senior-engineer",
+   "title": "Senior AI Engineer @ Anthropic",
+   "company": "Anthropic",
+   "role": "Senior AI Engineer"
+  },
+  {
+   "url": "https://jobs.smartrecruiters.com/Visa/743999999999999-senior-engineer",
+   "title": "Senior AI Engineer AT Anthropic",
+   "company": "Anthropic",
+   "role": "Senior AI Engineer"
+  },
+  {
+   "url": "https://jobs.smartrecruiters.com/Visa/743999999999999-senior-engineer",
+   "title": "Senior AI Engineer | Anthropic",
+   "company": "Anthropic",
+   "role": "Senior AI Engineer"
+  },
+  {
+   "url": "https://jobs.smartrecruiters.com/Visa/743999999999999-senior-engineer",
+   "title": "Senior AI Engineer — Anthropic",
+   "company": "Anthropic",
+   "role": "Senior AI Engineer"
+  },
+  {
+   "url": "https://jobs.smartrecruiters.com/Visa/743999999999999-senior-engineer",
+   "title": "Senior AI Engineer – Anthropic",
+   "company": "Anthropic",
+   "role": "Senior AI Engineer"
+  },
+  {
+   "url": "https://jobs.smartrecruiters.com/Visa/743999999999999-senior-engineer",
+   "title": "Senior AI Engineer - Anthropic",
+   "company": "Anthropic",
+   "role": "Senior AI Engineer"
+  },
+  {
+   "url": "https://jobs.smartrecruiters.com/Visa/743999999999999-senior-engineer",
+   "title": "Job Application for Software Engineer, Payments at Stripe",
+   "company": "Stripe",
+   "role": "Job Application for Software Engineer, Payments"
+  },
+  {
+   "url": "https://jobs.smartrecruiters.com/Visa/743999999999999-senior-engineer",
+   "title": "Software Engineer II - Backend | Payments - Mastercard",
+   "company": "Mastercard",
+   "role": "Software Engineer II"
+  },
+  {
+   "url": "https://jobs.smartrecruiters.com/Visa/743999999999999-senior-engineer",
+   "title": "Staff Engineer at Acme at Scale",
+   "company": "Acme at Scale",
+   "role": "Staff Engineer"
+  },
+  {
+   "url": "https://jobs.smartrecruiters.com/Visa/743999999999999-senior-engineer",
+   "title": "Data Scientist",
+   "company": "Visa",
+   "role": "Data Scientist"
+  },
+  {
+   "url": "https://jobs.smartrecruiters.com/Visa/743999999999999-senior-engineer",
+   "title": "  Product\tDesigner \n at \r Figma  ",
+   "company": "Figma",
+   "role": "Product Designer"
+  },
+  {
+   "url": "https://jobs.smartrecruiters.com/Visa/743999999999999-senior-engineer",
+   "title": "Engineer|Pipes|In|Name",
+   "company": "Visa",
+   "role": "Engineer/Pipes/In/Name"
+  },
+  {
+   "url": "https://jobs.smartrecruiters.com/Visa/743999999999999-senior-engineer",
+   "title": "Engineer - - Acme",
+   "company": "- Acme",
+   "role": "Engineer"
+  },
+  {
+   "url": "https://jobs.smartrecruiters.com/Visa/743999999999999-senior-engineer",
+   "title": "Engineer at",
+   "company": "Visa",
+   "role": "Engineer at"
+  },
+  {
+   "url": "https://jobs.smartrecruiters.com/Visa/743999999999999-senior-engineer",
+   "title": "at Acme",
+   "company": "Visa",
+   "role": "at Acme"
+  },
+  {
+   "url": "https://jobs.smartrecruiters.com/Visa/743999999999999-senior-engineer",
+   "title": "Café Manager – Le Bistro",
+   "company": "Le Bistro",
+   "role": "Café Manager"
+  },
+  {
+   "url": "https://jobs.smartrecruiters.com/Visa/743999999999999-senior-engineer",
+   "title": "Ingénieur logiciel H/F - Société Générale",
+   "company": "Société Générale",
+   "role": "Ingénieur logiciel H/F"
+  },
+  {
+   "url": "https://jobs.smartrecruiters.com/Visa/743999999999999-senior-engineer",
+   "title": "Lead Engineer at Acme",
+   "company": "Acme",
+   "role": "Lead Engineer"
+  },
+  {
+   "url": "https://jobs.smartrecruiters.com/Visa/743999999999999-senior-engineer",
+   "title": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA | BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB",
+   "company": "BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB",
+   "role": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+  },
+  {
+   "url": "https://careers.smartrecruiters.com/en_US/whatever",
+   "title": "",
+   "company": "Smartrecruiters",
+   "role": ""
+  },
+  {
+   "url": "https://careers.smartrecruiters.com/en_US/whatever",
+   "title": "Senior AI Engineer at Anthropic",
+   "company": "Anthropic",
+   "role": "Senior AI Engineer"
+  },
+  {
+   "url": "https://careers.smartrecruiters.com/en_US/whatever",
+   "title": "Senior AI Engineer @ Anthropic",
+   "company": "Anthropic",
+   "role": "Senior AI Engineer"
+  },
+  {
+   "url": "https://careers.smartrecruiters.com/en_US/whatever",
+   "title": "Senior AI Engineer AT Anthropic",
+   "company": "Anthropic",
+   "role": "Senior AI Engineer"
+  },
+  {
+   "url": "https://careers.smartrecruiters.com/en_US/whatever",
+   "title": "Senior AI Engineer | Anthropic",
+   "company": "Anthropic",
+   "role": "Senior AI Engineer"
+  },
+  {
+   "url": "https://careers.smartrecruiters.com/en_US/whatever",
+   "title": "Senior AI Engineer — Anthropic",
+   "company": "Anthropic",
+   "role": "Senior AI Engineer"
+  },
+  {
+   "url": "https://careers.smartrecruiters.com/en_US/whatever",
+   "title": "Senior AI Engineer – Anthropic",
+   "company": "Anthropic",
+   "role": "Senior AI Engineer"
+  },
+  {
+   "url": "https://careers.smartrecruiters.com/en_US/whatever",
+   "title": "Senior AI Engineer - Anthropic",
+   "company": "Anthropic",
+   "role": "Senior AI Engineer"
+  },
+  {
+   "url": "https://careers.smartrecruiters.com/en_US/whatever",
+   "title": "Job Application for Software Engineer, Payments at Stripe",
+   "company": "Stripe",
+   "role": "Job Application for Software Engineer, Payments"
+  },
+  {
+   "url": "https://careers.smartrecruiters.com/en_US/whatever",
+   "title": "Software Engineer II - Backend | Payments - Mastercard",
+   "company": "Mastercard",
+   "role": "Software Engineer II"
+  },
+  {
+   "url": "https://careers.smartrecruiters.com/en_US/whatever",
+   "title": "Staff Engineer at Acme at Scale",
+   "company": "Acme at Scale",
+   "role": "Staff Engineer"
+  },
+  {
+   "url": "https://careers.smartrecruiters.com/en_US/whatever",
+   "title": "Data Scientist",
+   "company": "Smartrecruiters",
+   "role": "Data Scientist"
+  },
+  {
+   "url": "https://careers.smartrecruiters.com/en_US/whatever",
+   "title": "  Product\tDesigner \n at \r Figma  ",
+   "company": "Figma",
+   "role": "Product Designer"
+  },
+  {
+   "url": "https://careers.smartrecruiters.com/en_US/whatever",
+   "title": "Engineer|Pipes|In|Name",
+   "company": "Smartrecruiters",
+   "role": "Engineer/Pipes/In/Name"
+  },
+  {
+   "url": "https://careers.smartrecruiters.com/en_US/whatever",
+   "title": "Engineer - - Acme",
+   "company": "- Acme",
+   "role": "Engineer"
+  },
+  {
+   "url": "https://careers.smartrecruiters.com/en_US/whatever",
+   "title": "Engineer at",
+   "company": "Smartrecruiters",
+   "role": "Engineer at"
+  },
+  {
+   "url": "https://careers.smartrecruiters.com/en_US/whatever",
+   "title": "at Acme",
+   "company": "Smartrecruiters",
+   "role": "at Acme"
+  },
+  {
+   "url": "https://careers.smartrecruiters.com/en_US/whatever",
+   "title": "Café Manager – Le Bistro",
+   "company": "Le Bistro",
+   "role": "Café Manager"
+  },
+  {
+   "url": "https://careers.smartrecruiters.com/en_US/whatever",
+   "title": "Ingénieur logiciel H/F - Société Générale",
+   "company": "Société Générale",
+   "role": "Ingénieur logiciel H/F"
+  },
+  {
+   "url": "https://careers.smartrecruiters.com/en_US/whatever",
+   "title": "Lead Engineer at Acme",
+   "company": "Acme",
+   "role": "Lead Engineer"
+  },
+  {
+   "url": "https://careers.smartrecruiters.com/en_US/whatever",
+   "title": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA | BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB",
+   "company": "BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB",
+   "role": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+  },
+  {
+   "url": "https://apply.workable.com/huggingface/j/ABC123/",
+   "title": "",
+   "company": "Huggingface",
+   "role": ""
+  },
+  {
+   "url": "https://apply.workable.com/huggingface/j/ABC123/",
+   "title": "Senior AI Engineer at Anthropic",
+   "company": "Anthropic",
+   "role": "Senior AI Engineer"
+  },
+  {
+   "url": "https://apply.workable.com/huggingface/j/ABC123/",
+   "title": "Senior AI Engineer @ Anthropic",
+   "company": "Anthropic",
+   "role": "Senior AI Engineer"
+  },
+  {
+   "url": "https://apply.workable.com/huggingface/j/ABC123/",
+   "title": "Senior AI Engineer AT Anthropic",
+   "company": "Anthropic",
+   "role": "Senior AI Engineer"
+  },
+  {
+   "url": "https://apply.workable.com/huggingface/j/ABC123/",
+   "title": "Senior AI Engineer | Anthropic",
+   "company": "Anthropic",
+   "role": "Senior AI Engineer"
+  },
+  {
+   "url": "https://apply.workable.com/huggingface/j/ABC123/",
+   "title": "Senior AI Engineer — Anthropic",
+   "company": "Anthropic",
+   "role": "Senior AI Engineer"
+  },
+  {
+   "url": "https://apply.workable.com/huggingface/j/ABC123/",
+   "title": "Senior AI Engineer – Anthropic",
+   "company": "Anthropic",
+   "role": "Senior AI Engineer"
+  },
+  {
+   "url": "https://apply.workable.com/huggingface/j/ABC123/",
+   "title": "Senior AI Engineer - Anthropic",
+   "company": "Anthropic",
+   "role": "Senior AI Engineer"
+  },
+  {
+   "url": "https://apply.workable.com/huggingface/j/ABC123/",
+   "title": "Job Application for Software Engineer, Payments at Stripe",
+   "company": "Stripe",
+   "role": "Job Application for Software Engineer, Payments"
+  },
+  {
+   "url": "https://apply.workable.com/huggingface/j/ABC123/",
+   "title": "Software Engineer II - Backend | Payments - Mastercard",
+   "company": "Mastercard",
+   "role": "Software Engineer II"
+  },
+  {
+   "url": "https://apply.workable.com/huggingface/j/ABC123/",
+   "title": "Staff Engineer at Acme at Scale",
+   "company": "Acme at Scale",
+   "role": "Staff Engineer"
+  },
+  {
+   "url": "https://apply.workable.com/huggingface/j/ABC123/",
+   "title": "Data Scientist",
+   "company": "Huggingface",
+   "role": "Data Scientist"
+  },
+  {
+   "url": "https://apply.workable.com/huggingface/j/ABC123/",
+   "title": "  Product\tDesigner \n at \r Figma  ",
+   "company": "Figma",
+   "role": "Product Designer"
+  },
+  {
+   "url": "https://apply.workable.com/huggingface/j/ABC123/",
+   "title": "Engineer|Pipes|In|Name",
+   "company": "Huggingface",
+   "role": "Engineer/Pipes/In/Name"
+  },
+  {
+   "url": "https://apply.workable.com/huggingface/j/ABC123/",
+   "title": "Engineer - - Acme",
+   "company": "- Acme",
+   "role": "Engineer"
+  },
+  {
+   "url": "https://apply.workable.com/huggingface/j/ABC123/",
+   "title": "Engineer at",
+   "company": "Huggingface",
+   "role": "Engineer at"
+  },
+  {
+   "url": "https://apply.workable.com/huggingface/j/ABC123/",
+   "title": "at Acme",
+   "company": "Huggingface",
+   "role": "at Acme"
+  },
+  {
+   "url": "https://apply.workable.com/huggingface/j/ABC123/",
+   "title": "Café Manager – Le Bistro",
+   "company": "Le Bistro",
+   "role": "Café Manager"
+  },
+  {
+   "url": "https://apply.workable.com/huggingface/j/ABC123/",
+   "title": "Ingénieur logiciel H/F - Société Générale",
+   "company": "Société Générale",
+   "role": "Ingénieur logiciel H/F"
+  },
+  {
+   "url": "https://apply.workable.com/huggingface/j/ABC123/",
+   "title": "Lead Engineer at Acme",
+   "company": "Acme",
+   "role": "Lead Engineer"
+  },
+  {
+   "url": "https://apply.workable.com/huggingface/j/ABC123/",
+   "title": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA | BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB",
+   "company": "BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB",
+   "role": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+  },
+  {
+   "url": "https://jobs.workable.com/de-de/view/1234",
+   "title": "",
+   "company": "Workable",
+   "role": ""
+  },
+  {
+   "url": "https://jobs.workable.com/de-de/view/1234",
+   "title": "Senior AI Engineer at Anthropic",
+   "company": "Anthropic",
+   "role": "Senior AI Engineer"
+  },
+  {
+   "url": "https://jobs.workable.com/de-de/view/1234",
+   "title": "Senior AI Engineer @ Anthropic",
+   "company": "Anthropic",
+   "role": "Senior AI Engineer"
+  },
+  {
+   "url": "https://jobs.workable.com/de-de/view/1234",
+   "title": "Senior AI Engineer AT Anthropic",
+   "company": "Anthropic",
+   "role": "Senior AI Engineer"
+  },
+  {
+   "url": "https://jobs.workable.com/de-de/view/1234",
+   "title": "Senior AI Engineer | Anthropic",
+   "company": "Anthropic",
+   "role": "Senior AI Engineer"
+  },
+  {
+   "url": "https://jobs.workable.com/de-de/view/1234",
+   "title": "Senior AI Engineer — Anthropic",
+   "company": "Anthropic",
+   "role": "Senior AI Engineer"
+  },
+  {
+   "url": "https://jobs.workable.com/de-de/view/1234",
+   "title": "Senior AI Engineer – Anthropic",
+   "company": "Anthropic",
+   "role": "Senior AI Engineer"
+  },
+  {
+   "url": "https://jobs.workable.com/de-de/view/1234",
+   "title": "Senior AI Engineer - Anthropic",
+   "company": "Anthropic",
+   "role": "Senior AI Engineer"
+  },
+  {
+   "url": "https://jobs.workable.com/de-de/view/1234",
+   "title": "Job Application for Software Engineer, Payments at Stripe",
+   "company": "Stripe",
+   "role": "Job Application for Software Engineer, Payments"
+  },
+  {
+   "url": "https://jobs.workable.com/de-de/view/1234",
+   "title": "Software Engineer II - Backend | Payments - Mastercard",
+   "company": "Mastercard",
+   "role": "Software Engineer II"
+  },
+  {
+   "url": "https://jobs.workable.com/de-de/view/1234",
+   "title": "Staff Engineer at Acme at Scale",
+   "company": "Acme at Scale",
+   "role": "Staff Engineer"
+  },
+  {
+   "url": "https://jobs.workable.com/de-de/view/1234",
+   "title": "Data Scientist",
+   "company": "Workable",
+   "role": "Data Scientist"
+  },
+  {
+   "url": "https://jobs.workable.com/de-de/view/1234",
+   "title": "  Product\tDesigner \n at \r Figma  ",
+   "company": "Figma",
+   "role": "Product Designer"
+  },
+  {
+   "url": "https://jobs.workable.com/de-de/view/1234",
+   "title": "Engineer|Pipes|In|Name",
+   "company": "Workable",
+   "role": "Engineer/Pipes/In/Name"
+  },
+  {
+   "url": "https://jobs.workable.com/de-de/view/1234",
+   "title": "Engineer - - Acme",
+   "company": "- Acme",
+   "role": "Engineer"
+  },
+  {
+   "url": "https://jobs.workable.com/de-de/view/1234",
+   "title": "Engineer at",
+   "company": "Workable",
+   "role": "Engineer at"
+  },
+  {
+   "url": "https://jobs.workable.com/de-de/view/1234",
+   "title": "at Acme",
+   "company": "Workable",
+   "role": "at Acme"
+  },
+  {
+   "url": "https://jobs.workable.com/de-de/view/1234",
+   "title": "Café Manager – Le Bistro",
+   "company": "Le Bistro",
+   "role": "Café Manager"
+  },
+  {
+   "url": "https://jobs.workable.com/de-de/view/1234",
+   "title": "Ingénieur logiciel H/F - Société Générale",
+   "company": "Société Générale",
+   "role": "Ingénieur logiciel H/F"
+  },
+  {
+   "url": "https://jobs.workable.com/de-de/view/1234",
+   "title": "Lead Engineer at Acme",
+   "company": "Acme",
+   "role": "Lead Engineer"
+  },
+  {
+   "url": "https://jobs.workable.com/de-de/view/1234",
+   "title": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA | BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB",
+   "company": "BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB",
+   "role": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+  },
+  {
+   "url": "https://jobs.lever.co/0b1c2d3e4f5a6b7c8d9e",
+   "title": "",
+   "company": "Lever",
+   "role": ""
+  },
+  {
+   "url": "https://jobs.lever.co/0b1c2d3e4f5a6b7c8d9e",
+   "title": "Senior AI Engineer at Anthropic",
+   "company": "Anthropic",
+   "role": "Senior AI Engineer"
+  },
+  {
+   "url": "https://jobs.lever.co/0b1c2d3e4f5a6b7c8d9e",
+   "title": "Senior AI Engineer @ Anthropic",
+   "company": "Anthropic",
+   "role": "Senior AI Engineer"
+  },
+  {
+   "url": "https://jobs.lever.co/0b1c2d3e4f5a6b7c8d9e",
+   "title": "Senior AI Engineer AT Anthropic",
+   "company": "Anthropic",
+   "role": "Senior AI Engineer"
+  },
+  {
+   "url": "https://jobs.lever.co/0b1c2d3e4f5a6b7c8d9e",
+   "title": "Senior AI Engineer | Anthropic",
+   "company": "Anthropic",
+   "role": "Senior AI Engineer"
+  },
+  {
+   "url": "https://jobs.lever.co/0b1c2d3e4f5a6b7c8d9e",
+   "title": "Senior AI Engineer — Anthropic",
+   "company": "Anthropic",
+   "role": "Senior AI Engineer"
+  },
+  {
+   "url": "https://jobs.lever.co/0b1c2d3e4f5a6b7c8d9e",
+   "title": "Senior AI Engineer – Anthropic",
+   "company": "Anthropic",
+   "role": "Senior AI Engineer"
+  },
+  {
+   "url": "https://jobs.lever.co/0b1c2d3e4f5a6b7c8d9e",
+   "title": "Senior AI Engineer - Anthropic",
+   "company": "Anthropic",
+   "role": "Senior AI Engineer"
+  },
+  {
+   "url": "https://jobs.lever.co/0b1c2d3e4f5a6b7c8d9e",
+   "title": "Job Application for Software Engineer, Payments at Stripe",
+   "company": "Stripe",
+   "role": "Job Application for Software Engineer, Payments"
+  },
+  {
+   "url": "https://jobs.lever.co/0b1c2d3e4f5a6b7c8d9e",
+   "title": "Software Engineer II - Backend | Payments - Mastercard",
+   "company": "Mastercard",
+   "role": "Software Engineer II"
+  },
+  {
+   "url": "https://jobs.lever.co/0b1c2d3e4f5a6b7c8d9e",
+   "title": "Staff Engineer at Acme at Scale",
+   "company": "Acme at Scale",
+   "role": "Staff Engineer"
+  },
+  {
+   "url": "https://jobs.lever.co/0b1c2d3e4f5a6b7c8d9e",
+   "title": "Data Scientist",
+   "company": "Lever",
+   "role": "Data Scientist"
+  },
+  {
+   "url": "https://jobs.lever.co/0b1c2d3e4f5a6b7c8d9e",
+   "title": "  Product\tDesigner \n at \r Figma  ",
+   "company": "Figma",
+   "role": "Product Designer"
+  },
+  {
+   "url": "https://jobs.lever.co/0b1c2d3e4f5a6b7c8d9e",
+   "title": "Engineer|Pipes|In|Name",
+   "company": "Lever",
+   "role": "Engineer/Pipes/In/Name"
+  },
+  {
+   "url": "https://jobs.lever.co/0b1c2d3e4f5a6b7c8d9e",
+   "title": "Engineer - - Acme",
+   "company": "- Acme",
+   "role": "Engineer"
+  },
+  {
+   "url": "https://jobs.lever.co/0b1c2d3e4f5a6b7c8d9e",
+   "title": "Engineer at",
+   "company": "Lever",
+   "role": "Engineer at"
+  },
+  {
+   "url": "https://jobs.lever.co/0b1c2d3e4f5a6b7c8d9e",
+   "title": "at Acme",
+   "company": "Lever",
+   "role": "at Acme"
+  },
+  {
+   "url": "https://jobs.lever.co/0b1c2d3e4f5a6b7c8d9e",
+   "title": "Café Manager – Le Bistro",
+   "company": "Le Bistro",
+   "role": "Café Manager"
+  },
+  {
+   "url": "https://jobs.lever.co/0b1c2d3e4f5a6b7c8d9e",
+   "title": "Ingénieur logiciel H/F - Société Générale",
+   "company": "Société Générale",
+   "role": "Ingénieur logiciel H/F"
+  },
+  {
+   "url": "https://jobs.lever.co/0b1c2d3e4f5a6b7c8d9e",
+   "title": "Lead Engineer at Acme",
+   "company": "Acme",
+   "role": "Lead Engineer"
+  },
+  {
+   "url": "https://jobs.lever.co/0b1c2d3e4f5a6b7c8d9e",
+   "title": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA | BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB",
+   "company": "BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB",
+   "role": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+  },
+  {
+   "url": "https://jobs.lever.co/acme%20labs/123",
+   "title": "",
+   "company": "Acme Labs",
+   "role": ""
+  },
+  {
+   "url": "https://jobs.lever.co/acme%20labs/123",
+   "title": "Senior AI Engineer at Anthropic",
+   "company": "Anthropic",
+   "role": "Senior AI Engineer"
+  },
+  {
+   "url": "https://jobs.lever.co/acme%20labs/123",
+   "title": "Senior AI Engineer @ Anthropic",
+   "company": "Anthropic",
+   "role": "Senior AI Engineer"
+  },
+  {
+   "url": "https://jobs.lever.co/acme%20labs/123",
+   "title": "Senior AI Engineer AT Anthropic",
+   "company": "Anthropic",
+   "role": "Senior AI Engineer"
+  },
+  {
+   "url": "https://jobs.lever.co/acme%20labs/123",
+   "title": "Senior AI Engineer | Anthropic",
+   "company": "Anthropic",
+   "role": "Senior AI Engineer"
+  },
+  {
+   "url": "https://jobs.lever.co/acme%20labs/123",
+   "title": "Senior AI Engineer — Anthropic",
+   "company": "Anthropic",
+   "role": "Senior AI Engineer"
+  },
+  {
+   "url": "https://jobs.lever.co/acme%20labs/123",
+   "title": "Senior AI Engineer – Anthropic",
+   "company": "Anthropic",
+   "role": "Senior AI Engineer"
+  },
+  {
+   "url": "https://jobs.lever.co/acme%20labs/123",
+   "title": "Senior AI Engineer - Anthropic",
+   "company": "Anthropic",
+   "role": "Senior AI Engineer"
+  },
+  {
+   "url": "https://jobs.lever.co/acme%20labs/123",
+   "title": "Job Application for Software Engineer, Payments at Stripe",
+   "company": "Stripe",
+   "role": "Job Application for Software Engineer, Payments"
+  },
+  {
+   "url": "https://jobs.lever.co/acme%20labs/123",
+   "title": "Software Engineer II - Backend | Payments - Mastercard",
+   "company": "Mastercard",
+   "role": "Software Engineer II"
+  },
+  {
+   "url": "https://jobs.lever.co/acme%20labs/123",
+   "title": "Staff Engineer at Acme at Scale",
+   "company": "Acme at Scale",
+   "role": "Staff Engineer"
+  },
+  {
+   "url": "https://jobs.lever.co/acme%20labs/123",
+   "title": "Data Scientist",
+   "company": "Acme Labs",
+   "role": "Data Scientist"
+  },
+  {
+   "url": "https://jobs.lever.co/acme%20labs/123",
+   "title": "  Product\tDesigner \n at \r Figma  ",
+   "company": "Figma",
+   "role": "Product Designer"
+  },
+  {
+   "url": "https://jobs.lever.co/acme%20labs/123",
+   "title": "Engineer|Pipes|In|Name",
+   "company": "Acme Labs",
+   "role": "Engineer/Pipes/In/Name"
+  },
+  {
+   "url": "https://jobs.lever.co/acme%20labs/123",
+   "title": "Engineer - - Acme",
+   "company": "- Acme",
+   "role": "Engineer"
+  },
+  {
+   "url": "https://jobs.lever.co/acme%20labs/123",
+   "title": "Engineer at",
+   "company": "Acme Labs",
+   "role": "Engineer at"
+  },
+  {
+   "url": "https://jobs.lever.co/acme%20labs/123",
+   "title": "at Acme",
+   "company": "Acme Labs",
+   "role": "at Acme"
+  },
+  {
+   "url": "https://jobs.lever.co/acme%20labs/123",
+   "title": "Café Manager – Le Bistro",
+   "company": "Le Bistro",
+   "role": "Café Manager"
+  },
+  {
+   "url": "https://jobs.lever.co/acme%20labs/123",
+   "title": "Ingénieur logiciel H/F - Société Générale",
+   "company": "Société Générale",
+   "role": "Ingénieur logiciel H/F"
+  },
+  {
+   "url": "https://jobs.lever.co/acme%20labs/123",
+   "title": "Lead Engineer at Acme",
+   "company": "Acme",
+   "role": "Lead Engineer"
+  },
+  {
+   "url": "https://jobs.lever.co/acme%20labs/123",
+   "title": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA | BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB",
+   "company": "BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB",
+   "role": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+  },
+  {
+   "url": "https://jobs.lever.co/caf%C3%A9_co/123",
+   "title": "",
+   "company": "Café Co",
+   "role": ""
+  },
+  {
+   "url": "https://jobs.lever.co/caf%C3%A9_co/123",
+   "title": "Senior AI Engineer at Anthropic",
+   "company": "Anthropic",
+   "role": "Senior AI Engineer"
+  },
+  {
+   "url": "https://jobs.lever.co/caf%C3%A9_co/123",
+   "title": "Senior AI Engineer @ Anthropic",
+   "company": "Anthropic",
+   "role": "Senior AI Engineer"
+  },
+  {
+   "url": "https://jobs.lever.co/caf%C3%A9_co/123",
+   "title": "Senior AI Engineer AT Anthropic",
+   "company": "Anthropic",
+   "role": "Senior AI Engineer"
+  },
+  {
+   "url": "https://jobs.lever.co/caf%C3%A9_co/123",
+   "title": "Senior AI Engineer | Anthropic",
+   "company": "Anthropic",
+   "role": "Senior AI Engineer"
+  },
+  {
+   "url": "https://jobs.lever.co/caf%C3%A9_co/123",
+   "title": "Senior AI Engineer — Anthropic",
+   "company": "Anthropic",
+   "role": "Senior AI Engineer"
+  },
+  {
+   "url": "https://jobs.lever.co/caf%C3%A9_co/123",
+   "title": "Senior AI Engineer – Anthropic",
+   "company": "Anthropic",
+   "role": "Senior AI Engineer"
+  },
+  {
+   "url": "https://jobs.lever.co/caf%C3%A9_co/123",
+   "title": "Senior AI Engineer - Anthropic",
+   "company": "Anthropic",
+   "role": "Senior AI Engineer"
+  },
+  {
+   "url": "https://jobs.lever.co/caf%C3%A9_co/123",
+   "title": "Job Application for Software Engineer, Payments at Stripe",
+   "company": "Stripe",
+   "role": "Job Application for Software Engineer, Payments"
+  },
+  {
+   "url": "https://jobs.lever.co/caf%C3%A9_co/123",
+   "title": "Software Engineer II - Backend | Payments - Mastercard",
+   "company": "Mastercard",
+   "role": "Software Engineer II"
+  },
+  {
+   "url": "https://jobs.lever.co/caf%C3%A9_co/123",
+   "title": "Staff Engineer at Acme at Scale",
+   "company": "Acme at Scale",
+   "role": "Staff Engineer"
+  },
+  {
+   "url": "https://jobs.lever.co/caf%C3%A9_co/123",
+   "title": "Data Scientist",
+   "company": "Café Co",
+   "role": "Data Scientist"
+  },
+  {
+   "url": "https://jobs.lever.co/caf%C3%A9_co/123",
+   "title": "  Product\tDesigner \n at \r Figma  ",
+   "company": "Figma",
+   "role": "Product Designer"
+  },
+  {
+   "url": "https://jobs.lever.co/caf%C3%A9_co/123",
+   "title": "Engineer|Pipes|In|Name",
+   "company": "Café Co",
+   "role": "Engineer/Pipes/In/Name"
+  },
+  {
+   "url": "https://jobs.lever.co/caf%C3%A9_co/123",
+   "title": "Engineer - - Acme",
+   "company": "- Acme",
+   "role": "Engineer"
+  },
+  {
+   "url": "https://jobs.lever.co/caf%C3%A9_co/123",
+   "title": "Engineer at",
+   "company": "Café Co",
+   "role": "Engineer at"
+  },
+  {
+   "url": "https://jobs.lever.co/caf%C3%A9_co/123",
+   "title": "at Acme",
+   "company": "Café Co",
+   "role": "at Acme"
+  },
+  {
+   "url": "https://jobs.lever.co/caf%C3%A9_co/123",
+   "title": "Café Manager – Le Bistro",
+   "company": "Le Bistro",
+   "role": "Café Manager"
+  },
+  {
+   "url": "https://jobs.lever.co/caf%C3%A9_co/123",
+   "title": "Ingénieur logiciel H/F - Société Générale",
+   "company": "Société Générale",
+   "role": "Ingénieur logiciel H/F"
+  },
+  {
+   "url": "https://jobs.lever.co/caf%C3%A9_co/123",
+   "title": "Lead Engineer at Acme",
+   "company": "Acme",
+   "role": "Lead Engineer"
+  },
+  {
+   "url": "https://jobs.lever.co/caf%C3%A9_co/123",
+   "title": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA | BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB",
+   "company": "BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB",
+   "role": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+  },
+  {
+   "url": "https://jobs.lever.co/bad%E0%A4%A/123",
+   "title": "",
+   "company": "",
+   "role": ""
+  },
+  {
+   "url": "https://jobs.lever.co/bad%E0%A4%A/123",
+   "title": "Senior AI Engineer at Anthropic",
+   "company": "Anthropic",
+   "role": "Senior AI Engineer"
+  },
+  {
+   "url": "https://jobs.lever.co/bad%E0%A4%A/123",
+   "title": "Senior AI Engineer @ Anthropic",
+   "company": "Anthropic",
+   "role": "Senior AI Engineer"
+  },
+  {
+   "url": "https://jobs.lever.co/bad%E0%A4%A/123",
+   "title": "Senior AI Engineer AT Anthropic",
+   "company": "Anthropic",
+   "role": "Senior AI Engineer"
+  },
+  {
+   "url": "https://jobs.lever.co/bad%E0%A4%A/123",
+   "title": "Senior AI Engineer | Anthropic",
+   "company": "Anthropic",
+   "role": "Senior AI Engineer"
+  },
+  {
+   "url": "https://jobs.lever.co/bad%E0%A4%A/123",
+   "title": "Senior AI Engineer — Anthropic",
+   "company": "Anthropic",
+   "role": "Senior AI Engineer"
+  },
+  {
+   "url": "https://jobs.lever.co/bad%E0%A4%A/123",
+   "title": "Senior AI Engineer – Anthropic",
+   "company": "Anthropic",
+   "role": "Senior AI Engineer"
+  },
+  {
+   "url": "https://jobs.lever.co/bad%E0%A4%A/123",
+   "title": "Senior AI Engineer - Anthropic",
+   "company": "Anthropic",
+   "role": "Senior AI Engineer"
+  },
+  {
+   "url": "https://jobs.lever.co/bad%E0%A4%A/123",
+   "title": "Job Application for Software Engineer, Payments at Stripe",
+   "company": "Stripe",
+   "role": "Job Application for Software Engineer, Payments"
+  },
+  {
+   "url": "https://jobs.lever.co/bad%E0%A4%A/123",
+   "title": "Software Engineer II - Backend | Payments - Mastercard",
+   "company": "Mastercard",
+   "role": "Software Engineer II"
+  },
+  {
+   "url": "https://jobs.lever.co/bad%E0%A4%A/123",
+   "title": "Staff Engineer at Acme at Scale",
+   "company": "Acme at Scale",
+   "role": "Staff Engineer"
+  },
+  {
+   "url": "https://jobs.lever.co/bad%E0%A4%A/123",
+   "title": "Data Scientist",
+   "company": "",
+   "role": "Data Scientist"
+  },
+  {
+   "url": "https://jobs.lever.co/bad%E0%A4%A/123",
+   "title": "  Product\tDesigner \n at \r Figma  ",
+   "company": "Figma",
+   "role": "Product Designer"
+  },
+  {
+   "url": "https://jobs.lever.co/bad%E0%A4%A/123",
+   "title": "Engineer|Pipes|In|Name",
+   "company": "",
+   "role": "Engineer/Pipes/In/Name"
+  },
+  {
+   "url": "https://jobs.lever.co/bad%E0%A4%A/123",
+   "title": "Engineer - - Acme",
+   "company": "- Acme",
+   "role": "Engineer"
+  },
+  {
+   "url": "https://jobs.lever.co/bad%E0%A4%A/123",
+   "title": "Engineer at",
+   "company": "",
+   "role": "Engineer at"
+  },
+  {
+   "url": "https://jobs.lever.co/bad%E0%A4%A/123",
+   "title": "at Acme",
+   "company": "",
+   "role": "at Acme"
+  },
+  {
+   "url": "https://jobs.lever.co/bad%E0%A4%A/123",
+   "title": "Café Manager – Le Bistro",
+   "company": "Le Bistro",
+   "role": "Café Manager"
+  },
+  {
+   "url": "https://jobs.lever.co/bad%E0%A4%A/123",
+   "title": "Ingénieur logiciel H/F - Société Générale",
+   "company": "Société Générale",
+   "role": "Ingénieur logiciel H/F"
+  },
+  {
+   "url": "https://jobs.lever.co/bad%E0%A4%A/123",
+   "title": "Lead Engineer at Acme",
+   "company": "Acme",
+   "role": "Lead Engineer"
+  },
+  {
+   "url": "https://jobs.lever.co/bad%E0%A4%A/123",
+   "title": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA | BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB",
+   "company": "BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB",
+   "role": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+  },
+  {
+   "url": "https://mastercard.wd1.myworkdayjobs.com/en-US/CorporateCareers/job/O-Fallon-Missouri/Software-Engineer_R-251234",
+   "title": "",
+   "company": "Mastercard",
+   "role": ""
+  },
+  {
+   "url": "https://mastercard.wd1.myworkdayjobs.com/en-US/CorporateCareers/job/O-Fallon-Missouri/Software-Engineer_R-251234",
+   "title": "Senior AI Engineer at Anthropic",
+   "company": "Anthropic",
+   "role": "Senior AI Engineer"
+  },
+  {
+   "url": "https://mastercard.wd1.myworkdayjobs.com/en-US/CorporateCareers/job/O-Fallon-Missouri/Software-Engineer_R-251234",
+   "title": "Senior AI Engineer @ Anthropic",
+   "company": "Anthropic",
+   "role": "Senior AI Engineer"
+  },
+  {
+   "url": "https://mastercard.wd1.myworkdayjobs.com/en-US/CorporateCareers/job/O-Fallon-Missouri/Software-Engineer_R-251234",
+   "title": "Senior AI Engineer AT Anthropic",
+   "company": "Anthropic",
+   "role": "Senior AI Engineer"
+  },
+  {
+   "url": "https://mastercard.wd1.myworkdayjobs.com/en-US/CorporateCareers/job/O-Fallon-Missouri/Software-Engineer_R-251234",
+   "title": "Senior AI Engineer | Anthropic",
+   "company": "Anthropic",
+   "role": "Senior AI Engineer"
+  },
+  {
+   "url": "https://mastercard.wd1.myworkdayjobs.com/en-US/CorporateCareers/job/O-Fallon-Missouri/Software-Engineer_R-251234",
+   "title": "Senior AI Engineer — Anthropic",
+   "company": "Anthropic",
+   "role": "Senior AI Engineer"
+  },
+  {
+   "url": "https://mastercard.wd1.myworkdayjobs.com/en-US/CorporateCareers/job/O-Fallon-Missouri/Software-Engineer_R-251234",
+   "title": "Senior AI Engineer – Anthropic",
+   "company": "Anthropic",
+   "role": "Senior AI Engineer"
+  },
+  {
+   "url": "https://mastercard.wd1.myworkdayjobs.com/en-US/CorporateCareers/job/O-Fallon-Missouri/Software-Engineer_R-251234",
+   "title": "Senior AI Engineer - Anthropic",
+   "company": "Anthropic",
+   "role": "Senior AI Engineer"
+  },
+  {
+   "url": "https://mastercard.wd1.myworkdayjobs.com/en-US/CorporateCareers/job/O-Fallon-Missouri/Software-Engineer_R-251234",
+   "title": "Job Application for Software Engineer, Payments at Stripe",
+   "company": "Stripe",
+   "role": "Job Application for Software Engineer, Payments"
+  },
+  {
+   "url": "https://mastercard.wd1.myworkdayjobs.com/en-US/CorporateCareers/job/O-Fallon-Missouri/Software-Engineer_R-251234",
+   "title": "Software Engineer II - Backend | Payments - Mastercard",
+   "company": "Mastercard",
+   "role": "Software Engineer II"
+  },
+  {
+   "url": "https://mastercard.wd1.myworkdayjobs.com/en-US/CorporateCareers/job/O-Fallon-Missouri/Software-Engineer_R-251234",
+   "title": "Staff Engineer at Acme at Scale",
+   "company": "Acme at Scale",
+   "role": "Staff Engineer"
+  },
+  {
+   "url": "https://mastercard.wd1.myworkdayjobs.com/en-US/CorporateCareers/job/O-Fallon-Missouri/Software-Engineer_R-251234",
+   "title": "Data Scientist",
+   "company": "Mastercard",
+   "role": "Data Scientist"
+  },
+  {
+   "url": "https://mastercard.wd1.myworkdayjobs.com/en-US/CorporateCareers/job/O-Fallon-Missouri/Software-Engineer_R-251234",
+   "title": "  Product\tDesigner \n at \r Figma  ",
+   "company": "Figma",
+   "role": "Product Designer"
+  },
+  {
+   "url": "https://mastercard.wd1.myworkdayjobs.com/en-US/CorporateCareers/job/O-Fallon-Missouri/Software-Engineer_R-251234",
+   "title": "Engineer|Pipes|In|Name",
+   "company": "Mastercard",
+   "role": "Engineer/Pipes/In/Name"
+  },
+  {
+   "url": "https://mastercard.wd1.myworkdayjobs.com/en-US/CorporateCareers/job/O-Fallon-Missouri/Software-Engineer_R-251234",
+   "title": "Engineer - - Acme",
+   "company": "- Acme",
+   "role": "Engineer"
+  },
+  {
+   "url": "https://mastercard.wd1.myworkdayjobs.com/en-US/CorporateCareers/job/O-Fallon-Missouri/Software-Engineer_R-251234",
+   "title": "Engineer at",
+   "company": "Mastercard",
+   "role": "Engineer at"
+  },
+  {
+   "url": "https://mastercard.wd1.myworkdayjobs.com/en-US/CorporateCareers/job/O-Fallon-Missouri/Software-Engineer_R-251234",
+   "title": "at Acme",
+   "company": "Mastercard",
+   "role": "at Acme"
+  },
+  {
+   "url": "https://mastercard.wd1.myworkdayjobs.com/en-US/CorporateCareers/job/O-Fallon-Missouri/Software-Engineer_R-251234",
+   "title": "Café Manager – Le Bistro",
+   "company": "Le Bistro",
+   "role": "Café Manager"
+  },
+  {
+   "url": "https://mastercard.wd1.myworkdayjobs.com/en-US/CorporateCareers/job/O-Fallon-Missouri/Software-Engineer_R-251234",
+   "title": "Ingénieur logiciel H/F - Société Générale",
+   "company": "Société Générale",
+   "role": "Ingénieur logiciel H/F"
+  },
+  {
+   "url": "https://mastercard.wd1.myworkdayjobs.com/en-US/CorporateCareers/job/O-Fallon-Missouri/Software-Engineer_R-251234",
+   "title": "Lead Engineer at Acme",
+   "company": "Acme",
+   "role": "Lead Engineer"
+  },
+  {
+   "url": "https://mastercard.wd1.myworkdayjobs.com/en-US/CorporateCareers/job/O-Fallon-Missouri/Software-Engineer_R-251234",
+   "title": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA | BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB",
+   "company": "BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB",
+   "role": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+  },
+  {
+   "url": "https://careers.google.com/jobs/results/123",
+   "title": "",
+   "company": "Google",
+   "role": ""
+  },
+  {
+   "url": "https://careers.google.com/jobs/results/123",
+   "title": "Senior AI Engineer at Anthropic",
+   "company": "Anthropic",
+   "role": "Senior AI Engineer"
+  },
+  {
+   "url": "https://careers.google.com/jobs/results/123",
+   "title": "Senior AI Engineer @ Anthropic",
+   "company": "Anthropic",
+   "role": "Senior AI Engineer"
+  },
+  {
+   "url": "https://careers.google.com/jobs/results/123",
+   "title": "Senior AI Engineer AT Anthropic",
+   "company": "Anthropic",
+   "role": "Senior AI Engineer"
+  },
+  {
+   "url": "https://careers.google.com/jobs/results/123",
+   "title": "Senior AI Engineer | Anthropic",
+   "company": "Anthropic",
+   "role": "Senior AI Engineer"
+  },
+  {
+   "url": "https://careers.google.com/jobs/results/123",
+   "title": "Senior AI Engineer — Anthropic",
+   "company": "Anthropic",
+   "role": "Senior AI Engineer"
+  },
+  {
+   "url": "https://careers.google.com/jobs/results/123",
+   "title": "Senior AI Engineer – Anthropic",
+   "company": "Anthropic",
+   "role": "Senior AI Engineer"
+  },
+  {
+   "url": "https://careers.google.com/jobs/results/123",
+   "title": "Senior AI Engineer - Anthropic",
+   "company": "Anthropic",
+   "role": "Senior AI Engineer"
+  },
+  {
+   "url": "https://careers.google.com/jobs/results/123",
+   "title": "Job Application for Software Engineer, Payments at Stripe",
+   "company": "Stripe",
+   "role": "Job Application for Software Engineer, Payments"
+  },
+  {
+   "url": "https://careers.google.com/jobs/results/123",
+   "title": "Software Engineer II - Backend | Payments - Mastercard",
+   "company": "Mastercard",
+   "role": "Software Engineer II"
+  },
+  {
+   "url": "https://careers.google.com/jobs/results/123",
+   "title": "Staff Engineer at Acme at Scale",
+   "company": "Acme at Scale",
+   "role": "Staff Engineer"
+  },
+  {
+   "url": "https://careers.google.com/jobs/results/123",
+   "title": "Data Scientist",
+   "company": "Google",
+   "role": "Data Scientist"
+  },
+  {
+   "url": "https://careers.google.com/jobs/results/123",
+   "title": "  Product\tDesigner \n at \r Figma  ",
+   "company": "Figma",
+   "role": "Product Designer"
+  },
+  {
+   "url": "https://careers.google.com/jobs/results/123",
+   "title": "Engineer|Pipes|In|Name",
+   "company": "Google",
+   "role": "Engineer/Pipes/In/Name"
+  },
+  {
+   "url": "https://careers.google.com/jobs/results/123",
+   "title": "Engineer - - Acme",
+   "company": "- Acme",
+   "role": "Engineer"
+  },
+  {
+   "url": "https://careers.google.com/jobs/results/123",
+   "title": "Engineer at",
+   "company": "Google",
+   "role": "Engineer at"
+  },
+  {
+   "url": "https://careers.google.com/jobs/results/123",
+   "title": "at Acme",
+   "company": "Google",
+   "role": "at Acme"
+  },
+  {
+   "url": "https://careers.google.com/jobs/results/123",
+   "title": "Café Manager – Le Bistro",
+   "company": "Le Bistro",
+   "role": "Café Manager"
+  },
+  {
+   "url": "https://careers.google.com/jobs/results/123",
+   "title": "Ingénieur logiciel H/F - Société Générale",
+   "company": "Société Générale",
+   "role": "Ingénieur logiciel H/F"
+  },
+  {
+   "url": "https://careers.google.com/jobs/results/123",
+   "title": "Lead Engineer at Acme",
+   "company": "Acme",
+   "role": "Lead Engineer"
+  },
+  {
+   "url": "https://careers.google.com/jobs/results/123",
+   "title": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA | BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB",
+   "company": "BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB",
+   "role": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+  },
+  {
+   "url": "https://www.careers.microsoft.com/us/en/job/1700000",
+   "title": "",
+   "company": "Microsoft",
+   "role": ""
+  },
+  {
+   "url": "https://www.careers.microsoft.com/us/en/job/1700000",
+   "title": "Senior AI Engineer at Anthropic",
+   "company": "Anthropic",
+   "role": "Senior AI Engineer"
+  },
+  {
+   "url": "https://www.careers.microsoft.com/us/en/job/1700000",
+   "title": "Senior AI Engineer @ Anthropic",
+   "company": "Anthropic",
+   "role": "Senior AI Engineer"
+  },
+  {
+   "url": "https://www.careers.microsoft.com/us/en/job/1700000",
+   "title": "Senior AI Engineer AT Anthropic",
+   "company": "Anthropic",
+   "role": "Senior AI Engineer"
+  },
+  {
+   "url": "https://www.careers.microsoft.com/us/en/job/1700000",
+   "title": "Senior AI Engineer | Anthropic",
+   "company": "Anthropic",
+   "role": "Senior AI Engineer"
+  },
+  {
+   "url": "https://www.careers.microsoft.com/us/en/job/1700000",
+   "title": "Senior AI Engineer — Anthropic",
+   "company": "Anthropic",
+   "role": "Senior AI Engineer"
+  },
+  {
+   "url": "https://www.careers.microsoft.com/us/en/job/1700000",
+   "title": "Senior AI Engineer – Anthropic",
+   "company": "Anthropic",
+   "role": "Senior AI Engineer"
+  },
+  {
+   "url": "https://www.careers.microsoft.com/us/en/job/1700000",
+   "title": "Senior AI Engineer - Anthropic",
+   "company": "Anthropic",
+   "role": "Senior AI Engineer"
+  },
+  {
+   "url": "https://www.careers.microsoft.com/us/en/job/1700000",
+   "title": "Job Application for Software Engineer, Payments at Stripe",
+   "company": "Stripe",
+   "role": "Job Application for Software Engineer, Payments"
+  },
+  {
+   "url": "https://www.careers.microsoft.com/us/en/job/1700000",
+   "title": "Software Engineer II - Backend | Payments - Mastercard",
+   "company": "Mastercard",
+   "role": "Software Engineer II"
+  },
+  {
+   "url": "https://www.careers.microsoft.com/us/en/job/1700000",
+   "title": "Staff Engineer at Acme at Scale",
+   "company": "Acme at Scale",
+   "role": "Staff Engineer"
+  },
+  {
+   "url": "https://www.careers.microsoft.com/us/en/job/1700000",
+   "title": "Data Scientist",
+   "company": "Microsoft",
+   "role": "Data Scientist"
+  },
+  {
+   "url": "https://www.careers.microsoft.com/us/en/job/1700000",
+   "title": "  Product\tDesigner \n at \r Figma  ",
+   "company": "Figma",
+   "role": "Product Designer"
+  },
+  {
+   "url": "https://www.careers.microsoft.com/us/en/job/1700000",
+   "title": "Engineer|Pipes|In|Name",
+   "company": "Microsoft",
+   "role": "Engineer/Pipes/In/Name"
+  },
+  {
+   "url": "https://www.careers.microsoft.com/us/en/job/1700000",
+   "title": "Engineer - - Acme",
+   "company": "- Acme",
+   "role": "Engineer"
+  },
+  {
+   "url": "https://www.careers.microsoft.com/us/en/job/1700000",
+   "title": "Engineer at",
+   "company": "Microsoft",
+   "role": "Engineer at"
+  },
+  {
+   "url": "https://www.careers.microsoft.com/us/en/job/1700000",
+   "title": "at Acme",
+   "company": "Microsoft",
+   "role": "at Acme"
+  },
+  {
+   "url": "https://www.careers.microsoft.com/us/en/job/1700000",
+   "title": "Café Manager – Le Bistro",
+   "company": "Le Bistro",
+   "role": "Café Manager"
+  },
+  {
+   "url": "https://www.careers.microsoft.com/us/en/job/1700000",
+   "title": "Ingénieur logiciel H/F - Société Générale",
+   "company": "Société Générale",
+   "role": "Ingénieur logiciel H/F"
+  },
+  {
+   "url": "https://www.careers.microsoft.com/us/en/job/1700000",
+   "title": "Lead Engineer at Acme",
+   "company": "Acme",
+   "role": "Lead Engineer"
+  },
+  {
+   "url": "https://www.careers.microsoft.com/us/en/job/1700000",
+   "title": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA | BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB",
+   "company": "BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB",
+   "role": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+  },
+  {
+   "url": "https://jobs.netflix.com/jobs/312345",
+   "title": "",
+   "company": "Netflix",
+   "role": ""
+  },
+  {
+   "url": "https://jobs.netflix.com/jobs/312345",
+   "title": "Senior AI Engineer at Anthropic",
+   "company": "Anthropic",
+   "role": "Senior AI Engineer"
+  },
+  {
+   "url": "https://jobs.netflix.com/jobs/312345",
+   "title": "Senior AI Engineer @ Anthropic",
+   "company": "Anthropic",
+   "role": "Senior AI Engineer"
+  },
+  {
+   "url": "https://jobs.netflix.com/jobs/312345",
+   "title": "Senior AI Engineer AT Anthropic",
+   "company": "Anthropic",
+   "role": "Senior AI Engineer"
+  },
+  {
+   "url": "https://jobs.netflix.com/jobs/312345",
+   "title": "Senior AI Engineer | Anthropic",
+   "company": "Anthropic",
+   "role": "Senior AI Engineer"
+  },
+  {
+   "url": "https://jobs.netflix.com/jobs/312345",
+   "title": "Senior AI Engineer — Anthropic",
+   "company": "Anthropic",
+   "role": "Senior AI Engineer"
+  },
+  {
+   "url": "https://jobs.netflix.com/jobs/312345",
+   "title": "Senior AI Engineer – Anthropic",
+   "company": "Anthropic",
+   "role": "Senior AI Engineer"
+  },
+  {
+   "url": "https://jobs.netflix.com/jobs/312345",
+   "title": "Senior AI Engineer - Anthropic",
+   "company": "Anthropic",
+   "role": "Senior AI Engineer"
+  },
+  {
+   "url": "https://jobs.netflix.com/jobs/312345",
+   "title": "Job Application for Software Engineer, Payments at Stripe",
+   "company": "Stripe",
+   "role": "Job Application for Software Engineer, Payments"
+  },
+  {
+   "url": "https://jobs.netflix.com/jobs/312345",
+   "title": "Software Engineer II - Backend | Payments - Mastercard",
+   "company": "Mastercard",
+   "role": "Software Engineer II"
+  },
+  {
+   "url": "https://jobs.netflix.com/jobs/312345",
+   "title": "Staff Engineer at Acme at Scale",
+   "company": "Acme at Scale",
+   "role": "Staff Engineer"
+  },
+  {
+   "url": "https://jobs.netflix.com/jobs/312345",
+   "title": "Data Scientist",
+   "company": "Netflix",
+   "role": "Data Scientist"
+  },
+  {
+   "url": "https://jobs.netflix.com/jobs/312345",
+   "title": "  Product\tDesigner \n at \r Figma  ",
+   "company": "Figma",
+   "role": "Product Designer"
+  },
+  {
+   "url": "https://jobs.netflix.com/jobs/312345",
+   "title": "Engineer|Pipes|In|Name",
+   "company": "Netflix",
+   "role": "Engineer/Pipes/In/Name"
+  },
+  {
+   "url": "https://jobs.netflix.com/jobs/312345",
+   "title": "Engineer - - Acme",
+   "company": "- Acme",
+   "role": "Engineer"
+  },
+  {
+   "url": "https://jobs.netflix.com/jobs/312345",
+   "title": "Engineer at",
+   "company": "Netflix",
+   "role": "Engineer at"
+  },
+  {
+   "url": "https://jobs.netflix.com/jobs/312345",
+   "title": "at Acme",
+   "company": "Netflix",
+   "role": "at Acme"
+  },
+  {
+   "url": "https://jobs.netflix.com/jobs/312345",
+   "title": "Café Manager – Le Bistro",
+   "company": "Le Bistro",
+   "role": "Café Manager"
+  },
+  {
+   "url": "https://jobs.netflix.com/jobs/312345",
+   "title": "Ingénieur logiciel H/F - Société Générale",
+   "company": "Société Générale",
+   "role": "Ingénieur logiciel H/F"
+  },
+  {
+   "url": "https://jobs.netflix.com/jobs/312345",
+   "title": "Lead Engineer at Acme",
+   "company": "Acme",
+   "role": "Lead Engineer"
+  },
+  {
+   "url": "https://jobs.netflix.com/jobs/312345",
+   "title": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA | BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB",
+   "company": "BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB",
+   "role": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+  },
+  {
+   "url": "https://www.datadoghq.com/careers/detail/?gh_jid=6543210",
+   "title": "",
+   "company": "Datadoghq",
+   "role": ""
+  },
+  {
+   "url": "https://www.datadoghq.com/careers/detail/?gh_jid=6543210",
+   "title": "Senior AI Engineer at Anthropic",
+   "company": "Anthropic",
+   "role": "Senior AI Engineer"
+  },
+  {
+   "url": "https://www.datadoghq.com/careers/detail/?gh_jid=6543210",
+   "title": "Senior AI Engineer @ Anthropic",
+   "company": "Anthropic",
+   "role": "Senior AI Engineer"
+  },
+  {
+   "url": "https://www.datadoghq.com/careers/detail/?gh_jid=6543210",
+   "title": "Senior AI Engineer AT Anthropic",
+   "company": "Anthropic",
+   "role": "Senior AI Engineer"
+  },
+  {
+   "url": "https://www.datadoghq.com/careers/detail/?gh_jid=6543210",
+   "title": "Senior AI Engineer | Anthropic",
+   "company": "Anthropic",
+   "role": "Senior AI Engineer"
+  },
+  {
+   "url": "https://www.datadoghq.com/careers/detail/?gh_jid=6543210",
+   "title": "Senior AI Engineer — Anthropic",
+   "company": "Anthropic",
+   "role": "Senior AI Engineer"
+  },
+  {
+   "url": "https://www.datadoghq.com/careers/detail/?gh_jid=6543210",
+   "title": "Senior AI Engineer – Anthropic",
+   "company": "Anthropic",
+   "role": "Senior AI Engineer"
+  },
+  {
+   "url": "https://www.datadoghq.com/careers/detail/?gh_jid=6543210",
+   "title": "Senior AI Engineer - Anthropic",
+   "company": "Anthropic",
+   "role": "Senior AI Engineer"
+  },
+  {
+   "url": "https://www.datadoghq.com/careers/detail/?gh_jid=6543210",
+   "title": "Job Application for Software Engineer, Payments at Stripe",
+   "company": "Stripe",
+   "role": "Job Application for Software Engineer, Payments"
+  },
+  {
+   "url": "https://www.datadoghq.com/careers/detail/?gh_jid=6543210",
+   "title": "Software Engineer II - Backend | Payments - Mastercard",
+   "company": "Mastercard",
+   "role": "Software Engineer II"
+  },
+  {
+   "url": "https://www.datadoghq.com/careers/detail/?gh_jid=6543210",
+   "title": "Staff Engineer at Acme at Scale",
+   "company": "Acme at Scale",
+   "role": "Staff Engineer"
+  },
+  {
+   "url": "https://www.datadoghq.com/careers/detail/?gh_jid=6543210",
+   "title": "Data Scientist",
+   "company": "Datadoghq",
+   "role": "Data Scientist"
+  },
+  {
+   "url": "https://www.datadoghq.com/careers/detail/?gh_jid=6543210",
+   "title": "  Product\tDesigner \n at \r Figma  ",
+   "company": "Figma",
+   "role": "Product Designer"
+  },
+  {
+   "url": "https://www.datadoghq.com/careers/detail/?gh_jid=6543210",
+   "title": "Engineer|Pipes|In|Name",
+   "company": "Datadoghq",
+   "role": "Engineer/Pipes/In/Name"
+  },
+  {
+   "url": "https://www.datadoghq.com/careers/detail/?gh_jid=6543210",
+   "title": "Engineer - - Acme",
+   "company": "- Acme",
+   "role": "Engineer"
+  },
+  {
+   "url": "https://www.datadoghq.com/careers/detail/?gh_jid=6543210",
+   "title": "Engineer at",
+   "company": "Datadoghq",
+   "role": "Engineer at"
+  },
+  {
+   "url": "https://www.datadoghq.com/careers/detail/?gh_jid=6543210",
+   "title": "at Acme",
+   "company": "Datadoghq",
+   "role": "at Acme"
+  },
+  {
+   "url": "https://www.datadoghq.com/careers/detail/?gh_jid=6543210",
+   "title": "Café Manager – Le Bistro",
+   "company": "Le Bistro",
+   "role": "Café Manager"
+  },
+  {
+   "url": "https://www.datadoghq.com/careers/detail/?gh_jid=6543210",
+   "title": "Ingénieur logiciel H/F - Société Générale",
+   "company": "Société Générale",
+   "role": "Ingénieur logiciel H/F"
+  },
+  {
+   "url": "https://www.datadoghq.com/careers/detail/?gh_jid=6543210",
+   "title": "Lead Engineer at Acme",
+   "company": "Acme",
+   "role": "Lead Engineer"
+  },
+  {
+   "url": "https://www.datadoghq.com/careers/detail/?gh_jid=6543210",
+   "title": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA | BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB",
+   "company": "BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB",
+   "role": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+  },
+  {
+   "url": "https://stripe.com/jobs/listing/backend-engineer/6012345",
+   "title": "",
+   "company": "Stripe",
+   "role": ""
+  },
+  {
+   "url": "https://stripe.com/jobs/listing/backend-engineer/6012345",
+   "title": "Senior AI Engineer at Anthropic",
+   "company": "Anthropic",
+   "role": "Senior AI Engineer"
+  },
+  {
+   "url": "https://stripe.com/jobs/listing/backend-engineer/6012345",
+   "title": "Senior AI Engineer @ Anthropic",
+   "company": "Anthropic",
+   "role": "Senior AI Engineer"
+  },
+  {
+   "url": "https://stripe.com/jobs/listing/backend-engineer/6012345",
+   "title": "Senior AI Engineer AT Anthropic",
+   "company": "Anthropic",
+   "role": "Senior AI Engineer"
+  },
+  {
+   "url": "https://stripe.com/jobs/listing/backend-engineer/6012345",
+   "title": "Senior AI Engineer | Anthropic",
+   "company": "Anthropic",
+   "role": "Senior AI Engineer"
+  },
+  {
+   "url": "https://stripe.com/jobs/listing/backend-engineer/6012345",
+   "title": "Senior AI Engineer — Anthropic",
+   "company": "Anthropic",
+   "role": "Senior AI Engineer"
+  },
+  {
+   "url": "https://stripe.com/jobs/listing/backend-engineer/6012345",
+   "title": "Senior AI Engineer – Anthropic",
+   "company": "Anthropic",
+   "role": "Senior AI Engineer"
+  },
+  {
+   "url": "https://stripe.com/jobs/listing/backend-engineer/6012345",
+   "title": "Senior AI Engineer - Anthropic",
+   "company": "Anthropic",
+   "role": "Senior AI Engineer"
+  },
+  {
+   "url": "https://stripe.com/jobs/listing/backend-engineer/6012345",
+   "title": "Job Application for Software Engineer, Payments at Stripe",
+   "company": "Stripe",
+   "role": "Job Application for Software Engineer, Payments"
+  },
+  {
+   "url": "https://stripe.com/jobs/listing/backend-engineer/6012345",
+   "title": "Software Engineer II - Backend | Payments - Mastercard",
+   "company": "Mastercard",
+   "role": "Software Engineer II"
+  },
+  {
+   "url": "https://stripe.com/jobs/listing/backend-engineer/6012345",
+   "title": "Staff Engineer at Acme at Scale",
+   "company": "Acme at Scale",
+   "role": "Staff Engineer"
+  },
+  {
+   "url": "https://stripe.com/jobs/listing/backend-engineer/6012345",
+   "title": "Data Scientist",
+   "company": "Stripe",
+   "role": "Data Scientist"
+  },
+  {
+   "url": "https://stripe.com/jobs/listing/backend-engineer/6012345",
+   "title": "  Product\tDesigner \n at \r Figma  ",
+   "company": "Figma",
+   "role": "Product Designer"
+  },
+  {
+   "url": "https://stripe.com/jobs/listing/backend-engineer/6012345",
+   "title": "Engineer|Pipes|In|Name",
+   "company": "Stripe",
+   "role": "Engineer/Pipes/In/Name"
+  },
+  {
+   "url": "https://stripe.com/jobs/listing/backend-engineer/6012345",
+   "title": "Engineer - - Acme",
+   "company": "- Acme",
+   "role": "Engineer"
+  },
+  {
+   "url": "https://stripe.com/jobs/listing/backend-engineer/6012345",
+   "title": "Engineer at",
+   "company": "Stripe",
+   "role": "Engineer at"
+  },
+  {
+   "url": "https://stripe.com/jobs/listing/backend-engineer/6012345",
+   "title": "at Acme",
+   "company": "Stripe",
+   "role": "at Acme"
+  },
+  {
+   "url": "https://stripe.com/jobs/listing/backend-engineer/6012345",
+   "title": "Café Manager – Le Bistro",
+   "company": "Le Bistro",
+   "role": "Café Manager"
+  },
+  {
+   "url": "https://stripe.com/jobs/listing/backend-engineer/6012345",
+   "title": "Ingénieur logiciel H/F - Société Générale",
+   "company": "Société Générale",
+   "role": "Ingénieur logiciel H/F"
+  },
+  {
+   "url": "https://stripe.com/jobs/listing/backend-engineer/6012345",
+   "title": "Lead Engineer at Acme",
+   "company": "Acme",
+   "role": "Lead Engineer"
+  },
+  {
+   "url": "https://stripe.com/jobs/listing/backend-engineer/6012345",
+   "title": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA | BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB",
+   "company": "BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB",
+   "role": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+  },
+  {
+   "url": "https://apply.example.co.uk/x",
+   "title": "",
+   "company": "Example",
+   "role": ""
+  },
+  {
+   "url": "https://apply.example.co.uk/x",
+   "title": "Senior AI Engineer at Anthropic",
+   "company": "Anthropic",
+   "role": "Senior AI Engineer"
+  },
+  {
+   "url": "https://apply.example.co.uk/x",
+   "title": "Senior AI Engineer @ Anthropic",
+   "company": "Anthropic",
+   "role": "Senior AI Engineer"
+  },
+  {
+   "url": "https://apply.example.co.uk/x",
+   "title": "Senior AI Engineer AT Anthropic",
+   "company": "Anthropic",
+   "role": "Senior AI Engineer"
+  },
+  {
+   "url": "https://apply.example.co.uk/x",
+   "title": "Senior AI Engineer | Anthropic",
+   "company": "Anthropic",
+   "role": "Senior AI Engineer"
+  },
+  {
+   "url": "https://apply.example.co.uk/x",
+   "title": "Senior AI Engineer — Anthropic",
+   "company": "Anthropic",
+   "role": "Senior AI Engineer"
+  },
+  {
+   "url": "https://apply.example.co.uk/x",
+   "title": "Senior AI Engineer – Anthropic",
+   "company": "Anthropic",
+   "role": "Senior AI Engineer"
+  },
+  {
+   "url": "https://apply.example.co.uk/x",
+   "title": "Senior AI Engineer - Anthropic",
+   "company": "Anthropic",
+   "role": "Senior AI Engineer"
+  },
+  {
+   "url": "https://apply.example.co.uk/x",
+   "title": "Job Application for Software Engineer, Payments at Stripe",
+   "company": "Stripe",
+   "role": "Job Application for Software Engineer, Payments"
+  },
+  {
+   "url": "https://apply.example.co.uk/x",
+   "title": "Software Engineer II - Backend | Payments - Mastercard",
+   "company": "Mastercard",
+   "role": "Software Engineer II"
+  },
+  {
+   "url": "https://apply.example.co.uk/x",
+   "title": "Staff Engineer at Acme at Scale",
+   "company": "Acme at Scale",
+   "role": "Staff Engineer"
+  },
+  {
+   "url": "https://apply.example.co.uk/x",
+   "title": "Data Scientist",
+   "company": "Example",
+   "role": "Data Scientist"
+  },
+  {
+   "url": "https://apply.example.co.uk/x",
+   "title": "  Product\tDesigner \n at \r Figma  ",
+   "company": "Figma",
+   "role": "Product Designer"
+  },
+  {
+   "url": "https://apply.example.co.uk/x",
+   "title": "Engineer|Pipes|In|Name",
+   "company": "Example",
+   "role": "Engineer/Pipes/In/Name"
+  },
+  {
+   "url": "https://apply.example.co.uk/x",
+   "title": "Engineer - - Acme",
+   "company": "- Acme",
+   "role": "Engineer"
+  },
+  {
+   "url": "https://apply.example.co.uk/x",
+   "title": "Engineer at",
+   "company": "Example",
+   "role": "Engineer at"
+  },
+  {
+   "url": "https://apply.example.co.uk/x",
+   "title": "at Acme",
+   "company": "Example",
+   "role": "at Acme"
+  },
+  {
+   "url": "https://apply.example.co.uk/x",
+   "title": "Café Manager – Le Bistro",
+   "company": "Le Bistro",
+   "role": "Café Manager"
+  },
+  {
+   "url": "https://apply.example.co.uk/x",
+   "title": "Ingénieur logiciel H/F - Société Générale",
+   "company": "Société Générale",
+   "role": "Ingénieur logiciel H/F"
+  },
+  {
+   "url": "https://apply.example.co.uk/x",
+   "title": "Lead Engineer at Acme",
+   "company": "Acme",
+   "role": "Lead Engineer"
+  },
+  {
+   "url": "https://apply.example.co.uk/x",
+   "title": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA | BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB",
+   "company": "BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB",
+   "role": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+  },
+  {
+   "url": "https://localhost:3000/jobs/1",
+   "title": "",
+   "company": "Localhost",
+   "role": ""
+  },
+  {
+   "url": "https://localhost:3000/jobs/1",
+   "title": "Senior AI Engineer at Anthropic",
+   "company": "Anthropic",
+   "role": "Senior AI Engineer"
+  },
+  {
+   "url": "https://localhost:3000/jobs/1",
+   "title": "Senior AI Engineer @ Anthropic",
+   "company": "Anthropic",
+   "role": "Senior AI Engineer"
+  },
+  {
+   "url": "https://localhost:3000/jobs/1",
+   "title": "Senior AI Engineer AT Anthropic",
+   "company": "Anthropic",
+   "role": "Senior AI Engineer"
+  },
+  {
+   "url": "https://localhost:3000/jobs/1",
+   "title": "Senior AI Engineer | Anthropic",
+   "company": "Anthropic",
+   "role": "Senior AI Engineer"
+  },
+  {
+   "url": "https://localhost:3000/jobs/1",
+   "title": "Senior AI Engineer — Anthropic",
+   "company": "Anthropic",
+   "role": "Senior AI Engineer"
+  },
+  {
+   "url": "https://localhost:3000/jobs/1",
+   "title": "Senior AI Engineer – Anthropic",
+   "company": "Anthropic",
+   "role": "Senior AI Engineer"
+  },
+  {
+   "url": "https://localhost:3000/jobs/1",
+   "title": "Senior AI Engineer - Anthropic",
+   "company": "Anthropic",
+   "role": "Senior AI Engineer"
+  },
+  {
+   "url": "https://localhost:3000/jobs/1",
+   "title": "Job Application for Software Engineer, Payments at Stripe",
+   "company": "Stripe",
+   "role": "Job Application for Software Engineer, Payments"
+  },
+  {
+   "url": "https://localhost:3000/jobs/1",
+   "title": "Software Engineer II - Backend | Payments - Mastercard",
+   "company": "Mastercard",
+   "role": "Software Engineer II"
+  },
+  {
+   "url": "https://localhost:3000/jobs/1",
+   "title": "Staff Engineer at Acme at Scale",
+   "company": "Acme at Scale",
+   "role": "Staff Engineer"
+  },
+  {
+   "url": "https://localhost:3000/jobs/1",
+   "title": "Data Scientist",
+   "company": "Localhost",
+   "role": "Data Scientist"
+  },
+  {
+   "url": "https://localhost:3000/jobs/1",
+   "title": "  Product\tDesigner \n at \r Figma  ",
+   "company": "Figma",
+   "role": "Product Designer"
+  },
+  {
+   "url": "https://localhost:3000/jobs/1",
+   "title": "Engineer|Pipes|In|Name",
+   "company": "Localhost",
+   "role": "Engineer/Pipes/In/Name"
+  },
+  {
+   "url": "https://localhost:3000/jobs/1",
+   "title": "Engineer - - Acme",
+   "company": "- Acme",
+   "role": "Engineer"
+  },
+  {
+   "url": "https://localhost:3000/jobs/1",
+   "title": "Engineer at",
+   "company": "Localhost",
+   "role": "Engineer at"
+  },
+  {
+   "url": "https://localhost:3000/jobs/1",
+   "title": "at Acme",
+   "company": "Localhost",
+   "role": "at Acme"
+  },
+  {
+   "url": "https://localhost:3000/jobs/1",
+   "title": "Café Manager – Le Bistro",
+   "company": "Le Bistro",
+   "role": "Café Manager"
+  },
+  {
+   "url": "https://localhost:3000/jobs/1",
+   "title": "Ingénieur logiciel H/F - Société Générale",
+   "company": "Société Générale",
+   "role": "Ingénieur logiciel H/F"
+  },
+  {
+   "url": "https://localhost:3000/jobs/1",
+   "title": "Lead Engineer at Acme",
+   "company": "Acme",
+   "role": "Lead Engineer"
+  },
+  {
+   "url": "https://localhost:3000/jobs/1",
+   "title": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA | BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB",
+   "company": "BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB",
+   "role": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+  },
+  {
+   "url": "https://WWW.Example.COM/Careers",
+   "title": "",
+   "company": "Example",
+   "role": ""
+  },
+  {
+   "url": "https://WWW.Example.COM/Careers",
+   "title": "Senior AI Engineer at Anthropic",
+   "company": "Anthropic",
+   "role": "Senior AI Engineer"
+  },
+  {
+   "url": "https://WWW.Example.COM/Careers",
+   "title": "Senior AI Engineer @ Anthropic",
+   "company": "Anthropic",
+   "role": "Senior AI Engineer"
+  },
+  {
+   "url": "https://WWW.Example.COM/Careers",
+   "title": "Senior AI Engineer AT Anthropic",
+   "company": "Anthropic",
+   "role": "Senior AI Engineer"
+  },
+  {
+   "url": "https://WWW.Example.COM/Careers",
+   "title": "Senior AI Engineer | Anthropic",
+   "company": "Anthropic",
+   "role": "Senior AI Engineer"
+  },
+  {
+   "url": "https://WWW.Example.COM/Careers",
+   "title": "Senior AI Engineer — Anthropic",
+   "company": "Anthropic",
+   "role": "Senior AI Engineer"
+  },
+  {
+   "url": "https://WWW.Example.COM/Careers",
+   "title": "Senior AI Engineer – Anthropic",
+   "company": "Anthropic",
+   "role": "Senior AI Engineer"
+  },
+  {
+   "url": "https://WWW.Example.COM/Careers",
+   "title": "Senior AI Engineer - Anthropic",
+   "company": "Anthropic",
+   "role": "Senior AI Engineer"
+  },
+  {
+   "url": "https://WWW.Example.COM/Careers",
+   "title": "Job Application for Software Engineer, Payments at Stripe",
+   "company": "Stripe",
+   "role": "Job Application for Software Engineer, Payments"
+  },
+  {
+   "url": "https://WWW.Example.COM/Careers",
+   "title": "Software Engineer II - Backend | Payments - Mastercard",
+   "company": "Mastercard",
+   "role": "Software Engineer II"
+  },
+  {
+   "url": "https://WWW.Example.COM/Careers",
+   "title": "Staff Engineer at Acme at Scale",
+   "company": "Acme at Scale",
+   "role": "Staff Engineer"
+  },
+  {
+   "url": "https://WWW.Example.COM/Careers",
+   "title": "Data Scientist",
+   "company": "Example",
+   "role": "Data Scientist"
+  },
+  {
+   "url": "https://WWW.Example.COM/Careers",
+   "title": "  Product\tDesigner \n at \r Figma  ",
+   "company": "Figma",
+   "role": "Product Designer"
+  },
+  {
+   "url": "https://WWW.Example.COM/Careers",
+   "title": "Engineer|Pipes|In|Name",
+   "company": "Example",
+   "role": "Engineer/Pipes/In/Name"
+  },
+  {
+   "url": "https://WWW.Example.COM/Careers",
+   "title": "Engineer - - Acme",
+   "company": "- Acme",
+   "role": "Engineer"
+  },
+  {
+   "url": "https://WWW.Example.COM/Careers",
+   "title": "Engineer at",
+   "company": "Example",
+   "role": "Engineer at"
+  },
+  {
+   "url": "https://WWW.Example.COM/Careers",
+   "title": "at Acme",
+   "company": "Example",
+   "role": "at Acme"
+  },
+  {
+   "url": "https://WWW.Example.COM/Careers",
+   "title": "Café Manager – Le Bistro",
+   "company": "Le Bistro",
+   "role": "Café Manager"
+  },
+  {
+   "url": "https://WWW.Example.COM/Careers",
+   "title": "Ingénieur logiciel H/F - Société Générale",
+   "company": "Société Générale",
+   "role": "Ingénieur logiciel H/F"
+  },
+  {
+   "url": "https://WWW.Example.COM/Careers",
+   "title": "Lead Engineer at Acme",
+   "company": "Acme",
+   "role": "Lead Engineer"
+  },
+  {
+   "url": "https://WWW.Example.COM/Careers",
+   "title": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA | BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB",
+   "company": "BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB",
+   "role": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+  },
+  {
+   "url": "http://hire.lyft.com/positions/123",
+   "title": "",
+   "company": "Lyft",
+   "role": ""
+  },
+  {
+   "url": "http://hire.lyft.com/positions/123",
+   "title": "Senior AI Engineer at Anthropic",
+   "company": "Anthropic",
+   "role": "Senior AI Engineer"
+  },
+  {
+   "url": "http://hire.lyft.com/positions/123",
+   "title": "Senior AI Engineer @ Anthropic",
+   "company": "Anthropic",
+   "role": "Senior AI Engineer"
+  },
+  {
+   "url": "http://hire.lyft.com/positions/123",
+   "title": "Senior AI Engineer AT Anthropic",
+   "company": "Anthropic",
+   "role": "Senior AI Engineer"
+  },
+  {
+   "url": "http://hire.lyft.com/positions/123",
+   "title": "Senior AI Engineer | Anthropic",
+   "company": "Anthropic",
+   "role": "Senior AI Engineer"
+  },
+  {
+   "url": "http://hire.lyft.com/positions/123",
+   "title": "Senior AI Engineer — Anthropic",
+   "company": "Anthropic",
+   "role": "Senior AI Engineer"
+  },
+  {
+   "url": "http://hire.lyft.com/positions/123",
+   "title": "Senior AI Engineer – Anthropic",
+   "company": "Anthropic",
+   "role": "Senior AI Engineer"
+  },
+  {
+   "url": "http://hire.lyft.com/positions/123",
+   "title": "Senior AI Engineer - Anthropic",
+   "company": "Anthropic",
+   "role": "Senior AI Engineer"
+  },
+  {
+   "url": "http://hire.lyft.com/positions/123",
+   "title": "Job Application for Software Engineer, Payments at Stripe",
+   "company": "Stripe",
+   "role": "Job Application for Software Engineer, Payments"
+  },
+  {
+   "url": "http://hire.lyft.com/positions/123",
+   "title": "Software Engineer II - Backend | Payments - Mastercard",
+   "company": "Mastercard",
+   "role": "Software Engineer II"
+  },
+  {
+   "url": "http://hire.lyft.com/positions/123",
+   "title": "Staff Engineer at Acme at Scale",
+   "company": "Acme at Scale",
+   "role": "Staff Engineer"
+  },
+  {
+   "url": "http://hire.lyft.com/positions/123",
+   "title": "Data Scientist",
+   "company": "Lyft",
+   "role": "Data Scientist"
+  },
+  {
+   "url": "http://hire.lyft.com/positions/123",
+   "title": "  Product\tDesigner \n at \r Figma  ",
+   "company": "Figma",
+   "role": "Product Designer"
+  },
+  {
+   "url": "http://hire.lyft.com/positions/123",
+   "title": "Engineer|Pipes|In|Name",
+   "company": "Lyft",
+   "role": "Engineer/Pipes/In/Name"
+  },
+  {
+   "url": "http://hire.lyft.com/positions/123",
+   "title": "Engineer - - Acme",
+   "company": "- Acme",
+   "role": "Engineer"
+  },
+  {
+   "url": "http://hire.lyft.com/positions/123",
+   "title": "Engineer at",
+   "company": "Lyft",
+   "role": "Engineer at"
+  },
+  {
+   "url": "http://hire.lyft.com/positions/123",
+   "title": "at Acme",
+   "company": "Lyft",
+   "role": "at Acme"
+  },
+  {
+   "url": "http://hire.lyft.com/positions/123",
+   "title": "Café Manager – Le Bistro",
+   "company": "Le Bistro",
+   "role": "Café Manager"
+  },
+  {
+   "url": "http://hire.lyft.com/positions/123",
+   "title": "Ingénieur logiciel H/F - Société Générale",
+   "company": "Société Générale",
+   "role": "Ingénieur logiciel H/F"
+  },
+  {
+   "url": "http://hire.lyft.com/positions/123",
+   "title": "Lead Engineer at Acme",
+   "company": "Acme",
+   "role": "Lead Engineer"
+  },
+  {
+   "url": "http://hire.lyft.com/positions/123",
+   "title": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA | BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB",
+   "company": "BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB",
+   "role": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+  },
+  {
+   "url": "https://talent.ki/abc",
+   "title": "",
+   "company": "Talent",
+   "role": ""
+  },
+  {
+   "url": "https://talent.ki/abc",
+   "title": "Senior AI Engineer at Anthropic",
+   "company": "Anthropic",
+   "role": "Senior AI Engineer"
+  },
+  {
+   "url": "https://talent.ki/abc",
+   "title": "Senior AI Engineer @ Anthropic",
+   "company": "Anthropic",
+   "role": "Senior AI Engineer"
+  },
+  {
+   "url": "https://talent.ki/abc",
+   "title": "Senior AI Engineer AT Anthropic",
+   "company": "Anthropic",
+   "role": "Senior AI Engineer"
+  },
+  {
+   "url": "https://talent.ki/abc",
+   "title": "Senior AI Engineer | Anthropic",
+   "company": "Anthropic",
+   "role": "Senior AI Engineer"
+  },
+  {
+   "url": "https://talent.ki/abc",
+   "title": "Senior AI Engineer — Anthropic",
+   "company": "Anthropic",
+   "role": "Senior AI Engineer"
+  },
+  {
+   "url": "https://talent.ki/abc",
+   "title": "Senior AI Engineer – Anthropic",
+   "company": "Anthropic",
+   "role": "Senior AI Engineer"
+  },
+  {
+   "url": "https://talent.ki/abc",
+   "title": "Senior AI Engineer - Anthropic",
+   "company": "Anthropic",
+   "role": "Senior AI Engineer"
+  },
+  {
+   "url": "https://talent.ki/abc",
+   "title": "Job Application for Software Engineer, Payments at Stripe",
+   "company": "Stripe",
+   "role": "Job Application for Software Engineer, Payments"
+  },
+  {
+   "url": "https://talent.ki/abc",
+   "title": "Software Engineer II - Backend | Payments - Mastercard",
+   "company": "Mastercard",
+   "role": "Software Engineer II"
+  },
+  {
+   "url": "https://talent.ki/abc",
+   "title": "Staff Engineer at Acme at Scale",
+   "company": "Acme at Scale",
+   "role": "Staff Engineer"
+  },
+  {
+   "url": "https://talent.ki/abc",
+   "title": "Data Scientist",
+   "company": "Talent",
+   "role": "Data Scientist"
+  },
+  {
+   "url": "https://talent.ki/abc",
+   "title": "  Product\tDesigner \n at \r Figma  ",
+   "company": "Figma",
+   "role": "Product Designer"
+  },
+  {
+   "url": "https://talent.ki/abc",
+   "title": "Engineer|Pipes|In|Name",
+   "company": "Talent",
+   "role": "Engineer/Pipes/In/Name"
+  },
+  {
+   "url": "https://talent.ki/abc",
+   "title": "Engineer - - Acme",
+   "company": "- Acme",
+   "role": "Engineer"
+  },
+  {
+   "url": "https://talent.ki/abc",
+   "title": "Engineer at",
+   "company": "Talent",
+   "role": "Engineer at"
+  },
+  {
+   "url": "https://talent.ki/abc",
+   "title": "at Acme",
+   "company": "Talent",
+   "role": "at Acme"
+  },
+  {
+   "url": "https://talent.ki/abc",
+   "title": "Café Manager – Le Bistro",
+   "company": "Le Bistro",
+   "role": "Café Manager"
+  },
+  {
+   "url": "https://talent.ki/abc",
+   "title": "Ingénieur logiciel H/F - Société Générale",
+   "company": "Société Générale",
+   "role": "Ingénieur logiciel H/F"
+  },
+  {
+   "url": "https://talent.ki/abc",
+   "title": "Lead Engineer at Acme",
+   "company": "Acme",
+   "role": "Lead Engineer"
+  },
+  {
+   "url": "https://talent.ki/abc",
+   "title": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA | BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB",
+   "company": "BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB",
+   "role": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+  },
+  {
+   "url": "not a url",
+   "title": "",
+   "company": "",
+   "role": ""
+  },
+  {
+   "url": "not a url",
+   "title": "Senior AI Engineer at Anthropic",
+   "company": "Anthropic",
+   "role": "Senior AI Engineer"
+  },
+  {
+   "url": "not a url",
+   "title": "Senior AI Engineer @ Anthropic",
+   "company": "Anthropic",
+   "role": "Senior AI Engineer"
+  },
+  {
+   "url": "not a url",
+   "title": "Senior AI Engineer AT Anthropic",
+   "company": "Anthropic",
+   "role": "Senior AI Engineer"
+  },
+  {
+   "url": "not a url",
+   "title": "Senior AI Engineer | Anthropic",
+   "company": "Anthropic",
+   "role": "Senior AI Engineer"
+  },
+  {
+   "url": "not a url",
+   "title": "Senior AI Engineer — Anthropic",
+   "company": "Anthropic",
+   "role": "Senior AI Engineer"
+  },
+  {
+   "url": "not a url",
+   "title": "Senior AI Engineer – Anthropic",
+   "company": "Anthropic",
+   "role": "Senior AI Engineer"
+  },
+  {
+   "url": "not a url",
+   "title": "Senior AI Engineer - Anthropic",
+   "company": "Anthropic",
+   "role": "Senior AI Engineer"
+  },
+  {
+   "url": "not a url",
+   "title": "Job Application for Software Engineer, Payments at Stripe",
+   "company": "Stripe",
+   "role": "Job Application for Software Engineer, Payments"
+  },
+  {
+   "url": "not a url",
+   "title": "Software Engineer II - Backend | Payments - Mastercard",
+   "company": "Mastercard",
+   "role": "Software Engineer II"
+  },
+  {
+   "url": "not a url",
+   "title": "Staff Engineer at Acme at Scale",
+   "company": "Acme at Scale",
+   "role": "Staff Engineer"
+  },
+  {
+   "url": "not a url",
+   "title": "Data Scientist",
+   "company": "",
+   "role": "Data Scientist"
+  },
+  {
+   "url": "not a url",
+   "title": "  Product\tDesigner \n at \r Figma  ",
+   "company": "Figma",
+   "role": "Product Designer"
+  },
+  {
+   "url": "not a url",
+   "title": "Engineer|Pipes|In|Name",
+   "company": "",
+   "role": "Engineer/Pipes/In/Name"
+  },
+  {
+   "url": "not a url",
+   "title": "Engineer - - Acme",
+   "company": "- Acme",
+   "role": "Engineer"
+  },
+  {
+   "url": "not a url",
+   "title": "Engineer at",
+   "company": "",
+   "role": "Engineer at"
+  },
+  {
+   "url": "not a url",
+   "title": "at Acme",
+   "company": "",
+   "role": "at Acme"
+  },
+  {
+   "url": "not a url",
+   "title": "Café Manager – Le Bistro",
+   "company": "Le Bistro",
+   "role": "Café Manager"
+  },
+  {
+   "url": "not a url",
+   "title": "Ingénieur logiciel H/F - Société Générale",
+   "company": "Société Générale",
+   "role": "Ingénieur logiciel H/F"
+  },
+  {
+   "url": "not a url",
+   "title": "Lead Engineer at Acme",
+   "company": "Acme",
+   "role": "Lead Engineer"
+  },
+  {
+   "url": "not a url",
+   "title": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA | BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB",
+   "company": "BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB",
+   "role": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+  },
+  {
+   "url": "",
+   "title": "",
+   "company": "",
+   "role": ""
+  },
+  {
+   "url": "",
+   "title": "Senior AI Engineer at Anthropic",
+   "company": "Anthropic",
+   "role": "Senior AI Engineer"
+  },
+  {
+   "url": "",
+   "title": "Senior AI Engineer @ Anthropic",
+   "company": "Anthropic",
+   "role": "Senior AI Engineer"
+  },
+  {
+   "url": "",
+   "title": "Senior AI Engineer AT Anthropic",
+   "company": "Anthropic",
+   "role": "Senior AI Engineer"
+  },
+  {
+   "url": "",
+   "title": "Senior AI Engineer | Anthropic",
+   "company": "Anthropic",
+   "role": "Senior AI Engineer"
+  },
+  {
+   "url": "",
+   "title": "Senior AI Engineer — Anthropic",
+   "company": "Anthropic",
+   "role": "Senior AI Engineer"
+  },
+  {
+   "url": "",
+   "title": "Senior AI Engineer – Anthropic",
+   "company": "Anthropic",
+   "role": "Senior AI Engineer"
+  },
+  {
+   "url": "",
+   "title": "Senior AI Engineer - Anthropic",
+   "company": "Anthropic",
+   "role": "Senior AI Engineer"
+  },
+  {
+   "url": "",
+   "title": "Job Application for Software Engineer, Payments at Stripe",
+   "company": "Stripe",
+   "role": "Job Application for Software Engineer, Payments"
+  },
+  {
+   "url": "",
+   "title": "Software Engineer II - Backend | Payments - Mastercard",
+   "company": "Mastercard",
+   "role": "Software Engineer II"
+  },
+  {
+   "url": "",
+   "title": "Staff Engineer at Acme at Scale",
+   "company": "Acme at Scale",
+   "role": "Staff Engineer"
+  },
+  {
+   "url": "",
+   "title": "Data Scientist",
+   "company": "",
+   "role": "Data Scientist"
+  },
+  {
+   "url": "",
+   "title": "  Product\tDesigner \n at \r Figma  ",
+   "company": "Figma",
+   "role": "Product Designer"
+  },
+  {
+   "url": "",
+   "title": "Engineer|Pipes|In|Name",
+   "company": "",
+   "role": "Engineer/Pipes/In/Name"
+  },
+  {
+   "url": "",
+   "title": "Engineer - - Acme",
+   "company": "- Acme",
+   "role": "Engineer"
+  },
+  {
+   "url": "",
+   "title": "Engineer at",
+   "company": "",
+   "role": "Engineer at"
+  },
+  {
+   "url": "",
+   "title": "at Acme",
+   "company": "",
+   "role": "at Acme"
+  },
+  {
+   "url": "",
+   "title": "Café Manager – Le Bistro",
+   "company": "Le Bistro",
+   "role": "Café Manager"
+  },
+  {
+   "url": "",
+   "title": "Ingénieur logiciel H/F - Société Générale",
+   "company": "Société Générale",
+   "role": "Ingénieur logiciel H/F"
+  },
+  {
+   "url": "",
+   "title": "Lead Engineer at Acme",
+   "company": "Acme",
+   "role": "Lead Engineer"
+  },
+  {
+   "url": "",
+   "title": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA | BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB",
+   "company": "BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB",
+   "role": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+  }
+ ]
+}

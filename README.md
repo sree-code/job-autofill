@@ -81,3 +81,15 @@ npm run engine        # rebuild engine/pkg (needs rustup, wasm32-unknown-unknown
 ```
 
 The keyword module is a port of [career-ops](https://github.com/santifer/career-ops)' `keyword-match.mjs` (MIT). `engine/scripts/gen-golden.mjs` regenerates the golden cases from a local career-ops checkout. See `docs/PIPELINE_PLAN.md` for what comes next.
+
+## Job postings (Phase 1)
+
+On a job posting Appliqué shows a tab at the right edge and reads the posting locally: `src/detect.js` decides whether the page is a job (JSON-LD, ATS host, URL, Apply button + job headings; lists stay silent), `src/jd.js` collects the page, and the Rust engine's `jd` module (`engine/applique-core/src/jd.rs`) turns it into fields, sections and facts. With an API key the posting (not your profile) gets one AI summary. Jobs are saved in `chrome.storage.local` and listed on the options page. Optionally each job is copied to career-ops through its own local capture server:
+
+```bash
+cd ~/Desktop/2026/career-ops && node capture-server.mjs --no-eval
+```
+
+Paste the printed token into Appliqué's settings under career-ops.
+
+Tests: `npm test` (includes the engine through WebAssembly) and `npm run test:e2e` (real Chrome; the jobs test needs career-ops at `~/Desktop/2026/career-ops` or `CAREER_OPS=`).

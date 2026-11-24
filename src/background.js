@@ -1,5 +1,7 @@
-// Service worker: keyboard shortcut + AI answering bridge for content scripts.
+// Service worker: keyboard shortcut, AI answering, job postings (Rust engine +
+// optional AI summary + optional career-ops copy) for the content scripts.
 import { AnswerSession } from "./ai/session.js";
+import { extractPosting, saveJob, summarizeJob, sendToCareerOps } from "./jobs.js";
 import { createTelemetry, metricsGate } from "./telemetry.js";
 import { handleEngine } from "./engine.js";
 
@@ -50,6 +52,41 @@ chrome.runtime.onMessage.addListener((msg, _sender, send) => {
     return true;
   }
   if (msg?.type === "OPEN_OPTIONS") { chrome.runtime.openOptionsPage(); return; }
+  if (msg?.type === "JOB_PAGE") {
+    // A small gold dot on the toolbar icon while the tab shows a job.
+    const tabId = _sender?.tab?.id;
+    if (tabId != null && _sender.frameId === 0) {
+      chrome.action.setBadgeText({ tabId, text: msg.kind ? "•" : "" }).catch(() => {});
+      if (msg.kind) chrome.action.setBadgeBackgroundColor({ tabId, color: "#E9A93A" }).catch(() => {});
+    }
+    return;
+  }
+  if (msg?.type === "JD_ANALYZE") {
+    (async () => {
+      const { settings = {} } = await chrome.storage.local.get("settings");
+      if (!metricsGate(settings).allowed) return send({ error: "consent" });
+      const { posting, ms } = await extractPosting(msg.input || {});
+      let entry = await saveJob(posting);
+      if (settings.careerOps && !entry.careerOps?.ok) {
+        await sendToCareerOps(entry.id, { settings });
+        entry = (await chrome.storage.local.get("jobs")).jobs?.[entry.id] || entry;
+      }
+      send({ entry, ms, ai: { hasKey: !!settings.apiKey, auto: settings.analyzePostings !== false } });
+    })().catch((e) => send({ error: String(e?.message || e) }));
+    return true;
+  }
+  if (msg?.type === "JD_SUMMARIZE") {
+    enqueue(async () => {
+      try {
+        const { settings = {} } = await chrome.storage.local.get("settings");
+        if (!metricsGate(settings).allowed) return send({ error: "consent" });
+        send(await summarizeJob(msg.id, { settings }));
+      } catch (e) {
+        send({ error: String(e?.message || e).slice(0, 300) });
+      }
+    });
+    return true;
+  }
   if (msg?.type === "ENGINE") {
     handleEngine(msg).then(send, (e) => send({ error: String(e?.message || e) }));
     return true;

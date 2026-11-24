@@ -1,5 +1,5 @@
-// Orchestrator: detect the page framework, fill known fields from the local
-// profile, ask the AI session for the rest, report.
+// Orchestrator: notice job postings and applications, fill known fields from
+// the local profile, ask the AI session for the rest, report.
 (() => {
   const NS = globalThis.JobAutofill;
   if (!NS || NS.loaded) return;
@@ -39,6 +39,15 @@
   }
 
   const getData = () => new Promise((r) => chrome.storage.local.get(["profile", "resume", "coverLetter", "settings"], r));
+  const message = (msg) =>
+    new Promise((r) => {
+      try { chrome.runtime.sendMessage(msg, (res) => { void chrome.runtime.lastError; r(res); }); }
+      catch (e) { r({ error: String(e?.message || e) }); }
+    });
+  // LinkedIn's help center doesn't allow extensions that automate activity on
+  // the site: nothing runs there on its own. Every action waits for a click.
+  const LINKEDIN = /(^|\.)linkedin\.com$/i.test(location.hostname);
+  const hostKey = location.hostname.replace(/^www\./, "");
   const askAI = (questions) =>
     new Promise((r) => {
       try {
@@ -304,24 +313,130 @@
     try { el.focus({ preventScroll: true }); } catch {}
   }
 
+  const handlers = {
+    fill: () => autofill({ trigger: "button" }),
+    next: () => {
+      const n = nextButton();
+      if (!n) return;
+      n.el.click();
+      // Steps often swap in place; look again as the next one renders.
+      for (const ms of [500, 1200, 2500]) setTimeout(scan, ms);
+    },
+    focus: focusField,
+    openOptions: () => { try { chrome.runtime.sendMessage({ type: "OPEN_OPTIONS" }); } catch {} },
+    summarize: () => {
+      const ps = NS.panel.state().posting;
+      if (ps?.phase === "manual" || ps?.phase === "error") readPosting(NS.detect.run(), { manual: true });
+      else if (ps?.entry) summarizePosting(ps.entry.id);
+    },
+    quiet: () => quietHere(),
+  };
+
   function maybeShowPanel() {
     if (window.top !== window || !NS.panel) return false;
-    if (NS.panel.isMounted()) return true;
+    const st = NS.panel.isMounted() ? NS.panel.state() : null;
+    if (st?.hasForm) return true;
     if (!looksLikeApplication()) return false;
-    NS.panel.mount({
-      fill: () => autofill({ trigger: "button" }),
-      next: () => {
-        const n = nextButton();
-        if (!n) return;
-        n.el.click();
-        // Steps often swap in place; look again as the next one renders.
-        for (const ms of [500, 1200, 2500]) setTimeout(scan, ms);
-      },
-      focus: focusField,
-      openOptions: () => { try { chrome.runtime.sendMessage({ type: "OPEN_OPTIONS" }); } catch {} },
-    });
-    NS.panel.update({ phase: "idle", job: jobInfo(), nextLabel: nextButton()?.label });
+    NS.panel.mount(handlers);
+    NS.panel.update({ hasForm: true, view: "form", phase: "idle", job: jobInfo(), nextLabel: nextButton()?.label });
+    if (st) NS.panel.setCollapsed(false, false); // was a posting pill: the application is what matters now
+    badge("application");
     return true;
+  }
+
+  // ---------- job postings ----------
+  // Detection runs here, locally. Reading happens in the background with the
+  // Rust engine; the AI summary uses the user's own key and provider.
+  let jobUrl = null, jobTries = 0, jobTimer = null, lastHref = location.href.split("#")[0];
+  const badge = (kind) => message({ type: "JOB_PAGE", kind: kind || null });
+
+  async function checkJobPage() {
+    if (window.top !== window || !NS.detect || !NS.jd || !NS.panel) return;
+    const href = location.href.split("#")[0];
+    if (href === jobUrl) return;
+    const { settings = {} } = await getData();
+    if (settings.detectJobs === false || (settings.quietHosts || []).includes(hostKey)) return;
+    const d = NS.detect.run();
+    if (!d.isPosting) return;
+    jobUrl = href;
+    const app = !!NS.panel.isMounted() && !!NS.panel.state().hasForm;
+    if (!app) badge("posting");
+    if (!NS.panel.isMounted()) NS.panel.mount(handlers, { view: "posting", collapsed: true });
+    NS.panel.update({ posting: null });
+    NS.panel.update({ posting: { phase: LINKEDIN ? "manual" : "reading" }, ...(app ? {} : { view: "posting" }) });
+    if (!LINKEDIN) readPosting(d, { app });
+  }
+
+  // SPA pages render late: look a few times after each page change.
+  function scheduleJobChecks() {
+    clearTimeout(jobTimer);
+    jobTries = 0;
+    const tick = () => {
+      checkJobPage();
+      if (++jobTries < 4 && jobUrl !== location.href.split("#")[0]) jobTimer = setTimeout(tick, [800, 2000, 4500][jobTries - 1]);
+    };
+    tick();
+  }
+
+  function onNavigate() {
+    const href = location.href.split("#")[0];
+    if (href === lastHref) return;
+    lastHref = href;
+    const st = NS.panel?.isMounted() ? NS.panel.state() : null;
+    if (st?.posting && !st.hasForm) NS.panel.unmount(); // a different page now
+    else if (st?.posting) NS.panel.update({ posting: null });
+    jobUrl = null;
+    badge(null);
+    scheduleJobChecks();
+  }
+
+  async function readPosting(d, { manual = false, app = false } = {}) {
+    const P = NS.panel;
+    const t0 = performance.now();
+    if ((await gate()).allowed === false) { P.update({ posting: { phase: "consent" } }); return; }
+    P.update({ posting: { phase: "reading", error: null } });
+    const input = NS.jd.collect(d.blocks);
+    const res = await message({ type: "JD_ANALYZE", input });
+    const tel = { host: location.hostname, kind: app ? "application" : "posting", trigger: manual ? "click" : "auto", score: d.score, signals: d.signals };
+    if (!res || res.error || !res.entry) {
+      P.update({ posting: { phase: "error", error: res?.error === "consent" ? null : "Something went wrong reading it." } });
+      sendTelemetry("job_page", { ...tel, error: res?.error || "no-response", ms: Math.round(performance.now() - t0) });
+      return;
+    }
+    if (!P.isMounted()) return;
+    const { entry, ai = {} } = res;
+    const p = entry.posting;
+    const canSummarize = !entry.summary && !!ai.hasKey;
+    const auto = canSummarize && ai.auto !== false && (!LINKEDIN || manual);
+    P.update({
+      job: { title: p.title, company: p.company, host: location.hostname },
+      posting: { phase: entry.summary ? "done" : auto ? "summarizing" : "read", entry, canSummarize,
+        aiNote: ai.hasKey ? "" : "Add an API key in Appliqué's settings for an AI summary." },
+    });
+    let aiRes = null;
+    if (auto) aiRes = await summarizePosting(entry.id);
+    sendTelemetry("job_page", { ...tel, source: p.source, words: p.words, sections: p.sections?.length || 0, extractMs: res.ms, ms: Math.round(performance.now() - t0),
+      careerOps: entry.careerOps ? (entry.careerOps.ok ? "ok" : "error") : null,
+      ai: aiRes && { latencyMs: aiRes.latencyMs, provider: aiRes.provider, model: aiRes.model, error: aiRes.error || null, cached: !!aiRes.cached } });
+  }
+
+  async function summarizePosting(id) {
+    const P = NS.panel;
+    P.update({ posting: { phase: "summarizing" } });
+    const s = await message({ type: "JD_SUMMARIZE", id });
+    if (s?.entry) P.update({ posting: { phase: "done", entry: s.entry, canSummarize: false } });
+    else P.update({ posting: { phase: "read", aiNote: s?.error === "no-api-key" ? "Add an API key in Appliqué's settings for an AI summary." : `The AI summary didn't work this time (${s?.error || "no response"}).` } });
+    return s || { error: "no-response" };
+  }
+
+  async function quietHere() {
+    const { settings = {} } = await getData();
+    const quietHosts = [...new Set([...(settings.quietHosts || []), hostKey])];
+    await new Promise((r) => chrome.storage.local.set({ settings: { ...settings, quietHosts } }, r));
+    if (!NS.panel.state().hasForm) NS.panel.unmount();
+    else NS.panel.update({ posting: null, view: "form" });
+    badge(null);
+    toast(`Appliqué won't show on ${hostKey}`, "Turn it back on in Appliqué's settings.");
   }
 
   chrome.runtime.onMessage.addListener((msg, _s, send) => {
@@ -341,12 +456,17 @@
     panel()?.update(changed ? { phase: "idle", items: [], job: jobInfo(), nextLabel: nextButton()?.label } : { nextLabel: nextButton()?.label });
     if (!changed) return;
     const { settings = {} } = await getData();
-    if (settings.autoFill === false) return;
+    if (settings.autoFill === false || LINKEDIN) return;
     autofill({ trigger: "auto" });
   }
   scan();
-  new MutationObserver(() => { clearTimeout(timer); timer = setTimeout(scan, 300); })
-    .observe(document.documentElement, { childList: true, subtree: true, attributes: true, attributeFilter: ["hidden", "style", "aria-hidden"] });
+  scheduleJobChecks();
+  document.addEventListener("jaf:nav", () => setTimeout(onNavigate, 50)); // history.pushState/popstate, from the MAIN-world bridge
+  addEventListener("popstate", () => setTimeout(onNavigate, 50));
+  new MutationObserver(() => {
+    clearTimeout(timer);
+    timer = setTimeout(() => { onNavigate(); scan(); }, 300);
+  }).observe(document.documentElement, { childList: true, subtree: true, attributes: true, attributeFilter: ["hidden", "style", "aria-hidden"] });
 
   NS.autofill = autofill;
   NS.bridge = bridge;

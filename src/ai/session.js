@@ -68,6 +68,7 @@ export class AnswerSession {
   }
 
   // One structured call, whichever provider. Returns {parsed, content, tokens, refused}.
+  // `shape` is a key of JSON_SHAPES or the shape text itself (DeepSeek's JSON mode needs an example).
   async callJSON({ systemBlocks, messages, schema, shape, anthropicExtras = {} }) {
     if (this.provider === "anthropic") {
       const res = await this.client.beta.messages.parse({
@@ -88,7 +89,7 @@ export class AnswerSession {
     }
     const r = await deepseekJSON({
       apiKey: this.apiKey, baseURL: this.baseURL, model: this.model, schema, fetchImpl: this.fetchImpl, reasoning: this.reasoning,
-      system: `${systemBlocks.map((b) => b.text).join("\n\n")}\n\n${JSON_SHAPES[shape]}`,
+      system: `${systemBlocks.map((b) => b.text).join("\n\n")}\n\n${JSON_SHAPES[shape] || shape}`,
       messages,
     });
     const u = r?.usage || {};

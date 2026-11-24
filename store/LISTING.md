@@ -34,6 +34,8 @@ WHAT IT DOES
 • Tick boxes that sign you up for things or make legal statements (talent communities, newsletters, "I certify", "I agree") are never ticked for you. They're listed for you to decide.
 • Marks every field it filled with a stitched outline: gold for answers from your profile, blue for AI-drafted answers you should check.
 • Never overwrites anything you've already typed, and never submits an application. You review every answer and click Submit yourself.
+• Notices job postings: a small tab appears at the right edge, reads the posting on your computer (role, pay, location, requirements, sponsorship and clearance notes) and saves it in your browser. With an API key it also gets a short AI summary. On LinkedIn nothing runs until you click.
+• Optional: copies each job to your own career-ops folder through its local capture server on this computer.
 • Optional AI answers: add your own DeepSeek or Anthropic API key and the extension drafts answers to questions your profile doesn't cover, such as "Why do you want to work here?".
 
 HOW TO USE
@@ -44,9 +46,10 @@ HOW TO USE
 PRIVACY
 • Your profile, resume, cover letter and API key are stored only in this browser (chrome.storage.local).
 • If you turn on AI answers, questions the extension can't answer from your profile are sent, together with your profile, directly from your browser to the AI provider you chose, using your own key. The developer never receives them.
+• With an API key, the text of job postings you open is sent to your AI provider for a summary (without your profile). Saved jobs stay in chrome.storage.local.
 
 BETA: ANONYMOUS USAGE METRICS ARE REQUIRED
-This is a beta release. Before the extension fills any form, you must accept anonymous usage metrics on its options page. These metrics are: a random install ID, the extension and browser version, the job site's hostname (no page path), the number and types of fields found and filled, question labels it couldn't match (with emails and numbers masked), timings, the AI provider and model, and error messages. Your profile values, form contents, AI answers, API keys, resume and full URLs are never sent. If you don't want this, don't install the extension, or uninstall it at any time to stop all collection.
+This is a beta release. Before the extension fills any form, you must accept anonymous usage metrics on its options page. These metrics are: a random install ID, the extension and browser version, the job site's hostname (no page path), the number and types of fields found and filled, question labels it couldn't match (with emails and numbers masked), how a job page was recognized and how much of it was read, timings, the AI provider and model, and error messages. Your profile values, form contents, AI answers, posting text, summaries, API keys, resume and full URLs are never sent. If you don't want this, don't install the extension, or uninstall it at any time to stop all collection.
 
 Privacy policy: https://job-autofill-telemetry.vercel.app/privacy
 Source code: https://github.com/sree-code/job-autofill
@@ -66,8 +69,8 @@ Fill job application forms on career websites with the user's own saved profile 
 
 | Permission | Justification |
 |---|---|
-| `storage` | Stores the user's profile, resume, cover letter, settings and optional AI API key locally in chrome.storage.local so they can be used to fill forms. |
-| Host permissions (`https://*/*`, `http://*/*`) | Job applications are hosted on thousands of different domains: applicant-tracking systems such as Workday, Greenhouse, Lever and Ashby, plus each company's own career site. The content script has to run on these pages to detect form fields and fill them. It only reads and writes form fields, and only acts when the user clicks Fill this page or has turned on auto-fill. The service worker also uses host access to call the AI provider the user configured (api.deepseek.com or api.anthropic.com) and to send the usage metrics the user accepted. |
+| `storage` | Stores the user's profile, resume, cover letter, settings, saved job postings and optional AI API key locally in chrome.storage.local. |
+| Host permissions (`https://*/*`, `http://*/*`) | Job applications are hosted on thousands of different domains: applicant-tracking systems such as Workday, Greenhouse, Lever and Ashby, plus each company's own career site. The content script has to run on these pages to detect form fields and fill them. It only reads and writes form fields, and only acts when the user clicks Fill this page or has turned on auto-fill. On job postings it reads the page to save and summarize the posting. The service worker also uses host access to call the AI provider the user configured (api.deepseek.com or api.anthropic.com), to send the usage metrics the user accepted, and, only if the user turns it on, to reach the user's own career-ops capture server on 127.0.0.1. |
 
 **Remote code:** No, I am not using remote code. (All JavaScript is in the package. The AI provider returns JSON text only, and that text is never executed.)
 
@@ -83,7 +86,7 @@ Fill job application forms on career websites with the user's own saved profile 
 | Location | ✅ | Address, city and state in the profile. Stored locally. |
 | Web history | ☐ | Only the job site's hostname is sent in metrics, never full URLs or history. If a reviewer disagrees, check this box too. |
 | User activity | ✅ | Anonymous fill counts and timings (the usage metrics). |
-| Website content | ✅ | Form question labels on the job page (sent to the AI provider when AI is on; unmatched labels, masked, in metrics). |
+| Website content | ✅ | Form question labels and job posting text (sent to the user's AI provider when AI is on; unmatched labels, masked, in metrics; postings saved locally). |
 
 **Certifications:** Check all three:
 - I do not sell or transfer user data to third parties, apart from the approved use cases.

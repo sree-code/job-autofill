@@ -1,6 +1,6 @@
 # Appliqué pipeline plan
 
-Status: revision 2 (2026-11-23). Phase 0 done (2026-11-24); Phases 1–8 not started.
+Status: revision 2 (2026-11-23). Phases 0 and 1 done (2026-11-24); Phases 2–8 not started.
 
 **Revision 2:**
 - career-ops' scoring and keyword logic gets ported into a **Rust engine** (`applique-core`), instead of calling career-ops at run time.
@@ -21,6 +21,21 @@ The goal: when you open a job, Appliqué notices it on its own, reads and summar
 | Typst WASM (in-extension PDF) | **28.3 MB** raw, **10.7 MB** compressed (`@myriaddreamin/typst-ts-web-compiler` 0.7.0, Apache-2.0). Chrome extensions must ship code inside the package (no downloading code later), so this would make the extension about 11 MB larger. **Lighter alternative for Phase 6:** our own small renderer in `applique-core` using Typst's low-level `pdf-writer` crate + `ttf-parser`/`rustybuzz` for fonts. That's under 1 MB, enough for resume layouts (paragraphs, bullets, tabs, columns, tables), and we decide after Phase 4 shows what real resumes need |
 | Motion skills | `animate`, `apple-design`, `choreograph`, `animation-performance` from emilkowalski/skills (MIT) installed in `~/.claude/skills/` |
 | Repos | `~/Desktop/2026/career-ops` and `~/Desktop/2026/resume_builder` |
+
+## Phase 1 results (2026-11-24)
+
+| Item | Result |
+|---|---|
+| Detection | `src/detect.js`, scored locally as in section 3. One change from the table: **Apply button + 2 job headings is worth 4, not 3**, and `/careers/<long-slug>` counts as a job URL. With the original weights a custom career page without markup scored 5 and was missed |
+| Reading | `src/jd.js` collects JSON-LD, microdata and the main text (headings and bullets marked); the Rust `jd` module turns it into one posting: title, company, locations, workplace, type, salary (structured or from the text), dates, sections (role, responsibilities, requirements, preferred, benefits, pay…), and facts (seniority, minimum years, sponsorship, citizenship, clearance, degree). No Readability dependency: the engine does the HTML → text |
+| career-ops parity | `deriveLabels` / `companyFromUrl` ported to Rust: **525/525** golden cases from the original JavaScript |
+| AI summary | One call with the user's key (posting only, never the profile), career-ops' "untrusted posting text" guard, cached per job so revisits cost nothing |
+| Saved | `chrome.storage.local` (`jobs`, last 200), listed on the options page; optional copy to career-ops through its existing `POST /capture` (no career-ops changes needed; never commits, pushes or evaluates) |
+| UI | Pill on the right edge with the needle-and-thread loader (bobbing needle, stitches feed out; folds into a dashed check when done, relaxes into a wave on error); expands into the panel's Job view. Reduced motion: no movement, crossfades |
+| Other | Toolbar dot on job tabs; single-page navigation via a `history.pushState` hook in the bridge; LinkedIn: nothing runs until you click, and no auto-fill; "Don't show on this site" |
+| Engine size | WASM 113 KB → 251 KB |
+| Tests | Rust unit + golden; `test/jd.test.mjs` (WASM in Node); `test/jobs-extension-e2e.mjs`: real Chrome with the extension, mock DeepSeek, the real career-ops capture server in a temp folder: posting with JSON-LD, posting without, a job list and an article (both silent), revisit (no second AI call), SPA navigation away |
+| Not done | Not yet tried on real job sites in your Chrome. The metrics receiver must be redeployed before it accepts the new `job_page` event (until then those events are dropped by the receiver) |
 
 ---
 

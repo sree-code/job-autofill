@@ -7,7 +7,9 @@
 // letter, full page URLs. Sent: event type, extension version, a random install
 // id, the job site's hostname, framework/adapter detected, counts, field *types*
 // filled (e.g. "email"), question labels we could not match (to add rules),
-// timings, and error messages.
+// timings, and error messages. For job postings: the job site's hostname, how
+// the page was recognized (signal names and score), how much text was read,
+// timings, and the AI provider/model. Never the posting text or its summary.
 import { TELEMETRY_URL } from "./config.js";
 
 const QUEUE_KEY = "telemetryQueue";
@@ -41,6 +43,25 @@ export function sanitize(type, p = {}) {
         error: p.ai.error ? scrub(p.ai.error, 160) : null, latencyMs: Math.round(Number(p.ai.latencyMs) || 0),
         provider: clip(p.ai.provider, 20), model: clip(p.ai.model, 40), reasoning: clip(p.ai.reasoning, 10),
         contextTokens: Number(p.ai.contextTokens) || 0, rollovers: Number(p.ai.rollovers) || 0,
+      } : null,
+    });
+  } else if (type === "job_page") {
+    Object.assign(e, {
+      host: p.host ? clip(p.host, 100) : hostOf(p.url),
+      kind: clip(p.kind, 20),
+      trigger: clip(p.trigger, 20),
+      score: Number(p.score) || 0,
+      signals: (p.signals || []).slice(0, 10).map((s) => clip(s, 24)),
+      source: p.source ? clip(p.source, 12) : null,
+      words: Number(p.words) || 0,
+      sections: Number(p.sections) || 0,
+      extractMs: Math.round(Number(p.extractMs) || 0),
+      ms: Math.round(Number(p.ms) || 0),
+      careerOps: p.careerOps ? clip(p.careerOps, 10) : null,
+      error: p.error ? scrub(p.error, 160) : null,
+      ai: p.ai ? {
+        latencyMs: Math.round(Number(p.ai.latencyMs) || 0), provider: clip(p.ai.provider, 20), model: clip(p.ai.model, 40),
+        error: p.ai.error ? scrub(p.ai.error, 160) : null, cached: !!p.ai.cached,
       } : null,
     });
   } else if (type === "error") {

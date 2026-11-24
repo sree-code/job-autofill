@@ -120,5 +120,12 @@
     catch (err) { result = { error: String(err?.message || err) }; }
     document.dispatchEvent(new CustomEvent("jaf:res", { detail: JSON.stringify({ id: req.id, result }) }));
   });
+  // Single-page apps change jobs without reloading: tell the content script.
+  const nav = () => document.dispatchEvent(new CustomEvent("jaf:nav"));
+  for (const k of ["pushState", "replaceState"]) {
+    const orig = history[k];
+    if (typeof orig !== "function") continue;
+    history[k] = function (...args) { const r = orig.apply(this, args); nav(); return r; };
+  }
   document.documentElement.setAttribute("data-jaf-bridge", "1");
 })();
