@@ -14,6 +14,7 @@ const zip = path.join(root, `store/job-autofill-${version}.zip`);
 await rm(stage, { recursive: true, force: true });
 await mkdir(path.join(stage, "dist"), { recursive: true });
 for (const f of ["manifest.json", "icons", "src"]) await cp(path.join(root, f), path.join(stage, f), { recursive: true });
+await rm(path.join(stage, "icons/src"), { recursive: true }); // icon source, not loaded
 await rm(path.join(stage, "src/background.js")); // source of dist/background.js, not loaded
 await cp(path.join(root, "dist/background.js"), path.join(stage, "dist/background.js"));
 await rm(zip, { force: true });
