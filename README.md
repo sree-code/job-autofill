@@ -70,3 +70,14 @@ Open `test/form.html` in a browser. It stubs `chrome.storage` and loads the real
 ## License
 
 MIT
+
+## Rust engine (`engine/`)
+
+`engine/applique-core` is Appliqué's local engine, compiled to WebAssembly and loaded by the service worker (`src/engine.js`). The built files in `engine/pkg/` are committed, so `npm run build` doesn't need Rust. To change the engine:
+
+```bash
+npm run engine:test   # cargo test, including 328 golden cases from career-ops' JavaScript
+npm run engine        # rebuild engine/pkg (needs rustup, wasm32-unknown-unknown, wasm-bindgen-cli 0.2.100)
+```
+
+The keyword module is a port of [career-ops](https://github.com/santifer/career-ops)' `keyword-match.mjs` (MIT). `engine/scripts/gen-golden.mjs` regenerates the golden cases from a local career-ops checkout. See `docs/PIPELINE_PLAN.md` for what comes next.

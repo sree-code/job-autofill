@@ -1,6 +1,7 @@
 // Service worker: keyboard shortcut + AI answering bridge for content scripts.
 import { AnswerSession } from "./ai/session.js";
 import { createTelemetry, metricsGate } from "./telemetry.js";
+import { handleEngine } from "./engine.js";
 
 const telemetry = createTelemetry({ version: chrome.runtime.getManifest().version });
 telemetry.flush().catch(() => {}); // send anything queued while offline
@@ -49,6 +50,10 @@ chrome.runtime.onMessage.addListener((msg, _sender, send) => {
     return true;
   }
   if (msg?.type === "OPEN_OPTIONS") { chrome.runtime.openOptionsPage(); return; }
+  if (msg?.type === "ENGINE") {
+    handleEngine(msg).then(send, (e) => send({ error: String(e?.message || e) }));
+    return true;
+  }
   if (msg?.type === "TELEMETRY") {
     telemetry.track(msg.event, { ...msg.props, url: _sender?.url }).then((ok) => send({ ok }), () => send({ ok: false }));
     return true;

@@ -1,4 +1,8 @@
 import { build } from "esbuild";
+import { mkdirSync, copyFileSync } from "node:fs";
+// Rust engine (prebuilt in engine/pkg by `npm run engine`): the service worker fetches the .wasm.
+mkdirSync("dist/engine", { recursive: true });
+copyFileSync("engine/pkg/applique_core_bg.wasm", "dist/engine/applique_core_bg.wasm");
 // Service worker: bundles the Anthropic SDK + zod.
 await build({ entryPoints: ["src/background.js"], bundle: true, format: "esm", platform: "browser", target: "chrome120", outfile: "dist/background.js", logLevel: "info" });
 // Same AI session for local test pages (exposes globalThis.JafAI).

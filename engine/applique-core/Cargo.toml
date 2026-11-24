@@ -1,0 +1,16 @@
+[package]
+name = "applique-core"
+version = "0.1.0"
+edition = "2021"
+license = "MIT"
+description = "Appliqué's local engine: job-posting parsing, ATS keyword coverage and fit scoring, resume layout. Runs in the extension as WebAssembly."
+
+[lib]
+crate-type = ["cdylib", "rlib"]
+
+[dependencies]
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+
+[target.'cfg(target_arch = "wasm32")'.dependencies]
+wasm-bindgen = "=0.2.100"   # must match the wasm-bindgen CLI exactly

@@ -1,0 +1,5013 @@
+{
+ "source": "career-ops keyword-match.mjs",
+ "cases": [
+  {
+   "term": "React",
+   "text": "Senior Engineer — React, TypeScript, Node.js, AWS (EC2, S3), Kubernetes/k8s, CI/CD with GitHub Actions.",
+   "normalized": "senior engineer — react, typescript, node.js, aws (ec2, s3), kubernetes/k8s, ci/cd with github actions.",
+   "count": 1,
+   "variants": [
+    "react",
+    "reacts"
+   ],
+   "expanded": [
+    "react",
+    "reacts"
+   ],
+   "keywordCount": 1
+  },
+  {
+   "term": "react.js",
+   "text": "Senior Engineer — React, TypeScript, Node.js, AWS (EC2, S3), Kubernetes/k8s, CI/CD with GitHub Actions.",
+   "normalized": "senior engineer — react, typescript, node.js, aws (ec2, s3), kubernetes/k8s, ci/cd with github actions.",
+   "count": 0,
+   "variants": [
+    "react.js",
+    "react.j"
+   ],
+   "expanded": [
+    "react.js",
+    "react.j"
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "TypeScript",
+   "text": "Senior Engineer — React, TypeScript, Node.js, AWS (EC2, S3), Kubernetes/k8s, CI/CD with GitHub Actions.",
+   "normalized": "senior engineer — react, typescript, node.js, aws (ec2, s3), kubernetes/k8s, ci/cd with github actions.",
+   "count": 1,
+   "variants": [
+    "typescript",
+    "typescripts"
+   ],
+   "expanded": [
+    "typescript",
+    "typescripts",
+    "ts"
+   ],
+   "keywordCount": 1
+  },
+  {
+   "term": "ts",
+   "text": "Senior Engineer — React, TypeScript, Node.js, AWS (EC2, S3), Kubernetes/k8s, CI/CD with GitHub Actions.",
+   "normalized": "senior engineer — react, typescript, node.js, aws (ec2, s3), kubernetes/k8s, ci/cd with github actions.",
+   "count": 0,
+   "variants": [
+    "ts"
+   ],
+   "expanded": [
+    "ts",
+    "typescript",
+    "typescripts"
+   ],
+   "keywordCount": 1
+  },
+  {
+   "term": "js",
+   "text": "Senior Engineer — React, TypeScript, Node.js, AWS (EC2, S3), Kubernetes/k8s, CI/CD with GitHub Actions.",
+   "normalized": "senior engineer — react, typescript, node.js, aws (ec2, s3), kubernetes/k8s, ci/cd with github actions.",
+   "count": 1,
+   "variants": [
+    "js"
+   ],
+   "expanded": [
+    "js",
+    "javascript",
+    "javascripts"
+   ],
+   "keywordCount": 1
+  },
+  {
+   "term": "JavaScript",
+   "text": "Senior Engineer — React, TypeScript, Node.js, AWS (EC2, S3), Kubernetes/k8s, CI/CD with GitHub Actions.",
+   "normalized": "senior engineer — react, typescript, node.js, aws (ec2, s3), kubernetes/k8s, ci/cd with github actions.",
+   "count": 0,
+   "variants": [
+    "javascript",
+    "javascripts"
+   ],
+   "expanded": [
+    "javascript",
+    "javascripts",
+    "js"
+   ],
+   "keywordCount": 1
+  },
+  {
+   "term": "Java",
+   "text": "Senior Engineer — React, TypeScript, Node.js, AWS (EC2, S3), Kubernetes/k8s, CI/CD with GitHub Actions.",
+   "normalized": "senior engineer — react, typescript, node.js, aws (ec2, s3), kubernetes/k8s, ci/cd with github actions.",
+   "count": 0,
+   "variants": [
+    "java",
+    "javas"
+   ],
+   "expanded": [
+    "java",
+    "javas"
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "Node.js",
+   "text": "Senior Engineer — React, TypeScript, Node.js, AWS (EC2, S3), Kubernetes/k8s, CI/CD with GitHub Actions.",
+   "normalized": "senior engineer — react, typescript, node.js, aws (ec2, s3), kubernetes/k8s, ci/cd with github actions.",
+   "count": 1,
+   "variants": [
+    "node.js",
+    "node.j"
+   ],
+   "expanded": [
+    "node.js",
+    "node.j"
+   ],
+   "keywordCount": 1
+  },
+  {
+   "term": "AWS",
+   "text": "Senior Engineer — React, TypeScript, Node.js, AWS (EC2, S3), Kubernetes/k8s, CI/CD with GitHub Actions.",
+   "normalized": "senior engineer — react, typescript, node.js, aws (ec2, s3), kubernetes/k8s, ci/cd with github actions.",
+   "count": 1,
+   "variants": [
+    "aws"
+   ],
+   "expanded": [
+    "aws",
+    "amazon web services",
+    "amazon web service"
+   ],
+   "keywordCount": 1
+  },
+  {
+   "term": "amazon web services",
+   "text": "Senior Engineer — React, TypeScript, Node.js, AWS (EC2, S3), Kubernetes/k8s, CI/CD with GitHub Actions.",
+   "normalized": "senior engineer — react, typescript, node.js, aws (ec2, s3), kubernetes/k8s, ci/cd with github actions.",
+   "count": 0,
+   "variants": [
+    "amazon web services",
+    "amazon web service"
+   ],
+   "expanded": [
+    "amazon web services",
+    "amazon web service",
+    "aws"
+   ],
+   "keywordCount": 1
+  },
+  {
+   "term": "Kubernetes",
+   "text": "Senior Engineer — React, TypeScript, Node.js, AWS (EC2, S3), Kubernetes/k8s, CI/CD with GitHub Actions.",
+   "normalized": "senior engineer — react, typescript, node.js, aws (ec2, s3), kubernetes/k8s, ci/cd with github actions.",
+   "count": 1,
+   "variants": [
+    "kubernetes",
+    "kubernete"
+   ],
+   "expanded": [
+    "kubernetes",
+    "kubernete",
+    "k8s"
+   ],
+   "keywordCount": 2
+  },
+  {
+   "term": "k8s",
+   "text": "Senior Engineer — React, TypeScript, Node.js, AWS (EC2, S3), Kubernetes/k8s, CI/CD with GitHub Actions.",
+   "normalized": "senior engineer — react, typescript, node.js, aws (ec2, s3), kubernetes/k8s, ci/cd with github actions.",
+   "count": 1,
+   "variants": [
+    "k8s"
+   ],
+   "expanded": [
+    "k8s",
+    "kubernetes",
+    "kubernete"
+   ],
+   "keywordCount": 2
+  },
+  {
+   "term": "CI/CD",
+   "text": "Senior Engineer — React, TypeScript, Node.js, AWS (EC2, S3), Kubernetes/k8s, CI/CD with GitHub Actions.",
+   "normalized": "senior engineer — react, typescript, node.js, aws (ec2, s3), kubernetes/k8s, ci/cd with github actions.",
+   "count": 1,
+   "variants": [
+    "ci/cd",
+    "ci/cds"
+   ],
+   "expanded": [
+    "ci/cd",
+    "ci/cds",
+    "cicd",
+    "cicds"
+   ],
+   "keywordCount": 1
+  },
+  {
+   "term": "cicd",
+   "text": "Senior Engineer — React, TypeScript, Node.js, AWS (EC2, S3), Kubernetes/k8s, CI/CD with GitHub Actions.",
+   "normalized": "senior engineer — react, typescript, node.js, aws (ec2, s3), kubernetes/k8s, ci/cd with github actions.",
+   "count": 0,
+   "variants": [
+    "cicd",
+    "cicds"
+   ],
+   "expanded": [
+    "cicd",
+    "cicds",
+    "ci/cd",
+    "ci/cds"
+   ],
+   "keywordCount": 1
+  },
+  {
+   "term": "LLM",
+   "text": "Senior Engineer — React, TypeScript, Node.js, AWS (EC2, S3), Kubernetes/k8s, CI/CD with GitHub Actions.",
+   "normalized": "senior engineer — react, typescript, node.js, aws (ec2, s3), kubernetes/k8s, ci/cd with github actions.",
+   "count": 0,
+   "variants": [
+    "llm",
+    "llms"
+   ],
+   "expanded": [
+    "llm",
+    "llms",
+    "large language model",
+    "large language models"
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "LLMs",
+   "text": "Senior Engineer — React, TypeScript, Node.js, AWS (EC2, S3), Kubernetes/k8s, CI/CD with GitHub Actions.",
+   "normalized": "senior engineer — react, typescript, node.js, aws (ec2, s3), kubernetes/k8s, ci/cd with github actions.",
+   "count": 0,
+   "variants": [
+    "llms",
+    "llm"
+   ],
+   "expanded": [
+    "llms",
+    "llm",
+    "large language model",
+    "large language models"
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "large language model",
+   "text": "Senior Engineer — React, TypeScript, Node.js, AWS (EC2, S3), Kubernetes/k8s, CI/CD with GitHub Actions.",
+   "normalized": "senior engineer — react, typescript, node.js, aws (ec2, s3), kubernetes/k8s, ci/cd with github actions.",
+   "count": 0,
+   "variants": [
+    "large language model",
+    "large language models"
+   ],
+   "expanded": [
+    "large language model",
+    "large language models",
+    "llm",
+    "llms"
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "ML",
+   "text": "Senior Engineer — React, TypeScript, Node.js, AWS (EC2, S3), Kubernetes/k8s, CI/CD with GitHub Actions.",
+   "normalized": "senior engineer — react, typescript, node.js, aws (ec2, s3), kubernetes/k8s, ci/cd with github actions.",
+   "count": 0,
+   "variants": [
+    "ml"
+   ],
+   "expanded": [
+    "ml",
+    "machine learning",
+    "machine learnings"
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "machine learning",
+   "text": "Senior Engineer — React, TypeScript, Node.js, AWS (EC2, S3), Kubernetes/k8s, CI/CD with GitHub Actions.",
+   "normalized": "senior engineer — react, typescript, node.js, aws (ec2, s3), kubernetes/k8s, ci/cd with github actions.",
+   "count": 0,
+   "variants": [
+    "machine learning",
+    "machine learnings"
+   ],
+   "expanded": [
+    "machine learning",
+    "machine learnings",
+    "ml"
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "GCP",
+   "text": "Senior Engineer — React, TypeScript, Node.js, AWS (EC2, S3), Kubernetes/k8s, CI/CD with GitHub Actions.",
+   "normalized": "senior engineer — react, typescript, node.js, aws (ec2, s3), kubernetes/k8s, ci/cd with github actions.",
+   "count": 0,
+   "variants": [
+    "gcp",
+    "gcps"
+   ],
+   "expanded": [
+    "gcp",
+    "gcps",
+    "google cloud platform",
+    "google cloud platforms"
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "C++",
+   "text": "Senior Engineer — React, TypeScript, Node.js, AWS (EC2, S3), Kubernetes/k8s, CI/CD with GitHub Actions.",
+   "normalized": "senior engineer — react, typescript, node.js, aws (ec2, s3), kubernetes/k8s, ci/cd with github actions.",
+   "count": 0,
+   "variants": [
+    "c++",
+    "c++s"
+   ],
+   "expanded": [
+    "c++",
+    "c++s"
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "PostgreSQL",
+   "text": "Senior Engineer — React, TypeScript, Node.js, AWS (EC2, S3), Kubernetes/k8s, CI/CD with GitHub Actions.",
+   "normalized": "senior engineer — react, typescript, node.js, aws (ec2, s3), kubernetes/k8s, ci/cd with github actions.",
+   "count": 0,
+   "variants": [
+    "postgresql",
+    "postgresqls"
+   ],
+   "expanded": [
+    "postgresql",
+    "postgresqls",
+    "postgres",
+    "postgre"
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "postgres",
+   "text": "Senior Engineer — React, TypeScript, Node.js, AWS (EC2, S3), Kubernetes/k8s, CI/CD with GitHub Actions.",
+   "normalized": "senior engineer — react, typescript, node.js, aws (ec2, s3), kubernetes/k8s, ci/cd with github actions.",
+   "count": 0,
+   "variants": [
+    "postgres",
+    "postgre"
+   ],
+   "expanded": [
+    "postgres",
+    "postgre",
+    "postgresql",
+    "postgresqls"
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "API",
+   "text": "Senior Engineer — React, TypeScript, Node.js, AWS (EC2, S3), Kubernetes/k8s, CI/CD with GitHub Actions.",
+   "normalized": "senior engineer — react, typescript, node.js, aws (ec2, s3), kubernetes/k8s, ci/cd with github actions.",
+   "count": 0,
+   "variants": [
+    "api",
+    "apis"
+   ],
+   "expanded": [
+    "api",
+    "apis"
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "APIs",
+   "text": "Senior Engineer — React, TypeScript, Node.js, AWS (EC2, S3), Kubernetes/k8s, CI/CD with GitHub Actions.",
+   "normalized": "senior engineer — react, typescript, node.js, aws (ec2, s3), kubernetes/k8s, ci/cd with github actions.",
+   "count": 0,
+   "variants": [
+    "apis",
+    "api"
+   ],
+   "expanded": [
+    "apis",
+    "api"
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "GraphQL",
+   "text": "Senior Engineer — React, TypeScript, Node.js, AWS (EC2, S3), Kubernetes/k8s, CI/CD with GitHub Actions.",
+   "normalized": "senior engineer — react, typescript, node.js, aws (ec2, s3), kubernetes/k8s, ci/cd with github actions.",
+   "count": 0,
+   "variants": [
+    "graphql",
+    "graphqls"
+   ],
+   "expanded": [
+    "graphql",
+    "graphqls"
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "Python",
+   "text": "Senior Engineer — React, TypeScript, Node.js, AWS (EC2, S3), Kubernetes/k8s, CI/CD with GitHub Actions.",
+   "normalized": "senior engineer — react, typescript, node.js, aws (ec2, s3), kubernetes/k8s, ci/cd with github actions.",
+   "count": 0,
+   "variants": [
+    "python",
+    "pythons"
+   ],
+   "expanded": [
+    "python",
+    "pythons"
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "PyTorch",
+   "text": "Senior Engineer — React, TypeScript, Node.js, AWS (EC2, S3), Kubernetes/k8s, CI/CD with GitHub Actions.",
+   "normalized": "senior engineer — react, typescript, node.js, aws (ec2, s3), kubernetes/k8s, ci/cd with github actions.",
+   "count": 0,
+   "variants": [
+    "pytorch",
+    "pytorchs"
+   ],
+   "expanded": [
+    "pytorch",
+    "pytorchs"
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "café",
+   "text": "Senior Engineer — React, TypeScript, Node.js, AWS (EC2, S3), Kubernetes/k8s, CI/CD with GitHub Actions.",
+   "normalized": "senior engineer — react, typescript, node.js, aws (ec2, s3), kubernetes/k8s, ci/cd with github actions.",
+   "count": 0,
+   "variants": [
+    "café",
+    "cafés"
+   ],
+   "expanded": [
+    "café",
+    "cafés"
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "résumé",
+   "text": "Senior Engineer — React, TypeScript, Node.js, AWS (EC2, S3), Kubernetes/k8s, CI/CD with GitHub Actions.",
+   "normalized": "senior engineer — react, typescript, node.js, aws (ec2, s3), kubernetes/k8s, ci/cd with github actions.",
+   "count": 0,
+   "variants": [
+    "résumé",
+    "résumés"
+   ],
+   "expanded": [
+    "résumé",
+    "résumés"
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "Docker",
+   "text": "Senior Engineer — React, TypeScript, Node.js, AWS (EC2, S3), Kubernetes/k8s, CI/CD with GitHub Actions.",
+   "normalized": "senior engineer — react, typescript, node.js, aws (ec2, s3), kubernetes/k8s, ci/cd with github actions.",
+   "count": 0,
+   "variants": [
+    "docker",
+    "dockers"
+   ],
+   "expanded": [
+    "docker",
+    "dockers"
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "Terraform",
+   "text": "Senior Engineer — React, TypeScript, Node.js, AWS (EC2, S3), Kubernetes/k8s, CI/CD with GitHub Actions.",
+   "normalized": "senior engineer — react, typescript, node.js, aws (ec2, s3), kubernetes/k8s, ci/cd with github actions.",
+   "count": 0,
+   "variants": [
+    "terraform",
+    "terraforms"
+   ],
+   "expanded": [
+    "terraform",
+    "terraforms"
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "IaC",
+   "text": "Senior Engineer — React, TypeScript, Node.js, AWS (EC2, S3), Kubernetes/k8s, CI/CD with GitHub Actions.",
+   "normalized": "senior engineer — react, typescript, node.js, aws (ec2, s3), kubernetes/k8s, ci/cd with github actions.",
+   "count": 0,
+   "variants": [
+    "iac",
+    "iacs"
+   ],
+   "expanded": [
+    "iac",
+    "iacs",
+    "infrastructure as code",
+    "infrastructure as codes"
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "Scrum",
+   "text": "Senior Engineer — React, TypeScript, Node.js, AWS (EC2, S3), Kubernetes/k8s, CI/CD with GitHub Actions.",
+   "normalized": "senior engineer — react, typescript, node.js, aws (ec2, s3), kubernetes/k8s, ci/cd with github actions.",
+   "count": 0,
+   "variants": [
+    "scrum",
+    "scrums"
+   ],
+   "expanded": [
+    "scrum",
+    "scrums"
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "Jira",
+   "text": "Senior Engineer — React, TypeScript, Node.js, AWS (EC2, S3), Kubernetes/k8s, CI/CD with GitHub Actions.",
+   "normalized": "senior engineer — react, typescript, node.js, aws (ec2, s3), kubernetes/k8s, ci/cd with github actions.",
+   "count": 0,
+   "variants": [
+    "jira",
+    "jiras"
+   ],
+   "expanded": [
+    "jira",
+    "jiras"
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "it",
+   "text": "Senior Engineer — React, TypeScript, Node.js, AWS (EC2, S3), Kubernetes/k8s, CI/CD with GitHub Actions.",
+   "normalized": "senior engineer — react, typescript, node.js, aws (ec2, s3), kubernetes/k8s, ci/cd with github actions.",
+   "count": 0,
+   "variants": [
+    "it"
+   ],
+   "expanded": [
+    "it"
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "its",
+   "text": "Senior Engineer — React, TypeScript, Node.js, AWS (EC2, S3), Kubernetes/k8s, CI/CD with GitHub Actions.",
+   "normalized": "senior engineer — react, typescript, node.js, aws (ec2, s3), kubernetes/k8s, ci/cd with github actions.",
+   "count": 0,
+   "variants": [
+    "its"
+   ],
+   "expanded": [
+    "its"
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "go",
+   "text": "Senior Engineer — React, TypeScript, Node.js, AWS (EC2, S3), Kubernetes/k8s, CI/CD with GitHub Actions.",
+   "normalized": "senior engineer — react, typescript, node.js, aws (ec2, s3), kubernetes/k8s, ci/cd with github actions.",
+   "count": 0,
+   "variants": [
+    "go"
+   ],
+   "expanded": [
+    "go"
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "s",
+   "text": "Senior Engineer — React, TypeScript, Node.js, AWS (EC2, S3), Kubernetes/k8s, CI/CD with GitHub Actions.",
+   "normalized": "senior engineer — react, typescript, node.js, aws (ec2, s3), kubernetes/k8s, ci/cd with github actions.",
+   "count": 0,
+   "variants": [
+    "s"
+   ],
+   "expanded": [
+    "s"
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "",
+   "text": "Senior Engineer — React, TypeScript, Node.js, AWS (EC2, S3), Kubernetes/k8s, CI/CD with GitHub Actions.",
+   "normalized": "senior engineer — react, typescript, node.js, aws (ec2, s3), kubernetes/k8s, ci/cd with github actions.",
+   "count": 0,
+   "variants": [
+    ""
+   ],
+   "expanded": [
+    ""
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "  ",
+   "text": "Senior Engineer — React, TypeScript, Node.js, AWS (EC2, S3), Kubernetes/k8s, CI/CD with GitHub Actions.",
+   "normalized": "senior engineer — react, typescript, node.js, aws (ec2, s3), kubernetes/k8s, ci/cd with github actions.",
+   "count": 0,
+   "variants": [
+    ""
+   ],
+   "expanded": [
+    ""
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "React",
+   "text": "Built LLM apps; fine-tuned large language models; ML pipelines on GCP and Google Cloud Platform.",
+   "normalized": "built llm apps; fine-tuned large language models; ml pipelines on gcp and google cloud platform.",
+   "count": 0,
+   "variants": [
+    "react",
+    "reacts"
+   ],
+   "expanded": [
+    "react",
+    "reacts"
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "react.js",
+   "text": "Built LLM apps; fine-tuned large language models; ML pipelines on GCP and Google Cloud Platform.",
+   "normalized": "built llm apps; fine-tuned large language models; ml pipelines on gcp and google cloud platform.",
+   "count": 0,
+   "variants": [
+    "react.js",
+    "react.j"
+   ],
+   "expanded": [
+    "react.js",
+    "react.j"
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "TypeScript",
+   "text": "Built LLM apps; fine-tuned large language models; ML pipelines on GCP and Google Cloud Platform.",
+   "normalized": "built llm apps; fine-tuned large language models; ml pipelines on gcp and google cloud platform.",
+   "count": 0,
+   "variants": [
+    "typescript",
+    "typescripts"
+   ],
+   "expanded": [
+    "typescript",
+    "typescripts",
+    "ts"
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "ts",
+   "text": "Built LLM apps; fine-tuned large language models; ML pipelines on GCP and Google Cloud Platform.",
+   "normalized": "built llm apps; fine-tuned large language models; ml pipelines on gcp and google cloud platform.",
+   "count": 0,
+   "variants": [
+    "ts"
+   ],
+   "expanded": [
+    "ts",
+    "typescript",
+    "typescripts"
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "js",
+   "text": "Built LLM apps; fine-tuned large language models; ML pipelines on GCP and Google Cloud Platform.",
+   "normalized": "built llm apps; fine-tuned large language models; ml pipelines on gcp and google cloud platform.",
+   "count": 0,
+   "variants": [
+    "js"
+   ],
+   "expanded": [
+    "js",
+    "javascript",
+    "javascripts"
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "JavaScript",
+   "text": "Built LLM apps; fine-tuned large language models; ML pipelines on GCP and Google Cloud Platform.",
+   "normalized": "built llm apps; fine-tuned large language models; ml pipelines on gcp and google cloud platform.",
+   "count": 0,
+   "variants": [
+    "javascript",
+    "javascripts"
+   ],
+   "expanded": [
+    "javascript",
+    "javascripts",
+    "js"
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "Java",
+   "text": "Built LLM apps; fine-tuned large language models; ML pipelines on GCP and Google Cloud Platform.",
+   "normalized": "built llm apps; fine-tuned large language models; ml pipelines on gcp and google cloud platform.",
+   "count": 0,
+   "variants": [
+    "java",
+    "javas"
+   ],
+   "expanded": [
+    "java",
+    "javas"
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "Node.js",
+   "text": "Built LLM apps; fine-tuned large language models; ML pipelines on GCP and Google Cloud Platform.",
+   "normalized": "built llm apps; fine-tuned large language models; ml pipelines on gcp and google cloud platform.",
+   "count": 0,
+   "variants": [
+    "node.js",
+    "node.j"
+   ],
+   "expanded": [
+    "node.js",
+    "node.j"
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "AWS",
+   "text": "Built LLM apps; fine-tuned large language models; ML pipelines on GCP and Google Cloud Platform.",
+   "normalized": "built llm apps; fine-tuned large language models; ml pipelines on gcp and google cloud platform.",
+   "count": 0,
+   "variants": [
+    "aws"
+   ],
+   "expanded": [
+    "aws",
+    "amazon web services",
+    "amazon web service"
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "amazon web services",
+   "text": "Built LLM apps; fine-tuned large language models; ML pipelines on GCP and Google Cloud Platform.",
+   "normalized": "built llm apps; fine-tuned large language models; ml pipelines on gcp and google cloud platform.",
+   "count": 0,
+   "variants": [
+    "amazon web services",
+    "amazon web service"
+   ],
+   "expanded": [
+    "amazon web services",
+    "amazon web service",
+    "aws"
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "Kubernetes",
+   "text": "Built LLM apps; fine-tuned large language models; ML pipelines on GCP and Google Cloud Platform.",
+   "normalized": "built llm apps; fine-tuned large language models; ml pipelines on gcp and google cloud platform.",
+   "count": 0,
+   "variants": [
+    "kubernetes",
+    "kubernete"
+   ],
+   "expanded": [
+    "kubernetes",
+    "kubernete",
+    "k8s"
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "k8s",
+   "text": "Built LLM apps; fine-tuned large language models; ML pipelines on GCP and Google Cloud Platform.",
+   "normalized": "built llm apps; fine-tuned large language models; ml pipelines on gcp and google cloud platform.",
+   "count": 0,
+   "variants": [
+    "k8s"
+   ],
+   "expanded": [
+    "k8s",
+    "kubernetes",
+    "kubernete"
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "CI/CD",
+   "text": "Built LLM apps; fine-tuned large language models; ML pipelines on GCP and Google Cloud Platform.",
+   "normalized": "built llm apps; fine-tuned large language models; ml pipelines on gcp and google cloud platform.",
+   "count": 0,
+   "variants": [
+    "ci/cd",
+    "ci/cds"
+   ],
+   "expanded": [
+    "ci/cd",
+    "ci/cds",
+    "cicd",
+    "cicds"
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "cicd",
+   "text": "Built LLM apps; fine-tuned large language models; ML pipelines on GCP and Google Cloud Platform.",
+   "normalized": "built llm apps; fine-tuned large language models; ml pipelines on gcp and google cloud platform.",
+   "count": 0,
+   "variants": [
+    "cicd",
+    "cicds"
+   ],
+   "expanded": [
+    "cicd",
+    "cicds",
+    "ci/cd",
+    "ci/cds"
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "LLM",
+   "text": "Built LLM apps; fine-tuned large language models; ML pipelines on GCP and Google Cloud Platform.",
+   "normalized": "built llm apps; fine-tuned large language models; ml pipelines on gcp and google cloud platform.",
+   "count": 1,
+   "variants": [
+    "llm",
+    "llms"
+   ],
+   "expanded": [
+    "llm",
+    "llms",
+    "large language model",
+    "large language models"
+   ],
+   "keywordCount": 2
+  },
+  {
+   "term": "LLMs",
+   "text": "Built LLM apps; fine-tuned large language models; ML pipelines on GCP and Google Cloud Platform.",
+   "normalized": "built llm apps; fine-tuned large language models; ml pipelines on gcp and google cloud platform.",
+   "count": 0,
+   "variants": [
+    "llms",
+    "llm"
+   ],
+   "expanded": [
+    "llms",
+    "llm",
+    "large language model",
+    "large language models"
+   ],
+   "keywordCount": 2
+  },
+  {
+   "term": "large language model",
+   "text": "Built LLM apps; fine-tuned large language models; ML pipelines on GCP and Google Cloud Platform.",
+   "normalized": "built llm apps; fine-tuned large language models; ml pipelines on gcp and google cloud platform.",
+   "count": 0,
+   "variants": [
+    "large language model",
+    "large language models"
+   ],
+   "expanded": [
+    "large language model",
+    "large language models",
+    "llm",
+    "llms"
+   ],
+   "keywordCount": 2
+  },
+  {
+   "term": "ML",
+   "text": "Built LLM apps; fine-tuned large language models; ML pipelines on GCP and Google Cloud Platform.",
+   "normalized": "built llm apps; fine-tuned large language models; ml pipelines on gcp and google cloud platform.",
+   "count": 1,
+   "variants": [
+    "ml"
+   ],
+   "expanded": [
+    "ml",
+    "machine learning",
+    "machine learnings"
+   ],
+   "keywordCount": 1
+  },
+  {
+   "term": "machine learning",
+   "text": "Built LLM apps; fine-tuned large language models; ML pipelines on GCP and Google Cloud Platform.",
+   "normalized": "built llm apps; fine-tuned large language models; ml pipelines on gcp and google cloud platform.",
+   "count": 0,
+   "variants": [
+    "machine learning",
+    "machine learnings"
+   ],
+   "expanded": [
+    "machine learning",
+    "machine learnings",
+    "ml"
+   ],
+   "keywordCount": 1
+  },
+  {
+   "term": "GCP",
+   "text": "Built LLM apps; fine-tuned large language models; ML pipelines on GCP and Google Cloud Platform.",
+   "normalized": "built llm apps; fine-tuned large language models; ml pipelines on gcp and google cloud platform.",
+   "count": 1,
+   "variants": [
+    "gcp",
+    "gcps"
+   ],
+   "expanded": [
+    "gcp",
+    "gcps",
+    "google cloud platform",
+    "google cloud platforms"
+   ],
+   "keywordCount": 2
+  },
+  {
+   "term": "C++",
+   "text": "Built LLM apps; fine-tuned large language models; ML pipelines on GCP and Google Cloud Platform.",
+   "normalized": "built llm apps; fine-tuned large language models; ml pipelines on gcp and google cloud platform.",
+   "count": 0,
+   "variants": [
+    "c++",
+    "c++s"
+   ],
+   "expanded": [
+    "c++",
+    "c++s"
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "PostgreSQL",
+   "text": "Built LLM apps; fine-tuned large language models; ML pipelines on GCP and Google Cloud Platform.",
+   "normalized": "built llm apps; fine-tuned large language models; ml pipelines on gcp and google cloud platform.",
+   "count": 0,
+   "variants": [
+    "postgresql",
+    "postgresqls"
+   ],
+   "expanded": [
+    "postgresql",
+    "postgresqls",
+    "postgres",
+    "postgre"
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "postgres",
+   "text": "Built LLM apps; fine-tuned large language models; ML pipelines on GCP and Google Cloud Platform.",
+   "normalized": "built llm apps; fine-tuned large language models; ml pipelines on gcp and google cloud platform.",
+   "count": 0,
+   "variants": [
+    "postgres",
+    "postgre"
+   ],
+   "expanded": [
+    "postgres",
+    "postgre",
+    "postgresql",
+    "postgresqls"
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "API",
+   "text": "Built LLM apps; fine-tuned large language models; ML pipelines on GCP and Google Cloud Platform.",
+   "normalized": "built llm apps; fine-tuned large language models; ml pipelines on gcp and google cloud platform.",
+   "count": 0,
+   "variants": [
+    "api",
+    "apis"
+   ],
+   "expanded": [
+    "api",
+    "apis"
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "APIs",
+   "text": "Built LLM apps; fine-tuned large language models; ML pipelines on GCP and Google Cloud Platform.",
+   "normalized": "built llm apps; fine-tuned large language models; ml pipelines on gcp and google cloud platform.",
+   "count": 0,
+   "variants": [
+    "apis",
+    "api"
+   ],
+   "expanded": [
+    "apis",
+    "api"
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "GraphQL",
+   "text": "Built LLM apps; fine-tuned large language models; ML pipelines on GCP and Google Cloud Platform.",
+   "normalized": "built llm apps; fine-tuned large language models; ml pipelines on gcp and google cloud platform.",
+   "count": 0,
+   "variants": [
+    "graphql",
+    "graphqls"
+   ],
+   "expanded": [
+    "graphql",
+    "graphqls"
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "Python",
+   "text": "Built LLM apps; fine-tuned large language models; ML pipelines on GCP and Google Cloud Platform.",
+   "normalized": "built llm apps; fine-tuned large language models; ml pipelines on gcp and google cloud platform.",
+   "count": 0,
+   "variants": [
+    "python",
+    "pythons"
+   ],
+   "expanded": [
+    "python",
+    "pythons"
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "PyTorch",
+   "text": "Built LLM apps; fine-tuned large language models; ML pipelines on GCP and Google Cloud Platform.",
+   "normalized": "built llm apps; fine-tuned large language models; ml pipelines on gcp and google cloud platform.",
+   "count": 0,
+   "variants": [
+    "pytorch",
+    "pytorchs"
+   ],
+   "expanded": [
+    "pytorch",
+    "pytorchs"
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "café",
+   "text": "Built LLM apps; fine-tuned large language models; ML pipelines on GCP and Google Cloud Platform.",
+   "normalized": "built llm apps; fine-tuned large language models; ml pipelines on gcp and google cloud platform.",
+   "count": 0,
+   "variants": [
+    "café",
+    "cafés"
+   ],
+   "expanded": [
+    "café",
+    "cafés"
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "résumé",
+   "text": "Built LLM apps; fine-tuned large language models; ML pipelines on GCP and Google Cloud Platform.",
+   "normalized": "built llm apps; fine-tuned large language models; ml pipelines on gcp and google cloud platform.",
+   "count": 0,
+   "variants": [
+    "résumé",
+    "résumés"
+   ],
+   "expanded": [
+    "résumé",
+    "résumés"
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "Docker",
+   "text": "Built LLM apps; fine-tuned large language models; ML pipelines on GCP and Google Cloud Platform.",
+   "normalized": "built llm apps; fine-tuned large language models; ml pipelines on gcp and google cloud platform.",
+   "count": 0,
+   "variants": [
+    "docker",
+    "dockers"
+   ],
+   "expanded": [
+    "docker",
+    "dockers"
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "Terraform",
+   "text": "Built LLM apps; fine-tuned large language models; ML pipelines on GCP and Google Cloud Platform.",
+   "normalized": "built llm apps; fine-tuned large language models; ml pipelines on gcp and google cloud platform.",
+   "count": 0,
+   "variants": [
+    "terraform",
+    "terraforms"
+   ],
+   "expanded": [
+    "terraform",
+    "terraforms"
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "IaC",
+   "text": "Built LLM apps; fine-tuned large language models; ML pipelines on GCP and Google Cloud Platform.",
+   "normalized": "built llm apps; fine-tuned large language models; ml pipelines on gcp and google cloud platform.",
+   "count": 0,
+   "variants": [
+    "iac",
+    "iacs"
+   ],
+   "expanded": [
+    "iac",
+    "iacs",
+    "infrastructure as code",
+    "infrastructure as codes"
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "Scrum",
+   "text": "Built LLM apps; fine-tuned large language models; ML pipelines on GCP and Google Cloud Platform.",
+   "normalized": "built llm apps; fine-tuned large language models; ml pipelines on gcp and google cloud platform.",
+   "count": 0,
+   "variants": [
+    "scrum",
+    "scrums"
+   ],
+   "expanded": [
+    "scrum",
+    "scrums"
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "Jira",
+   "text": "Built LLM apps; fine-tuned large language models; ML pipelines on GCP and Google Cloud Platform.",
+   "normalized": "built llm apps; fine-tuned large language models; ml pipelines on gcp and google cloud platform.",
+   "count": 0,
+   "variants": [
+    "jira",
+    "jiras"
+   ],
+   "expanded": [
+    "jira",
+    "jiras"
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "it",
+   "text": "Built LLM apps; fine-tuned large language models; ML pipelines on GCP and Google Cloud Platform.",
+   "normalized": "built llm apps; fine-tuned large language models; ml pipelines on gcp and google cloud platform.",
+   "count": 0,
+   "variants": [
+    "it"
+   ],
+   "expanded": [
+    "it"
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "its",
+   "text": "Built LLM apps; fine-tuned large language models; ML pipelines on GCP and Google Cloud Platform.",
+   "normalized": "built llm apps; fine-tuned large language models; ml pipelines on gcp and google cloud platform.",
+   "count": 0,
+   "variants": [
+    "its"
+   ],
+   "expanded": [
+    "its"
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "go",
+   "text": "Built LLM apps; fine-tuned large language models; ML pipelines on GCP and Google Cloud Platform.",
+   "normalized": "built llm apps; fine-tuned large language models; ml pipelines on gcp and google cloud platform.",
+   "count": 0,
+   "variants": [
+    "go"
+   ],
+   "expanded": [
+    "go"
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "s",
+   "text": "Built LLM apps; fine-tuned large language models; ML pipelines on GCP and Google Cloud Platform.",
+   "normalized": "built llm apps; fine-tuned large language models; ml pipelines on gcp and google cloud platform.",
+   "count": 0,
+   "variants": [
+    "s"
+   ],
+   "expanded": [
+    "s"
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "",
+   "text": "Built LLM apps; fine-tuned large language models; ML pipelines on GCP and Google Cloud Platform.",
+   "normalized": "built llm apps; fine-tuned large language models; ml pipelines on gcp and google cloud platform.",
+   "count": 0,
+   "variants": [
+    ""
+   ],
+   "expanded": [
+    ""
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "  ",
+   "text": "Built LLM apps; fine-tuned large language models; ML pipelines on GCP and Google Cloud Platform.",
+   "normalized": "built llm apps; fine-tuned large language models; ml pipelines on gcp and google cloud platform.",
+   "count": 0,
+   "variants": [
+    ""
+   ],
+   "expanded": [
+    ""
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "React",
+   "text": "JavaScript and Java; C++17 and c++; PostgreSQL/postgres; REST APIs and GraphQL api.",
+   "normalized": "javascript and java; c++17 and c++; postgresql/postgres; rest apis and graphql api.",
+   "count": 0,
+   "variants": [
+    "react",
+    "reacts"
+   ],
+   "expanded": [
+    "react",
+    "reacts"
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "react.js",
+   "text": "JavaScript and Java; C++17 and c++; PostgreSQL/postgres; REST APIs and GraphQL api.",
+   "normalized": "javascript and java; c++17 and c++; postgresql/postgres; rest apis and graphql api.",
+   "count": 0,
+   "variants": [
+    "react.js",
+    "react.j"
+   ],
+   "expanded": [
+    "react.js",
+    "react.j"
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "TypeScript",
+   "text": "JavaScript and Java; C++17 and c++; PostgreSQL/postgres; REST APIs and GraphQL api.",
+   "normalized": "javascript and java; c++17 and c++; postgresql/postgres; rest apis and graphql api.",
+   "count": 0,
+   "variants": [
+    "typescript",
+    "typescripts"
+   ],
+   "expanded": [
+    "typescript",
+    "typescripts",
+    "ts"
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "ts",
+   "text": "JavaScript and Java; C++17 and c++; PostgreSQL/postgres; REST APIs and GraphQL api.",
+   "normalized": "javascript and java; c++17 and c++; postgresql/postgres; rest apis and graphql api.",
+   "count": 0,
+   "variants": [
+    "ts"
+   ],
+   "expanded": [
+    "ts",
+    "typescript",
+    "typescripts"
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "js",
+   "text": "JavaScript and Java; C++17 and c++; PostgreSQL/postgres; REST APIs and GraphQL api.",
+   "normalized": "javascript and java; c++17 and c++; postgresql/postgres; rest apis and graphql api.",
+   "count": 0,
+   "variants": [
+    "js"
+   ],
+   "expanded": [
+    "js",
+    "javascript",
+    "javascripts"
+   ],
+   "keywordCount": 1
+  },
+  {
+   "term": "JavaScript",
+   "text": "JavaScript and Java; C++17 and c++; PostgreSQL/postgres; REST APIs and GraphQL api.",
+   "normalized": "javascript and java; c++17 and c++; postgresql/postgres; rest apis and graphql api.",
+   "count": 1,
+   "variants": [
+    "javascript",
+    "javascripts"
+   ],
+   "expanded": [
+    "javascript",
+    "javascripts",
+    "js"
+   ],
+   "keywordCount": 1
+  },
+  {
+   "term": "Java",
+   "text": "JavaScript and Java; C++17 and c++; PostgreSQL/postgres; REST APIs and GraphQL api.",
+   "normalized": "javascript and java; c++17 and c++; postgresql/postgres; rest apis and graphql api.",
+   "count": 1,
+   "variants": [
+    "java",
+    "javas"
+   ],
+   "expanded": [
+    "java",
+    "javas"
+   ],
+   "keywordCount": 1
+  },
+  {
+   "term": "Node.js",
+   "text": "JavaScript and Java; C++17 and c++; PostgreSQL/postgres; REST APIs and GraphQL api.",
+   "normalized": "javascript and java; c++17 and c++; postgresql/postgres; rest apis and graphql api.",
+   "count": 0,
+   "variants": [
+    "node.js",
+    "node.j"
+   ],
+   "expanded": [
+    "node.js",
+    "node.j"
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "AWS",
+   "text": "JavaScript and Java; C++17 and c++; PostgreSQL/postgres; REST APIs and GraphQL api.",
+   "normalized": "javascript and java; c++17 and c++; postgresql/postgres; rest apis and graphql api.",
+   "count": 0,
+   "variants": [
+    "aws"
+   ],
+   "expanded": [
+    "aws",
+    "amazon web services",
+    "amazon web service"
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "amazon web services",
+   "text": "JavaScript and Java; C++17 and c++; PostgreSQL/postgres; REST APIs and GraphQL api.",
+   "normalized": "javascript and java; c++17 and c++; postgresql/postgres; rest apis and graphql api.",
+   "count": 0,
+   "variants": [
+    "amazon web services",
+    "amazon web service"
+   ],
+   "expanded": [
+    "amazon web services",
+    "amazon web service",
+    "aws"
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "Kubernetes",
+   "text": "JavaScript and Java; C++17 and c++; PostgreSQL/postgres; REST APIs and GraphQL api.",
+   "normalized": "javascript and java; c++17 and c++; postgresql/postgres; rest apis and graphql api.",
+   "count": 0,
+   "variants": [
+    "kubernetes",
+    "kubernete"
+   ],
+   "expanded": [
+    "kubernetes",
+    "kubernete",
+    "k8s"
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "k8s",
+   "text": "JavaScript and Java; C++17 and c++; PostgreSQL/postgres; REST APIs and GraphQL api.",
+   "normalized": "javascript and java; c++17 and c++; postgresql/postgres; rest apis and graphql api.",
+   "count": 0,
+   "variants": [
+    "k8s"
+   ],
+   "expanded": [
+    "k8s",
+    "kubernetes",
+    "kubernete"
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "CI/CD",
+   "text": "JavaScript and Java; C++17 and c++; PostgreSQL/postgres; REST APIs and GraphQL api.",
+   "normalized": "javascript and java; c++17 and c++; postgresql/postgres; rest apis and graphql api.",
+   "count": 0,
+   "variants": [
+    "ci/cd",
+    "ci/cds"
+   ],
+   "expanded": [
+    "ci/cd",
+    "ci/cds",
+    "cicd",
+    "cicds"
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "cicd",
+   "text": "JavaScript and Java; C++17 and c++; PostgreSQL/postgres; REST APIs and GraphQL api.",
+   "normalized": "javascript and java; c++17 and c++; postgresql/postgres; rest apis and graphql api.",
+   "count": 0,
+   "variants": [
+    "cicd",
+    "cicds"
+   ],
+   "expanded": [
+    "cicd",
+    "cicds",
+    "ci/cd",
+    "ci/cds"
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "LLM",
+   "text": "JavaScript and Java; C++17 and c++; PostgreSQL/postgres; REST APIs and GraphQL api.",
+   "normalized": "javascript and java; c++17 and c++; postgresql/postgres; rest apis and graphql api.",
+   "count": 0,
+   "variants": [
+    "llm",
+    "llms"
+   ],
+   "expanded": [
+    "llm",
+    "llms",
+    "large language model",
+    "large language models"
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "LLMs",
+   "text": "JavaScript and Java; C++17 and c++; PostgreSQL/postgres; REST APIs and GraphQL api.",
+   "normalized": "javascript and java; c++17 and c++; postgresql/postgres; rest apis and graphql api.",
+   "count": 0,
+   "variants": [
+    "llms",
+    "llm"
+   ],
+   "expanded": [
+    "llms",
+    "llm",
+    "large language model",
+    "large language models"
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "large language model",
+   "text": "JavaScript and Java; C++17 and c++; PostgreSQL/postgres; REST APIs and GraphQL api.",
+   "normalized": "javascript and java; c++17 and c++; postgresql/postgres; rest apis and graphql api.",
+   "count": 0,
+   "variants": [
+    "large language model",
+    "large language models"
+   ],
+   "expanded": [
+    "large language model",
+    "large language models",
+    "llm",
+    "llms"
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "ML",
+   "text": "JavaScript and Java; C++17 and c++; PostgreSQL/postgres; REST APIs and GraphQL api.",
+   "normalized": "javascript and java; c++17 and c++; postgresql/postgres; rest apis and graphql api.",
+   "count": 0,
+   "variants": [
+    "ml"
+   ],
+   "expanded": [
+    "ml",
+    "machine learning",
+    "machine learnings"
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "machine learning",
+   "text": "JavaScript and Java; C++17 and c++; PostgreSQL/postgres; REST APIs and GraphQL api.",
+   "normalized": "javascript and java; c++17 and c++; postgresql/postgres; rest apis and graphql api.",
+   "count": 0,
+   "variants": [
+    "machine learning",
+    "machine learnings"
+   ],
+   "expanded": [
+    "machine learning",
+    "machine learnings",
+    "ml"
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "GCP",
+   "text": "JavaScript and Java; C++17 and c++; PostgreSQL/postgres; REST APIs and GraphQL api.",
+   "normalized": "javascript and java; c++17 and c++; postgresql/postgres; rest apis and graphql api.",
+   "count": 0,
+   "variants": [
+    "gcp",
+    "gcps"
+   ],
+   "expanded": [
+    "gcp",
+    "gcps",
+    "google cloud platform",
+    "google cloud platforms"
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "C++",
+   "text": "JavaScript and Java; C++17 and c++; PostgreSQL/postgres; REST APIs and GraphQL api.",
+   "normalized": "javascript and java; c++17 and c++; postgresql/postgres; rest apis and graphql api.",
+   "count": 1,
+   "variants": [
+    "c++",
+    "c++s"
+   ],
+   "expanded": [
+    "c++",
+    "c++s"
+   ],
+   "keywordCount": 1
+  },
+  {
+   "term": "PostgreSQL",
+   "text": "JavaScript and Java; C++17 and c++; PostgreSQL/postgres; REST APIs and GraphQL api.",
+   "normalized": "javascript and java; c++17 and c++; postgresql/postgres; rest apis and graphql api.",
+   "count": 1,
+   "variants": [
+    "postgresql",
+    "postgresqls"
+   ],
+   "expanded": [
+    "postgresql",
+    "postgresqls",
+    "postgres",
+    "postgre"
+   ],
+   "keywordCount": 2
+  },
+  {
+   "term": "postgres",
+   "text": "JavaScript and Java; C++17 and c++; PostgreSQL/postgres; REST APIs and GraphQL api.",
+   "normalized": "javascript and java; c++17 and c++; postgresql/postgres; rest apis and graphql api.",
+   "count": 1,
+   "variants": [
+    "postgres",
+    "postgre"
+   ],
+   "expanded": [
+    "postgres",
+    "postgre",
+    "postgresql",
+    "postgresqls"
+   ],
+   "keywordCount": 2
+  },
+  {
+   "term": "API",
+   "text": "JavaScript and Java; C++17 and c++; PostgreSQL/postgres; REST APIs and GraphQL api.",
+   "normalized": "javascript and java; c++17 and c++; postgresql/postgres; rest apis and graphql api.",
+   "count": 1,
+   "variants": [
+    "api",
+    "apis"
+   ],
+   "expanded": [
+    "api",
+    "apis"
+   ],
+   "keywordCount": 2
+  },
+  {
+   "term": "APIs",
+   "text": "JavaScript and Java; C++17 and c++; PostgreSQL/postgres; REST APIs and GraphQL api.",
+   "normalized": "javascript and java; c++17 and c++; postgresql/postgres; rest apis and graphql api.",
+   "count": 1,
+   "variants": [
+    "apis",
+    "api"
+   ],
+   "expanded": [
+    "apis",
+    "api"
+   ],
+   "keywordCount": 2
+  },
+  {
+   "term": "GraphQL",
+   "text": "JavaScript and Java; C++17 and c++; PostgreSQL/postgres; REST APIs and GraphQL api.",
+   "normalized": "javascript and java; c++17 and c++; postgresql/postgres; rest apis and graphql api.",
+   "count": 1,
+   "variants": [
+    "graphql",
+    "graphqls"
+   ],
+   "expanded": [
+    "graphql",
+    "graphqls"
+   ],
+   "keywordCount": 1
+  },
+  {
+   "term": "Python",
+   "text": "JavaScript and Java; C++17 and c++; PostgreSQL/postgres; REST APIs and GraphQL api.",
+   "normalized": "javascript and java; c++17 and c++; postgresql/postgres; rest apis and graphql api.",
+   "count": 0,
+   "variants": [
+    "python",
+    "pythons"
+   ],
+   "expanded": [
+    "python",
+    "pythons"
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "PyTorch",
+   "text": "JavaScript and Java; C++17 and c++; PostgreSQL/postgres; REST APIs and GraphQL api.",
+   "normalized": "javascript and java; c++17 and c++; postgresql/postgres; rest apis and graphql api.",
+   "count": 0,
+   "variants": [
+    "pytorch",
+    "pytorchs"
+   ],
+   "expanded": [
+    "pytorch",
+    "pytorchs"
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "café",
+   "text": "JavaScript and Java; C++17 and c++; PostgreSQL/postgres; REST APIs and GraphQL api.",
+   "normalized": "javascript and java; c++17 and c++; postgresql/postgres; rest apis and graphql api.",
+   "count": 0,
+   "variants": [
+    "café",
+    "cafés"
+   ],
+   "expanded": [
+    "café",
+    "cafés"
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "résumé",
+   "text": "JavaScript and Java; C++17 and c++; PostgreSQL/postgres; REST APIs and GraphQL api.",
+   "normalized": "javascript and java; c++17 and c++; postgresql/postgres; rest apis and graphql api.",
+   "count": 0,
+   "variants": [
+    "résumé",
+    "résumés"
+   ],
+   "expanded": [
+    "résumé",
+    "résumés"
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "Docker",
+   "text": "JavaScript and Java; C++17 and c++; PostgreSQL/postgres; REST APIs and GraphQL api.",
+   "normalized": "javascript and java; c++17 and c++; postgresql/postgres; rest apis and graphql api.",
+   "count": 0,
+   "variants": [
+    "docker",
+    "dockers"
+   ],
+   "expanded": [
+    "docker",
+    "dockers"
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "Terraform",
+   "text": "JavaScript and Java; C++17 and c++; PostgreSQL/postgres; REST APIs and GraphQL api.",
+   "normalized": "javascript and java; c++17 and c++; postgresql/postgres; rest apis and graphql api.",
+   "count": 0,
+   "variants": [
+    "terraform",
+    "terraforms"
+   ],
+   "expanded": [
+    "terraform",
+    "terraforms"
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "IaC",
+   "text": "JavaScript and Java; C++17 and c++; PostgreSQL/postgres; REST APIs and GraphQL api.",
+   "normalized": "javascript and java; c++17 and c++; postgresql/postgres; rest apis and graphql api.",
+   "count": 0,
+   "variants": [
+    "iac",
+    "iacs"
+   ],
+   "expanded": [
+    "iac",
+    "iacs",
+    "infrastructure as code",
+    "infrastructure as codes"
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "Scrum",
+   "text": "JavaScript and Java; C++17 and c++; PostgreSQL/postgres; REST APIs and GraphQL api.",
+   "normalized": "javascript and java; c++17 and c++; postgresql/postgres; rest apis and graphql api.",
+   "count": 0,
+   "variants": [
+    "scrum",
+    "scrums"
+   ],
+   "expanded": [
+    "scrum",
+    "scrums"
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "Jira",
+   "text": "JavaScript and Java; C++17 and c++; PostgreSQL/postgres; REST APIs and GraphQL api.",
+   "normalized": "javascript and java; c++17 and c++; postgresql/postgres; rest apis and graphql api.",
+   "count": 0,
+   "variants": [
+    "jira",
+    "jiras"
+   ],
+   "expanded": [
+    "jira",
+    "jiras"
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "it",
+   "text": "JavaScript and Java; C++17 and c++; PostgreSQL/postgres; REST APIs and GraphQL api.",
+   "normalized": "javascript and java; c++17 and c++; postgresql/postgres; rest apis and graphql api.",
+   "count": 0,
+   "variants": [
+    "it"
+   ],
+   "expanded": [
+    "it"
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "its",
+   "text": "JavaScript and Java; C++17 and c++; PostgreSQL/postgres; REST APIs and GraphQL api.",
+   "normalized": "javascript and java; c++17 and c++; postgresql/postgres; rest apis and graphql api.",
+   "count": 0,
+   "variants": [
+    "its"
+   ],
+   "expanded": [
+    "its"
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "go",
+   "text": "JavaScript and Java; C++17 and c++; PostgreSQL/postgres; REST APIs and GraphQL api.",
+   "normalized": "javascript and java; c++17 and c++; postgresql/postgres; rest apis and graphql api.",
+   "count": 0,
+   "variants": [
+    "go"
+   ],
+   "expanded": [
+    "go"
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "s",
+   "text": "JavaScript and Java; C++17 and c++; PostgreSQL/postgres; REST APIs and GraphQL api.",
+   "normalized": "javascript and java; c++17 and c++; postgresql/postgres; rest apis and graphql api.",
+   "count": 0,
+   "variants": [
+    "s"
+   ],
+   "expanded": [
+    "s"
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "",
+   "text": "JavaScript and Java; C++17 and c++; PostgreSQL/postgres; REST APIs and GraphQL api.",
+   "normalized": "javascript and java; c++17 and c++; postgresql/postgres; rest apis and graphql api.",
+   "count": 0,
+   "variants": [
+    ""
+   ],
+   "expanded": [
+    ""
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "  ",
+   "text": "JavaScript and Java; C++17 and c++; PostgreSQL/postgres; REST APIs and GraphQL api.",
+   "normalized": "javascript and java; c++17 and c++; postgresql/postgres; rest apis and graphql api.",
+   "count": 0,
+   "variants": [
+    ""
+   ],
+   "expanded": [
+    ""
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "React",
+   "text": "  Spaces and odd\ttabs\nnewlines​ and﻿BOM   ",
+   "normalized": "spaces and odd tabs newlines​ and bom",
+   "count": 0,
+   "variants": [
+    "react",
+    "reacts"
+   ],
+   "expanded": [
+    "react",
+    "reacts"
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "react.js",
+   "text": "  Spaces and odd\ttabs\nnewlines​ and﻿BOM   ",
+   "normalized": "spaces and odd tabs newlines​ and bom",
+   "count": 0,
+   "variants": [
+    "react.js",
+    "react.j"
+   ],
+   "expanded": [
+    "react.js",
+    "react.j"
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "TypeScript",
+   "text": "  Spaces and odd\ttabs\nnewlines​ and﻿BOM   ",
+   "normalized": "spaces and odd tabs newlines​ and bom",
+   "count": 0,
+   "variants": [
+    "typescript",
+    "typescripts"
+   ],
+   "expanded": [
+    "typescript",
+    "typescripts",
+    "ts"
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "ts",
+   "text": "  Spaces and odd\ttabs\nnewlines​ and﻿BOM   ",
+   "normalized": "spaces and odd tabs newlines​ and bom",
+   "count": 0,
+   "variants": [
+    "ts"
+   ],
+   "expanded": [
+    "ts",
+    "typescript",
+    "typescripts"
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "js",
+   "text": "  Spaces and odd\ttabs\nnewlines​ and﻿BOM   ",
+   "normalized": "spaces and odd tabs newlines​ and bom",
+   "count": 0,
+   "variants": [
+    "js"
+   ],
+   "expanded": [
+    "js",
+    "javascript",
+    "javascripts"
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "JavaScript",
+   "text": "  Spaces and odd\ttabs\nnewlines​ and﻿BOM   ",
+   "normalized": "spaces and odd tabs newlines​ and bom",
+   "count": 0,
+   "variants": [
+    "javascript",
+    "javascripts"
+   ],
+   "expanded": [
+    "javascript",
+    "javascripts",
+    "js"
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "Java",
+   "text": "  Spaces and odd\ttabs\nnewlines​ and﻿BOM   ",
+   "normalized": "spaces and odd tabs newlines​ and bom",
+   "count": 0,
+   "variants": [
+    "java",
+    "javas"
+   ],
+   "expanded": [
+    "java",
+    "javas"
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "Node.js",
+   "text": "  Spaces and odd\ttabs\nnewlines​ and﻿BOM   ",
+   "normalized": "spaces and odd tabs newlines​ and bom",
+   "count": 0,
+   "variants": [
+    "node.js",
+    "node.j"
+   ],
+   "expanded": [
+    "node.js",
+    "node.j"
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "AWS",
+   "text": "  Spaces and odd\ttabs\nnewlines​ and﻿BOM   ",
+   "normalized": "spaces and odd tabs newlines​ and bom",
+   "count": 0,
+   "variants": [
+    "aws"
+   ],
+   "expanded": [
+    "aws",
+    "amazon web services",
+    "amazon web service"
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "amazon web services",
+   "text": "  Spaces and odd\ttabs\nnewlines​ and﻿BOM   ",
+   "normalized": "spaces and odd tabs newlines​ and bom",
+   "count": 0,
+   "variants": [
+    "amazon web services",
+    "amazon web service"
+   ],
+   "expanded": [
+    "amazon web services",
+    "amazon web service",
+    "aws"
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "Kubernetes",
+   "text": "  Spaces and odd\ttabs\nnewlines​ and﻿BOM   ",
+   "normalized": "spaces and odd tabs newlines​ and bom",
+   "count": 0,
+   "variants": [
+    "kubernetes",
+    "kubernete"
+   ],
+   "expanded": [
+    "kubernetes",
+    "kubernete",
+    "k8s"
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "k8s",
+   "text": "  Spaces and odd\ttabs\nnewlines​ and﻿BOM   ",
+   "normalized": "spaces and odd tabs newlines​ and bom",
+   "count": 0,
+   "variants": [
+    "k8s"
+   ],
+   "expanded": [
+    "k8s",
+    "kubernetes",
+    "kubernete"
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "CI/CD",
+   "text": "  Spaces and odd\ttabs\nnewlines​ and﻿BOM   ",
+   "normalized": "spaces and odd tabs newlines​ and bom",
+   "count": 0,
+   "variants": [
+    "ci/cd",
+    "ci/cds"
+   ],
+   "expanded": [
+    "ci/cd",
+    "ci/cds",
+    "cicd",
+    "cicds"
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "cicd",
+   "text": "  Spaces and odd\ttabs\nnewlines​ and﻿BOM   ",
+   "normalized": "spaces and odd tabs newlines​ and bom",
+   "count": 0,
+   "variants": [
+    "cicd",
+    "cicds"
+   ],
+   "expanded": [
+    "cicd",
+    "cicds",
+    "ci/cd",
+    "ci/cds"
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "LLM",
+   "text": "  Spaces and odd\ttabs\nnewlines​ and﻿BOM   ",
+   "normalized": "spaces and odd tabs newlines​ and bom",
+   "count": 0,
+   "variants": [
+    "llm",
+    "llms"
+   ],
+   "expanded": [
+    "llm",
+    "llms",
+    "large language model",
+    "large language models"
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "LLMs",
+   "text": "  Spaces and odd\ttabs\nnewlines​ and﻿BOM   ",
+   "normalized": "spaces and odd tabs newlines​ and bom",
+   "count": 0,
+   "variants": [
+    "llms",
+    "llm"
+   ],
+   "expanded": [
+    "llms",
+    "llm",
+    "large language model",
+    "large language models"
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "large language model",
+   "text": "  Spaces and odd\ttabs\nnewlines​ and﻿BOM   ",
+   "normalized": "spaces and odd tabs newlines​ and bom",
+   "count": 0,
+   "variants": [
+    "large language model",
+    "large language models"
+   ],
+   "expanded": [
+    "large language model",
+    "large language models",
+    "llm",
+    "llms"
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "ML",
+   "text": "  Spaces and odd\ttabs\nnewlines​ and﻿BOM   ",
+   "normalized": "spaces and odd tabs newlines​ and bom",
+   "count": 0,
+   "variants": [
+    "ml"
+   ],
+   "expanded": [
+    "ml",
+    "machine learning",
+    "machine learnings"
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "machine learning",
+   "text": "  Spaces and odd\ttabs\nnewlines​ and﻿BOM   ",
+   "normalized": "spaces and odd tabs newlines​ and bom",
+   "count": 0,
+   "variants": [
+    "machine learning",
+    "machine learnings"
+   ],
+   "expanded": [
+    "machine learning",
+    "machine learnings",
+    "ml"
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "GCP",
+   "text": "  Spaces and odd\ttabs\nnewlines​ and﻿BOM   ",
+   "normalized": "spaces and odd tabs newlines​ and bom",
+   "count": 0,
+   "variants": [
+    "gcp",
+    "gcps"
+   ],
+   "expanded": [
+    "gcp",
+    "gcps",
+    "google cloud platform",
+    "google cloud platforms"
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "C++",
+   "text": "  Spaces and odd\ttabs\nnewlines​ and﻿BOM   ",
+   "normalized": "spaces and odd tabs newlines​ and bom",
+   "count": 0,
+   "variants": [
+    "c++",
+    "c++s"
+   ],
+   "expanded": [
+    "c++",
+    "c++s"
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "PostgreSQL",
+   "text": "  Spaces and odd\ttabs\nnewlines​ and﻿BOM   ",
+   "normalized": "spaces and odd tabs newlines​ and bom",
+   "count": 0,
+   "variants": [
+    "postgresql",
+    "postgresqls"
+   ],
+   "expanded": [
+    "postgresql",
+    "postgresqls",
+    "postgres",
+    "postgre"
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "postgres",
+   "text": "  Spaces and odd\ttabs\nnewlines​ and﻿BOM   ",
+   "normalized": "spaces and odd tabs newlines​ and bom",
+   "count": 0,
+   "variants": [
+    "postgres",
+    "postgre"
+   ],
+   "expanded": [
+    "postgres",
+    "postgre",
+    "postgresql",
+    "postgresqls"
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "API",
+   "text": "  Spaces and odd\ttabs\nnewlines​ and﻿BOM   ",
+   "normalized": "spaces and odd tabs newlines​ and bom",
+   "count": 0,
+   "variants": [
+    "api",
+    "apis"
+   ],
+   "expanded": [
+    "api",
+    "apis"
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "APIs",
+   "text": "  Spaces and odd\ttabs\nnewlines​ and﻿BOM   ",
+   "normalized": "spaces and odd tabs newlines​ and bom",
+   "count": 0,
+   "variants": [
+    "apis",
+    "api"
+   ],
+   "expanded": [
+    "apis",
+    "api"
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "GraphQL",
+   "text": "  Spaces and odd\ttabs\nnewlines​ and﻿BOM   ",
+   "normalized": "spaces and odd tabs newlines​ and bom",
+   "count": 0,
+   "variants": [
+    "graphql",
+    "graphqls"
+   ],
+   "expanded": [
+    "graphql",
+    "graphqls"
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "Python",
+   "text": "  Spaces and odd\ttabs\nnewlines​ and﻿BOM   ",
+   "normalized": "spaces and odd tabs newlines​ and bom",
+   "count": 0,
+   "variants": [
+    "python",
+    "pythons"
+   ],
+   "expanded": [
+    "python",
+    "pythons"
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "PyTorch",
+   "text": "  Spaces and odd\ttabs\nnewlines​ and﻿BOM   ",
+   "normalized": "spaces and odd tabs newlines​ and bom",
+   "count": 0,
+   "variants": [
+    "pytorch",
+    "pytorchs"
+   ],
+   "expanded": [
+    "pytorch",
+    "pytorchs"
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "café",
+   "text": "  Spaces and odd\ttabs\nnewlines​ and﻿BOM   ",
+   "normalized": "spaces and odd tabs newlines​ and bom",
+   "count": 0,
+   "variants": [
+    "café",
+    "cafés"
+   ],
+   "expanded": [
+    "café",
+    "cafés"
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "résumé",
+   "text": "  Spaces and odd\ttabs\nnewlines​ and﻿BOM   ",
+   "normalized": "spaces and odd tabs newlines​ and bom",
+   "count": 0,
+   "variants": [
+    "résumé",
+    "résumés"
+   ],
+   "expanded": [
+    "résumé",
+    "résumés"
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "Docker",
+   "text": "  Spaces and odd\ttabs\nnewlines​ and﻿BOM   ",
+   "normalized": "spaces and odd tabs newlines​ and bom",
+   "count": 0,
+   "variants": [
+    "docker",
+    "dockers"
+   ],
+   "expanded": [
+    "docker",
+    "dockers"
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "Terraform",
+   "text": "  Spaces and odd\ttabs\nnewlines​ and﻿BOM   ",
+   "normalized": "spaces and odd tabs newlines​ and bom",
+   "count": 0,
+   "variants": [
+    "terraform",
+    "terraforms"
+   ],
+   "expanded": [
+    "terraform",
+    "terraforms"
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "IaC",
+   "text": "  Spaces and odd\ttabs\nnewlines​ and﻿BOM   ",
+   "normalized": "spaces and odd tabs newlines​ and bom",
+   "count": 0,
+   "variants": [
+    "iac",
+    "iacs"
+   ],
+   "expanded": [
+    "iac",
+    "iacs",
+    "infrastructure as code",
+    "infrastructure as codes"
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "Scrum",
+   "text": "  Spaces and odd\ttabs\nnewlines​ and﻿BOM   ",
+   "normalized": "spaces and odd tabs newlines​ and bom",
+   "count": 0,
+   "variants": [
+    "scrum",
+    "scrums"
+   ],
+   "expanded": [
+    "scrum",
+    "scrums"
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "Jira",
+   "text": "  Spaces and odd\ttabs\nnewlines​ and﻿BOM   ",
+   "normalized": "spaces and odd tabs newlines​ and bom",
+   "count": 0,
+   "variants": [
+    "jira",
+    "jiras"
+   ],
+   "expanded": [
+    "jira",
+    "jiras"
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "it",
+   "text": "  Spaces and odd\ttabs\nnewlines​ and﻿BOM   ",
+   "normalized": "spaces and odd tabs newlines​ and bom",
+   "count": 0,
+   "variants": [
+    "it"
+   ],
+   "expanded": [
+    "it"
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "its",
+   "text": "  Spaces and odd\ttabs\nnewlines​ and﻿BOM   ",
+   "normalized": "spaces and odd tabs newlines​ and bom",
+   "count": 0,
+   "variants": [
+    "its"
+   ],
+   "expanded": [
+    "its"
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "go",
+   "text": "  Spaces and odd\ttabs\nnewlines​ and﻿BOM   ",
+   "normalized": "spaces and odd tabs newlines​ and bom",
+   "count": 0,
+   "variants": [
+    "go"
+   ],
+   "expanded": [
+    "go"
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "s",
+   "text": "  Spaces and odd\ttabs\nnewlines​ and﻿BOM   ",
+   "normalized": "spaces and odd tabs newlines​ and bom",
+   "count": 0,
+   "variants": [
+    "s"
+   ],
+   "expanded": [
+    "s"
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "",
+   "text": "  Spaces and odd\ttabs\nnewlines​ and﻿BOM   ",
+   "normalized": "spaces and odd tabs newlines​ and bom",
+   "count": 0,
+   "variants": [
+    ""
+   ],
+   "expanded": [
+    ""
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "  ",
+   "text": "  Spaces and odd\ttabs\nnewlines​ and﻿BOM   ",
+   "normalized": "spaces and odd tabs newlines​ and bom",
+   "count": 0,
+   "variants": [
+    ""
+   ],
+   "expanded": [
+    ""
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "React",
+   "text": "Ciência de Dados, Café, naïve résumé — Python & PyTorch; ÉTUDES.",
+   "normalized": "ciência de dados, café, naïve résumé — python & pytorch; études.",
+   "count": 0,
+   "variants": [
+    "react",
+    "reacts"
+   ],
+   "expanded": [
+    "react",
+    "reacts"
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "react.js",
+   "text": "Ciência de Dados, Café, naïve résumé — Python & PyTorch; ÉTUDES.",
+   "normalized": "ciência de dados, café, naïve résumé — python & pytorch; études.",
+   "count": 0,
+   "variants": [
+    "react.js",
+    "react.j"
+   ],
+   "expanded": [
+    "react.js",
+    "react.j"
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "TypeScript",
+   "text": "Ciência de Dados, Café, naïve résumé — Python & PyTorch; ÉTUDES.",
+   "normalized": "ciência de dados, café, naïve résumé — python & pytorch; études.",
+   "count": 0,
+   "variants": [
+    "typescript",
+    "typescripts"
+   ],
+   "expanded": [
+    "typescript",
+    "typescripts",
+    "ts"
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "ts",
+   "text": "Ciência de Dados, Café, naïve résumé — Python & PyTorch; ÉTUDES.",
+   "normalized": "ciência de dados, café, naïve résumé — python & pytorch; études.",
+   "count": 0,
+   "variants": [
+    "ts"
+   ],
+   "expanded": [
+    "ts",
+    "typescript",
+    "typescripts"
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "js",
+   "text": "Ciência de Dados, Café, naïve résumé — Python & PyTorch; ÉTUDES.",
+   "normalized": "ciência de dados, café, naïve résumé — python & pytorch; études.",
+   "count": 0,
+   "variants": [
+    "js"
+   ],
+   "expanded": [
+    "js",
+    "javascript",
+    "javascripts"
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "JavaScript",
+   "text": "Ciência de Dados, Café, naïve résumé — Python & PyTorch; ÉTUDES.",
+   "normalized": "ciência de dados, café, naïve résumé — python & pytorch; études.",
+   "count": 0,
+   "variants": [
+    "javascript",
+    "javascripts"
+   ],
+   "expanded": [
+    "javascript",
+    "javascripts",
+    "js"
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "Java",
+   "text": "Ciência de Dados, Café, naïve résumé — Python & PyTorch; ÉTUDES.",
+   "normalized": "ciência de dados, café, naïve résumé — python & pytorch; études.",
+   "count": 0,
+   "variants": [
+    "java",
+    "javas"
+   ],
+   "expanded": [
+    "java",
+    "javas"
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "Node.js",
+   "text": "Ciência de Dados, Café, naïve résumé — Python & PyTorch; ÉTUDES.",
+   "normalized": "ciência de dados, café, naïve résumé — python & pytorch; études.",
+   "count": 0,
+   "variants": [
+    "node.js",
+    "node.j"
+   ],
+   "expanded": [
+    "node.js",
+    "node.j"
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "AWS",
+   "text": "Ciência de Dados, Café, naïve résumé — Python & PyTorch; ÉTUDES.",
+   "normalized": "ciência de dados, café, naïve résumé — python & pytorch; études.",
+   "count": 0,
+   "variants": [
+    "aws"
+   ],
+   "expanded": [
+    "aws",
+    "amazon web services",
+    "amazon web service"
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "amazon web services",
+   "text": "Ciência de Dados, Café, naïve résumé — Python & PyTorch; ÉTUDES.",
+   "normalized": "ciência de dados, café, naïve résumé — python & pytorch; études.",
+   "count": 0,
+   "variants": [
+    "amazon web services",
+    "amazon web service"
+   ],
+   "expanded": [
+    "amazon web services",
+    "amazon web service",
+    "aws"
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "Kubernetes",
+   "text": "Ciência de Dados, Café, naïve résumé — Python & PyTorch; ÉTUDES.",
+   "normalized": "ciência de dados, café, naïve résumé — python & pytorch; études.",
+   "count": 0,
+   "variants": [
+    "kubernetes",
+    "kubernete"
+   ],
+   "expanded": [
+    "kubernetes",
+    "kubernete",
+    "k8s"
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "k8s",
+   "text": "Ciência de Dados, Café, naïve résumé — Python & PyTorch; ÉTUDES.",
+   "normalized": "ciência de dados, café, naïve résumé — python & pytorch; études.",
+   "count": 0,
+   "variants": [
+    "k8s"
+   ],
+   "expanded": [
+    "k8s",
+    "kubernetes",
+    "kubernete"
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "CI/CD",
+   "text": "Ciência de Dados, Café, naïve résumé — Python & PyTorch; ÉTUDES.",
+   "normalized": "ciência de dados, café, naïve résumé — python & pytorch; études.",
+   "count": 0,
+   "variants": [
+    "ci/cd",
+    "ci/cds"
+   ],
+   "expanded": [
+    "ci/cd",
+    "ci/cds",
+    "cicd",
+    "cicds"
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "cicd",
+   "text": "Ciência de Dados, Café, naïve résumé — Python & PyTorch; ÉTUDES.",
+   "normalized": "ciência de dados, café, naïve résumé — python & pytorch; études.",
+   "count": 0,
+   "variants": [
+    "cicd",
+    "cicds"
+   ],
+   "expanded": [
+    "cicd",
+    "cicds",
+    "ci/cd",
+    "ci/cds"
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "LLM",
+   "text": "Ciência de Dados, Café, naïve résumé — Python & PyTorch; ÉTUDES.",
+   "normalized": "ciência de dados, café, naïve résumé — python & pytorch; études.",
+   "count": 0,
+   "variants": [
+    "llm",
+    "llms"
+   ],
+   "expanded": [
+    "llm",
+    "llms",
+    "large language model",
+    "large language models"
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "LLMs",
+   "text": "Ciência de Dados, Café, naïve résumé — Python & PyTorch; ÉTUDES.",
+   "normalized": "ciência de dados, café, naïve résumé — python & pytorch; études.",
+   "count": 0,
+   "variants": [
+    "llms",
+    "llm"
+   ],
+   "expanded": [
+    "llms",
+    "llm",
+    "large language model",
+    "large language models"
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "large language model",
+   "text": "Ciência de Dados, Café, naïve résumé — Python & PyTorch; ÉTUDES.",
+   "normalized": "ciência de dados, café, naïve résumé — python & pytorch; études.",
+   "count": 0,
+   "variants": [
+    "large language model",
+    "large language models"
+   ],
+   "expanded": [
+    "large language model",
+    "large language models",
+    "llm",
+    "llms"
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "ML",
+   "text": "Ciência de Dados, Café, naïve résumé — Python & PyTorch; ÉTUDES.",
+   "normalized": "ciência de dados, café, naïve résumé — python & pytorch; études.",
+   "count": 0,
+   "variants": [
+    "ml"
+   ],
+   "expanded": [
+    "ml",
+    "machine learning",
+    "machine learnings"
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "machine learning",
+   "text": "Ciência de Dados, Café, naïve résumé — Python & PyTorch; ÉTUDES.",
+   "normalized": "ciência de dados, café, naïve résumé — python & pytorch; études.",
+   "count": 0,
+   "variants": [
+    "machine learning",
+    "machine learnings"
+   ],
+   "expanded": [
+    "machine learning",
+    "machine learnings",
+    "ml"
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "GCP",
+   "text": "Ciência de Dados, Café, naïve résumé — Python & PyTorch; ÉTUDES.",
+   "normalized": "ciência de dados, café, naïve résumé — python & pytorch; études.",
+   "count": 0,
+   "variants": [
+    "gcp",
+    "gcps"
+   ],
+   "expanded": [
+    "gcp",
+    "gcps",
+    "google cloud platform",
+    "google cloud platforms"
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "C++",
+   "text": "Ciência de Dados, Café, naïve résumé — Python & PyTorch; ÉTUDES.",
+   "normalized": "ciência de dados, café, naïve résumé — python & pytorch; études.",
+   "count": 0,
+   "variants": [
+    "c++",
+    "c++s"
+   ],
+   "expanded": [
+    "c++",
+    "c++s"
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "PostgreSQL",
+   "text": "Ciência de Dados, Café, naïve résumé — Python & PyTorch; ÉTUDES.",
+   "normalized": "ciência de dados, café, naïve résumé — python & pytorch; études.",
+   "count": 0,
+   "variants": [
+    "postgresql",
+    "postgresqls"
+   ],
+   "expanded": [
+    "postgresql",
+    "postgresqls",
+    "postgres",
+    "postgre"
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "postgres",
+   "text": "Ciência de Dados, Café, naïve résumé — Python & PyTorch; ÉTUDES.",
+   "normalized": "ciência de dados, café, naïve résumé — python & pytorch; études.",
+   "count": 0,
+   "variants": [
+    "postgres",
+    "postgre"
+   ],
+   "expanded": [
+    "postgres",
+    "postgre",
+    "postgresql",
+    "postgresqls"
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "API",
+   "text": "Ciência de Dados, Café, naïve résumé — Python & PyTorch; ÉTUDES.",
+   "normalized": "ciência de dados, café, naïve résumé — python & pytorch; études.",
+   "count": 0,
+   "variants": [
+    "api",
+    "apis"
+   ],
+   "expanded": [
+    "api",
+    "apis"
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "APIs",
+   "text": "Ciência de Dados, Café, naïve résumé — Python & PyTorch; ÉTUDES.",
+   "normalized": "ciência de dados, café, naïve résumé — python & pytorch; études.",
+   "count": 0,
+   "variants": [
+    "apis",
+    "api"
+   ],
+   "expanded": [
+    "apis",
+    "api"
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "GraphQL",
+   "text": "Ciência de Dados, Café, naïve résumé — Python & PyTorch; ÉTUDES.",
+   "normalized": "ciência de dados, café, naïve résumé — python & pytorch; études.",
+   "count": 0,
+   "variants": [
+    "graphql",
+    "graphqls"
+   ],
+   "expanded": [
+    "graphql",
+    "graphqls"
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "Python",
+   "text": "Ciência de Dados, Café, naïve résumé — Python & PyTorch; ÉTUDES.",
+   "normalized": "ciência de dados, café, naïve résumé — python & pytorch; études.",
+   "count": 1,
+   "variants": [
+    "python",
+    "pythons"
+   ],
+   "expanded": [
+    "python",
+    "pythons"
+   ],
+   "keywordCount": 1
+  },
+  {
+   "term": "PyTorch",
+   "text": "Ciência de Dados, Café, naïve résumé — Python & PyTorch; ÉTUDES.",
+   "normalized": "ciência de dados, café, naïve résumé — python & pytorch; études.",
+   "count": 1,
+   "variants": [
+    "pytorch",
+    "pytorchs"
+   ],
+   "expanded": [
+    "pytorch",
+    "pytorchs"
+   ],
+   "keywordCount": 1
+  },
+  {
+   "term": "café",
+   "text": "Ciência de Dados, Café, naïve résumé — Python & PyTorch; ÉTUDES.",
+   "normalized": "ciência de dados, café, naïve résumé — python & pytorch; études.",
+   "count": 1,
+   "variants": [
+    "café",
+    "cafés"
+   ],
+   "expanded": [
+    "café",
+    "cafés"
+   ],
+   "keywordCount": 1
+  },
+  {
+   "term": "résumé",
+   "text": "Ciência de Dados, Café, naïve résumé — Python & PyTorch; ÉTUDES.",
+   "normalized": "ciência de dados, café, naïve résumé — python & pytorch; études.",
+   "count": 1,
+   "variants": [
+    "résumé",
+    "résumés"
+   ],
+   "expanded": [
+    "résumé",
+    "résumés"
+   ],
+   "keywordCount": 1
+  },
+  {
+   "term": "Docker",
+   "text": "Ciência de Dados, Café, naïve résumé — Python & PyTorch; ÉTUDES.",
+   "normalized": "ciência de dados, café, naïve résumé — python & pytorch; études.",
+   "count": 0,
+   "variants": [
+    "docker",
+    "dockers"
+   ],
+   "expanded": [
+    "docker",
+    "dockers"
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "Terraform",
+   "text": "Ciência de Dados, Café, naïve résumé — Python & PyTorch; ÉTUDES.",
+   "normalized": "ciência de dados, café, naïve résumé — python & pytorch; études.",
+   "count": 0,
+   "variants": [
+    "terraform",
+    "terraforms"
+   ],
+   "expanded": [
+    "terraform",
+    "terraforms"
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "IaC",
+   "text": "Ciência de Dados, Café, naïve résumé — Python & PyTorch; ÉTUDES.",
+   "normalized": "ciência de dados, café, naïve résumé — python & pytorch; études.",
+   "count": 0,
+   "variants": [
+    "iac",
+    "iacs"
+   ],
+   "expanded": [
+    "iac",
+    "iacs",
+    "infrastructure as code",
+    "infrastructure as codes"
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "Scrum",
+   "text": "Ciência de Dados, Café, naïve résumé — Python & PyTorch; ÉTUDES.",
+   "normalized": "ciência de dados, café, naïve résumé — python & pytorch; études.",
+   "count": 0,
+   "variants": [
+    "scrum",
+    "scrums"
+   ],
+   "expanded": [
+    "scrum",
+    "scrums"
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "Jira",
+   "text": "Ciência de Dados, Café, naïve résumé — Python & PyTorch; ÉTUDES.",
+   "normalized": "ciência de dados, café, naïve résumé — python & pytorch; études.",
+   "count": 0,
+   "variants": [
+    "jira",
+    "jiras"
+   ],
+   "expanded": [
+    "jira",
+    "jiras"
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "it",
+   "text": "Ciência de Dados, Café, naïve résumé — Python & PyTorch; ÉTUDES.",
+   "normalized": "ciência de dados, café, naïve résumé — python & pytorch; études.",
+   "count": 0,
+   "variants": [
+    "it"
+   ],
+   "expanded": [
+    "it"
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "its",
+   "text": "Ciência de Dados, Café, naïve résumé — Python & PyTorch; ÉTUDES.",
+   "normalized": "ciência de dados, café, naïve résumé — python & pytorch; études.",
+   "count": 0,
+   "variants": [
+    "its"
+   ],
+   "expanded": [
+    "its"
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "go",
+   "text": "Ciência de Dados, Café, naïve résumé — Python & PyTorch; ÉTUDES.",
+   "normalized": "ciência de dados, café, naïve résumé — python & pytorch; études.",
+   "count": 0,
+   "variants": [
+    "go"
+   ],
+   "expanded": [
+    "go"
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "s",
+   "text": "Ciência de Dados, Café, naïve résumé — Python & PyTorch; ÉTUDES.",
+   "normalized": "ciência de dados, café, naïve résumé — python & pytorch; études.",
+   "count": 0,
+   "variants": [
+    "s"
+   ],
+   "expanded": [
+    "s"
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "",
+   "text": "Ciência de Dados, Café, naïve résumé — Python & PyTorch; ÉTUDES.",
+   "normalized": "ciência de dados, café, naïve résumé — python & pytorch; études.",
+   "count": 0,
+   "variants": [
+    ""
+   ],
+   "expanded": [
+    ""
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "  ",
+   "text": "Ciência de Dados, Café, naïve résumé — Python & PyTorch; ÉTUDES.",
+   "normalized": "ciência de dados, café, naïve résumé — python & pytorch; études.",
+   "count": 0,
+   "variants": [
+    ""
+   ],
+   "expanded": [
+    ""
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "React",
+   "text": "kubernetes kubernete Kubernetes's k8s K8S",
+   "normalized": "kubernetes kubernete kubernetes's k8s k8s",
+   "count": 0,
+   "variants": [
+    "react",
+    "reacts"
+   ],
+   "expanded": [
+    "react",
+    "reacts"
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "react.js",
+   "text": "kubernetes kubernete Kubernetes's k8s K8S",
+   "normalized": "kubernetes kubernete kubernetes's k8s k8s",
+   "count": 0,
+   "variants": [
+    "react.js",
+    "react.j"
+   ],
+   "expanded": [
+    "react.js",
+    "react.j"
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "TypeScript",
+   "text": "kubernetes kubernete Kubernetes's k8s K8S",
+   "normalized": "kubernetes kubernete kubernetes's k8s k8s",
+   "count": 0,
+   "variants": [
+    "typescript",
+    "typescripts"
+   ],
+   "expanded": [
+    "typescript",
+    "typescripts",
+    "ts"
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "ts",
+   "text": "kubernetes kubernete Kubernetes's k8s K8S",
+   "normalized": "kubernetes kubernete kubernetes's k8s k8s",
+   "count": 0,
+   "variants": [
+    "ts"
+   ],
+   "expanded": [
+    "ts",
+    "typescript",
+    "typescripts"
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "js",
+   "text": "kubernetes kubernete Kubernetes's k8s K8S",
+   "normalized": "kubernetes kubernete kubernetes's k8s k8s",
+   "count": 0,
+   "variants": [
+    "js"
+   ],
+   "expanded": [
+    "js",
+    "javascript",
+    "javascripts"
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "JavaScript",
+   "text": "kubernetes kubernete Kubernetes's k8s K8S",
+   "normalized": "kubernetes kubernete kubernetes's k8s k8s",
+   "count": 0,
+   "variants": [
+    "javascript",
+    "javascripts"
+   ],
+   "expanded": [
+    "javascript",
+    "javascripts",
+    "js"
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "Java",
+   "text": "kubernetes kubernete Kubernetes's k8s K8S",
+   "normalized": "kubernetes kubernete kubernetes's k8s k8s",
+   "count": 0,
+   "variants": [
+    "java",
+    "javas"
+   ],
+   "expanded": [
+    "java",
+    "javas"
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "Node.js",
+   "text": "kubernetes kubernete Kubernetes's k8s K8S",
+   "normalized": "kubernetes kubernete kubernetes's k8s k8s",
+   "count": 0,
+   "variants": [
+    "node.js",
+    "node.j"
+   ],
+   "expanded": [
+    "node.js",
+    "node.j"
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "AWS",
+   "text": "kubernetes kubernete Kubernetes's k8s K8S",
+   "normalized": "kubernetes kubernete kubernetes's k8s k8s",
+   "count": 0,
+   "variants": [
+    "aws"
+   ],
+   "expanded": [
+    "aws",
+    "amazon web services",
+    "amazon web service"
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "amazon web services",
+   "text": "kubernetes kubernete Kubernetes's k8s K8S",
+   "normalized": "kubernetes kubernete kubernetes's k8s k8s",
+   "count": 0,
+   "variants": [
+    "amazon web services",
+    "amazon web service"
+   ],
+   "expanded": [
+    "amazon web services",
+    "amazon web service",
+    "aws"
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "Kubernetes",
+   "text": "kubernetes kubernete Kubernetes's k8s K8S",
+   "normalized": "kubernetes kubernete kubernetes's k8s k8s",
+   "count": 2,
+   "variants": [
+    "kubernetes",
+    "kubernete"
+   ],
+   "expanded": [
+    "kubernetes",
+    "kubernete",
+    "k8s"
+   ],
+   "keywordCount": 5
+  },
+  {
+   "term": "k8s",
+   "text": "kubernetes kubernete Kubernetes's k8s K8S",
+   "normalized": "kubernetes kubernete kubernetes's k8s k8s",
+   "count": 2,
+   "variants": [
+    "k8s"
+   ],
+   "expanded": [
+    "k8s",
+    "kubernetes",
+    "kubernete"
+   ],
+   "keywordCount": 5
+  },
+  {
+   "term": "CI/CD",
+   "text": "kubernetes kubernete Kubernetes's k8s K8S",
+   "normalized": "kubernetes kubernete kubernetes's k8s k8s",
+   "count": 0,
+   "variants": [
+    "ci/cd",
+    "ci/cds"
+   ],
+   "expanded": [
+    "ci/cd",
+    "ci/cds",
+    "cicd",
+    "cicds"
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "cicd",
+   "text": "kubernetes kubernete Kubernetes's k8s K8S",
+   "normalized": "kubernetes kubernete kubernetes's k8s k8s",
+   "count": 0,
+   "variants": [
+    "cicd",
+    "cicds"
+   ],
+   "expanded": [
+    "cicd",
+    "cicds",
+    "ci/cd",
+    "ci/cds"
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "LLM",
+   "text": "kubernetes kubernete Kubernetes's k8s K8S",
+   "normalized": "kubernetes kubernete kubernetes's k8s k8s",
+   "count": 0,
+   "variants": [
+    "llm",
+    "llms"
+   ],
+   "expanded": [
+    "llm",
+    "llms",
+    "large language model",
+    "large language models"
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "LLMs",
+   "text": "kubernetes kubernete Kubernetes's k8s K8S",
+   "normalized": "kubernetes kubernete kubernetes's k8s k8s",
+   "count": 0,
+   "variants": [
+    "llms",
+    "llm"
+   ],
+   "expanded": [
+    "llms",
+    "llm",
+    "large language model",
+    "large language models"
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "large language model",
+   "text": "kubernetes kubernete Kubernetes's k8s K8S",
+   "normalized": "kubernetes kubernete kubernetes's k8s k8s",
+   "count": 0,
+   "variants": [
+    "large language model",
+    "large language models"
+   ],
+   "expanded": [
+    "large language model",
+    "large language models",
+    "llm",
+    "llms"
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "ML",
+   "text": "kubernetes kubernete Kubernetes's k8s K8S",
+   "normalized": "kubernetes kubernete kubernetes's k8s k8s",
+   "count": 0,
+   "variants": [
+    "ml"
+   ],
+   "expanded": [
+    "ml",
+    "machine learning",
+    "machine learnings"
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "machine learning",
+   "text": "kubernetes kubernete Kubernetes's k8s K8S",
+   "normalized": "kubernetes kubernete kubernetes's k8s k8s",
+   "count": 0,
+   "variants": [
+    "machine learning",
+    "machine learnings"
+   ],
+   "expanded": [
+    "machine learning",
+    "machine learnings",
+    "ml"
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "GCP",
+   "text": "kubernetes kubernete Kubernetes's k8s K8S",
+   "normalized": "kubernetes kubernete kubernetes's k8s k8s",
+   "count": 0,
+   "variants": [
+    "gcp",
+    "gcps"
+   ],
+   "expanded": [
+    "gcp",
+    "gcps",
+    "google cloud platform",
+    "google cloud platforms"
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "C++",
+   "text": "kubernetes kubernete Kubernetes's k8s K8S",
+   "normalized": "kubernetes kubernete kubernetes's k8s k8s",
+   "count": 0,
+   "variants": [
+    "c++",
+    "c++s"
+   ],
+   "expanded": [
+    "c++",
+    "c++s"
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "PostgreSQL",
+   "text": "kubernetes kubernete Kubernetes's k8s K8S",
+   "normalized": "kubernetes kubernete kubernetes's k8s k8s",
+   "count": 0,
+   "variants": [
+    "postgresql",
+    "postgresqls"
+   ],
+   "expanded": [
+    "postgresql",
+    "postgresqls",
+    "postgres",
+    "postgre"
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "postgres",
+   "text": "kubernetes kubernete Kubernetes's k8s K8S",
+   "normalized": "kubernetes kubernete kubernetes's k8s k8s",
+   "count": 0,
+   "variants": [
+    "postgres",
+    "postgre"
+   ],
+   "expanded": [
+    "postgres",
+    "postgre",
+    "postgresql",
+    "postgresqls"
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "API",
+   "text": "kubernetes kubernete Kubernetes's k8s K8S",
+   "normalized": "kubernetes kubernete kubernetes's k8s k8s",
+   "count": 0,
+   "variants": [
+    "api",
+    "apis"
+   ],
+   "expanded": [
+    "api",
+    "apis"
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "APIs",
+   "text": "kubernetes kubernete Kubernetes's k8s K8S",
+   "normalized": "kubernetes kubernete kubernetes's k8s k8s",
+   "count": 0,
+   "variants": [
+    "apis",
+    "api"
+   ],
+   "expanded": [
+    "apis",
+    "api"
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "GraphQL",
+   "text": "kubernetes kubernete Kubernetes's k8s K8S",
+   "normalized": "kubernetes kubernete kubernetes's k8s k8s",
+   "count": 0,
+   "variants": [
+    "graphql",
+    "graphqls"
+   ],
+   "expanded": [
+    "graphql",
+    "graphqls"
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "Python",
+   "text": "kubernetes kubernete Kubernetes's k8s K8S",
+   "normalized": "kubernetes kubernete kubernetes's k8s k8s",
+   "count": 0,
+   "variants": [
+    "python",
+    "pythons"
+   ],
+   "expanded": [
+    "python",
+    "pythons"
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "PyTorch",
+   "text": "kubernetes kubernete Kubernetes's k8s K8S",
+   "normalized": "kubernetes kubernete kubernetes's k8s k8s",
+   "count": 0,
+   "variants": [
+    "pytorch",
+    "pytorchs"
+   ],
+   "expanded": [
+    "pytorch",
+    "pytorchs"
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "café",
+   "text": "kubernetes kubernete Kubernetes's k8s K8S",
+   "normalized": "kubernetes kubernete kubernetes's k8s k8s",
+   "count": 0,
+   "variants": [
+    "café",
+    "cafés"
+   ],
+   "expanded": [
+    "café",
+    "cafés"
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "résumé",
+   "text": "kubernetes kubernete Kubernetes's k8s K8S",
+   "normalized": "kubernetes kubernete kubernetes's k8s k8s",
+   "count": 0,
+   "variants": [
+    "résumé",
+    "résumés"
+   ],
+   "expanded": [
+    "résumé",
+    "résumés"
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "Docker",
+   "text": "kubernetes kubernete Kubernetes's k8s K8S",
+   "normalized": "kubernetes kubernete kubernetes's k8s k8s",
+   "count": 0,
+   "variants": [
+    "docker",
+    "dockers"
+   ],
+   "expanded": [
+    "docker",
+    "dockers"
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "Terraform",
+   "text": "kubernetes kubernete Kubernetes's k8s K8S",
+   "normalized": "kubernetes kubernete kubernetes's k8s k8s",
+   "count": 0,
+   "variants": [
+    "terraform",
+    "terraforms"
+   ],
+   "expanded": [
+    "terraform",
+    "terraforms"
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "IaC",
+   "text": "kubernetes kubernete Kubernetes's k8s K8S",
+   "normalized": "kubernetes kubernete kubernetes's k8s k8s",
+   "count": 0,
+   "variants": [
+    "iac",
+    "iacs"
+   ],
+   "expanded": [
+    "iac",
+    "iacs",
+    "infrastructure as code",
+    "infrastructure as codes"
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "Scrum",
+   "text": "kubernetes kubernete Kubernetes's k8s K8S",
+   "normalized": "kubernetes kubernete kubernetes's k8s k8s",
+   "count": 0,
+   "variants": [
+    "scrum",
+    "scrums"
+   ],
+   "expanded": [
+    "scrum",
+    "scrums"
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "Jira",
+   "text": "kubernetes kubernete Kubernetes's k8s K8S",
+   "normalized": "kubernetes kubernete kubernetes's k8s k8s",
+   "count": 0,
+   "variants": [
+    "jira",
+    "jiras"
+   ],
+   "expanded": [
+    "jira",
+    "jiras"
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "it",
+   "text": "kubernetes kubernete Kubernetes's k8s K8S",
+   "normalized": "kubernetes kubernete kubernetes's k8s k8s",
+   "count": 0,
+   "variants": [
+    "it"
+   ],
+   "expanded": [
+    "it"
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "its",
+   "text": "kubernetes kubernete Kubernetes's k8s K8S",
+   "normalized": "kubernetes kubernete kubernetes's k8s k8s",
+   "count": 0,
+   "variants": [
+    "its"
+   ],
+   "expanded": [
+    "its"
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "go",
+   "text": "kubernetes kubernete Kubernetes's k8s K8S",
+   "normalized": "kubernetes kubernete kubernetes's k8s k8s",
+   "count": 0,
+   "variants": [
+    "go"
+   ],
+   "expanded": [
+    "go"
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "s",
+   "text": "kubernetes kubernete Kubernetes's k8s K8S",
+   "normalized": "kubernetes kubernete kubernetes's k8s k8s",
+   "count": 1,
+   "variants": [
+    "s"
+   ],
+   "expanded": [
+    "s"
+   ],
+   "keywordCount": 1
+  },
+  {
+   "term": "",
+   "text": "kubernetes kubernete Kubernetes's k8s K8S",
+   "normalized": "kubernetes kubernete kubernetes's k8s k8s",
+   "count": 0,
+   "variants": [
+    ""
+   ],
+   "expanded": [
+    ""
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "  ",
+   "text": "kubernetes kubernete Kubernetes's k8s K8S",
+   "normalized": "kubernetes kubernete kubernetes's k8s k8s",
+   "count": 0,
+   "variants": [
+    ""
+   ],
+   "expanded": [
+    ""
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "React",
+   "text": "Team lead for 5 engineers; Agile/Scrum; Jira; Docker; Terraform (IaC); infrastructure as code.",
+   "normalized": "team lead for 5 engineers; agile/scrum; jira; docker; terraform (iac); infrastructure as code.",
+   "count": 0,
+   "variants": [
+    "react",
+    "reacts"
+   ],
+   "expanded": [
+    "react",
+    "reacts"
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "react.js",
+   "text": "Team lead for 5 engineers; Agile/Scrum; Jira; Docker; Terraform (IaC); infrastructure as code.",
+   "normalized": "team lead for 5 engineers; agile/scrum; jira; docker; terraform (iac); infrastructure as code.",
+   "count": 0,
+   "variants": [
+    "react.js",
+    "react.j"
+   ],
+   "expanded": [
+    "react.js",
+    "react.j"
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "TypeScript",
+   "text": "Team lead for 5 engineers; Agile/Scrum; Jira; Docker; Terraform (IaC); infrastructure as code.",
+   "normalized": "team lead for 5 engineers; agile/scrum; jira; docker; terraform (iac); infrastructure as code.",
+   "count": 0,
+   "variants": [
+    "typescript",
+    "typescripts"
+   ],
+   "expanded": [
+    "typescript",
+    "typescripts",
+    "ts"
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "ts",
+   "text": "Team lead for 5 engineers; Agile/Scrum; Jira; Docker; Terraform (IaC); infrastructure as code.",
+   "normalized": "team lead for 5 engineers; agile/scrum; jira; docker; terraform (iac); infrastructure as code.",
+   "count": 0,
+   "variants": [
+    "ts"
+   ],
+   "expanded": [
+    "ts",
+    "typescript",
+    "typescripts"
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "js",
+   "text": "Team lead for 5 engineers; Agile/Scrum; Jira; Docker; Terraform (IaC); infrastructure as code.",
+   "normalized": "team lead for 5 engineers; agile/scrum; jira; docker; terraform (iac); infrastructure as code.",
+   "count": 0,
+   "variants": [
+    "js"
+   ],
+   "expanded": [
+    "js",
+    "javascript",
+    "javascripts"
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "JavaScript",
+   "text": "Team lead for 5 engineers; Agile/Scrum; Jira; Docker; Terraform (IaC); infrastructure as code.",
+   "normalized": "team lead for 5 engineers; agile/scrum; jira; docker; terraform (iac); infrastructure as code.",
+   "count": 0,
+   "variants": [
+    "javascript",
+    "javascripts"
+   ],
+   "expanded": [
+    "javascript",
+    "javascripts",
+    "js"
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "Java",
+   "text": "Team lead for 5 engineers; Agile/Scrum; Jira; Docker; Terraform (IaC); infrastructure as code.",
+   "normalized": "team lead for 5 engineers; agile/scrum; jira; docker; terraform (iac); infrastructure as code.",
+   "count": 0,
+   "variants": [
+    "java",
+    "javas"
+   ],
+   "expanded": [
+    "java",
+    "javas"
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "Node.js",
+   "text": "Team lead for 5 engineers; Agile/Scrum; Jira; Docker; Terraform (IaC); infrastructure as code.",
+   "normalized": "team lead for 5 engineers; agile/scrum; jira; docker; terraform (iac); infrastructure as code.",
+   "count": 0,
+   "variants": [
+    "node.js",
+    "node.j"
+   ],
+   "expanded": [
+    "node.js",
+    "node.j"
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "AWS",
+   "text": "Team lead for 5 engineers; Agile/Scrum; Jira; Docker; Terraform (IaC); infrastructure as code.",
+   "normalized": "team lead for 5 engineers; agile/scrum; jira; docker; terraform (iac); infrastructure as code.",
+   "count": 0,
+   "variants": [
+    "aws"
+   ],
+   "expanded": [
+    "aws",
+    "amazon web services",
+    "amazon web service"
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "amazon web services",
+   "text": "Team lead for 5 engineers; Agile/Scrum; Jira; Docker; Terraform (IaC); infrastructure as code.",
+   "normalized": "team lead for 5 engineers; agile/scrum; jira; docker; terraform (iac); infrastructure as code.",
+   "count": 0,
+   "variants": [
+    "amazon web services",
+    "amazon web service"
+   ],
+   "expanded": [
+    "amazon web services",
+    "amazon web service",
+    "aws"
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "Kubernetes",
+   "text": "Team lead for 5 engineers; Agile/Scrum; Jira; Docker; Terraform (IaC); infrastructure as code.",
+   "normalized": "team lead for 5 engineers; agile/scrum; jira; docker; terraform (iac); infrastructure as code.",
+   "count": 0,
+   "variants": [
+    "kubernetes",
+    "kubernete"
+   ],
+   "expanded": [
+    "kubernetes",
+    "kubernete",
+    "k8s"
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "k8s",
+   "text": "Team lead for 5 engineers; Agile/Scrum; Jira; Docker; Terraform (IaC); infrastructure as code.",
+   "normalized": "team lead for 5 engineers; agile/scrum; jira; docker; terraform (iac); infrastructure as code.",
+   "count": 0,
+   "variants": [
+    "k8s"
+   ],
+   "expanded": [
+    "k8s",
+    "kubernetes",
+    "kubernete"
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "CI/CD",
+   "text": "Team lead for 5 engineers; Agile/Scrum; Jira; Docker; Terraform (IaC); infrastructure as code.",
+   "normalized": "team lead for 5 engineers; agile/scrum; jira; docker; terraform (iac); infrastructure as code.",
+   "count": 0,
+   "variants": [
+    "ci/cd",
+    "ci/cds"
+   ],
+   "expanded": [
+    "ci/cd",
+    "ci/cds",
+    "cicd",
+    "cicds"
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "cicd",
+   "text": "Team lead for 5 engineers; Agile/Scrum; Jira; Docker; Terraform (IaC); infrastructure as code.",
+   "normalized": "team lead for 5 engineers; agile/scrum; jira; docker; terraform (iac); infrastructure as code.",
+   "count": 0,
+   "variants": [
+    "cicd",
+    "cicds"
+   ],
+   "expanded": [
+    "cicd",
+    "cicds",
+    "ci/cd",
+    "ci/cds"
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "LLM",
+   "text": "Team lead for 5 engineers; Agile/Scrum; Jira; Docker; Terraform (IaC); infrastructure as code.",
+   "normalized": "team lead for 5 engineers; agile/scrum; jira; docker; terraform (iac); infrastructure as code.",
+   "count": 0,
+   "variants": [
+    "llm",
+    "llms"
+   ],
+   "expanded": [
+    "llm",
+    "llms",
+    "large language model",
+    "large language models"
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "LLMs",
+   "text": "Team lead for 5 engineers; Agile/Scrum; Jira; Docker; Terraform (IaC); infrastructure as code.",
+   "normalized": "team lead for 5 engineers; agile/scrum; jira; docker; terraform (iac); infrastructure as code.",
+   "count": 0,
+   "variants": [
+    "llms",
+    "llm"
+   ],
+   "expanded": [
+    "llms",
+    "llm",
+    "large language model",
+    "large language models"
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "large language model",
+   "text": "Team lead for 5 engineers; Agile/Scrum; Jira; Docker; Terraform (IaC); infrastructure as code.",
+   "normalized": "team lead for 5 engineers; agile/scrum; jira; docker; terraform (iac); infrastructure as code.",
+   "count": 0,
+   "variants": [
+    "large language model",
+    "large language models"
+   ],
+   "expanded": [
+    "large language model",
+    "large language models",
+    "llm",
+    "llms"
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "ML",
+   "text": "Team lead for 5 engineers; Agile/Scrum; Jira; Docker; Terraform (IaC); infrastructure as code.",
+   "normalized": "team lead for 5 engineers; agile/scrum; jira; docker; terraform (iac); infrastructure as code.",
+   "count": 0,
+   "variants": [
+    "ml"
+   ],
+   "expanded": [
+    "ml",
+    "machine learning",
+    "machine learnings"
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "machine learning",
+   "text": "Team lead for 5 engineers; Agile/Scrum; Jira; Docker; Terraform (IaC); infrastructure as code.",
+   "normalized": "team lead for 5 engineers; agile/scrum; jira; docker; terraform (iac); infrastructure as code.",
+   "count": 0,
+   "variants": [
+    "machine learning",
+    "machine learnings"
+   ],
+   "expanded": [
+    "machine learning",
+    "machine learnings",
+    "ml"
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "GCP",
+   "text": "Team lead for 5 engineers; Agile/Scrum; Jira; Docker; Terraform (IaC); infrastructure as code.",
+   "normalized": "team lead for 5 engineers; agile/scrum; jira; docker; terraform (iac); infrastructure as code.",
+   "count": 0,
+   "variants": [
+    "gcp",
+    "gcps"
+   ],
+   "expanded": [
+    "gcp",
+    "gcps",
+    "google cloud platform",
+    "google cloud platforms"
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "C++",
+   "text": "Team lead for 5 engineers; Agile/Scrum; Jira; Docker; Terraform (IaC); infrastructure as code.",
+   "normalized": "team lead for 5 engineers; agile/scrum; jira; docker; terraform (iac); infrastructure as code.",
+   "count": 0,
+   "variants": [
+    "c++",
+    "c++s"
+   ],
+   "expanded": [
+    "c++",
+    "c++s"
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "PostgreSQL",
+   "text": "Team lead for 5 engineers; Agile/Scrum; Jira; Docker; Terraform (IaC); infrastructure as code.",
+   "normalized": "team lead for 5 engineers; agile/scrum; jira; docker; terraform (iac); infrastructure as code.",
+   "count": 0,
+   "variants": [
+    "postgresql",
+    "postgresqls"
+   ],
+   "expanded": [
+    "postgresql",
+    "postgresqls",
+    "postgres",
+    "postgre"
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "postgres",
+   "text": "Team lead for 5 engineers; Agile/Scrum; Jira; Docker; Terraform (IaC); infrastructure as code.",
+   "normalized": "team lead for 5 engineers; agile/scrum; jira; docker; terraform (iac); infrastructure as code.",
+   "count": 0,
+   "variants": [
+    "postgres",
+    "postgre"
+   ],
+   "expanded": [
+    "postgres",
+    "postgre",
+    "postgresql",
+    "postgresqls"
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "API",
+   "text": "Team lead for 5 engineers; Agile/Scrum; Jira; Docker; Terraform (IaC); infrastructure as code.",
+   "normalized": "team lead for 5 engineers; agile/scrum; jira; docker; terraform (iac); infrastructure as code.",
+   "count": 0,
+   "variants": [
+    "api",
+    "apis"
+   ],
+   "expanded": [
+    "api",
+    "apis"
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "APIs",
+   "text": "Team lead for 5 engineers; Agile/Scrum; Jira; Docker; Terraform (IaC); infrastructure as code.",
+   "normalized": "team lead for 5 engineers; agile/scrum; jira; docker; terraform (iac); infrastructure as code.",
+   "count": 0,
+   "variants": [
+    "apis",
+    "api"
+   ],
+   "expanded": [
+    "apis",
+    "api"
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "GraphQL",
+   "text": "Team lead for 5 engineers; Agile/Scrum; Jira; Docker; Terraform (IaC); infrastructure as code.",
+   "normalized": "team lead for 5 engineers; agile/scrum; jira; docker; terraform (iac); infrastructure as code.",
+   "count": 0,
+   "variants": [
+    "graphql",
+    "graphqls"
+   ],
+   "expanded": [
+    "graphql",
+    "graphqls"
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "Python",
+   "text": "Team lead for 5 engineers; Agile/Scrum; Jira; Docker; Terraform (IaC); infrastructure as code.",
+   "normalized": "team lead for 5 engineers; agile/scrum; jira; docker; terraform (iac); infrastructure as code.",
+   "count": 0,
+   "variants": [
+    "python",
+    "pythons"
+   ],
+   "expanded": [
+    "python",
+    "pythons"
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "PyTorch",
+   "text": "Team lead for 5 engineers; Agile/Scrum; Jira; Docker; Terraform (IaC); infrastructure as code.",
+   "normalized": "team lead for 5 engineers; agile/scrum; jira; docker; terraform (iac); infrastructure as code.",
+   "count": 0,
+   "variants": [
+    "pytorch",
+    "pytorchs"
+   ],
+   "expanded": [
+    "pytorch",
+    "pytorchs"
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "café",
+   "text": "Team lead for 5 engineers; Agile/Scrum; Jira; Docker; Terraform (IaC); infrastructure as code.",
+   "normalized": "team lead for 5 engineers; agile/scrum; jira; docker; terraform (iac); infrastructure as code.",
+   "count": 0,
+   "variants": [
+    "café",
+    "cafés"
+   ],
+   "expanded": [
+    "café",
+    "cafés"
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "résumé",
+   "text": "Team lead for 5 engineers; Agile/Scrum; Jira; Docker; Terraform (IaC); infrastructure as code.",
+   "normalized": "team lead for 5 engineers; agile/scrum; jira; docker; terraform (iac); infrastructure as code.",
+   "count": 0,
+   "variants": [
+    "résumé",
+    "résumés"
+   ],
+   "expanded": [
+    "résumé",
+    "résumés"
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "Docker",
+   "text": "Team lead for 5 engineers; Agile/Scrum; Jira; Docker; Terraform (IaC); infrastructure as code.",
+   "normalized": "team lead for 5 engineers; agile/scrum; jira; docker; terraform (iac); infrastructure as code.",
+   "count": 1,
+   "variants": [
+    "docker",
+    "dockers"
+   ],
+   "expanded": [
+    "docker",
+    "dockers"
+   ],
+   "keywordCount": 1
+  },
+  {
+   "term": "Terraform",
+   "text": "Team lead for 5 engineers; Agile/Scrum; Jira; Docker; Terraform (IaC); infrastructure as code.",
+   "normalized": "team lead for 5 engineers; agile/scrum; jira; docker; terraform (iac); infrastructure as code.",
+   "count": 1,
+   "variants": [
+    "terraform",
+    "terraforms"
+   ],
+   "expanded": [
+    "terraform",
+    "terraforms"
+   ],
+   "keywordCount": 1
+  },
+  {
+   "term": "IaC",
+   "text": "Team lead for 5 engineers; Agile/Scrum; Jira; Docker; Terraform (IaC); infrastructure as code.",
+   "normalized": "team lead for 5 engineers; agile/scrum; jira; docker; terraform (iac); infrastructure as code.",
+   "count": 1,
+   "variants": [
+    "iac",
+    "iacs"
+   ],
+   "expanded": [
+    "iac",
+    "iacs",
+    "infrastructure as code",
+    "infrastructure as codes"
+   ],
+   "keywordCount": 2
+  },
+  {
+   "term": "Scrum",
+   "text": "Team lead for 5 engineers; Agile/Scrum; Jira; Docker; Terraform (IaC); infrastructure as code.",
+   "normalized": "team lead for 5 engineers; agile/scrum; jira; docker; terraform (iac); infrastructure as code.",
+   "count": 1,
+   "variants": [
+    "scrum",
+    "scrums"
+   ],
+   "expanded": [
+    "scrum",
+    "scrums"
+   ],
+   "keywordCount": 1
+  },
+  {
+   "term": "Jira",
+   "text": "Team lead for 5 engineers; Agile/Scrum; Jira; Docker; Terraform (IaC); infrastructure as code.",
+   "normalized": "team lead for 5 engineers; agile/scrum; jira; docker; terraform (iac); infrastructure as code.",
+   "count": 1,
+   "variants": [
+    "jira",
+    "jiras"
+   ],
+   "expanded": [
+    "jira",
+    "jiras"
+   ],
+   "keywordCount": 1
+  },
+  {
+   "term": "it",
+   "text": "Team lead for 5 engineers; Agile/Scrum; Jira; Docker; Terraform (IaC); infrastructure as code.",
+   "normalized": "team lead for 5 engineers; agile/scrum; jira; docker; terraform (iac); infrastructure as code.",
+   "count": 0,
+   "variants": [
+    "it"
+   ],
+   "expanded": [
+    "it"
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "its",
+   "text": "Team lead for 5 engineers; Agile/Scrum; Jira; Docker; Terraform (IaC); infrastructure as code.",
+   "normalized": "team lead for 5 engineers; agile/scrum; jira; docker; terraform (iac); infrastructure as code.",
+   "count": 0,
+   "variants": [
+    "its"
+   ],
+   "expanded": [
+    "its"
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "go",
+   "text": "Team lead for 5 engineers; Agile/Scrum; Jira; Docker; Terraform (IaC); infrastructure as code.",
+   "normalized": "team lead for 5 engineers; agile/scrum; jira; docker; terraform (iac); infrastructure as code.",
+   "count": 0,
+   "variants": [
+    "go"
+   ],
+   "expanded": [
+    "go"
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "s",
+   "text": "Team lead for 5 engineers; Agile/Scrum; Jira; Docker; Terraform (IaC); infrastructure as code.",
+   "normalized": "team lead for 5 engineers; agile/scrum; jira; docker; terraform (iac); infrastructure as code.",
+   "count": 0,
+   "variants": [
+    "s"
+   ],
+   "expanded": [
+    "s"
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "",
+   "text": "Team lead for 5 engineers; Agile/Scrum; Jira; Docker; Terraform (IaC); infrastructure as code.",
+   "normalized": "team lead for 5 engineers; agile/scrum; jira; docker; terraform (iac); infrastructure as code.",
+   "count": 0,
+   "variants": [
+    ""
+   ],
+   "expanded": [
+    ""
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "  ",
+   "text": "Team lead for 5 engineers; Agile/Scrum; Jira; Docker; Terraform (IaC); infrastructure as code.",
+   "normalized": "team lead for 5 engineers; agile/scrum; jira; docker; terraform (iac); infrastructure as code.",
+   "count": 0,
+   "variants": [
+    ""
+   ],
+   "expanded": [
+    ""
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "React",
+   "text": "",
+   "normalized": "",
+   "count": 0,
+   "variants": [
+    "react",
+    "reacts"
+   ],
+   "expanded": [
+    "react",
+    "reacts"
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "react.js",
+   "text": "",
+   "normalized": "",
+   "count": 0,
+   "variants": [
+    "react.js",
+    "react.j"
+   ],
+   "expanded": [
+    "react.js",
+    "react.j"
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "TypeScript",
+   "text": "",
+   "normalized": "",
+   "count": 0,
+   "variants": [
+    "typescript",
+    "typescripts"
+   ],
+   "expanded": [
+    "typescript",
+    "typescripts",
+    "ts"
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "ts",
+   "text": "",
+   "normalized": "",
+   "count": 0,
+   "variants": [
+    "ts"
+   ],
+   "expanded": [
+    "ts",
+    "typescript",
+    "typescripts"
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "js",
+   "text": "",
+   "normalized": "",
+   "count": 0,
+   "variants": [
+    "js"
+   ],
+   "expanded": [
+    "js",
+    "javascript",
+    "javascripts"
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "JavaScript",
+   "text": "",
+   "normalized": "",
+   "count": 0,
+   "variants": [
+    "javascript",
+    "javascripts"
+   ],
+   "expanded": [
+    "javascript",
+    "javascripts",
+    "js"
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "Java",
+   "text": "",
+   "normalized": "",
+   "count": 0,
+   "variants": [
+    "java",
+    "javas"
+   ],
+   "expanded": [
+    "java",
+    "javas"
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "Node.js",
+   "text": "",
+   "normalized": "",
+   "count": 0,
+   "variants": [
+    "node.js",
+    "node.j"
+   ],
+   "expanded": [
+    "node.js",
+    "node.j"
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "AWS",
+   "text": "",
+   "normalized": "",
+   "count": 0,
+   "variants": [
+    "aws"
+   ],
+   "expanded": [
+    "aws",
+    "amazon web services",
+    "amazon web service"
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "amazon web services",
+   "text": "",
+   "normalized": "",
+   "count": 0,
+   "variants": [
+    "amazon web services",
+    "amazon web service"
+   ],
+   "expanded": [
+    "amazon web services",
+    "amazon web service",
+    "aws"
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "Kubernetes",
+   "text": "",
+   "normalized": "",
+   "count": 0,
+   "variants": [
+    "kubernetes",
+    "kubernete"
+   ],
+   "expanded": [
+    "kubernetes",
+    "kubernete",
+    "k8s"
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "k8s",
+   "text": "",
+   "normalized": "",
+   "count": 0,
+   "variants": [
+    "k8s"
+   ],
+   "expanded": [
+    "k8s",
+    "kubernetes",
+    "kubernete"
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "CI/CD",
+   "text": "",
+   "normalized": "",
+   "count": 0,
+   "variants": [
+    "ci/cd",
+    "ci/cds"
+   ],
+   "expanded": [
+    "ci/cd",
+    "ci/cds",
+    "cicd",
+    "cicds"
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "cicd",
+   "text": "",
+   "normalized": "",
+   "count": 0,
+   "variants": [
+    "cicd",
+    "cicds"
+   ],
+   "expanded": [
+    "cicd",
+    "cicds",
+    "ci/cd",
+    "ci/cds"
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "LLM",
+   "text": "",
+   "normalized": "",
+   "count": 0,
+   "variants": [
+    "llm",
+    "llms"
+   ],
+   "expanded": [
+    "llm",
+    "llms",
+    "large language model",
+    "large language models"
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "LLMs",
+   "text": "",
+   "normalized": "",
+   "count": 0,
+   "variants": [
+    "llms",
+    "llm"
+   ],
+   "expanded": [
+    "llms",
+    "llm",
+    "large language model",
+    "large language models"
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "large language model",
+   "text": "",
+   "normalized": "",
+   "count": 0,
+   "variants": [
+    "large language model",
+    "large language models"
+   ],
+   "expanded": [
+    "large language model",
+    "large language models",
+    "llm",
+    "llms"
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "ML",
+   "text": "",
+   "normalized": "",
+   "count": 0,
+   "variants": [
+    "ml"
+   ],
+   "expanded": [
+    "ml",
+    "machine learning",
+    "machine learnings"
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "machine learning",
+   "text": "",
+   "normalized": "",
+   "count": 0,
+   "variants": [
+    "machine learning",
+    "machine learnings"
+   ],
+   "expanded": [
+    "machine learning",
+    "machine learnings",
+    "ml"
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "GCP",
+   "text": "",
+   "normalized": "",
+   "count": 0,
+   "variants": [
+    "gcp",
+    "gcps"
+   ],
+   "expanded": [
+    "gcp",
+    "gcps",
+    "google cloud platform",
+    "google cloud platforms"
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "C++",
+   "text": "",
+   "normalized": "",
+   "count": 0,
+   "variants": [
+    "c++",
+    "c++s"
+   ],
+   "expanded": [
+    "c++",
+    "c++s"
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "PostgreSQL",
+   "text": "",
+   "normalized": "",
+   "count": 0,
+   "variants": [
+    "postgresql",
+    "postgresqls"
+   ],
+   "expanded": [
+    "postgresql",
+    "postgresqls",
+    "postgres",
+    "postgre"
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "postgres",
+   "text": "",
+   "normalized": "",
+   "count": 0,
+   "variants": [
+    "postgres",
+    "postgre"
+   ],
+   "expanded": [
+    "postgres",
+    "postgre",
+    "postgresql",
+    "postgresqls"
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "API",
+   "text": "",
+   "normalized": "",
+   "count": 0,
+   "variants": [
+    "api",
+    "apis"
+   ],
+   "expanded": [
+    "api",
+    "apis"
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "APIs",
+   "text": "",
+   "normalized": "",
+   "count": 0,
+   "variants": [
+    "apis",
+    "api"
+   ],
+   "expanded": [
+    "apis",
+    "api"
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "GraphQL",
+   "text": "",
+   "normalized": "",
+   "count": 0,
+   "variants": [
+    "graphql",
+    "graphqls"
+   ],
+   "expanded": [
+    "graphql",
+    "graphqls"
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "Python",
+   "text": "",
+   "normalized": "",
+   "count": 0,
+   "variants": [
+    "python",
+    "pythons"
+   ],
+   "expanded": [
+    "python",
+    "pythons"
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "PyTorch",
+   "text": "",
+   "normalized": "",
+   "count": 0,
+   "variants": [
+    "pytorch",
+    "pytorchs"
+   ],
+   "expanded": [
+    "pytorch",
+    "pytorchs"
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "café",
+   "text": "",
+   "normalized": "",
+   "count": 0,
+   "variants": [
+    "café",
+    "cafés"
+   ],
+   "expanded": [
+    "café",
+    "cafés"
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "résumé",
+   "text": "",
+   "normalized": "",
+   "count": 0,
+   "variants": [
+    "résumé",
+    "résumés"
+   ],
+   "expanded": [
+    "résumé",
+    "résumés"
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "Docker",
+   "text": "",
+   "normalized": "",
+   "count": 0,
+   "variants": [
+    "docker",
+    "dockers"
+   ],
+   "expanded": [
+    "docker",
+    "dockers"
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "Terraform",
+   "text": "",
+   "normalized": "",
+   "count": 0,
+   "variants": [
+    "terraform",
+    "terraforms"
+   ],
+   "expanded": [
+    "terraform",
+    "terraforms"
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "IaC",
+   "text": "",
+   "normalized": "",
+   "count": 0,
+   "variants": [
+    "iac",
+    "iacs"
+   ],
+   "expanded": [
+    "iac",
+    "iacs",
+    "infrastructure as code",
+    "infrastructure as codes"
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "Scrum",
+   "text": "",
+   "normalized": "",
+   "count": 0,
+   "variants": [
+    "scrum",
+    "scrums"
+   ],
+   "expanded": [
+    "scrum",
+    "scrums"
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "Jira",
+   "text": "",
+   "normalized": "",
+   "count": 0,
+   "variants": [
+    "jira",
+    "jiras"
+   ],
+   "expanded": [
+    "jira",
+    "jiras"
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "it",
+   "text": "",
+   "normalized": "",
+   "count": 0,
+   "variants": [
+    "it"
+   ],
+   "expanded": [
+    "it"
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "its",
+   "text": "",
+   "normalized": "",
+   "count": 0,
+   "variants": [
+    "its"
+   ],
+   "expanded": [
+    "its"
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "go",
+   "text": "",
+   "normalized": "",
+   "count": 0,
+   "variants": [
+    "go"
+   ],
+   "expanded": [
+    "go"
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "s",
+   "text": "",
+   "normalized": "",
+   "count": 0,
+   "variants": [
+    "s"
+   ],
+   "expanded": [
+    "s"
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "",
+   "text": "",
+   "normalized": "",
+   "count": 0,
+   "variants": [
+    ""
+   ],
+   "expanded": [
+    ""
+   ],
+   "keywordCount": 0
+  },
+  {
+   "term": "  ",
+   "text": "",
+   "normalized": "",
+   "count": 0,
+   "variants": [
+    ""
+   ],
+   "expanded": [
+    ""
+   ],
+   "keywordCount": 0
+  }
+ ]
+}

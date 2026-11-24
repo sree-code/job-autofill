@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "Appliqué: Job Application Autofill",
-  "version": "0.6.0",
+  "version": "0.6.1",
   "description": "Fill job applications from a profile that stays in your browser. Works on Workday, Greenhouse, Lever, Ashby and more.",
   "permissions": [
     "storage"
@@ -71,5 +71,8 @@
       "description": "Fill this application"
     }
   },
-  "short_name": "Appliqué"
+  "short_name": "Appliqué",
+  "content_security_policy": {
+    "extension_pages": "script-src 'self' 'wasm-unsafe-eval'; object-src 'self'"
+  }
 }

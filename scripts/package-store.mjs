@@ -17,6 +17,7 @@ for (const f of ["manifest.json", "icons", "src"]) await cp(path.join(root, f), 
 await rm(path.join(stage, "icons/src"), { recursive: true }); // icon source, not loaded
 await rm(path.join(stage, "src/background.js")); // source of dist/background.js, not loaded
 await cp(path.join(root, "dist/background.js"), path.join(stage, "dist/background.js"));
+await cp(path.join(root, "dist/engine"), path.join(stage, "dist/engine"), { recursive: true });
 await rm(zip, { force: true });
 execFileSync("zip", ["-r", "-X", "-q", zip, "."], { cwd: stage });
 await rm(stage, { recursive: true, force: true });

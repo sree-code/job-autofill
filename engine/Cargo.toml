@@ -1,0 +1,10 @@
+[workspace]
+resolver = "2"
+members = ["applique-core"]
+
+[profile.release]
+opt-level = "s"     # size matters more than speed for code shipped in the extension
+lto = true
+codegen-units = 1
+panic = "abort"
+strip = true
